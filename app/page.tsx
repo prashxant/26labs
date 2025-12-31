@@ -1,11 +1,15 @@
-import Footer from "./components/footer";
+import Image from "next/image";
+
 
 
 export default function Home() {
   return (
-    <div className="w-screen bg-cover h-screen flex flex-col justify-end bg-[url('/26labs.svg')] ">
-
- <Footer/>
-    </div>
+    <Image
+      src="/26labs.svg"
+      alt="background"
+      fill
+      className="object-cover max-md:object-top w-full h-full absolute -z-10 opacity-90"
+      priority
+    />
   );
 }
