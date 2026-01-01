@@ -7,8 +7,8 @@ export const Hero = () => {
         Good things take time
       </h1>
       <p className="pl-1 text-gray-500  tracking-tighter font-semibold">
-        we are working
-        <span className="cursor-pointer text-rose-700/50">26labs.live</span>
+        we are working on
+        <span className="cursor-pointer px-1 text-rose-700/50">26labs.live</span>
       </p>
     </div>
   );
