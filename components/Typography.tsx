@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-export type TypographyProps = {
+ type TypographyProps = {
   variant: TypographyVariant
   className: string;
   description: string;
@@ -9,13 +9,21 @@ export type TypographyProps = {
   popUp: string;
 };
 
+type DiscriptionProps = {
+  className: string
+  description: string
+}
+
+
 type TypographyVariant = "h1" | "h2" | "h3";
 
 const variants = {
-  h1: "text-[68.66px] font-bold  flex flex-col justify-center items-center",
-  h2: "text-[43.95px] font-bold  flex flex-col justify-center items-center",
-  h3: "text-[28.13px] font-bold  flex flex-col justify-center items-center",
+  h1: "text-[68.66px] ",
+  h2: "text-[43.95px] ",
+  h3: "text-[28.13px] ",
 };
+
+const baseStyles = "font-bold flex flex-col justify-center items-center";
 
 const highlightStyles = {
   h1: "text-white bg-orange1 mx-2 p-1",
@@ -34,7 +42,7 @@ export const Typography = (
     :Omit<TypographyProps,"description">) =>{
 
   return (
-    <div className={cn(variants[variant], className)}>
+    <div className={cn(baseStyles,variants[variant], className)}>
       <p>{line1}</p>
       <p>
          {line2}
@@ -51,6 +59,6 @@ export const Typography = (
 export const Discripton = ({
   className,
   description,
-}: Pick<TypographyProps, "className" | "description">) => {
+}:DiscriptionProps) => {
   return <div className={cn("", className)}>{description}</div>;
 };
