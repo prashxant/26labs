@@ -1,15 +1,14 @@
-import { Hero } from "@/components/Hero";
+import { Container } from "@/components/Container";
+
+import { Navbar } from "@/components/Navbar";
 
 
 
 
 export default function Home() {
   return (
-    <div
-      className="relative flex w-screen h-screen justify-center items-center bg-cover bg-center"
-      style={{ backgroundImage: "url('/26labsBg.svg')" }}
-    >
-      <Hero />
-    </div>
+    <Container className="bg-white justify-center flex items-center w-screen h-screen">
+      <Navbar/>
+    </Container>
   );
 }
