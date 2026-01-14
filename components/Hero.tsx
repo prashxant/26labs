@@ -1,22 +1,32 @@
 
+import Image from "next/image";
 import { Descripton, Typography } from "./Typography";
 
 
 export const Hero = () => {
   return (
-    <div className=" w-full h-screen">
-      <Typography
-        variant="h1"
-        className="pt-88.25"
-        line1="One Problem One Service"
-        line2="One "
-        popUp="Audience"
+    <div className="relative w-full h-screen overflow-hidden">
+      <Image
+        src="/image.png"
+        alt="bg"
+        fill
+        priority
+        className=" z-0"
       />
-      <Descripton
-        className="max-w-xl "
-        description="Delivering warm opportunities and optimizing your visibility process to ensure nothing stands between you and your revenue goals."
-      />
-      <Email/>
+      <div className="relative z-10 flex flex-col items-center text-center">
+        <Typography
+          variant="h1"
+          className="pt-60 "
+          line1="One Problem One Service"
+          line2="One "
+          popUp="Audience"
+        />
+        <Descripton
+          className="max-w-xl "
+          description="Delivering warm opportunities and optimizing your visibility process to ensure nothing stands between you and your revenue goals."
+        />
+        <Email />
+      </div>
     </div>
   );
 }
@@ -76,10 +86,6 @@ export const Email = () => {
         <p className="text-gray-500 tracking-tight text-xs mt-1">
           Already Claimed
         </p>
-
-        <div className="mt-[85px] h-[71px] font-bold text-[22.5px]">
-          Our Toolkit
-        </div>
       </div>
     </div>
   );
