@@ -1,9 +1,9 @@
-import React from 'react'
+
 import { Descripton, Typography } from './Typography'
 
 export const Third = () => {
   return (
-    <div className=''>
+    <div className="flex flex-col justify-center mx-auto items-center">
       <Typography
         className=""
         variant="h2"
@@ -20,7 +20,7 @@ export const Third = () => {
         description="From strategy and positioning to a fully functional website, every step is covered with a clear, full-cycle process. With our team experts acting as an extension of your business, our research-driven approach ensures websites that reach the right audience, reflect your brand, and drive real growth."
         className="max-w-2xl "
       />
-      <button className='shadow-ld w-10 rounded-xs ring-2 ring-orange2 px-2 '>
+      <button className="shadow-lg shadow-orange1 mb-10 px-4 text-xl rounded-xs ring-2 ring-orange2 ">
         More
       </button>
     </div>

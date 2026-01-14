@@ -13,7 +13,7 @@ export const Navbar = () => {
           rounded-lg
           bg-blue1
           px-4
-          mt-20
+          mt-
           shadow-lg
         "
       >
