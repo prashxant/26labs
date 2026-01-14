@@ -56,9 +56,13 @@ export const Typography = (
   );
 }
 
-export const Discripton = ({
+export const Descripton = ({
   className,
   description,
 }:DiscriptionProps) => {
-  return <div className={cn("", className)}>{description}</div>;
+  return (
+    <div className={cn("mx-auto text-center my-10 tracking-tight font-normal text-shadow-2xs", className)}>
+      {description}
+    </div>
+  );
 };
