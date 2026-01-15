@@ -1,9 +1,10 @@
-import React from 'react'
+
+import { SkewCards } from './Card';
 import { Descripton, Typography } from './Typography'
 
 export const Third = () => {
   return (
-    <div className=''>
+    <div className="flex flex-col justify-center mx-auto items-center">
       <Typography
         className=""
         variant="h2"
@@ -11,6 +12,7 @@ export const Third = () => {
         line2="Idea to"
         popUp="Live Product."
       />
+    
       <ThreeCards />
       <Descripton
         description="With over 4+ years of experience, we collaborate with businesses of all sizes, from ambitious SaaS startups to established B2B leaders, to transform and improve their presence in the digital space and gain traction."
@@ -20,9 +22,7 @@ export const Third = () => {
         description="From strategy and positioning to a fully functional website, every step is covered with a clear, full-cycle process. With our team experts acting as an extension of your business, our research-driven approach ensures websites that reach the right audience, reflect your brand, and drive real growth."
         className="max-w-2xl "
       />
-      <button className='shadow-ld w-10 rounded-xs ring-2 ring-orange2 px-2 '>
-        More
-      </button>
+
     </div>
   );
 }

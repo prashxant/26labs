@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Navbar } from "@/components/Navbar";
 
 const myFont = localFont({
   src:"../public/Helvetica.ttf"
@@ -18,8 +19,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={myFont.className}>
-      <body
-      >
+      <body className="bg-mainBg ">
+    
         {children}
       </body>
     </html>
