@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={myFont.className}>
       <body className="bg-mainBg ">
-        {/* <Navbar /> */}
+        <Navbar />
         {children}
       </body>
     </html>

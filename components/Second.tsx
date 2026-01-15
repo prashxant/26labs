@@ -6,7 +6,7 @@ import { Typography } from "./Typography"
 export const Second = () => {
   return (
     <div className="flex flex-col justify-center items-center">
-      <div className="mt-[85px] mb-[32px] h-[71px] font-bold  text-[22.5px]">
+      <div className="mt-21.25 mb-8 h-17.75 font-bold  text-[22.5px]">
         Our Toolkit
       </div>
       <Typography
