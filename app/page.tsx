@@ -36,9 +36,6 @@ const Hero = () => {
           26labs.livessss
         </span>
       </p>
-      <Link href='./test' className="cursor-pointer mt-10 px-4 py-2 rounded-md shadow-md bg-blue-400 text-mainBg hover:bg-blue-600 transition duration-200 ">
-          Go to main Site (building...)
-      </Link>
     </div>
   );
 };
