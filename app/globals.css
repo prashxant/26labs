@@ -9,3 +9,21 @@
   --color-blue2:oklch(0.7481 0.1287 268.99);
   --color-blue3:oklch(0.6321 0.2018 254.09);
 }
+
+
+
+@theme{
+
+  --animate-marque: marque 30s linear infinite;
+
+@keyframes marque  {
+
+  from{
+  transform: translateX(100%)
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+}

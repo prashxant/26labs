@@ -1,4 +1,23 @@
-// import React from "react";
+import React from 'react'
+
+export const SkewCards = () => {
+  return (
+    <div >
+      <Card/>
+    </div>
+  )
+}
+
+
+export const Card = () => {
+  return (
+    <div>
+ Card
+    </div>
+  )
+}
+
+
 
 // const ServiceCard = ({ icons, title, description, linkText }) => (
 //   <div className="border border-gray-400 p-8 bg-gray-100 h-full flex flex-col">
@@ -26,6 +45,8 @@
 //     </a>
 //   </div>
 // );
+
+
 
 // const ServicesGrid = () => {
 //   const services = [

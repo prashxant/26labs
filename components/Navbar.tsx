@@ -8,25 +8,47 @@ export const Navbar = () => {
         className="
           mx-auto
           flex items-center justify-between
-          h-[55px]
-          w-[715px]
+          h-13.75
+          w-178.75
           rounded-lg
           bg-blue1
           px-4
-          mt-
-          shadow-lg
-        "
-      >
+          mt-20
+          shadow-lg"
+       >
         <Menu />
-        <Image alt="Company logo" width={100} height={40} src="/logo.svg" />
 
-        <button className="bg-orange2 text-[22.5px] text-shadow-sm rounded-md text-mainBg px-4 py-1">
+        <Image
+          alt="Company logo"
+          width={100}
+          height={40}
+          src="/logo.svg"
+         />
+
+        <button
+        className="bg-orange2 text-[22.5px] text-shadow-sm rounded-md text-mainBg px-4 py-1">
           Book now
         </button>
       </div>
     </nav>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 export const Menu = () => {
