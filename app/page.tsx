@@ -6,7 +6,7 @@ import { MainFooter } from "@/components/MainFooter";
 import { MainFooter2 } from "@/components/MainFooter2";
 import { Newsletter } from "@/components/Newsletter";
  import { Second } from "@/components/Second";
-import { Descripton } from "@/components/Typography";
+
 
 
 
@@ -21,8 +21,8 @@ export default function Home() {
       <Newsletter />
       <Container>
         <MainFooter />
-       <MainFooter2/>
       </Container>
+      <MainFooter2 />
     </div>
   );
 }
