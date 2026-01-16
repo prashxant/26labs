@@ -14,7 +14,7 @@ export const Newsletter = () => {
         <input
           type="text"
           placeholder="Email Address"
-          className="bg-gray-400 ring p-1 w-fit "
+          className=" ring p-1 w-fit "
         />
         <div className="bg-orange1 justify-center ring items-center flex p-1 ">
           <Image alt="logo" width={48} height={48} src="/logo.svg" />

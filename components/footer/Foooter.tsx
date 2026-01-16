@@ -1,8 +1,11 @@
-import { GrowthPlan } from "./GrowthPlan";
-import { Sliding } from "./Sliding";
-import { Descripton, Typography } from "./Typography";
+import { GrowthPlan } from "../GrowthPlan";
+import { Sliding } from "../Sliding";
+import { Descripton, Typography } from "../Typography";
+
+
+
 //spacing is needed
-export const Footer = () => {
+export const Foooter = () => {
   return (
     <div className="flex flex-col justify-center items-center">
       <Typography

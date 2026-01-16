@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Navbar } from "@/components/Navbar";
+import { Navbar } from "@/components/footer/Navbar";
+import { Footer } from "@/components/footer/Footer";
 
 const myFont = localFont({
   src:"../public/Helvetica.ttf"
@@ -20,8 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={myFont.className}>
       <body className="bg-mainBg ">
-    
+
         {children}
+        <Footer/>
       </body>
     </html>
   );
