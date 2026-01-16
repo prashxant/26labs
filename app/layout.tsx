@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={myFont.className}>
       <body className="bg-mainBg ">
-
+        {/* <Navbar/> */}
         {children}
         <Footer/>
       </body>

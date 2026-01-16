@@ -8,12 +8,10 @@
 // import { Newsletter } from "@/components/Newsletter";
 //  import { Second } from "@/components/Second";
 
-import { Footer } from "@/components/footer/Footer";
-
 export default function Home() {
   return (
     <div>
-      <Footer />
+      hi
     </div>
   );
 }
