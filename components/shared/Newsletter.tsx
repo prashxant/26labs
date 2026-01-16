@@ -1,6 +1,5 @@
 import Image from "next/image";
-import { Descripton } from "./Typography";
-
+import { Descripton } from "@/components/shared/Typography";
 
 export const Newsletter = () => {
   return (
@@ -26,5 +25,4 @@ export const Newsletter = () => {
       />
     </div>
   );
-
-}
+};

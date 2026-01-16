@@ -1,5 +1,5 @@
 import Image from "next/image";
-import MailFilledIcon from "../ui/mail-filled-icon";
+import MailFilledIcon from "@/components/ui/mail-filled-icon";
 
 export const LetsConnect = () => {
   return (

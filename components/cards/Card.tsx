@@ -1,11 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import { MessageIcon } from "./icons/message";
-import LinkedinIcon from "./ui/linkedin-icon";
-import TwitterXIcon from "./ui/twitter-x-icon";
-import YoutubeIcon from "./ui/youtube-icon";
-import { Typography } from "./Typography";
-
+import { MessageIcon } from "@/components/icons/message";
+import LinkedinIcon from "@/components/ui/linkedin-icon";
+import TwitterXIcon from "@/components/ui/twitter-x-icon";
+import YoutubeIcon from "@/components/ui/youtube-icon";
+import { Typography } from "@/components/shared/Typography";
 
 interface Service {
   icons?: React.ReactNode[];
@@ -40,9 +39,7 @@ const ServiceCard = ({ icons = [], title, description, linkText }: Service) => {
 
       <h3 className="text-2xl font-semibold pl-2 mb-4">{title}</h3>
 
-      <p className="text-gray-700 mb-6 leading-relaxed grow">
-        {description}
-      </p>
+      <p className="text-gray-700 mb-6 leading-relaxed grow">{description}</p>
 
       <a
         href="#"

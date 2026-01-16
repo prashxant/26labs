@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { Newsletter } from "../Newsletter";
-import { LetsConnect } from "./MainFooter";
-import { Socials } from "./Socials";
-import { Thanks } from "./Thanks";
+import { Newsletter } from "@/components/shared/Newsletter";
+import { LetsConnect } from "@/components/layout/MainFooter";
+import { Socials } from "@/components/layout/Socials";
+import { Thanks } from "@/components/layout/Thanks";
 
 export const Footer = () => {
   return (
@@ -35,20 +35,6 @@ export const Footer = () => {
     </footer>
   );
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 const FooterColumn = ({ title, items }: { title: string; items: string[] }) => (
   <div className="space-y-2 ">

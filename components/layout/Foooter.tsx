@@ -1,8 +1,6 @@
-import { GrowthPlan } from "../GrowthPlan";
-import { Sliding } from "../Sliding";
-import { Descripton, Typography } from "../Typography";
-
-
+import { GrowthPlan } from "@/components/sections/GrowthPlan";
+import { Sliding } from "@/components/sections/Sliding";
+import { Descripton, Typography } from "@/components/shared/Typography";
 
 //spacing is needed
 export const Foooter = () => {
@@ -26,9 +24,7 @@ export const Foooter = () => {
         className="max-w-xl "
         description="By combining thoughtful design, smart AI-driven targeting, and modern technology, we ensure your site speaks to the right people at the right time. Every interaction is crafted to build trust, engagement, and clarity. With us, your website doesn't just exist—it performs, connects, and grows your brand."
       />
-       <GrowthPlan/>
-   </div>
+      <GrowthPlan />
+    </div>
   );
 };
-
-

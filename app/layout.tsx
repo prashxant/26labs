@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Navbar } from "@/components/footer/Navbar";
-import { Footer } from "@/components/footer/Footer";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 
 const myFont = localFont({
-  src:"../public/Helvetica.ttf"
-})
+  src: "../public/Helvetica.ttf",
+});
 
 export const metadata: Metadata = {
   title: "26labs",
@@ -21,9 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={myFont.className}>
       <body className="bg-mainBg ">
-        <Navbar/>
+        <Navbar />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );

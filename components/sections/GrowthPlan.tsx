@@ -1,5 +1,6 @@
-import React from "react";
-import { Descripton, Typography } from "./Typography";
+
+import { Descripton, Typography } from "../shared/Typography";
+
 
 
 

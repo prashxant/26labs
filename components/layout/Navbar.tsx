@@ -37,7 +37,7 @@ export const Menu = () => {
 
   return (
     <button onClick={() => setOpen((v) => !v)} className="flex items-center">
-      {/* ICON WRAPPER (THIS rotates) */}
+    
       <div
         className={`
           flex items-center

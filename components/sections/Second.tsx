@@ -1,6 +1,5 @@
+import { Typography } from "../shared/Typography";
 
-import { SkewCards } from "./Card";
-import { Typography } from "./Typography"
 
 
 export const Second = () => {
@@ -16,7 +15,6 @@ export const Second = () => {
         line2="to Launch Your"
         popUp="Own Website"
       />
-      <SkewCards />
     </div>
   );
 }

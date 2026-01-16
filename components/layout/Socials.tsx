@@ -1,9 +1,9 @@
 import Link from "next/link";
-import InstagramIcon from "../ui/instagram-icon";
-import LinkedinIcon from "../ui/linkedin-icon";
-import TwitterXIcon from "../ui/twitter-x-icon";
-import YoutubeIcon from "../ui/youtube-icon";
-import { Descripton } from "../Typography";
+import InstagramIcon from "@/components/ui/instagram-icon";
+import LinkedinIcon from "@/components/ui/linkedin-icon";
+import TwitterXIcon from "@/components/ui/twitter-x-icon";
+import YoutubeIcon from "@/components/ui/youtube-icon";
+import { Descripton } from "@/components/shared/Typography";
 
 const SOCIALS = [
   { Icon: LinkedinIcon, href: "/", label: "LinkedIn" },

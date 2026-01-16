@@ -1,6 +1,7 @@
 
 import Image from "next/image";
-import { Descripton, Typography } from "./Typography";
+import { Descripton, Typography } from "../shared/Typography";
+
 
 
 export const Hero = () => {
