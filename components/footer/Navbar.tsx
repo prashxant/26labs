@@ -1,5 +1,6 @@
-import Image from "next/image"
-
+"use client";
+import Image from "next/image";
+import { useState } from "react";
 
 export const Navbar = () => {
   return (
@@ -15,49 +16,40 @@ export const Navbar = () => {
           px-4
           mt-20
           shadow-lg"
-       >
+      >
         <Menu />
 
-        <Image
-          alt="Company logo"
-          width={100}
-          height={40}
-          src="/logo.svg"
-         />
+        <Image alt="Company logo" width={100} height={40} src="/logo.svg" />
 
-        <button
-        className="bg-orange2 text-[22.5px] text-shadow-sm rounded-md text-mainBg px-4 py-1">
+        <button className="bg-orange2 text-[22.5px] text-shadow-sm rounded-md text-mainBg px-4 py-1">
           Book now
         </button>
       </div>
     </nav>
   );
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+};
 
 
 
 
 export const Menu = () => {
-  return (
-    <div className="flex">
-        <span className="bg-black h-8.75 w-1.75 mx-0.75 rounded-[6.5px]"></span>
-        <span className="bg-black h-8.75 w-2.75 mx-0.75 rounded-[8.5px]"></span>
-        <p className="text-[22.5px] text-shadow-sm font-bold ml-[9.5px] ">Menu</p>
-    </div>
+  const [open, setOpen] = useState(false);
 
-  )
-}
+  return (
+    <button onClick={() => setOpen((v) => !v)} className="flex items-center">
+      {/* ICON WRAPPER (THIS rotates) */}
+      <div
+        className={`
+          flex items-center
+          transition-transform duration-300
+          ${open ? "rotate-90" : "rotate-0"}
+        `}
+      >
+        <span className="bg-black h-8.75 w-1.5 mx-0.75 rounded-[6.5px]" />
+        <span className="bg-black h-8.75 w-1.5 mx-0.75  rounded-[8.5px]" />
+      </div>
+
+      <p className="ml-[9.5px] text-[22.5px] font-bold">Menu</p>
+    </button>
+  );
+};

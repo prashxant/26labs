@@ -4,13 +4,13 @@ import { Descripton } from "./Typography";
 
 export const Newsletter = () => {
   return (
-    <div className="max-w-4xl mx-auto my-10 justify-start space-y-1">
+    <div className="max-w-4xl mx-auto my-20 justify-start space-y-1">
       <h2 className="font-bold  text-4xl ">We give you more. A monthly</h2>
       <h2 className="font-bold  text-4xl ">
         <span className="text-orange2 tracking-widest">Newsletter</span> to keep
         you updated.
       </h2>
-      <div className="flex  my-5">
+      <div className="flex  my-10">
         <input
           type="text"
           placeholder="Email Address"

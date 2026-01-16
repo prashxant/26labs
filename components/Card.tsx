@@ -4,8 +4,9 @@ import { MessageIcon } from "./icons/message";
 import LinkedinIcon from "./ui/linkedin-icon";
 import TwitterXIcon from "./ui/twitter-x-icon";
 import YoutubeIcon from "./ui/youtube-icon";
+import { Typography } from "./Typography";
 
-// Type definitions
+
 interface Service {
   icons?: React.ReactNode[];
   title: string;
@@ -15,7 +16,7 @@ interface Service {
 
 export const Card = () => {
   return (
-    <div>
+    <div className="">
       <ServicesGrid />
     </div>
   );
@@ -23,7 +24,7 @@ export const Card = () => {
 
 const ServiceCard = ({ icons = [], title, description, linkText }: Service) => {
   return (
-    <div className="border border-gray-300 p-8 bg-gray-100 h-full flex flex-col">
+    <div className="border  border-black  p-8  h-full flex flex-col">
       {icons.length > 0 && (
         <div className="flex gap-3 mb-6">
           {icons.map((icon, index) => (
@@ -37,7 +38,7 @@ const ServiceCard = ({ icons = [], title, description, linkText }: Service) => {
         </div>
       )}
 
-      <h3 className="text-2xl font-semibold mb-4">{title}</h3>
+      <h3 className="text-2xl font-semibold pl-2 mb-4">{title}</h3>
 
       <p className="text-gray-700 mb-6 leading-relaxed grow">
         {description}
@@ -45,7 +46,7 @@ const ServiceCard = ({ icons = [], title, description, linkText }: Service) => {
 
       <a
         href="#"
-        className="inline-flex items-center gap-2 text-sm font-medium hover:underline"
+        className="inline-flex items-center gap-2 text-sm font-bold hover:underline"
       >
         <span>↓</span> {linkText}
       </a>
@@ -180,12 +181,16 @@ const ServicesGrid = () => {
 
   return (
     <section className="min-h-screen bg-mainBg p-8 flex items-center justify-center">
-      <div className="max-w-6xl w-full">
-        <h1 className="text-5xl font-bold text-center mb-12">
-          To Launch Your <span className="text-orange-500">Own Website</span>
-        </h1>
+      <div className="max-w-6xl my-10 w-full">
+        <Typography
+          variant="h2"
+          className=""
+          line1="Everything You Need"
+          line2="to Launch Your "
+          popUp="Own Website."
+        />
 
-        <div className="flex flex-col">
+        <div className="flex mt-20 flex-col">
           {/* First row */}
           <div className="grid grid-cols-1 md:grid-cols-3 ">
             {services.slice(0, 3).map((service, i) => (
@@ -195,7 +200,7 @@ const ServicesGrid = () => {
 
           {/* Second row */}
           <div className="flex justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-2  md:w-2/3">
+            <div className="grid grid-cols-1  md:grid-cols-2  md:w-2/3">
               {services.slice(3).map((service, i) => (
                 <ServiceCard key={i} {...service} />
               ))}

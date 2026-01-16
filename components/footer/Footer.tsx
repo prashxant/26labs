@@ -8,12 +8,12 @@ export const Footer = () => {
   return (
     <footer className="">
       <div className="mx-auto max-w-4xl">
-        <div className="flex pl-5 justify-center  items-center gap-4 text-sm text-gray-600">
+        <div className="flex my-15 justify-center  items-center gap-4 text-sm text-gray-600">
           <span>Based in Dubai</span>
           <Image width={104} height={104} src="/union.svg" alt="lgog" />
           <span>Designing Worldwide</span>
         </div>
-        <div className="grid grid-cols-3 gap-12 text-sm text-center max-w-4xl mx-auto">
+        <div className="grid grid-cols-3 gap-12 my-10 text-sm text-center max-w-4xl mx-auto">
           <FooterColumn
             title="Pricing"
             items={["Basic", "Standard", "Premium", "Custom"]}

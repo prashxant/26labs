@@ -9,11 +9,24 @@
 //  import { Second } from "@/components/Second";
 
 import { Card } from "@/components/Card";
+import { Container } from "@/components/Container";
+import { GrowthPlan } from "@/components/GrowthPlan";
+import { Hero } from "@/components/Hero";
+import { Third } from "@/components/Third";
+import Link from "next/link";
+
 
 export default function Home() {
   return (
     <div>
-      <Card/>
+      <Container>
+        <Hero />
+        <Link className="size-5 ml-10" href="/resources">a</Link>
+        <Link className="size-5" href="/pricing">b</Link>
+        <Card />
+        <Third />
+        <GrowthPlan />
+      </Container>
     </div>
   );
 }

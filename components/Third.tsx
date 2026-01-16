@@ -1,18 +1,17 @@
 
-import { SkewCards } from './Card';
 import { Descripton, Typography } from './Typography'
 
 export const Third = () => {
   return (
     <div className="flex flex-col justify-center mx-auto items-center">
       <Typography
-        className=""
+        className=" my-10"
         variant="h2"
         line1="We takes you from"
         line2="Idea to"
         popUp="Live Product."
       />
-    
+
       <ThreeCards />
       <Descripton
         description="With over 4+ years of experience, we collaborate with businesses of all sizes, from ambitious SaaS startups to established B2B leaders, to transform and improve their presence in the digital space and gain traction."
@@ -39,3 +38,4 @@ export const ThreeCards = () => {
     </div>
   );
 }
+

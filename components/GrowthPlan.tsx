@@ -1,6 +1,6 @@
 import React from "react";
 import { Descripton, Typography } from "./Typography";
-import Image from "next/image";
+
 
 
 export const GrowthPlan = () => {
@@ -9,7 +9,7 @@ export const GrowthPlan = () => {
       <div className="space-y-6">
         <Typography
           variant="h2"
-          className="text-orange2"
+          className="text-orange2 my-10"
           line1="Get personalized"
           popUp="growth plan"
         />
