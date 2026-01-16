@@ -1,158 +1,210 @@
-import React from 'react'
+import React from "react";
+import Image from "next/image";
+import { MessageIcon } from "./icons/message";
+import LinkedinIcon from "./ui/linkedin-icon";
+import TwitterXIcon from "./ui/twitter-x-icon";
+import YoutubeIcon from "./ui/youtube-icon";
 
-export const SkewCards = () => {
-  return (
-    <div >
-      <Card/>
-    </div>
-  )
+// Type definitions
+interface Service {
+  icons?: React.ReactNode[];
+  title: string;
+  description: string;
+  linkText: string;
 }
-
 
 export const Card = () => {
   return (
     <div>
- Card
+      <ServicesGrid />
     </div>
-  )
-}
+  );
+};
 
+const ServiceCard = ({ icons = [], title, description, linkText }: Service) => {
+  return (
+    <div className="border border-gray-300 p-8 bg-gray-100 h-full flex flex-col">
+      {icons.length > 0 && (
+        <div className="flex gap-3 mb-6">
+          {icons.map((icon, index) => (
+            <div
+              key={index}
+              className="w-10 h-10 flex items-center justify-center"
+            >
+              {icon}
+            </div>
+          ))}
+        </div>
+      )}
 
+      <h3 className="text-2xl font-semibold mb-4">{title}</h3>
 
-// const ServiceCard = ({ icons, title, description, linkText }) => (
-//   <div className="border border-gray-400 p-8 bg-gray-100 h-full flex flex-col">
-//     {icons.length > 0 && (
-//       <div className="flex gap-3 mb-6">
-//         {icons.map((icon, index) => (
-//           <div
-//             key={index}
-//             className="w-10 h-10 flex items-center justify-center"
-//           >
-//             {icon}
-//           </div>
-//         ))}
-//       </div>
-//     )}
-//     <h3 className="text-2xl font-semibold mb-4">{title}</h3>
-//     <p className="text-gray-700 mb-6 leading-relaxed flex-grow">
-//       {description}
-//     </p>
-//     <a
-//       href="#"
-//       className="text-base inline-flex items-center gap-2 hover:underline"
-//     >
-//       <span>↓</span> {linkText}
-//     </a>
-//   </div>
-// );
+      <p className="text-gray-700 mb-6 leading-relaxed grow">
+        {description}
+      </p>
 
+      <a
+        href="#"
+        className="inline-flex items-center gap-2 text-sm font-medium hover:underline"
+      >
+        <span>↓</span> {linkText}
+      </a>
+    </div>
+  );
+};
 
+const ServicesGrid = () => {
+  const services: Service[] = [
+    {
+      icons: [
+        <div
+          key="ps"
+          className="w-10 h-10 bg-linear-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center text-white text-xs font-bold"
+        >
+          Ps
+        </div>,
+        <div
+          key="figma"
+          className="w-10 h-10 bg-black rounded-lg flex items-center justify-center text-white"
+        >
+          <Image src="/logo.svg" alt="Figma" width={24} height={24} />
+        </div>,
+        <div
+          key="framer"
+          className="w-10 h-10 bg-black rounded-lg flex items-center justify-center text-white"
+        >
+          <Image src="/fevicon.svg" alt="Framer" width={24} height={24} />
+        </div>,
+      ],
+      title: "Design.",
+      description:
+        "We use a modern design stack powered by Adobe Creative Suite, Figma, and Framer to craft visually striking and highly functional digital experiences.",
+      linkText: "Explore Design Content",
+    },
+    {
+      icons: [
+        <div
+          key="react"
+          className="w-10 h-10 border-2 border-blue-500 rounded-full flex items-center justify-center text-blue-500 text-xl"
+        >
+          ⚛
+        </div>,
+        <div
+          key="next"
+          className="w-10 h-10 bg-black rounded-full flex items-center justify-center text-white"
+        >
+          <Image src="/union.svg" alt="Next.js" width={20} height={20} />
+        </div>,
+        <div
+          key="tailwind"
+          className="w-10 h-10 bg-blue-400 rounded-lg flex items-center justify-center text-white text-xl"
+        >
+          〜
+        </div>,
+      ],
+      title: "Develop.",
+      description:
+        "Building powerful web applications with React, Next.js, and Tailwind CSS. Our development process focuses on performance, scalability, and modern best practices.",
+      linkText: "Find more about Development",
+    },
+    {
+      icons: [
+        <div
+          key="vercel"
+          className="w-10 h-10 bg-black rounded flex items-center justify-center text-white text-xl"
+        >
+          ▲
+        </div>,
+        <div
+          key="aws"
+          className="w-10 h-10 bg-linear-to-r from-blue-400 via-purple-500 to-pink-500 rounded flex items-center justify-center text-white"
+        >
+          <Image src="/aa.svg" alt="AWS" width={24} height={24} />
+        </div>,
+        <div
+          key="netlify"
+          className="w-10 h-10 bg-teal-400 rounded flex items-center justify-center text-white text-xl"
+        >
+          -n-
+        </div>,
+      ],
+      title: "Deploy.",
+      description:
+        "Seamless deployment on modern platforms like Vercel, AWS, and Netlify. We ensure your applications are live with optimal performance and reliability.",
+      linkText: "Know about Deployment",
+    },
+    {
+      icons: [
+        <div
+          key="github"
+          className="w-10 h-10 bg-blue-500 rounded flex items-center justify-center text-white"
+        >
+          <Image
+            src="/bgF.svg"
+            alt="GitHub"
+            width={24}
+            height={24}
+            className="invert"
+          />
+        </div>,
+        <div
+          key="support"
+          className="w-10 h-10 bg-black rounded-full flex items-center justify-center text-white"
+        >
+          <MessageIcon />
+        </div>,
+        <div
+          key="cloud"
+          className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white text-xl"
+        >
+          ☁
+        </div>,
+      ],
+      title: "Maintain.",
+      description:
+        "Continuous monitoring and maintenance to keep your website running smoothly. We provide regular updates, security patches, and performance optimization.",
+      linkText: "Maintenance needs consistency",
+    },
+    {
+      icons: [
+        <LinkedinIcon key="linkedin" size={40} className="text-gray-700" />,
+        <TwitterXIcon key="twitter" size={40} className="text-gray-700" />,
+        <YoutubeIcon key="youtube" size={40} className="text-gray-700" />,
+      ],
+      title: "Support (24×7)",
+      description:
+        "Round-the-clock support for your digital presence. Whether it's a late-night emergency or a scheduled update, we're here to help anytime.",
+      linkText: "2am push an update",
+    },
+  ];
 
-// const ServicesGrid = () => {
-//   const services = [
-//     {
-//       icons: [
-//         <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center text-white text-xs font-bold">
-//           Ps
-//         </div>,
-//         <div className="w-10 h-10 bg-black rounded-lg flex items-center justify-center">
-//           <span className="text-white text-2xl">F</span>
-//         </div>,
-//         <div className="w-10 h-10 bg-black rounded-lg flex items-center justify-center">
-//           <span className="text-white text-2xl">⌐</span>
-//         </div>,
-//       ],
-//       title: "Design.",
-//       description:
-//         "We use a modern design stack powered by Adobe Creative Suite, Figma, and Framer to craft visually striking and highly functional digital experiences.",
-//       linkText: "Explore Design Content",
-//     },
-//     {
-//       icons: [
-//         <div className="w-10 h-10 border-2 border-blue-500 rounded-full flex items-center justify-center">
-//           <span className="text-blue-500 text-xl">⚛</span>
-//         </div>,
-//         <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center">
-//           <span className="text-white text-xl">Λ</span>
-//         </div>,
-//         <div className="w-10 h-10 bg-blue-400 rounded-lg flex items-center justify-center">
-//           <span className="text-white text-xl">〜</span>
-//         </div>,
-//       ],
-//       title: "Devlope.",
-//       description:
-//         "Lorem ipsum dolor sit amet consectetur. Morbi risus nibh accumsan risus ac mauris.",
-//       linkText: "Find more about Development",
-//     },
-//     {
-//       icons: [
-//         <div className="w-10 h-10 bg-black rounded flex items-center justify-center">
-//           <span className="text-white text-xl">▲</span>
-//         </div>,
-//         <div className="w-10 h-10 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 rounded flex items-center justify-center">
-//           <span className="text-white text-xl">|||</span>
-//         </div>,
-//         <div className="w-10 h-10 bg-teal-400 rounded flex items-center justify-center">
-//           <span className="text-white text-xl">-n-</span>
-//         </div>,
-//       ],
-//       title: "Deploy.",
-//       description:
-//         "Lorem ipsum dolor sit amet consectetur. Morbi risus nibh accumsan risus ac mauris.",
-//       linkText: "Know about Deploiment",
-//     },
-//     {
-//       icons: [
-//         <div className="w-10 h-10 bg-blue-500 rounded flex items-center justify-center">
-//           <span className="text-white text-xl">⚡</span>
-//         </div>,
-//         <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center">
-//           <span className="text-white text-xl">🐙</span>
-//         </div>,
-//         <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center">
-//           <span className="text-white text-xl">☁</span>
-//         </div>,
-//       ],
-//       title: "Maintain.",
-//       description:
-//         "Lorem ipsum dolor sit amet consectetur. Nec tristique bibendum diam sit sed. Nunc id neque porta diam leo lorem bibendum massa hendrerit.",
-//       linkText: "Maintenance need coinsistence",
-//     },
-//     {
-//       icons: [],
-//       title: "Support(24x7)",
-//       description:
-//         "Lorem ipsum dolor sit amet consectetur. Nec tristique bibendum diam sit sed. Nunc id neque porta diam leo lorem bibendum massa hendrerit.",
-//       linkText: "2am push a update",
-//     },
-//   ];
+  return (
+    <section className="min-h-screen bg-mainBg p-8 flex items-center justify-center">
+      <div className="max-w-6xl w-full">
+        <h1 className="text-5xl font-bold text-center mb-12">
+          To Launch Your <span className="text-orange-500">Own Website</span>
+        </h1>
 
-//   return (
-//     <div className="min-h-screen bg-gray-200 p-8 flex items-center justify-center">
-//       <div className="max-w-6xl w-full">
-//         <h1 className="text-5xl font-bold text-center mb-12">
-//           to Launch Your <span className="text-orange-500">own Website</span>
-//         </h1>
+        <div className="flex flex-col">
+          {/* First row */}
+          <div className="grid grid-cols-1 md:grid-cols-3 ">
+            {services.slice(0, 3).map((service, i) => (
+              <ServiceCard key={i} {...service} />
+            ))}
+          </div>
 
-//         <div className="flex flex-col items-center gap-0">
+          {/* Second row */}
+          <div className="flex justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-2  md:w-2/3">
+              {services.slice(3).map((service, i) => (
+                <ServiceCard key={i} {...service} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
-//           <div className="grid grid-cols-3 w-full">
-//             <ServiceCard {...services[0]} />
-//             <ServiceCard {...services[1]} />
-//             <ServiceCard {...services[2]} />
-//           </div>
-
-//           {/* Second row - 2 cards centered */}
-//           <div className="flex justify-center w-full">
-//             <div className="w-2/3 grid grid-cols-2">
-//               <ServiceCard {...services[3]} />
-//               <ServiceCard {...services[4]} />
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ServicesGrid;
+export default ServicesGrid;

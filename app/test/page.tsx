@@ -8,10 +8,12 @@
 // import { Newsletter } from "@/components/Newsletter";
 //  import { Second } from "@/components/Second";
 
+import { Card } from "@/components/Card";
+
 export default function Home() {
   return (
     <div>
-      hi
+      <Card/>
     </div>
   );
 }
