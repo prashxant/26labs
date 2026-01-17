@@ -1,5 +1,5 @@
 import React from "react";
-import { Descripton } from "@/components/shared/Typography";
+
 import Image from "next/image";
 
 export const MainFooter2 = () => {

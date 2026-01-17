@@ -18,7 +18,7 @@ type DiscriptionProps = {
 type TypographyVariant = "h1" | "h2" | "h3";
 
 const variants = {
-  h1: "text-[68.66px] ",
+  h1: "text-[68.66px]  ",
   h2: "text-[43.95px] ",
   h3: "text-[28.13px] ",
 };

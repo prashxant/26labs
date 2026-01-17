@@ -9,7 +9,11 @@ const SOCIALS = [
   { Icon: LinkedinIcon, href: "/", label: "LinkedIn" },
   { Icon: TwitterXIcon, href: "/", label: "Twitter X" },
   { Icon: YoutubeIcon, href: "/", label: "YouTube" },
-  { Icon: InstagramIcon, href: "/", label: "Instagram" },
+  {
+    Icon: InstagramIcon,
+    href: "https://www.instagram.com/26labs.live/",
+    label: "Instagram",
+  },
 ];
 
 export const Socials = () => {

@@ -5,7 +5,6 @@ type ContainerProps = {
   children: React.ReactNode
 }
 
-
 export const Container = ({className,children}: ContainerProps) => {
   return (
     <div className={cn("max-w-5xl  mx-auto overflow-hidden", className)}>
