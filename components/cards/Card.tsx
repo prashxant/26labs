@@ -177,7 +177,7 @@ const ServicesGrid = () => {
   ];
 
   return (
-    <section className="min-h-screen bg-mainBg p-8 flex items-center justify-center">
+    <section className="min-h-screen  p-8 flex items-center justify-center">
       <div className="max-w-6xl my-10 w-full">
         <Typography
           variant="h2"

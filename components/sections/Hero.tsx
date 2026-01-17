@@ -1,6 +1,8 @@
 
 import Image from "next/image";
 import { Descripton, Typography } from "../shared/Typography";
+import { Toolkit } from "./Toolkit";
+
 
 
 
@@ -27,6 +29,7 @@ export const Hero = () => {
           description="Delivering warm opportunities and optimizing your visibility process to ensure nothing stands between you and your revenue goals."
         />
         <Email />
+        <Toolkit/>
       </div>
     </div>
   );

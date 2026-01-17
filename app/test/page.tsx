@@ -13,6 +13,9 @@ export default function Home() {
       <Container>
         <Hero />
         <Card />
+      </Container>
+      <HorizontalScrollSection />
+      <Container>
         <Third />
         <GrowthPlan />
       </Container>

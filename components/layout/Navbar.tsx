@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
-import ScrollProgress from "../shared/ScroolProcress";
+import { useEffect, useRef, useState } from "react";
 
 export const Navbar = () => {
   return (
@@ -20,18 +19,18 @@ export const Navbar = () => {
       >
         <Menu />
 
-        <Image
-          alt="Company logo"
-          width={100}
-          height={40}
-          src="/logo.svg"
-          className="w-20 sm:w-24 md:w-28 lg:w-[100px] h-auto"
-        />
-
+        <Link href='/test' >
+          <Image
+            alt="Company logo"
+            width={100}
+            height={40}
+            src="/logo.svg"
+            className="w-20 sm:w-24 md:w-28 lg:w-25 h-auto"
+          />
+        </Link>
         <button className="bg-orange2 text-sm sm:text-base md:text-lg lg:text-[22.5px] text-shadow-sm rounded-md text-mainBg px-2 sm:px-3 md:px-4 lg:px-4 py-1">
           Book now
         </button>
-       
       </div>
     </nav>
   );
@@ -39,24 +38,82 @@ export const Navbar = () => {
 
 export const Menu = () => {
   const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
-    <button onClick={() => setOpen((v) => !v)} className="flex items-center">
-      <div
-        className={`
-          flex items-center
-          transition-transform duration-300
-          ${open ? "rotate-90" : "rotate-0"}
-        `}
+    <div ref={ref} className="relative">
+
+      <button
+        onClick={() => setOpen((v) => !v)}
+        className="flex items-center gap-2"
       >
-        <span className="bg-black h-6 sm:h-7 md:h-8 lg:h-8.75 w-1 sm:w-1.5 mx-0.5 sm:mx-0.75 rounded-lg sm:rounded-[5px] md:rounded-[6px] lg:rounded-[6.5px]" />
-        <span className="bg-black h-6 sm:h-7 md:h-8 lg:h-8.75 w-1.5 sm:w-2 mx-0.5 sm:mx-0.75 rounded-[5px] sm:rounded-[6px] md:rounded-[7px] lg:rounded-[8.5px]" />
-      </div>
+        <div
+          className={`
+            flex items-center
+            transition-transform duration-300
+            ${open ? "rotate-90" : "rotate-0"}
+          `}
+        >
+          <span className="bg-black h-6 w-1 rounded-lg mx-0.5" />
+          <span className="bg-black h-6 w-1.5 rounded-lg mx-0.5" />
+        </div>
 
-      <p className="ml-1.5 sm:ml-2 md:ml-3 lg:ml-[9.5px] text-base sm:text-lg md:text-xl lg:text-[22.5px] font-bold">
-        Menu
-      </p>
-    </button>
+        <span className="text-lg font-bold">Menu</span>
+      </button>
 
+
+      <MenuDropdown open={open} />
+    </div>
+  );
+};
+
+import Link from "next/link";
+
+export const MenuDropdown = ({ open }: { open: boolean }) => {
+  return (
+    <div
+      className={`
+        absolute left-0 mt-4 w-[260px]
+        rounded-xl
+        bg-linear-to-b from-[#9db2ff] to-[#6b6b6b]
+        p-6
+        shadow-xl
+        transition-all duration-300 ease-out
+        ${
+          open
+            ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
+            : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
+        }
+      `}
+    >
+      <nav className="space-y-4 text-lg font-semibold">
+        <Link
+          href="/resources"
+          className="block text-white underline underline-offset-4"
+        >
+          Resource
+        </Link>
+        <Link href="/pricing" className="block text-black">
+          Pricing
+        </Link>
+        <Link href="/blog" className="block text-white">
+          Blog
+        </Link>
+        <Link href="/Contact" className="block text-white">
+          Contact
+        </Link>
+      </nav>
+    </div>
   );
 };

@@ -75,7 +75,7 @@ export default function HorizontalScrollSection() {
         relative
         h-screen
         overflow-hidden
-        bg-mainBg
+
 
       "
     >
@@ -89,7 +89,7 @@ export default function HorizontalScrollSection() {
       >
         <HorizontalItem >
           <Photo1 />
-          <Photo2/>
+
         </HorizontalItem>
         <HorizontalItem>
           <FeatureBlock />
@@ -168,7 +168,7 @@ export function DecorativeWave({
 
 function Photo1() {
   return (
-    <div className="h-screen rounded-xl w-screen bg-red-400 flex items-center justify-center">
+    <div className=" rounded-xl  bg-red-400 flex items-center justify-center">
       Photo 1
     </div>
   );
