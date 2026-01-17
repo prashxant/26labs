@@ -16,6 +16,13 @@ interface Service {
 export const Card = () => {
   return (
     <div className="">
+      <Typography
+        variant="h2"
+        className="px-4"
+        line1="Everything You Need"
+        line2="to Launch Your "
+        popUp="Own Website."
+      />
       <ServicesGrid />
     </div>
   );
@@ -23,13 +30,13 @@ export const Card = () => {
 
 const ServiceCard = ({ icons = [], title, description, linkText }: Service) => {
   return (
-    <div className="border  border-black  p-8  h-full flex flex-col">
+    <div className="border border-black p-4 md:p-6 lg:p-8 h-full flex flex-col">
       {icons.length > 0 && (
-        <div className="flex gap-3 mb-6">
+        <div className="flex gap-2 md:gap-3 mb-4 md:mb-6">
           {icons.map((icon, index) => (
             <div
               key={index}
-              className="w-10 h-10 flex items-center justify-center"
+              className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center"
             >
               {icon}
             </div>
@@ -37,13 +44,17 @@ const ServiceCard = ({ icons = [], title, description, linkText }: Service) => {
         </div>
       )}
 
-      <h3 className="text-2xl font-semibold pl-2 mb-4">{title}</h3>
+      <h3 className="text-lg md:text-xl lg:text-2xl font-semibold pl-1 md:pl-2 mb-3 md:mb-4">
+        {title}
+      </h3>
 
-      <p className="text-gray-700 mb-6 leading-relaxed grow">{description}</p>
+      <p className="text-gray-700 text-sm md:text-base mb-4 md:mb-6 leading-relaxed grow">
+        {description}
+      </p>
 
       <a
         href="#"
-        className="inline-flex items-center gap-2 text-sm font-bold hover:underline"
+        className="inline-flex items-center gap-2 text-xs md:text-sm font-bold hover:underline"
       >
         <span>↓</span> {linkText}
       </a>
@@ -177,19 +188,13 @@ const ServicesGrid = () => {
   ];
 
   return (
-    <section className="min-h-screen  p-8 flex items-center justify-center">
-      <div className="max-w-6xl my-10 w-full">
-        <Typography
-          variant="h2"
-          className=""
-          line1="Everything You Need"
-          line2="to Launch Your "
-          popUp="Own Website."
-        />
+    <section className="min-h-screen p-4 md:p-6 lg:p-8 flex items-center justify-center">
+      <div className="max-w-6xl my-6 md:my-8 lg:my-10 w-full">
 
-        <div className="flex mt-20 flex-col">
+
+        <div className="flex mt-10 md:mt-16 lg:mt-20 flex-col">
           {/* First row */}
-          <div className="grid grid-cols-1 md:grid-cols-3 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {services.slice(0, 3).map((service, i) => (
               <ServiceCard key={i} {...service} />
             ))}
@@ -197,7 +202,7 @@ const ServicesGrid = () => {
 
           {/* Second row */}
           <div className="flex justify-center">
-            <div className="grid grid-cols-1  md:grid-cols-2  md:w-2/3">
+            <div className="grid grid-cols-1 md:grid-cols-2 md:w-2/3">
               {services.slice(3).map((service, i) => (
                 <ServiceCard key={i} {...service} />
               ))}

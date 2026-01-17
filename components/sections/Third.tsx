@@ -37,45 +37,45 @@ export const Third = () => {
 };
 
 export const ThreeCards = () => {
-
-const cards = [
-  {
-    id: 1,
-    src: "/Image pack/gt1.svg",
-    alt: "Design tools",
-  },
-  {
-    id: 2,
-    src: "/Image pack/gt2.svg",
-    alt: "Development tools",
-  },
-  {
-    id: 3,
-    src: "/Image pack/gt3.svg",
-    alt: "Deployment tools",
-  },
-];
+  const cards = [
+    {
+      id: 1,
+      src: "/Image pack/gt1.svg",
+      alt: "Design tools",
+    },
+    {
+      id: 2,
+      src: "/Image pack/gt2.svg",
+      alt: "Development tools",
+    },
+    {
+      id: 3,
+      src: "/Image pack/gt3.svg",
+      alt: "Deployment tools",
+    },
+  ];
 
   return (
-    <div className="grid grid-cols-3 gap-40 pt-10">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-16 lg:gap-40 pt-6 md:pt-8 lg:pt-10">
       {cards.map((card) => (
         <div
           key={card.id}
           className="
             relative
-            w-45 h-45
+            w-32 h-32 md:w-36 md:h-36 lg:w-45 lg:h-45
             rounded-[10px]
             bg-linear-to-t from-gray-300 to-[#8CA9FF]/50
             shadow-2xs
             overflow-hidden
+            mx-auto
           "
         >
           <Image
             src={card.src}
             alt={card.alt}
             fill
-            className="object-contain p-4"
-            sizes="(max-width: 640px) 100vw, 180px"
+            className="object-contain p-2 md:p-3 lg:p-4"
+            sizes="(max-width: 640px) 128px, (max-width: 1024px) 144px, 180px"
             priority={card.id === 1}
           />
         </div>

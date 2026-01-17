@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
- type TypographyProps = {
-  variant: TypographyVariant
+type TypographyProps = {
+  variant: TypographyVariant;
   className: string;
   description: string;
   line1: string;
@@ -10,58 +10,52 @@ import { cn } from "@/lib/utils";
 };
 
 type DiscriptionProps = {
-  className: string
-  description: string
-}
-
+  className: string;
+  description: string;
+};
 
 type TypographyVariant = "h1" | "h2" | "h3";
 
 const variants = {
-  h1: "text-[68.66px]  ",
-  h2: "text-[43.95px] ",
-  h3: "text-[28.13px] ",
+  h1: "text-3xl md:text-5xl lg:text-[68.66px]",
+  h2: "text-2xl md:text-4xl lg:text-[43.95px]",
+  h3: "text-xl md:text-2xl lg:text-[28.13px]",
 };
 
 const baseStyles = "font-bold flex flex-col justify-center items-center";
 
 const highlightStyles = {
-  h1: "text-white bg-orange1 mx-2 p-1",
-  h2: "text-orange2 mx-2 p-1",
-  h3: "text-orange2  mx-2 p-1 ",
+  h1: "text-white bg-orange1 mx-1 md:mx-2 p-1",
+  h2: "text-orange2 mx-1 md:mx-2 p-1",
+  h3: "text-orange2 mx-1 md:mx-2 p-1",
 };
 
-export const Typography = (
-  {
-    variant,
-    className,
-    line1,
-    line2,
-     popUp
-  }
-    :Omit<TypographyProps,"description">) =>{
-
+export const Typography = ({
+  variant,
+  className,
+  line1,
+  line2,
+  popUp,
+}: Omit<TypographyProps, "description">) => {
   return (
-    <div className={cn(baseStyles,variants[variant], className)}>
+    <div className={cn(baseStyles, variants[variant], className)}>
       <p>{line1}</p>
       <p>
-         {line2}
-          {popUp && (
-            <span className={highlightStyles[variant]}>
-              {popUp}
-            </span>
-          )}
+        {line2}
+        {popUp && <span className={highlightStyles[variant]}>{popUp}</span>}
       </p>
     </div>
   );
-}
+};
 
-export const Descripton = ({
-  className,
-  description,
-}:DiscriptionProps) => {
+export const Descripton = ({ className, description }: DiscriptionProps) => {
   return (
-    <div className={cn("mx-auto text-center my-10 tracking-tight font-normal text-shadow-2xs", className)}>
+    <div
+      className={cn(
+        "mx-auto text-center my-6 md:my-8 lg:my-10 tracking-tight font-normal text-shadow-2xs text-sm md:text-base",
+        className,
+      )}
+    >
       {description}
     </div>
   );

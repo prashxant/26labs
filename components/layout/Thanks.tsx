@@ -26,7 +26,7 @@ export const Thanks = () => {
             />
           </div>
           <div className="relative w-full overflow-hidden h-20 sm:h-24 md:h-32 lg:h-40">
-            <div className="absolute -inset-x-[15%] sm:-inset-x-[20%] md:-inset-x-[18%] lg:-inset-x-[15%] bottom-0 h-20 sm:h-24 md:h-32 lg:h-40 rotate-3 origin-bottom-left">
+            <div className="absolute -inset-x-[50%] bottom-0 h-20 sm:h-24 md:h-32 lg:h-40 rotate-3 origin-bottom-left">
               <div className="absolute inset-x-0 bottom-0 h-full bg-blue-200" />
               <div className="absolute inset-x-0 bottom-0 h-full bg-blue-300 translate-y-3 sm:translate-y-4 md:translate-y-6 lg:translate-y-6" />
               <div className="absolute inset-x-0 bottom-0 h-full bg-blue-400 translate-y-6 sm:translate-y-8 md:translate-y-12 lg:translate-y-12" />

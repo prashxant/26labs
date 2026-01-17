@@ -8,7 +8,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 /* ------------------ Item Wrapper ------------------ */
 function HorizontalItem({ children }: { children: React.ReactNode }) {
-  return <div className="shrink-0 w-[420px]">{children}</div>;
+  return (
+    <div className="shrink-0 w-[280px] md:w-[350px] lg:w-[420px]">
+      {children}
+    </div>
+  );
 }
 
 /* ------------------ Main Section ------------------ */
@@ -85,11 +89,10 @@ export default function HorizontalScrollSection() {
       {/* Horizontal Track */}
       <div
         ref={trackRef}
-        className="relative z-10 flex h-full w-max items-center gap-32 px-40"
+        className="relative z-10 flex h-full w-max items-center gap-8 md:gap-16 lg:gap-32 px-8 md:px-20 lg:px-40"
       >
-        <HorizontalItem >
+        <HorizontalItem>
           <Photo1 />
-
         </HorizontalItem>
         <HorizontalItem>
           <FeatureBlock />
@@ -176,7 +179,7 @@ function Photo1() {
 
 function Photo2() {
   return (
-    <div className="h-[300px] rounded-xl bg-green-400 flex items-center justify-center">
+    <div className="h-[200px] md:h-[250px] lg:h-[300px] rounded-xl bg-green-400 flex items-center justify-center text-sm md:text-base">
       Photo 2
     </div>
   );
@@ -184,9 +187,11 @@ function Photo2() {
 
 function FeatureBlock() {
   return (
-    <div className="rounded-xl bg-white p-6 shadow-xl">
-      <h3 className="text-xl font-semibold">Feature</h3>
-      <p className="mt-2 text-sm text-gray-600">Some feature description.</p>
+    <div className="rounded-xl bg-white p-4 md:p-5 lg:p-6 shadow-xl">
+      <h3 className="text-lg md:text-xl font-semibold">Feature</h3>
+      <p className="mt-2 text-xs md:text-sm text-gray-600">
+        Some feature description.
+      </p>
     </div>
   );
 }
