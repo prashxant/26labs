@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Open_Sans } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/Navbar";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import ScrollProgress from "@/components/shared/ScroolProcress";
 
-const myFont = localFont({
-  src:"../public/Helvetica.ttf"
-})
+
+export const openSans = Open_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-open-sans",
+  display: "swap",
+});
+
 
 export const metadata: Metadata = {
   title: "26labs",
@@ -18,10 +25,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={myFont.className}>
-      <body className="bg-mainBg ">
-    
+    <html lang="en" className={openSans.variable}>
+      <body className="bg-[#F5F5F5] font-sans antialiased ">
+        <Navbar />
+        <ScrollProgress />
         {children}
+        <Footer />
       </body>
     </html>
   );

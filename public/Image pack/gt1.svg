@@ -1,0 +1,62 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="180" height="180" rx="10" fill="url(#paint0_linear_440_4)" fill-opacity="0.35"/>
+<line x1="28.978" y1="117.628" x2="28.978" y2="33.9775" stroke="#FF8535" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 5"/>
+<line x1="148.021" y1="117.628" x2="148.021" y2="33.9775" stroke="#FF8535" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 5"/>
+<rect x="22.5" y="26.5" width="11.957" height="11.957" rx="5.97852" fill="#58AA11" stroke="white"/>
+<rect x="142.5" y="113.5" width="11.957" height="11.957" rx="5.97852" fill="#58AA11" stroke="white"/>
+<path d="M149.521 32.0732C149.521 64.946 122.872 76.5 89.9994 76.5C57.1266 76.5 30.478 78.5 30.478 119" stroke="#161616" stroke-width="5"/>
+<rect x="24.5" y="113.5" width="11.957" height="11.957" fill="#58AA11" stroke="white"/>
+<rect x="143.542" y="26.5" width="11.957" height="11.957" fill="#58AA11" stroke="white"/>
+<g filter="url(#filter0_n_440_4)">
+<rect x="86.4351" y="100.305" width="29.8822" height="29.8822" rx="3" transform="rotate(45 86.4351 100.305)" fill="url(#paint1_linear_440_4)"/>
+</g>
+<g filter="url(#filter1_n_440_4)">
+<rect x="99" y="94" width="19.799" height="19.799" rx="3" transform="rotate(45 99 94)" fill="url(#paint2_linear_440_4)"/>
+</g>
+<defs>
+<filter id="filter0_n_440_4" x="66.5479" y="101.548" width="39.7744" height="39.7744" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feTurbulence type="fractalNoise" baseFrequency="2 2" stitchTiles="stitch" numOctaves="3" result="noise" seed="2200" />
+<feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise" />
+<feComponentTransfer in="alphaNoise" result="coloredNoise1">
+<feFuncA type="discrete" tableValues="0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
+</feComponentTransfer>
+<feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped" />
+<feFlood flood-color="rgba(0, 0, 0, 0.25)" result="color1Flood" />
+<feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1" />
+<feMerge result="effect1_noise_440_4">
+<feMergeNode in="shape" />
+<feMergeNode in="color1" />
+</feMerge>
+</filter>
+<filter id="filter1_n_440_4" x="86.2427" y="95.2427" width="25.5146" height="25.5146" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feTurbulence type="fractalNoise" baseFrequency="2 2" stitchTiles="stitch" numOctaves="3" result="noise" seed="2200" />
+<feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise" />
+<feComponentTransfer in="alphaNoise" result="coloredNoise1">
+<feFuncA type="discrete" tableValues="0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
+</feComponentTransfer>
+<feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped" />
+<feFlood flood-color="rgba(0, 0, 0, 0.25)" result="color1Flood" />
+<feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1" />
+<feMerge result="effect1_noise_440_4">
+<feMergeNode in="shape" />
+<feMergeNode in="color1" />
+</feMerge>
+</filter>
+<linearGradient id="paint0_linear_440_4" x1="90" y1="-5.5" x2="90" y2="180" gradientUnits="userSpaceOnUse">
+<stop stop-color="#A0B8FF"/>
+<stop offset="1" stop-color="#E0E0E0"/>
+</linearGradient>
+<linearGradient id="paint1_linear_440_4" x1="101.376" y1="100.305" x2="89.6991" y2="126.923" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF8535"/>
+<stop offset="1" stop-color="#FFDD33"/>
+</linearGradient>
+<linearGradient id="paint2_linear_440_4" x1="108.899" y1="94" x2="101.163" y2="111.636" gradientUnits="userSpaceOnUse">
+<stop stop-color="#47AC2C"/>
+<stop offset="1" stop-color="#FFDD33"/>
+</linearGradient>
+</defs>
+</svg>

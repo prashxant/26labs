@@ -1,6 +1,9 @@
 
 import Image from "next/image";
-import { Descripton, Typography } from "./Typography";
+import { Descripton, Typography } from "../shared/Typography";
+import { Toolkit } from "./Toolkit";
+
+
 
 
 export const Hero = () => {
@@ -11,12 +14,12 @@ export const Hero = () => {
         alt="bg"
         fill
         priority
-        className=" z-0"
+        className=""
       />
       <div className="relative z-10 flex flex-col items-center text-center">
         <Typography
           variant="h1"
-          className="pt-60 "
+          className="pt-40 "
           line1="One Problem One Service"
           line2="One "
           popUp="Audience"
@@ -26,6 +29,7 @@ export const Hero = () => {
           description="Delivering warm opportunities and optimizing your visibility process to ensure nothing stands between you and your revenue goals."
         />
         <Email />
+        <Toolkit/>
       </div>
     </div>
   );
@@ -33,7 +37,7 @@ export const Hero = () => {
 
 export const Email = () => {
   return (
-    <div className="flex flex-col items-center justify-center mt-[65px]">
+    <div className="flex flex-col items-center justify-center mt-16.25">
       <div className="flex items-center gap-14">
         <input
           type="email"
@@ -42,16 +46,16 @@ export const Email = () => {
             bg-gray-300
             rounded-sm
             px-2
-            h-[36px]
-            w-[285px]
+            h-9
+            w-71.25
             ring-1 ring-white
           "
         />
        <button
           className="
             bg-blue2
-            h-[38px]
-            w-[116px]
+            h-9.5
+            w-29
             px-2
             rounded-[5px]
             ring-1 ring-blue3
@@ -63,11 +67,11 @@ export const Email = () => {
       </div>
 
 
-      <div className="mt-[25px] flex flex-col items-center">
+      <div className="mt-6.25 flex flex-col items-center">
         <div
           className="
-            w-[117px]
-            h-[30px]
+            w-29
+            h-7.5
             rounded-3xl
             ring-1 ring-blue2
             shadow-[inset_0_0_3px_0.5px_rgba(0,136,255,1)]

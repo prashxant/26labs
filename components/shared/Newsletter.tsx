@@ -1,20 +1,19 @@
 import Image from "next/image";
-import { Descripton } from "./Typography";
-
+import { Descripton } from "@/components/shared/Typography";
 
 export const Newsletter = () => {
   return (
-    <div className="max-w-4xl mx-auto my-10 justify-start space-y-1">
+    <div className="max-w-4xl mx-auto my-20 justify-start space-y-1">
       <h2 className="font-bold  text-4xl ">We give you more. A monthly</h2>
       <h2 className="font-bold  text-4xl ">
         <span className="text-orange2 tracking-widest">Newsletter</span> to keep
         you updated.
       </h2>
-      <div className="flex  my-5">
+      <div className="flex  my-10">
         <input
           type="text"
           placeholder="Email Address"
-          className="bg-gray-400 ring p-1 w-fit "
+          className=" ring p-1 w-fit "
         />
         <div className="bg-orange1 justify-center ring items-center flex p-1 ">
           <Image alt="logo" width={48} height={48} src="/logo.svg" />
@@ -26,5 +25,4 @@ export const Newsletter = () => {
       />
     </div>
   );
-
-}
+};

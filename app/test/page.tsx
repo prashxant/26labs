@@ -1,31 +1,24 @@
 
- import { Container } from "@/components/Container";
-import { Footer } from "@/components/Footer";
-import { Hero } from "@/components/Hero";
-import { MainFooter } from "@/components/MainFooter";
-import { MainFooter2 } from "@/components/MainFooter2";
-import { Navbar } from "@/components/Navbar";
-import { Newsletter } from "@/components/Newsletter";
- import { Second } from "@/components/Second";
+import { Card } from "@/components/cards/Card";
+import { Container } from "@/components/shared/Container";
+import { GrowthPlan } from "@/components/sections/GrowthPlan";
+import { Hero } from "@/components/sections/Hero";
+import { Third } from "@/components/sections/Third";
+import HorizontalScrollSection from "@/components/layout/HorizontalScrollSection";
 
 
 export default function Home() {
   return (
     <div>
-      <Navbar />
       <Container>
         <Hero />
-        <Second />
+        <Card />
       </Container>
-      <Footer />
-      <Newsletter />
+      <HorizontalScrollSection />
       <Container>
-        <MainFooter />
+        <Third />
+        <GrowthPlan />
       </Container>
-      <MainFooter2 />
     </div>
   );
 }
-
-
-
