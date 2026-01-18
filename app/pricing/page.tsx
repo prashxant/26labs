@@ -21,7 +21,7 @@ function page() {
         <Typography
           variant="h2"
           className="text-white relative z-10 p-10 text-shadow-[0_2px_0px_rgba(255,133,53,1)]"
-          line1="Get personalized growth plan"
+          line1="Get personalized growth plan ."
           line2=""
           popUp=""
         />
