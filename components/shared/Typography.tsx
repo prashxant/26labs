@@ -17,15 +17,15 @@ type DiscriptionProps = {
 type TypographyVariant = "h1" | "h2" | "h3";
 
 const variants = {
-  h1: "text-3xl md:text-5xl lg:text-[68.66px]",
+  h1: "text-[75px]",
   h2: "text-2xl md:text-4xl lg:text-[43.95px]",
-  h3: "text-xl md:text-2xl lg:text-[28.13px]",
+  h3: "text-xl  md:text-2xl lg:text-[28.13px]",
 };
 
-const baseStyles = "font-bold flex flex-col justify-center items-center";
+const baseStyles = "font-bold  flex flex-col gap-2 items-center";
 
 const highlightStyles = {
-  h1: "text-white bg-orange1 mx-1 md:mx-2 p-1",
+  h1: "text-white px-2 py-1 mx-1 bg-[#FFAA72] ",
   h2: "text-orange2 mx-1 md:mx-2 p-1",
   h3: "text-orange2 mx-1 md:mx-2 p-1",
 };

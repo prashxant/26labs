@@ -4,9 +4,9 @@ export const MenuDropdown = ({ open }: { open: boolean }) => {
   return (
     <div
       className={`
-        absolute left-0 mt-4 w-65
+        absolute mt-5 w-65
         rounded-xl
-        bg-linear-to-b from-[#9db2ff] to-[#6b6b6b]
+        bg-linear-to-b from-[#9db2ff] to-mainBg
         p-6
         shadow-xl
         transition-all duration-300 ease-out
@@ -17,20 +17,17 @@ export const MenuDropdown = ({ open }: { open: boolean }) => {
         }
       `}
     >
-      <nav className="space-y-4 text-lg font-semibold">
-        <Link
-          href="/resources"
-          className="block text-white underline underline-offset-4"
-        >
+      <nav className="space-y-4 text-white  text-lg font-semibold">
+        <Link href="/resources" className="block hover:text-black ">
           Resource
         </Link>
-        <Link href="/pricing" className="block text-black">
+        <Link href="/pricing" className="block hover:text-black transition duration-200 ">
           Pricing
         </Link>
-        <Link href="/blog" className="block text-white">
+        <Link href="/blog" className="block transition duration-200 hover:text-black  text-white">
           Blog
         </Link>
-        <Link href="/Contact" className="block text-white">
+        <Link href="/Contact" className=" transition duration-200 hover:text-black  text-white">
           Contact
         </Link>
       </nav>

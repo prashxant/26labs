@@ -32,7 +32,7 @@ export const Menu = () => {
           <span className="bg-black h-6 w-1.5 rounded-lg mx-0.5" />
         </div>
 
-        <span className="text-lg font-bold">Menu</span>
+        <span className="text-lg  text-black font-bold">Menu</span>
       </button>
 
       <MenuDropdown open={open} />
