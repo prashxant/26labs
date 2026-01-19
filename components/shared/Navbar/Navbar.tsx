@@ -1,7 +1,7 @@
-"use client";
+'use client'
 import Image from "next/image";
-import { Menu } from "./navMenu";
 import Link from "next/link";
+import { Menu } from "./navMenu";
 
 
 export const Navbar = () => {
@@ -11,16 +11,17 @@ export const Navbar = () => {
         className="
           mx-auto
           flex items-center justify-between
-          h-12 sm:h-13 md:h-14 lg:h-13.75
-          w-11/12 sm:w-5/6 md:w-4/5 lg:w-178.75
+          h-12 sm:h-13 md:h-14 lg:h-13.75 xl:h-15
+          w-11/12 sm:w-5/6 md:w-4/5 lg:w-178.75 xl:max-w-[50vw]
           rounded-lg
           bg-blue1
           px-3 sm:px-4 md:px-5 lg:px-4
           mt-4 sm:mt-6 md:mt-12 lg:mt-20
-          shadow-lg">
+          shadow-lg"
+      >
         <Menu/>
 
-        <Link href='/test' >
+        <Link href="/test">
           <Image
             alt="Company logo"
             width={100}
@@ -36,5 +37,4 @@ export const Navbar = () => {
     </nav>
   );
 };
-
 

@@ -27,10 +27,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={openSans.variable}>
       <body className="bg-[#F5F5F5] font-sans antialiased ">
-        <Navbar />
+        <Navbar/>
         <ScrollProgress />
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );
