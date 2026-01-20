@@ -1,26 +1,16 @@
-
-import { Card } from "@/components/cards/Card";
 import { Container } from "@/components/shared/Container";
-import { GrowthPlan } from "@/components/sections/GrowthPlan";
-import { Hero } from "@/components/sections/Hero";
-import { Third } from "@/components/sections/Third";
-import HorizontalScrollSection from "@/components/layout/HorizontalScrollSection";
-import { Sliding } from "@/components/sections/Sliding";
+import { Hero } from "@/components/shared/Hero Section/Hero";
+import { LiveProductPage } from "@/components/shared/Live Product/LiveProductPage";
+import ToolkitPage from "@/components/shared/Toolkit/ToolkitPage";
 
 
 export default function Home() {
   return (
-    <div>
-      <Container>
+    <div >
+
         <Hero />
-        <Card />
-      </Container>
-      <HorizontalScrollSection />
-      <Container>
-        <Third />
-        <Sliding/>
-        <GrowthPlan />
-      </Container>
+        <ToolkitPage/>
+        <LiveProductPage/>
     </div>
   );
 }
