@@ -15,7 +15,7 @@ export const Footer = () => {
             height={64}
             src="/union.svg"
             alt="lgog"
-            className="md:w-20 md:h-20 lg:w-26 lg:h-26"
+            className="md:w-20 animate-spin-slow md:h-20 lg:w-26 lg:h-26"
           />
           <span>Designing Worldwide</span>
         </div>

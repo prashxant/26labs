@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+import { Navbar } from "@/components/shared/Navbar/Navbar";
 import ScrollProgress from "@/components/shared/ScroolProcress";
 
 
@@ -27,10 +26,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={openSans.variable}>
       <body className="bg-[#F5F5F5] font-sans antialiased ">
-        <Navbar />
+        <Navbar/>
         <ScrollProgress />
         {children}
-        <Footer />
+
       </body>
     </html>
   );
