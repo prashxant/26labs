@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/shared/Navbar/Navbar";
-import { Footer } from "@/components/layout/Footer";
 import ScrollProgress from "@/components/shared/ScroolProcress";
 
 
@@ -30,7 +29,7 @@ export default function RootLayout({
         <Navbar/>
         <ScrollProgress />
         {children}
-        <Footer />
+
       </body>
     </html>
   );
