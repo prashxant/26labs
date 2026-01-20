@@ -1,12 +1,10 @@
-
 import { Card } from "@/components/cards/Card";
 import { Container } from "@/components/shared/Container";
 import { GrowthPlan } from "@/components/sections/GrowthPlan";
 import { Hero } from "@/components/sections/Hero";
 import { Third } from "@/components/sections/Third";
-import HorizontalScrollSection from "@/components/layout/HorizontalScrollSection";
 import { Sliding } from "@/components/sections/Sliding";
-
+import HorizontalScrollSection from "@/components/sections/HorizontalScroll";
 
 export default function Home() {
   return (
@@ -18,7 +16,7 @@ export default function Home() {
       <HorizontalScrollSection />
       <Container>
         <Third />
-        <Sliding/>
+        <Sliding />
         <GrowthPlan />
       </Container>
     </div>

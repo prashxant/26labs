@@ -29,7 +29,7 @@ const Hero = () => {
       <p className="pl-1 text-sm md:text-base text-gray-500 text-center tracking-tighter font-semibold">
         we are working on
         <span className="cursor-pointer px-1 text-rose-700/50">
-          26labs.livessss
+          26labs.live
         </span>
       </p>
     </div>
