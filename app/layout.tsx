@@ -30,7 +30,7 @@ export default function RootLayout({
         <Navbar/>
         <ScrollProgress />
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );
