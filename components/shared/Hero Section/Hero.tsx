@@ -12,7 +12,7 @@ export const Hero = () => {
         src="/ii.png"
         alt="mainbg"
         fill
-        className=" animate-spin-slow -z-10  max-w-9xl translate-x-20 absolute inset-0  "
+        className=" max-w-6xl animate-spin-slow -z-10  max-w-9xl translate-x-80 absolute inset-0  "
       />
       <div className="flex gap-10 flex-col justify-center items-center">
         <div className="mt-5">

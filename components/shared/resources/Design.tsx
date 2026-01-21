@@ -68,7 +68,7 @@ export const Design = () => {
         Line2="Develop better Humanity"
         src="Image pack/phool.svg"
       />
-      <div className="pb-32">
+      <div className="pb-32 flex flex-col justify-center items-center">
         <Typography
           variant="h2"
           className="py-16"
