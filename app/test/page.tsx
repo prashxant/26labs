@@ -7,7 +7,6 @@ import ToolkitPage from "@/components/shared/Toolkit/ToolkitPage";
 export default function Home() {
   return (
     <div >
-
         <Hero />
         <ToolkitPage/>
         <LiveProductPage/>
