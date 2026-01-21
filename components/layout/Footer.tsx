@@ -7,18 +7,7 @@ import { Thanks } from "@/components/layout/Thanks";
 export const Footer = () => {
   return (
     <footer className="px-4 md:px-8">
-      <div className="mx-auto max-w-4xl">
-        <div className="flex flex-col md:flex-row my-8 md:my-12 lg:my-15 justify-center items-center gap-3 md:gap-4 text-xs md:text-sm text-gray-600">
-          <span>Based in Dubai</span>
-          <Image
-            width={64}
-            height={64}
-            src="/union.svg"
-            alt="lgog"
-            className="md:w-20 animate-spin-slow md:h-20 lg:w-26 lg:h-26"
-          />
-          <span>Designing Worldwide</span>
-        </div>
+      <div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 my-6 md:my-10 text-sm text-center max-w-4xl mx-auto">
           <FooterColumn
             title="Pricing"
