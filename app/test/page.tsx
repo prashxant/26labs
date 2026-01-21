@@ -8,8 +8,7 @@ import ToolkitPage from "@/components/shared/Toolkit/ToolkitPage";
 
 export default function Home() {
   return (
-    <div >
-      
+    <div >      
       <Hero />
         <ToolkitPage/>
            <HorizontalScrollSection />
