@@ -90,7 +90,7 @@ export default function ProcessGrid() {
   );
 }
 
-function Card({
+export function Card({
   title,
   cta,
   description,

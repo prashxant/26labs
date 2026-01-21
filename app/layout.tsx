@@ -3,6 +3,7 @@ import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/shared/Navbar/Navbar";
 import ScrollProgress from "@/components/shared/ScroolProcress";
+import { Footer } from "@/components/layout/Footer";
 
 
 export const openSans = Open_Sans({
@@ -29,7 +30,6 @@ export default function RootLayout({
         <Navbar/>
         <ScrollProgress />
         {children}
-
       </body>
     </html>
   );
