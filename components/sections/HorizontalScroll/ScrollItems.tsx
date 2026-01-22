@@ -2,7 +2,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Flower } from "lucide-react";
 
-// The Wrapper that handles the XY positioning
+
 export const Point = ({ 
   children, 
   x, 
@@ -23,11 +23,11 @@ export const Point = ({
 };
 
 export const PhotoCard = ({ src, className }: { src: string; className?: string }) => (
-  <div className={cn("w-[450px] aspect-video bg-white rounded-2xl shadow-2xl overflow-hidden border-8 border-white", className)}>
+  <div >
     <Image 
       src={src} 
       alt="Project" 
-      width={450} 
+      width={390} 
       height={300} 
       className="object-cover w-full h-full"
     />

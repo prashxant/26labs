@@ -4,6 +4,7 @@ import HorizontalScrollSection from "@/components/sections/HorizontalScroll";
 
 import { LiveProductPage } from "@/components/shared/Live Product/LiveProductPage";
 import ToolkitPage from "@/components/shared/Toolkit/ToolkitPage";
+import  Brand  from "@/components/shared/Brand Section/Brand";
 
 
 export default function Home() {
@@ -12,8 +13,10 @@ export default function Home() {
       
       <Hero />
         <ToolkitPage/>
-           <HorizontalScrollSection />
         <LiveProductPage/>
+        <Brand/>
+           <HorizontalScrollSection />
+        
     </div>
   );
 }
