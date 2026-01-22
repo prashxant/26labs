@@ -15,10 +15,6 @@ export default function Home() {
         <LiveProductPage/>
         <Brand/>
            <HorizontalScrollSection />
-        
-      <ToolkitPage />
-      <LiveProductPage />
-      <HorizontalScrollSection />
     </div>
   );
 }
