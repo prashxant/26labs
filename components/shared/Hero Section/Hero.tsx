@@ -2,18 +2,14 @@ import React from 'react'
 import { Descripton, Typography } from '../Typography'
 import Image from 'next/image';
 import { Email } from './Email';
+import { HeroSvg } from '@/components/icons/HeroSvg';
 
 
 export const Hero = () => {
 
   return (
     <div className="h-screen mt-20 relative w-full flex justify-center items-center ">
-      <Image
-        src="/ii.png"
-        alt="mainbg"
-        fill
-        className=" animate-spin-slow -z-10  max-w-9xl translate-x-20 absolute inset-0  "
-      />
+      <HeroSvg />
       <div className="flex gap-10 flex-col justify-center items-center">
         <div className="mt-5">
           <Typography

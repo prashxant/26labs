@@ -9,14 +9,16 @@ import  Brand  from "@/components/shared/Brand Section/Brand";
 
 export default function Home() {
   return (
-    <div >
-      
+    <div>
       <Hero />
         <ToolkitPage/>
         <LiveProductPage/>
         <Brand/>
            <HorizontalScrollSection />
         
+      <ToolkitPage />
+      <LiveProductPage />
+      <HorizontalScrollSection />
     </div>
   );
 }
