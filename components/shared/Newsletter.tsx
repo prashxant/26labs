@@ -11,22 +11,7 @@ export const Newsletter = () => {
         <span className="text-orange2 tracking-widest">Newsletter</span> to keep
         you updated.
       </h2>
-      <div className="flex flex-col md:flex-row my-6 md:my-10 gap-2 md:gap-0">
-        <input
-          type="text"
-          placeholder="Email Address"
-          className="ring p-1 w-full md:w-fit"
-        />
-        <div className="bg-orange1 justify-center ring items-center flex p-1 w-full md:w-auto">
-          <Image
-            alt="logo"
-            width={48}
-            height={48}
-            src="/logo.svg"
-            className="w-10 h-10 md:w-12 md:h-12"
-          />
-        </div>
-      </div>
+      a
       <Descripton
         className="text-start text-gray-500"
         description="Be the first to receive ideas, trends, and strategies that help your brand grow smarter and stand out."

@@ -4,6 +4,7 @@ import HorizontalScrollSection from "@/components/sections/HorizontalScroll";
 
 import { LiveProductPage } from "@/components/shared/Live Product/LiveProductPage";
 import ToolkitPage from "@/components/shared/Toolkit/ToolkitPage";
+import { Footer } from "@/components/shared/Footer Section/Footer";
 
 
 export default function Home() {
@@ -12,7 +13,11 @@ export default function Home() {
       <Hero />
       <ToolkitPage />
       <LiveProductPage />
-      <HorizontalScrollSection />
+      {/* <HorizontalScrollSection /> */}
+
+      <Footer/>
     </div>
   );
 }
+
+
