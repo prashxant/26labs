@@ -18,7 +18,7 @@ const SOCIALS = [
 
 export const Socials = () => {
   return (
-    <div className="flex relative flex-col mt-6 md:mt-8 lg:mt-10 pb-6 md:pb-8 text-gray-500 lg:pb-10 ">
+    <div className="flex relative flex-col  text-gray-500  ">
       <Descripton
         className="max-w-2xl mt-4 md:mt-6 lg:mt-8 mb-3 md:mb-4 "
         description="Say goodbye to outdated enterprise software and welcome the smoother one.

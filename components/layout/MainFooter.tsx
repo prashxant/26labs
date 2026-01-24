@@ -1,9 +1,9 @@
 import Image from "next/image";
-import MailFilledIcon from "@/components/ui/mail-filled-icon";
+
 
 export const LetsConnect = () => {
   return (
-    <div className="flex relative justify-between max-w-3xl px-4">
+    <div className="flex relative w-full px-4">
       <div className="relative leading-[0.9] text-5xl md:text-7xl lg:text-[95px]">
         <h1>Let&apos;s</h1>
         <h1>Connect </h1>
@@ -16,9 +16,6 @@ export const LetsConnect = () => {
             className="absolute -bottom-4 md:-bottom-6 lg:-bottom-7 z-10 w-48 md:w-72 lg:w-full"
           />
         </div>
-      </div>
-      <div className="size-8 md:size-10 absolute bottom-0 right-0">
-        <MailFilledIcon className="text-blue2 size-8 md:size-10 lg:size-12 hover:text-blue-600/90" />
       </div>
     </div>
   );
