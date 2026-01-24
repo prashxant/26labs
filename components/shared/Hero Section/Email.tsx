@@ -7,7 +7,7 @@ export const Email = () => {
         <input
           className="bg-gray-300 ring-[#FFF0E7] ring-2 text-xs sm:text-[13px] font-light rounded-[5px] px-3 sm:px-4 py-2 sm:py-2.5 placeholder:font-light w-full sm:w-auto"
           type="text"
-          placeholder="Email"z
+          placeholder="Email"
         />
         <button className="text-mainBg ring-2 bg-blue1 ring-[#0088FF] shadow-[inset_0px_1px_6px_rgba(0,136,255,1)] rounded-[5px] px-6 sm:px-8 py-2 sm:py-2.5 text-sm sm:text-base whitespace-nowrap">
           Claim It{" "}
