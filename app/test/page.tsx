@@ -11,7 +11,7 @@ import Fueling from "@/components/shared/Fueling Section/Fueling";
 export default function Home() {
   return (
     <div>
-      <Hero />
+        <Hero />
         <ToolkitPage/>
         <LiveProductPage/>
         <Brand/>
