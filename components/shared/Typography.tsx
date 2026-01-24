@@ -17,15 +17,16 @@ type DiscriptionProps = {
 type TypographyVariant = "h1" | "h2" | "h3";
 
 const variants = {
-  h1: "text-[75px]",
+  h1: "text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[75px]",
   h2: "text-2xl md:text-4xl lg:text-[43.95px]",
   h3: "text-xl  md:text-2xl lg:text-[28.13px]",
 };
 
-const baseStyles = "font-bold  flex flex-col gap-2 items-center";
+const baseStyles =
+  "font-bold flex flex-col gap-1 sm:gap-2 items-center text-center";
 
 const highlightStyles = {
-  h1: "text-white px-2 py-1 mx-1 bg-[#FFAA72] ",
+  h1: "text-white px-1 sm:px-2 py-0.5 sm:py-1 mx-0.5 sm:mx-1 bg-[#FFAA72] ",
   h2: "text-orange2 mx-1 md:mx-2 p-1",
   h3: "text-orange2 mx-1 md:mx-2 p-1",
 };
@@ -53,7 +54,7 @@ export const Descripton = ({ className, description }: DiscriptionProps) => {
     <div
       className={cn(
         "mx-auto text-center my-6 md:my-8 lg:my-10 tracking-tight font-normal text-shadow-2xs text-sm md:text-base",
-        className,
+        className
       )}
     >
       {description}

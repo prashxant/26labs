@@ -1,22 +1,27 @@
-import React from 'react'
-import { Phool } from '../Phool'
-import { Newsletter } from './Newsletter';
-import {  NewSvg } from '@/components/icons/New';
-
-
-
+import { FooterSvg } from "@/components/icons/footerSvg";
+import { Phool } from "../Phool";
+import { Socials } from "@/components/shared/Footer Section/Socials";
+import { FootFooter } from "./FootFooter";
+import { PricingResCon } from "./PricingResCon";
+import { Newsletter } from "./Newsletter";
+import { LetsConnect } from "@/components/shared/Footer Section/LetsConnetc";
 
 export const Footer = () => {
   return (
-    <footer className="flex py-32 gap-12 flex-col justify-center items-center ">
-      <Phool
-        src="union.svg"
-        Line1="Based out of  Dubai"
-        Line2="Designing Worldwide"
-      />
-      <Newsletter />
-
-      
+    <footer className="flex w-full max-w-7xl relative mx-auto py-8 px-4 sm:px-6 lg:px-8">
+      <FooterSvg className="absolute inset-0 -z-10 " />
+      <div className="flex justify-center gap-8 sm:gap-12 md:gap-16 items-center flex-col mx-auto w-full">
+        <Phool
+          Line1="Based out of Dubai "
+          Line2="Designing Worldwide"
+          src="union.svg"
+        />
+        <PricingResCon />
+        <Newsletter />
+        <LetsConnect />
+        <Socials />
+        <FootFooter />
+      </div>
     </footer>
   );
-}
+};
