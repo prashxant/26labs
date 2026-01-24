@@ -4,7 +4,7 @@ import { Socials } from "@/components/shared/Footer Section/Socials";
 import { FootFooter } from "./FootFooter";
 import { PricingResCon } from "./PricingResCon";
 import { Newsletter } from "./Newsletter";
-import { LetsConnect } from "@/components/layout/MainFooter";
+import { LetsConnect } from "@/components/shared/Footer Section/LetsConnetc";
 
 
 
