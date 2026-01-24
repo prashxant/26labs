@@ -11,7 +11,11 @@ import Fueling from "@/components/shared/Fueling Section/Fueling";
 export default function Home() {
   return (
     <div>
+<<<<<<< HEAD
       <Hero />
+=======
+      <Hero /> 
+>>>>>>> 5bacc41ca131da80feea2e1a3781751c915fe427
         <ToolkitPage/>
         <LiveProductPage/>
         <Brand/>
