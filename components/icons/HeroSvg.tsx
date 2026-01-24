@@ -3,13 +3,8 @@ import React from 'react'
 export const HeroSvg = () => {
   return (
     <svg
-      className="absolute w-full h-full animate-spin-slow
-     inset-0 -z-10 mask-x-from-70% mask-x-to-90%
-     mask-y-from-70% mask-y-to-90%"
-      width="1426"
-      height="1122"
+      className="absolute mask-l-from- -top-20 -z-10"
       viewBox="0 0 1426 1122"
-      fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g filter="url(#filter0_f_596_649)">
@@ -74,9 +69,9 @@ export const HeroSvg = () => {
           width="1203.2"
           height="880.779"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -95,9 +90,9 @@ export const HeroSvg = () => {
           width="952"
           height="721"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -116,9 +111,9 @@ export const HeroSvg = () => {
           width="756"
           height="565"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -137,9 +132,9 @@ export const HeroSvg = () => {
           width="816.213"
           height="597.974"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -158,9 +153,9 @@ export const HeroSvg = () => {
           width="816"
           height="642"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -179,9 +174,9 @@ export const HeroSvg = () => {
           width="635.465"
           height="632.857"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -201,8 +196,8 @@ export const HeroSvg = () => {
           y2="1078.05"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFAA72" />
-          <stop offset="1" stop-color="#8CA9FF" />
+          <stop stopColor="#FFAA72" />
+          <stop offset="1" stopColor="#8CA9FF" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_596_649"
@@ -212,8 +207,8 @@ export const HeroSvg = () => {
           y2="1087.62"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFAA72" />
-          <stop offset="1" stop-color="#8CA9FF" />
+          <stop stopColor="#FFAA72" />
+          <stop offset="1" stopColor="#8CA9FF" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_596_649"
@@ -223,8 +218,8 @@ export const HeroSvg = () => {
           y2="410.337"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFAA72" />
-          <stop offset="1" stop-color="#8CA9FF" />
+          <stop stopColor="#FFAA72" />
+          <stop offset="1" stopColor="#8CA9FF" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_596_649"
@@ -234,8 +229,8 @@ export const HeroSvg = () => {
           y2="668.63"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#BCCDFF" />
-          <stop offset="1" stop-color="#FF6C0C" />
+          <stop stopColor="#BCCDFF" />
+          <stop offset="1" stopColor="#FF6C0C" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_596_649"
@@ -245,8 +240,8 @@ export const HeroSvg = () => {
           y2="156.534"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#A0B8FF" />
-          <stop offset="1" stop-color="#FF8535" />
+          <stop stopColor="#A0B8FF" />
+          <stop offset="1" stopColor="#FF8535" />
         </linearGradient>
       </defs>
     </svg>

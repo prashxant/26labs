@@ -1,3 +1,4 @@
+import { HeroSvg } from "@/components/icons/HeroSvg";
 import { Phool } from "../Phool";
 import ProcessGrid from "../Toolkit/Cards";
 import { Descripton, Typography } from "../Typography";
@@ -5,7 +6,8 @@ import { Design } from "./Design";
 
 export const Resources = () => {
   return (
-    <main className="relative max-w-7xl">
+    <main className="">
+
       <HeroSection />
       <ProcessGrid />
       <Phool
@@ -41,7 +43,6 @@ const HeroSection = () => {
           line2="to Launch Your"
           popUp="Own Website."
         />
-
         <Descripton
           className="max-w-lg"
           description="Introducing our full on tech stack which we will be using for your project. Live from discovery to delivery."

@@ -40,8 +40,10 @@ const TOP_CARDS = [
 
 export const Design = () => {
   return (
-    <section className="max-w-7xl">
+    <section className=" flex flex-col  mx-auto max-w-7xl">
+      
       <div className="py-16 flex justify-center">
+
         <Typography
           variant="h2"
           className=""

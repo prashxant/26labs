@@ -8,18 +8,17 @@ type Phoolprops = {
 };
 
 export const Phool = ({Line1,Line2,src}:Phoolprops) => {
-  return (<div className="">
-      <div className="flex flex-colmd:flex-row my-8 md:my-12 lg:my-15 justify-center items-center gap-3 md:gap-4 py-8 text-xs md:text-sm lg:text-lg font-semibold text-black">
-        <span>{Line1}</span>
+  return (
+  <div className="flex font-semibold text-[18px] justify-center items-center gap-6 py-16 ">
+        <p>{Line1}</p>
         <Image
-          width={64}
-          height={64}
+          width={128}
+          height={128}
           src={src}
           alt="lgog"
-          className="md:w-20 animate-spin-slow md:h-20 lg:w-26 lg:h-26"
+          className=""
         />
-        <span>{Line2}</span>
+        <p>{Line2}</p>
       </div>
-    </div>
   );
 }
