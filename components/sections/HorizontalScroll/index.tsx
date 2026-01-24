@@ -3,7 +3,7 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import { Point, PhotoCard, IconCard} from "./ScrollItems";
+import { Point, PhotoCard, IconCard } from "./ScrollItems";
 import WaveBackground from "./WaveBackground";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -11,52 +11,79 @@ gsap.registerPlugin(ScrollTrigger);
 export default function HorizontalScrollSection() {
   const componentRef = useRef<HTMLDivElement>(null);
   const scrollContentRef = useRef<HTMLDivElement>(null);
+  const waveRef = useRef<SVGSVGElement>(null);
 
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      if (!scrollContentRef.current || !componentRef.current) return;
+useLayoutEffect(() => {
+  const ctx = gsap.context(() => {
+    if (!componentRef.current || !scrollContentRef.current || !waveRef.current) return;
 
-      const totalWidth = 8572; 
-      const scrollLength = totalWidth - window.innerWidth;
+    const totalWidth = 8572;
+    const scrollLength = totalWidth - window.innerWidth;
 
-      gsap.to(scrollContentRef.current, {
-        x: -scrollLength,
-        ease: "none",
-        scrollTrigger: {
-          trigger: componentRef.current,
-          start: "top top",
-          end: () => `+=${totalWidth}`,
-          scrub: 1,
-          pin: true,
-          invalidateOnRefresh: true,
-        },
-      });
-    }, componentRef);
+    const wave = waveRef.current;
 
-    return () => ctx.revert();
-  }, []);
+   
+    ScrollTrigger.create({
+      trigger: componentRef.current,
+      start: "top top",
+      end: `+=${totalWidth}`,
+      scrub: 1,
+      pin: true,
+      invalidateOnRefresh: true,
+
+      onUpdate: (self) => {
+       
+        gsap.set(scrollContentRef.current!, {
+          x: -scrollLength * self.progress,
+        });
+
+        
+        const amplitude = 50; 
+        const frequency = Math.PI * 2; 
+
+        const yOffset = Math.sin(self.progress * frequency) * amplitude;
+
+        gsap.set(wave, {
+          y: yOffset,
+        });
+      },
+    });
+  }, componentRef);
+
+  return () => ctx.revert();
+}, []);
+
+
 
   return (
-    <section ref={componentRef} className="relative h-screen w-full overflow-hidden bg-[#F5F5F5]">
-      <div ref={scrollContentRef} className="absolute top-0 left-0 h-full w-[8572px] will-change-transform">
+    <section
+      ref={componentRef}
+      className="relative h-screen w-full overflow-hidden bg-[#F5F5F5]"
+    >
+      <div
+        ref={scrollContentRef}
+        className="absolute top-0 left-0 h-full w-2143 will-change-transform"
+      >
         
-      
-        <WaveBackground />
+        <WaveBackground ref={waveRef} />
 
       
-        
-        <Point x={400} y={300}>
-          <div className="text-4xl font-bold w-[500px]">
-          Take a Look at Some of {" Our "} 
-          <span className="text-orange-500">featured projects</span>
+        <Point x={300} y={200}>
+          <div className="text-4xl font-bold w-125">
+            Take a Look at Some of {" Our "}
+            <span className="text-orange-500">featured projects</span>
           </div>
-         </Point>
+        </Point>
 
-        <Point x={1000} y={700}>
+        <Point x={910} y={550}>
           <PhotoCard src="/HorizontalScroll/Project 1.svg" />
         </Point>
 
-        <Point x={1400} y={590}>
+        <Point x={1250} y={750}>
+          <PhotoCard src="/HorizontalScroll/Rectangle.png" />
+        </Point>
+
+        <Point x={1250} y={490}>
           <div className="w-75 font-bold text-gray-600">
             <span className="text-orange-500">Diagnose AI </span>
             is a health-tech project that runs on an in-house server hosted in our lab.
@@ -71,54 +98,55 @@ export default function HorizontalScrollSection() {
           <PhotoCard src="/HorizontalScroll/Project 2.svg" />
         </Point>
 
-         <Point x={2440} y={500}>
+        <Point x={2440} y={500}>
           <div className="w-76 font-bold text-gray-600">
-            Its a tax and financial services software platform made for Simplifying tax management and financial guidance for individuals and businesses.
+          1  Its a tax and financial services software platform made for Simplifying tax management and financial guidance for individuals and businesses .
           </div>
         </Point>
 
-        <Point x={2650} y={720}> 
+        <Point x={2650} y={720}>
           <IconCard src="Image pack/phool.svg" />
         </Point>
 
-         <Point x={3090} y={670}>
+        <Point x={3090} y={670}>
+          <div className="w-100 h-62.5">
           <PhotoCard src="/HorizontalScroll/Project 3.svg" />
+          </div>
         </Point>
 
         <Point x={3040} y={470}>
           <div className="w-76 font-bold text-gray-600">
-            Its a tax and financial services software platform made for Simplifying tax management and financial guidance for individuals and businesses.
+            Its a tax and financial services software platform made for Simplifying tax management and financial guidance for individuals and businesse.
           </div>
         </Point>
 
         <Point x={3990} y={220}>
+           <div className="w-100 h-62.5">
           <PhotoCard src="/HorizontalScroll/Project 4.svg" />
+          </div>
         </Point>
 
-        <Point x={4350} y={220}> 
+        <Point x={4350} y={220}>
           <IconCard src="Image pack/phool.svg" />
         </Point>
 
-          <Point x={4900} y={350}>
+        <Point x={4900} y={350}>
+           <div className="w-100 h-62.5">
           <PhotoCard src="/HorizontalScroll/Project 5.svg" />
+          </div>
         </Point>
 
-         <Point x={5600} y={930}>
+        <Point x={5600} y={930}>
           <IconCard src="/union.svg" />
         </Point>
 
-         <Point x={6500} y={360}>
-          <PhotoCard src="/HorizontalScroll/Project 5.svg" />
+        <Point x={6500} y={360}>
+          <PhotoCard src="/HorizontalScroll/mockuuups-free-imac-mockup.png" />
         </Point>
 
-
-
-
-
-
-
-        
-
+          <Point x={7990} y={370}>
+          <IconCard src="Image pack/phool.svg" />
+        </Point>
       </div>
     </section>
   );

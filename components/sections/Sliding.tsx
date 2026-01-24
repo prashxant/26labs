@@ -10,14 +10,12 @@ export const Sliding = () => {
 
 const Slider = () => {
   const Logo = [
-    { src: "/logo.svg", alt: "Somthing" },
-    { src: "/logo.svg", alt: "Somthing" },
-    { src: "/logo.svg", alt: "Somthing" },
-    { src: "/logo.svg", alt: "Somthing" },
-    { src: "/logo.svg", alt: "Somthing" },
-    { src: "/logo.svg", alt: "Somthing" },
-    { src: "/logo.svg", alt: "Somthing" },
-    { src: "/logo.svg", alt: "Somthing" },
+    { src: "/postman_icon.png.png", alt: "Somthing" },
+    { src: "/Icon.jpeg.png", alt: "Somthing" },
+    { src: "/mapmyindia_icon.jpeg.png", alt: "Somthing" },
+    { src: "/amazon_web_services_icon.jpeg.png", alt: "Somthing" },   
+    { src: "/clickup_symbol.png.png", alt: "Somthing" },
+    { src: "/Icon.jpeg (1).png", alt: "Somthing" },  
   ];
 
   const loopLogos = [...Logo, ...Logo];
