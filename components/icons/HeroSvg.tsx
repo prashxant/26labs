@@ -1,10 +1,12 @@
-import React from 'react'
+import React from "react";
 
 export const HeroSvg = () => {
   return (
     <svg
-      className="absolute mask-l-from- -top-20 -z-10"
+      className="absolute
+       inset-0   -z-20"
       viewBox="0 0 1426 1122"
+      preserveAspectRatio="xMidYMid slice"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g filter="url(#filter0_f_596_649)">
@@ -246,6 +248,4 @@ export const HeroSvg = () => {
       </defs>
     </svg>
   );
-
-
-}
+};

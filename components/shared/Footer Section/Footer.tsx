@@ -6,13 +6,11 @@ import { PricingResCon } from "./PricingResCon";
 import { Newsletter } from "./Newsletter";
 import { LetsConnect } from "@/components/shared/Footer Section/LetsConnetc";
 
-
-
 export const Footer = () => {
   return (
-    <footer className="flex relative mx-auto py-8  ">
+    <footer className="flex w-full max-w-7xl relative mx-auto py-8 px-4 sm:px-6 lg:px-8">
       <FooterSvg className="absolute inset-0 -z-10 " />
-      <div className="flex justify-center gap-16  items-center flex-col mx-auto">
+      <div className="flex justify-center gap-8 sm:gap-12 md:gap-16 items-center flex-col mx-auto w-full">
         <Phool
           Line1="Based out of Dubai "
           Line2="Designing Worldwide"

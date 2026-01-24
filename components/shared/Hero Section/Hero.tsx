@@ -1,17 +1,15 @@
-import React from 'react'
-import { Descripton, Typography } from '../Typography'
-import Image from 'next/image';
-import { Email } from './Email';
-import { HeroSvg } from '@/components/icons/HeroSvg';
+import React from "react";
+import { Descripton, Typography } from "../Typography";
 
+import { Email } from "./Email";
+import { HeroSvg } from "@/components/icons/HeroSvg";
 
 export const Hero = () => {
-
   return (
-    <div className="h-screen mt-20 relative w-full flex justify-center items-center ">
-      <HeroSvg />
-      <div className="flex gap-10 flex-col justify-center items-center">
-        <div className="mt-5">
+    <div className="h-screen  pt-20 sm:pt-24 md:pt-0 md:mt-16 lg:mt-20 relative  flex justify-center items-start md:items-center px-4 sm:px-6 lg:px-8  pb-4 md:pb-8">
+     
+      <div className="flex gap-6 sm:gap-8 md:gap-10 flex-col justify-center items-center w-full max-w-4xl">
+        <div>
           <Typography
             variant="h1"
             line1="One Problem One Service"
@@ -29,4 +27,4 @@ export const Hero = () => {
       </div>
     </div>
   );
-}
+};

@@ -1,34 +1,43 @@
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 type FooterSvgProps = {
-  className: string;
+  className?: string;
 };
 
-
-export const FooterSvg = ( {className} : FooterSvgProps) => {
+export const FooterSvg = ({ className }: FooterSvgProps) => {
   return (
     <svg
-      className={cn("w-full mask-x-from-65% mask-r-to-85% ", className)}
-      width="1440"
-      height="1427"
-      viewBox="0 0 1440 1427"
+      className={cn("w-full mask-x-from-65% mask-r-to-85%", className)}
+      width="1800"
+      height="1600"
+      viewBox="0 0 1800 1600"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g filter="url(#filter0_d_732_2)">
         <path
-          d="M1458.5 52.4551C1458.5 52.4551 1096.04 189.968 954.142 478.365C832.983 724.622 736.362 823.25 187.824 528.622C187.824 538.622 26.7005 395.607 -24.8431 528.622C-88.0365 691.7 164.308 901.776 164.308 901.776C349.199 1038.1 778.897 1247.79 1018.56 1200.006C1258.22 1168.222 1466.04 1178.4 1540 1300 "
+          d="
+            M2058.5 52.4551
+            C1458.5 52.4551 1096.04 189.968 954.142 478.365
+            C832.983 724.622 736.362 823.25 187.824 528.622
+            C187.824 538.622 26.7005 395.607 -24.8431 528.622
+            C-88.0365 691.7 164.308 901.776 164.308 901.776
+            C349.199 1038.1 778.897 1247.79 1018.56 1200.006
+            C1258.22 1168.222 1466.04 1178.4 1850 1390
+          "
           stroke="url(#paint0_linear_732_2)"
           strokeWidth="78"
+          strokeLinecap="round"
         />
       </g>
+
       <defs>
         <filter
           id="filter0_d_732_2"
-          x="-94.0029"
+          x="-120"
           y="0"
-          width="1691.38"
-          height="1462.08"
+          width="1900"
+          height="1600"
           filterUnits="userSpaceOnUse"
           colorInterpolationFilters="sRGB"
         >
@@ -58,12 +67,13 @@ export const FooterSvg = ( {className} : FooterSvgProps) => {
             result="shape"
           />
         </filter>
+
         <linearGradient
           id="paint0_linear_732_2"
-          x1="834.517"
-          y1="715.827"
-          x2="1333.44"
-          y2="844.153"
+          x1="900"
+          y1="700"
+          x2="1550"
+          y2="950"
           gradientUnits="userSpaceOnUse"
         >
           <stop stopColor="#8CA9FF" />
@@ -72,4 +82,4 @@ export const FooterSvg = ( {className} : FooterSvgProps) => {
       </defs>
     </svg>
   );
-}
+};

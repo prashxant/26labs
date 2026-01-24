@@ -12,13 +12,13 @@ import { Footer } from "@/components/shared/Footer Section/Footer";
 export default function Home() {
   return (
     <div>
-        <Hero />
-        <ToolkitPage/>
-        <LiveProductPage/>
-        <Brand/>
-         <HorizontalScrollSection />
-         <Fueling/>
-         <Footer/>
+      <Hero />
+      <ToolkitPage />
+      <LiveProductPage />
+      <Brand />
+      <HorizontalScrollSection />
+      <Fueling />
+      <Footer />
     </div>
   );
 }
