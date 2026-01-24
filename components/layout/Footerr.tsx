@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Newsletter } from "@/components/shared/Newsletter";
 import { LetsConnect } from "@/components/layout/MainFooter";
-import { Socials } from "@/components/layout/Socials";
+import { Socials } from "@/components/shared/Footer Section/Socials";
 import { Thanks } from "@/components/layout/Thanks";
 
 export const Footer = () => {

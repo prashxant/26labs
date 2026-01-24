@@ -6,6 +6,7 @@ import { LiveProductPage } from "@/components/shared/Live Product/LiveProductPag
 import ToolkitPage from "@/components/shared/Toolkit/ToolkitPage";
 import  Brand  from "@/components/shared/Brand Section/Brand";
 import Fueling from "@/components/shared/Fueling Section/Fueling";
+import { Footer } from "@/components/shared/Footer Section/Footer";
 
 
 export default function Home() {
@@ -15,8 +16,9 @@ export default function Home() {
         <ToolkitPage/>
         <LiveProductPage/>
         <Brand/>
-           <HorizontalScrollSection />
-           <Fueling/>
+         <HorizontalScrollSection />
+         <Fueling/>
+         <Footer/>
     </div>
   );
 }
