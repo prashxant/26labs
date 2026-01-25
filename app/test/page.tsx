@@ -11,10 +11,9 @@ import Growth from "@/components/shared/Growth Section/Growth";
 
 
 
-
 export default function Home() {
   return (
-    <><div>
+    <div>
       <Hero />
       <ToolkitPage />
       <LiveProductPage />
@@ -24,18 +23,6 @@ export default function Home() {
       <Need />
       <Growth />
       <Footer />
-
-    </div><>
-        <main id="main">
-          <Hero />
-          <ToolkitPage />
-          <LiveProductPage />
-          <Brand />
-          <HorizontalScrollSection />
-          <Fueling />
-        </main>
-      </></>
+    </div>
   );
 }
-
-
