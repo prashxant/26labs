@@ -4,10 +4,10 @@ export const MenuDropdown = ({ open }: { open: boolean }) => {
   return (
     <div
       className={`
-        absolute mt-3 sm:mt-4 md:mt-5 w-52 sm:w-60 md:w-65
-        rounded-xl
+        absolute left-0 mt-3 md:mt-4 lg:mt-5 w-56 md:w-64 lg:w-72
+        rounded-xl md:rounded-2xl
         bg-linear-to-b from-[#9db2ff] to-mainBg
-        p-4 sm:p-5 md:p-6
+        p-5 md:p-6 lg:p-7
         shadow-xl
         transition-all duration-300 ease-out
         ${
@@ -17,7 +17,7 @@ export const MenuDropdown = ({ open }: { open: boolean }) => {
         }
       `}
     >
-      <nav className="space-y-3 sm:space-y-4 text-white text-base sm:text-lg font-semibold">
+      <nav className="space-y-3 md:space-y-4 text-white text-base md:text-lg lg:text-xl font-semibold">
         <Link href="/resources" className="block hover:text-black ">
           Resource
         </Link>
@@ -34,8 +34,8 @@ export const MenuDropdown = ({ open }: { open: boolean }) => {
           Blog
         </Link>
         <Link
-          href="/Contact"
-          className=" transition duration-200 hover:text-black  text-white"
+          href="https://calendly.com/26labs-live/30min"
+          className="block transition-all duration-200 hover:text-black hover:translate-x-1 text-white"
         >
           Contact
         </Link>

@@ -19,7 +19,7 @@ export const Menu = () => {
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen((v) => !v)}
-        className="flex items-center gap-1.5 sm:gap-2 hover:opacity-80 transition-opacity"
+        className="flex items-center gap-2 md:gap-2.5 lg:gap-3 hover:opacity-80 transition-all duration-200 active:scale-95"
       >
         <div
           className={`
@@ -28,11 +28,13 @@ export const Menu = () => {
             ${open ? "rotate-90" : "rotate-0"}
           `}
         >
-          <span className="bg-black h-5 sm:h-6 w-0.5 sm:w-1 rounded-lg mx-0.5" />
-          <span className="bg-black h-5 sm:h-6 w-1 sm:w-1.5 rounded-lg mx-0.5" />
+          <span className="bg-black h-5 md:h-6 lg:h-7 w-0.5 md:w-1 rounded-lg mx-0.5" />
+          <span className="bg-black h-5 md:h-6 lg:h-7 w-1 md:w-1.5 rounded-lg mx-0.5" />
         </div>
 
-        <span className="text-base sm:text-lg text-black font-bold">Menu</span>
+        <span className="text-base md:text-lg lg:text-xl text-black font-bold">
+          Menu
+        </span>
       </button>
 
       <MenuDropdown open={open} />
