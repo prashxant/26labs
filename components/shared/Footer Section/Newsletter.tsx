@@ -1,8 +1,17 @@
+"use client";
+
 import { NewSvg } from "@/components/icons/New";
 import Image from "next/image";
 import React from "react";
+import posthog from "posthog-js";
 
 export const Newsletter = () => {
+  const handleNewsletterClick = () => {
+    posthog.capture("newsletter_signup_clicked", {
+      location: "footer_section",
+    });
+  };
+
   return (
     <div className="border relative flex flex-col w-full p-6 sm:p-8 md:p-10 justify-center items-center gap-4 sm:gap-6 md:gap-8 border-black">
       <div className="absolute top-0 left-0 sm:left-2 -translate-y-1/4 -translate-x-1/6">
@@ -23,7 +32,10 @@ export const Newsletter = () => {
           placeholder="Email Address"
           className="ring p-2 sm:p-3 w-full text-sm sm:text-base"
         />
-        <div className="bg-orange1 justify-center ring items-center flex p-2 sm:p-3 shrink-0">
+        <button
+          onClick={handleNewsletterClick}
+          className="bg-orange1 justify-center ring items-center flex p-2 sm:p-3 shrink-0 cursor-pointer hover:bg-orange-600 transition-colors"
+        >
           <Image
             alt="logo"
             width={48}
@@ -31,7 +43,7 @@ export const Newsletter = () => {
             src="/logo.svg"
             className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
           />
-        </div>
+        </button>
       </div>
       <p className="max-w-lg text-sm sm:text-base md:text-[18px] text-center font-semibold px-4">
         Be the first to receive ideas, trends, and strategies that help your
