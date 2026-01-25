@@ -34,7 +34,7 @@ export const MenuDropdown = ({ open }: { open: boolean }) => {
           Blog
         </Link>
         <Link
-          href="/Contact"
+          href="https://calendly.com/26labs-live/30min"
           className=" transition duration-200 hover:text-black  text-white"
         >
           Contact

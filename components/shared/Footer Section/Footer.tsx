@@ -1,4 +1,4 @@
-import { FooterSvg } from "@/components/icons/footerSvg";
+
 import { Phool } from "../Phool";
 import { Socials } from "@/components/shared/Footer Section/Socials";
 import { FootFooter } from "./FootFooter";
@@ -9,7 +9,7 @@ import { LetsConnect } from "@/components/shared/Footer Section/LetsConnetc";
 export const Footer = () => {
   return (
     <footer className="flex w-full max-w-7xl relative mx-auto py-8 px-4 sm:px-6 lg:px-8">
-      <FooterSvg className="absolute inset-0 -z-10 " />
+
       <div className="flex justify-center gap-8 sm:gap-12 md:gap-16 items-center flex-col mx-auto w-full">
         <Phool
           Line1="Based out of Dubai "

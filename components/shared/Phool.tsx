@@ -16,7 +16,7 @@ export const Phool = ({Line1,Line2,src}:Phoolprops) => {
           height={128}
           src={src}
           alt="lgog"
-          className=""
+          className="animate-spin-slow"
         />
         <p>{Line2}</p>
       </div>

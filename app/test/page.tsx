@@ -12,17 +12,16 @@ import Need from "@/components/shared/Need Section/Need";
 
 export default function Home() {
   return (
-    <div>
-      <Hero />
-      <ToolkitPage />
-      <LiveProductPage />
-      <Brand />
-      <HorizontalScrollSection />
-      <Fueling />
-      <Need />
-      <Footer />
-      
-    </div>
+    <>
+      <main id="main">
+        <Hero />
+        <ToolkitPage />
+        <LiveProductPage />
+        <Brand />
+        <HorizontalScrollSection />
+        <Fueling />
+      </main>
+    </>
   );
 }
 

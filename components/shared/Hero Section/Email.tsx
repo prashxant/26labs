@@ -4,9 +4,11 @@ export const Email = () => {
   return (
     <div className="flex flex-col gap-6 sm:gap-8 md:gap-10 justify-center items-center w-full">
       <div className="flex flex-col justify-center sm:flex-row gap-4 sm:gap-6 md:gap-10 w-full max-w-md sm:max-w-none">
+        <label htmlFor="email" className="sr-only">Email</label>
         <input
-          className="bg-gray-300 ring-[#FFF0E7] ring-2 text-xs sm:text-[13px] font-light rounded-[5px] px-3 sm:px-4 py-2 sm:py-2.5 placeholder:font-light w-full sm:w-auto"
+          className="bg-red-100 ring-[#FFF0E7] ring-2 text-xs sm:text-[13px] font-light rounded-[5px] px-3 sm:px-4 py-2 sm:py-2.5 placeholder:font-light w-full sm:w-auto"
           type="text"
+          autoComplete="email"
           placeholder="Email"
         />
         <button className="text-mainBg ring-2 bg-blue1 ring-[#0088FF] shadow-[inset_0px_1px_6px_rgba(0,136,255,1)] rounded-[5px] px-6 sm:px-8 py-2 sm:py-2.5 text-sm sm:text-base whitespace-nowrap">

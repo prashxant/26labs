@@ -97,13 +97,13 @@ export const Navbar = () => {
             >
               Blog
             </Link>
-            <Link
-              href="/Contact"
+            <a
+              href="https://calendly.com/26labs-live/30min"
               className="block text-white text-sm sm:text-base hover:text-orange2 transition-colors py-2"
               onClick={() => setOpen(false)}
             >
               Contact
-            </Link>
+            </a>
 
             <div className="pt-2 mt-2 border-t border-white/20">
               <a
