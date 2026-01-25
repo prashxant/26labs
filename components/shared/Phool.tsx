@@ -9,7 +9,7 @@ type Phoolprops = {
 
 export const Phool = ({Line1,Line2,src}:Phoolprops) => {
   return (
-  <div className="flex font-semibold text-[18px] justify-center items-center gap-6 py-16 ">
+  <div className=" grid grid-cols-3 place-items-center font-semibold lg:text-[18px] text-[10px] gap-6 px-4 py-16 ">
         <p>{Line1}</p>
         <Image
           width={128}

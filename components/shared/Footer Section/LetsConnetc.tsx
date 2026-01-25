@@ -11,7 +11,7 @@ export const LetsConnect = () => {
             alt="logo"
             width={400}
             height={100}
-            src="aa.svg"
+            src="/aa.svg"
             className="absolute -bottom-4 md:-bottom-6 lg:-bottom-7 z-10 w-48 md:w-72 lg:w-full"
           />
         </div>

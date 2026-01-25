@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import { Descripton } from "@/components/shared/Typography";
 
 export const Newsletter = () => {
