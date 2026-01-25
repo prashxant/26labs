@@ -1,6 +1,15 @@
+"use client";
+
 import Image from "next/image";
+import posthog from "posthog-js";
 
 export const Email = () => {
+  const handleClaimClick = () => {
+    posthog.capture("hero_email_signup_clicked", {
+      location: "hero_section",
+    });
+  };
+
   return (
     <div className="flex flex-col gap-5 sm:gap-6 md:gap-8 lg:gap-10 justify-center items-center w-full">
       <div className="flex flex-col justify-center sm:flex-row gap-3 sm:gap-4 md:gap-6 lg:gap-8 w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl">
@@ -14,7 +23,9 @@ export const Email = () => {
           autoComplete="email"
           placeholder="Enter your email"
         />
-        <button className="text-mainBg ring-2 bg-blue1 ring-[#0088FF] shadow-[inset_0px_1px_6px_rgba(0,136,255,1)] rounded-md px-8 sm:px-10 md:px-12 lg:px-14 xl:px-16 py-2 sm:py-2.5 md:py-3 lg:py-3.5 text-xs sm:text-sm md:text-base lg:text-lg font-medium whitespace-nowrap hover:bg-[#0077EE] transition-all duration-200 active:scale-95 w-1/2 sm:w-auto sm:min-w-[160px] md:min-w-[180px] lg:min-w-[200px] mx-auto sm:mx-0">
+        <button
+          onClick={handleClaimClick}
+          className="text-mainBg ring-2 bg-blue1 ring-[#0088FF] shadow-[inset_0px_1px_6px_rgba(0,136,255,1)] rounded-md px-8 sm:px-10 md:px-12 lg:px-14 xl:px-16 py-2 sm:py-2.5 md:py-3 lg:py-3.5 text-xs sm:text-sm md:text-base lg:text-lg font-medium whitespace-nowrap hover:bg-[#0077EE] transition-all duration-200 active:scale-95 w-1/2 sm:w-auto sm:min-w-40 md:min-w-45 lg:min-w-50 mx-auto sm:mx-0">
           Claim It
         </button>
       </div>

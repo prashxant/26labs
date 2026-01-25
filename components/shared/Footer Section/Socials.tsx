@@ -1,9 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import InstagramIcon from "@/components/ui/instagram-icon";
 import LinkedinIcon from "@/components/ui/linkedin-icon";
 import TwitterXIcon from "@/components/ui/twitter-x-icon";
 import YoutubeIcon from "@/components/ui/youtube-icon";
 import { Descripton } from "@/components/shared/Typography";
+import posthog from "posthog-js";
 
 const SOCIALS = [
   { Icon: LinkedinIcon, href: "/", label: "LinkedIn" },
@@ -17,6 +20,14 @@ const SOCIALS = [
 ];
 
 export const Socials = () => {
+  const handleSocialClick = (platform: string, href: string) => {
+    posthog.capture("social_link_clicked", {
+      platform,
+      destination_url: href,
+      location: "footer_section",
+    });
+  };
+
   return (
     <div className="flex relative flex-col text-gray-500 w-full px-4 sm:px-6">
       <Descripton
@@ -27,7 +38,13 @@ We lead you from design to product innovation to shape your path from idea to su
 
       <div className="flex justify-center items-center gap-x-2 md:gap-x-3">
         {SOCIALS.map(({ Icon, href, label }) => (
-          <Link key={label} href={href} aria-label={label} className="group">
+          <Link
+            key={label}
+            href={href}
+            aria-label={label}
+            className="group"
+            onClick={() => handleSocialClick(label, href)}
+          >
             <Icon className="size-6 md:size-8 text-blue2 transition-colors group-hover:text-blue-600/90" />
           </Link>
         ))}

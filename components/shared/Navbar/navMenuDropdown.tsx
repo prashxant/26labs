@@ -6,7 +6,7 @@ export const MenuDropdown = ({ open }: { open: boolean }) => {
       className={`
         absolute left-0 mt-3 md:mt-4 lg:mt-5 w-56 md:w-64 lg:w-72
         rounded-xl md:rounded-2xl
-        bg-gradient-to-b from-[#9db2ff] to-mainBg
+        bg-linear-to-b from-[#9db2ff] to-mainBg
         p-5 md:p-6 lg:p-7
         shadow-xl
         transition-all duration-300 ease-out

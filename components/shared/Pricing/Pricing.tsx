@@ -1,4 +1,7 @@
+"use client";
+
 import { Check } from "lucide-react";
+import posthog from "posthog-js";
 
 export default function Price() {
   return (
@@ -92,6 +95,16 @@ function Card({
   highlighted?: boolean;
   quotation?: boolean;
 }) {
+  const handlePlanClick = () => {
+    posthog.capture("pricing_plan_selected", {
+      plan_name: title,
+      plan_price: price || "custom",
+      is_highlighted: highlighted || false,
+      is_quotation: quotation || false,
+      button_text: button,
+    });
+  };
+
   return (
     <div
       className={`relative w-[270px] rounded-[28px] bg-white px-[26px] py-[32px]
@@ -148,6 +161,7 @@ function Card({
 
       {/* Button */}
       <button
+        onClick={handlePlanClick}
         className={`mt-[22px] w-full rounded-[12px] border px-[16px] py-[10px] text-[14px] font-medium transition
           ${
             highlighted

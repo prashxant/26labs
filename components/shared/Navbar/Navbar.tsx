@@ -4,9 +4,32 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Menu } from "./navMenu";
+import posthog from "posthog-js";
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
+
+  const handleMenuToggle = () => {
+    const newState = !open;
+    setOpen(newState);
+    posthog.capture("mobile_menu_toggled", {
+      action: newState ? "opened" : "closed",
+    });
+  };
+
+  const handleBookCallClick = (location: string) => {
+    posthog.capture("book_call_clicked", {
+      location,
+    });
+  };
+
+  const handleNavLinkClick = (linkName: string) => {
+    posthog.capture("navigation_link_clicked", {
+      link_name: linkName,
+      location: "mobile_menu",
+    });
+    setOpen(false);
+  };
 
   return (
     <nav className="fixed inset-x-0 top-2 sm:top-4 md:top-6 lg:top-8 xl:top-12 z-50 px-3 sm:px-4 md:px-6 lg:px-8">
@@ -14,7 +37,7 @@ export const Navbar = () => {
         className="
           mx-auto
           flex items-center justify-between
-          h-14 sm:h-16 md:h-[4.5rem] lg:h-20
+          h-14 sm:h-16 md:h-18 lg:h-20
           w-full sm:w-11/12 md:w-5/6 lg:w-4/5 xl:max-w-[50vw]
           rounded-lg sm:rounded-xl md:rounded-2xl
           bg-blue1
@@ -24,7 +47,7 @@ export const Navbar = () => {
       >
         {/* Left: Menu / Hamburger */}
         <button
-          onClick={() => setOpen(!open)}
+          onClick={handleMenuToggle}
           className="md:hidden text-white text-xl sm:text-2xl p-1.5 sm:p-2 hover:bg-white/10 rounded-md transition-colors active:scale-95"
           aria-label="Toggle menu"
         >
@@ -36,7 +59,7 @@ export const Navbar = () => {
         </div>
 
         {/* Center: Logo */}
-        <Link href="/test" className="flex items-center flex-shrink-0">
+        <Link href="/test" className="flex items-center shrink-0">
           <Image
             alt="Company logo"
             width={100}
@@ -52,6 +75,7 @@ export const Navbar = () => {
           href="https://calendly.com/26labs-live/30min"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => handleBookCallClick("navbar_desktop")}
           className="
             inline-flex items-center justify-center
             rounded-md sm:rounded-lg md:rounded-xl
@@ -81,29 +105,29 @@ export const Navbar = () => {
           <nav className="space-y-2 sm:space-y-3">
             <Link
               href="/resources"
-              className="block text-white text-sm sm:text-base hover:text-orange2 transition-colors py-2 sm:py-2.5 hover:pl-2 transition-all duration-200"
-              onClick={() => setOpen(false)}
+              className="block text-white text-sm sm:text-base hover:text-orange2  py-2 sm:py-2.5 hover:pl-2 transition-colors duration-200"
+              onClick={() => handleNavLinkClick("Resource")}
             >
               Resource
             </Link>
             <Link
               href="/pricing"
-              className="block text-white text-sm sm:text-base hover:text-orange2 transition-colors py-2 sm:py-2.5 hover:pl-2 transition-all duration-200"
-              onClick={() => setOpen(false)}
+              className="block text-white text-sm sm:text-base hover:text-orange2 transition-colors py-2 sm:py-2.5 hover:pl-2  duration-200"
+              onClick={() => handleNavLinkClick("Pricing")}
             >
               Pricing
             </Link>
             <Link
               href="/blog"
-              className="block text-white text-sm sm:text-base hover:text-orange2 transition-colors py-2 sm:py-2.5 hover:pl-2 transition-all duration-200"
-              onClick={() => setOpen(false)}
+              className="block text-white text-sm sm:text-base hover:text-orange2 transition-colors py-2 sm:py-2.5 hover:pl-2  duration-200"
+              onClick={() => handleNavLinkClick("Blog")}
             >
               Blog
             </Link>
             <a
               href="https://calendly.com/26labs-live/30min"
-              className="block text-white text-sm sm:text-base hover:text-orange2 transition-colors py-2 sm:py-2.5 hover:pl-2 transition-all duration-200"
-              onClick={() => setOpen(false)}
+              className="block text-white text-sm sm:text-base hover:text-orange2 transition-colors py-2 sm:py-2.5 hover:pl-2 duration-200"
+              onClick={() => handleNavLinkClick("Contact")}
             >
               Contact
             </a>
@@ -114,7 +138,10 @@ export const Navbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block rounded-md sm:rounded-lg bg-orange2 px-4 py-2.5 sm:py-3 text-center text-mainBg font-medium sm:font-semibold text-sm sm:text-base hover:bg-orange-500/90 transition-all duration-200 active:scale-[0.98]"
-                onClick={() => setOpen(false)}
+                onClick={() => {
+                  handleBookCallClick("mobile_menu");
+                  setOpen(false);
+                }}
               >
                 Book a Call
               </a>
