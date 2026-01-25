@@ -5,22 +5,25 @@ import { LiveProductPage } from "@/components/shared/Live Product/LiveProductPag
 import ToolkitPage from "@/components/shared/Toolkit/ToolkitPage";
 import  Brand  from "@/components/shared/Brand Section/Brand";
 import Fueling from "@/components/shared/Fueling Section/Fueling";
-
+import { Footer } from "@/components/shared/Footer Section/Footer";
+import Need from "@/components/shared/Need Section/Need";
+import Growth from "@/components/shared/Growth Section/Growth";
 
 
 
 export default function Home() {
   return (
-    <>
-      <main id="main">
-        <Hero />
-        <ToolkitPage />
-        <LiveProductPage />
-        <Brand />
-        <HorizontalScrollSection />
-        <Fueling />
-      </main>
-    </>
+    <div>
+      <Hero />
+      <ToolkitPage />
+      <LiveProductPage />
+      <Brand />
+      <HorizontalScrollSection />
+      <Fueling />
+      <Need />
+      <Growth />
+      <Footer />
+    </div>
   );
 }
 
