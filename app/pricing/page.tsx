@@ -4,7 +4,7 @@
 
 function page() {
   return (
-    <Pricing/>
+ <div className="">hi</div>
   );
 }
 
