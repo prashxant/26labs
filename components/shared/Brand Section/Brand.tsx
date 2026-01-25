@@ -11,12 +11,11 @@ const Brand = () => {
           line1="Website that carry your"
           popUp="Brand Emotion" />
         <Typography
-          className=""
+          className="" 
           variant="h3"
           line1="Website Target Based on"
           popUp="AI and Internet" />
       </div>
-
       <TwoCards />
 
       <Descripton
