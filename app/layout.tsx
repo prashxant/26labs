@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
-import { Open_Sans } from "next/font/google";
+import { Open_Sans , Roboto } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/shared/Navbar/Navbar";
 import ScrollProgress from "@/components/shared/ScroolProcress";
 import { Footer } from "@/components/shared/Footer Section/Footer";
 
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
+  variable: "--font-roboto",
+  display: "swap",
+});
 
 
 export const openSans = Open_Sans({
@@ -26,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={openSans.variable}>
+    <html lang="en" className={`${openSans.variable} ${roboto.variable}`}>
       <body className="bg-[#F5F5F5] font-sans antialiased ">
         <a
           href="#main"
@@ -35,7 +42,7 @@ export default function RootLayout({
           Skip to main content
         </a>
         <header>
-            <Navbar />
+          <Navbar />
         </header>
         <ScrollProgress aria-hidden="true" />
         <main id="main">{children}</main>

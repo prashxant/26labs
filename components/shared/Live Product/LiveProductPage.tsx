@@ -3,22 +3,25 @@ import { Descripton, Typography } from '../Typography';
 
 export const LiveProductPage = () => {
   return (
-    <div className='flex flex-col gap-10 justify-center mx-auto items-center my-30'>
-      <Typography
-        className="relative z-10  py-5 w-full"
-        variant="h2"
-        line1="We takes you from"
-        line2="Idea to"
-        popUp="Live Product."
-      />
+    <div className="flex  flex-col gap-10 justify-center mx-auto items-center my-30">
+      <div className="relative">
+        <div className='absolute -inset-10 bg-[#8CA9FF] opacity-50 blur-3xl rounded-full"'></div>
+        <Typography
+          className="relative z-20   py-5 w-full"
+          variant="h2"
+          line1="We takes you from"
+          line2="Idea to"
+          popUp="Live Product."
+        />
+      </div>
       <ThreeCards />
       <Descripton
         description="With over 4+ years of experience, we collaborate with businesses of all sizes, from ambitious SaaS startups to established B2B leaders, to transform and improve their presence in the digital space and gain traction."
-        className="max-w-xl "
+        className="max-w-4xl"
       />
       <Descripton
         description="From strategy and positioning to a fully functional website, every step is covered with a clear, full-cycle process. With our team experts acting as an extension of your business, our research-driven approach ensures websites that reach the right audience, reflect your brand, and drive real growth."
-        className="max-w-2xl "
+        className="max-w-4xl "
       />
     </div>
   );

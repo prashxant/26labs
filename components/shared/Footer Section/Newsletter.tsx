@@ -14,7 +14,7 @@ export const Newsletter = () => {
 
   return (
     <div className="border relative flex flex-col w-full p-6 sm:p-8 md:p-10 justify-center items-center gap-4 sm:gap-6 md:gap-8 border-black">
-      <div className="absolute top-0 left-0 sm:left-2 -translate-y-1/4 -translate-x-1/6">
+      <div className="absolute top-0 left-0 sm:left-2  md:left-0 -translate-y-1/4 -translate-x-1/12">
         <div className="absolute translate-x-6 sm:translate-x-6 text-sm sm:text-base md:text-[18px] font-semibold text-white">
           New
         </div>

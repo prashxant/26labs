@@ -8,31 +8,28 @@
   --color-orange1: oklch(0.8097 0.1234 53.5);
   --color-orange2: oklch(0.7416 0.1727 49.77);
   --color-blue1: oklch(0.7912 0.1049 269.56);
-  --color-blue2:oklch(0.7481 0.1287 268.99);
-  --color-blue3:oklch(0.6321 0.2018 254.09);
+  --color-blue2: oklch(0.7481 0.1287 268.99);
+  --color-blue3: oklch(0.6321 0.2018 254.09);
+
+  --font-family-roboto: var(--font-roboto);
 }
 
-@theme{
-
+@theme {
   --animate-marque: marque 30s linear infinite;
 
-@keyframes marque  {
-
-  from{
-  transform: translateX(100%)
-  }
-  to {
-    transform: translateX(-100%);
+  @keyframes marque {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
   }
 }
-
-}
-
 
 @theme inline {
   --shadow-input:
-    0px 2px 3px -1px rgba(0, 0, 0, 0.1),
-    0px 1px 0px 0px rgba(25, 28, 33, 0.02),
+    0px 2px 3px -1px rgba(0, 0, 0, 0.1), 0px 1px 0px 0px rgba(25, 28, 33, 0.02),
     0px 0px 0px 1px rgba(25, 28, 33, 0.08);
 }
 @layer utilities {
@@ -46,8 +43,6 @@
     animation: spin-slow 8s linear infinite;
   }
 }
-
-
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -167,5 +162,3 @@
     @apply bg-background text-foreground;
   }
 }
-
-
