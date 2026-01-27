@@ -1,6 +1,6 @@
 
 
-export const aa = () => {
+export const BigAssSvg = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

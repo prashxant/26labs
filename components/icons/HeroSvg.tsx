@@ -4,7 +4,7 @@ export const HeroSvg = () => {
   return (
     <svg
       className="absolute
-       inset-0   -z-20"
+       inset-0 lg:mt-40 h-full w-full mask-y-from-90% mask-x-from-60% -z-20"
       viewBox="0 0 1426 1122"
       preserveAspectRatio="xMidYMid slice"
       xmlns="http://www.w3.org/2000/svg"

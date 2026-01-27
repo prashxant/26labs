@@ -17,16 +17,16 @@ type DiscriptionProps = {
 type TypographyVariant = "h1" | "h2" | "h3";
 
 const variants = {
-  h1: "text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[75px]",
+  h1: "text-2xl sm:text-3xl md:text-4xl text-shadow lg:text-5xl xl:text-[75px] ",
   h2: "text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[43.95px]",
   h3: "text-lg sm:text-xl md:text-2xl lg:text-[28.13px]",
 };
 
 const baseStyles =
-  "font-bold flex flex-col gap-1 sm:gap-2 md:gap-2.5 lg:gap-3 items-center text-center leading-tight";
+  "font-bold flex flex-col text-shadow-lg gap-1 sm:gap-2 md:gap-4 lg:gap-8 items-center text-center leading-tight";
 
 const highlightStyles = {
-  h1: "text-white px-1 sm:px-2 md:px-3 lg:px-4 py-0.5 sm:py-1 md:py-1.5 mx-0.5 sm:mx-1 md:mx-1.5 lg:mx-2 bg-[#FFAA72] rounded-sm",
+  h1: "text-white px-1  sm:px-2 md:px-3 lg:px-4 py-0.5 sm:py-1 md:py-1.5 mx-0.5 sm:mx-1 md:mx-1.5 lg:mx-2 bg-[#FFAA72]",
   h2: "text-orange2 mx-1 md:mx-2 lg:mx-3 p-1 md:p-1.5 lg:p-2",
   h3: "text-orange2 mx-1 md:mx-2 p-1 md:p-1.5",
 };
@@ -53,7 +53,7 @@ export const Descripton = ({ className, description }: DiscriptionProps) => {
   return (
     <div
       className={cn(
-        "mx-auto text-center my-4 sm:my-6 md:my-8 lg:my-10 xl:my-12 tracking-tight font-normal text-shadow-2xs text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed",
+        "mx-auto text-center font-family-roboto max-w-2xl text-shadow-lg my-4 sm:my-6 md:my-8 lg:my-8 tracking-tight font-normal text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed",
         className
       )}
     >

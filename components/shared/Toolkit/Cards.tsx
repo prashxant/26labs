@@ -19,7 +19,7 @@ const TOP_CARDS = [
     title: "Develop.",
     cta: "Find more about Development",
     description:
-      "We convert design specifications into efficient, scalable, and reliable code. By applying contemporary frameworks and established development practices, we create websites and applications that demonstrate consistent performance, fast load times, and compatibility across devices. Emphasis is placed on code quality, structural clarity, and sustainable scalability, ensuring long-term functionality and maintainability.",
+      "We transform designs into high-performance, scalable software.Built with modern frameworks for speed, reliability, and cross-device compatibility.Clean architecture ensures maintainable code that grows with your business.",
     icons: [
       "/Image pack/Icon/react.svg",
       "/Image pack/Icon/Next js.svg",
@@ -31,7 +31,7 @@ const TOP_CARDS = [
     title: "Deploy.",
     cta: "Know about Deployment",
     description:
-      "We take products live through a secure and well-planned deployment process. This includes hosting configuration and performance optimization to ensure the product is fully production-ready and capable of scaling as requirements grow. The launch is supported by system monitoring and optimization practices that promote stability and long-term reliability.",
+      "We deploy products through secure, well-structured launch processes.Hosting, configuration, and performance optimization ensure production readiness.Continuous monitoring supports stability, scalability, and long-term reliability.",
     icons: [
       "/Image pack/Icon/vercel.svg",
       "/Image pack/Icon/neglefer.svg",
@@ -46,7 +46,7 @@ const BOTTOM_CARDS = [
     title: "Maintain.",
     cta: "Maintenance need consistency",
     description:
-      "Effective digital products require consistency and structured oversight. We maintain websites through regular updates, performance optimization, and issue resolution to ensure continued reliability as requirements evolve. Ongoing improvements and maintenance tasks are managed systematically to support long-term performance and stability.",
+      "Effective digital products require consistency and structured maintenance.We manage updates, performance optimization, and issue resolution as systems evolve.Ongoing improvements ensure long-term stability, reliability,and performance.",
     icons: [
       "/Image pack/Icon/Docker.svg",
       "/Image pack/Icon/github.svg",
@@ -58,7 +58,7 @@ const BOTTOM_CARDS = [
     title: "Support (24x7)",
     cta: "2am push a update",
     description:
-      "Technical issues are not limited to standard working hours, and our support services reflect that reality. Whether addressing minor fixes or urgent updates, our team remains available around the clock to ensure uninterrupted operation and consistent performance.",
+      "Technical issues don’t follow business hours, and neither do we.Our team provides round-the-clock support for urgent updates and ongoing fixes.Ensuring uninterrupted operation and consistent performance at all times.",
     icons: [
       "/Image pack/Icon/gmail.svg",
       "/Image pack/Icon/slake.svg",

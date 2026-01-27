@@ -17,12 +17,11 @@ export default function Home() {
       <Hero />
       <ToolkitPage />
       <LiveProductPage />
-      <Brand />
+      {/* <Brand />
       <HorizontalScrollSection />
       <Fueling />
-      <Need />
-      <Growth />
-      <Footer />
+      <Need /> */}
+      {/* <Growth /> */}
     </div>
   );
 }
