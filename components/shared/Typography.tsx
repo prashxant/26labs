@@ -23,10 +23,10 @@ const variants = {
 };
 
 const baseStyles =
-  "font-bold flex flex-col text-shadow-lg gap-1 sm:gap-2 md:gap-4 lg:gap-8 items-center text-center leading-tight";
+  "font-bold flex flex-col gap-1 sm:gap-2 md:gap-4 lg:gap-8 items-center text-center leading-tight";
 
 const highlightStyles = {
-  h1: "text-white px-1  sm:px-2 md:px-3 lg:px-4 py-0.5 sm:py-1 md:py-1.5 mx-0.5 sm:mx-1 md:mx-1.5 lg:mx-2 bg-[#FFAA72]",
+  h1: "text-white mx-2 text-[px] inline-flex leading-none  px-2 bg-[#FFAA72]",
   h2: "text-orange2 mx-1 md:mx-2 lg:mx-3 p-1 md:p-1.5 lg:p-2",
   h3: "text-orange2 mx-1 md:mx-2 p-1 md:p-1.5",
 };

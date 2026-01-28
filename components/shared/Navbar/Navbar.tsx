@@ -40,7 +40,7 @@ export const Navbar = () => {
           h-14 sm:h-16 md:h-18 lg:h-20
           w-full sm:w-11/12 md:w-5/6 lg:w-4/5 xl:max-w-[50vw]
           rounded-2xl sm:rounded-2xl md:rounded-2xl
-          bg-blue1
+    bg-linear-to-r from-[#cbd6f9] to-[#A0B8FF]
           px-3 sm:px-4 md:px-6 lg:px-8
           shadow-lg
         "

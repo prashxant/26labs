@@ -2,59 +2,89 @@
 
 import Image from "next/image";
 import posthog from "posthog-js";
+import { useState } from "react";
 
 export const Email = () => {
-  const handleClaimClick = () => {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
+
+  const handleClaimClick = async () => {
+    if (status === "loading") return;
+
+    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    if (!isValidEmail) {
+      alert("Please enter a valid email");
+      return;
+    }
+
+    setStatus("loading");
+
+    // Analytics (safe on client)
     posthog.capture("hero_email_signup_clicked", {
       location: "hero_section",
+      email,
     });
+
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!res.ok) {
+        throw new Error("Request failed");
+      }
+
+      setStatus("success");
+      setEmail("");
+    } catch (error) {
+      console.error("Failed to submit email", error);
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 3000);
+    }
   };
 
   return (
-    <div className="flex  flex-col gap-5 sm:gap-6 md:gap-8 lg:gap-10 justify-center items-center w-full">
-      <div className="flex flex-col justify-center sm:flex-row gap-3 sm:gap-4 md:gap-6 lg:gap-8 w-[50vw] max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl">
-        <label htmlFor="email" className="sr-only">
-          Email
-        </label>
+    <div className="flex flex-col gap-6 items-center w-full">
+      <div className="flex gap-3 w-full max-w-md">
         <input
-          id="email"
-          className="bg-red-100 ring-[#FFF0E7] ring-2 text-xs sm:text-sm md:text-base font-light rounded-md px-3 sm:px-4 md:px-5 lg:px-6 py-2 sm:py-2.5 md:py-3 lg:py-3.5 placeholder:font-light placeholder:text-gray-500 w-full sm:flex-1 focus:outline-none focus:ring-[#0088FF] transition-all"
           type="email"
-          autoComplete="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter your email"
+          className="flex-1 rounded-md border px-4 py-2"
         />
+
         <button
           onClick={handleClaimClick}
-          className="text-mainBg justify-center flex ring-2 bg-blue1 ring-[#0088FF] shadow-[inset_0px_1px_6px_rgba(0,136,255,1)] rounded-md px-8 sm:px-10 md:px-12 lg:px-14 xl:px-16 py-2 sm:py-2.5 md:py-3 lg:py-3.5 text-xs sm:text-sm md:text-base lg:text-lg font-medium whitespace-nowrap hover:bg-[#0077EE] transition-all duration-200 active:scale-95 w-1/2 sm:w-auto sm:min-w-40 md:min-w-45 lg:min-w-50 mx-auto sm:mx-0"
+          disabled={status === "loading"}
+          className="rounded-md bg-blue-600 px-6 py-2 text-white disabled:opacity-60"
         >
-          Claim It
+          {status === "loading" ? "Sending…" : "Claim It"}
         </button>
       </div>
-      <div className="rounded-full flex gap-1.5 sm:gap-2 md:gap-2.5 p-1.5 sm:p-2 md:p-2.5 shadow-[inset_0px_1px_6px_rgba(0,136,255,1)] bg-white/5">
-        <Image
-          src="/pfp3.png"
-          width={32}
-          height={32}
-          alt="Customer profile 1"
-          className="w-5 hover:scale-125 transition duration-200 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 rounded-full object-cover"
-        />
-        <Image
-          src="/pfp2.png"
-          width={32}
-          height={32}
-          alt="Customer profile 2"
-          className="w-5 hover:scale-125 transition duration-200  h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 rounded-full object-cover"
-        />
-        <Image
-          src="/pfp1.png"
-          width={32}
-          height={32}
-          alt="Customer profile 3"
-          className="w-5 hover:scale-125 transition duration-200  h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 rounded-full object-cover"
-        />
-        <div className="rounded-full hover:scale-125 transition duration-200  text-gray-600 font-medium p-0.5 px-2 sm:p-1 sm:px-3 md:px-4 text-xs sm:text-sm md:text-base shadow-[inset_0px_1px_6px_rgba(0,136,255,1)] bg-white/90 flex items-center">
-          +99
-        </div>
+
+      {status === "success" && (
+        <p className="text-sm text-green-600">Email saved successfully ✅</p>
+      )}
+
+      {status === "error" && (
+        <p className="text-sm text-red-600">
+          Failed to save email. Please try again.
+        </p>
+      )}
+
+      {/* Optional avatars */}
+      <div className="flex gap-2">
+        <Image src="/pfp1.png" width={32} height={32} alt="User" />
+        <Image src="/pfp2.png" width={32} height={32} alt="User" />
+        <Image src="/pfp3.png" width={32} height={32} alt="User" />
       </div>
     </div>
   );
