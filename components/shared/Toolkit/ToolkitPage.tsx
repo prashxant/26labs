@@ -15,8 +15,7 @@ function ToolkitPage() {
         className="tracking-wider "
         line1="Everything You Need"
         line2="to Launch Your "
-        popUp="Own Website."
-      />
+        popUp="Own Website ." />
       <ProcessGrid />
     </div>
   );
