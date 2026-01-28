@@ -33,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${openSans.variable} ${roboto.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${openSans.variable} ${roboto.variable}`}>
       <body className="bg-[#F5F5F5] font-sans antialiased ">
         <a
           href="#main"
