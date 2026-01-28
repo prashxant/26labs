@@ -4,55 +4,66 @@ import { Phool } from "../Phool";
 
 const TOP_CARDS = [
   {
-    title: "Design.",
-    cta: "Explore Design Content",
+    title: "The Design of Everyday Things — Don Norman",
+    cta: "View Official Source",
+    link: "https://mitpress.mit.edu/9780262525671/the-design-of-everyday-things/",
     description:
-      "We use a modern design stack powered by Adobe Creative Suite, Figma, and Framer to craft visually striking and highly functional digital experiences.",
-    icons: [
-      "/Image pack/Icon/adobe.svg",
-      "/Image pack/Icon/figma.svg",
-      "/Image pack/Icon/framer.svg",
-    ],
+      "A classic book on human-centered design and how to create intuitive, usable products.",
+    icons: ["/Image pack/Icon/Book.png"],
   },
   {
-    title: "Develop.",
-    cta: "Find more about Development",
+    title: "Grid Systems — Kimberly Elam",
+    cta: "View Official Source",
+    link: "https://yalebooks.yale.edu/book/9780300104654/grid-systems/",
     description:
-      "We convert design specifications into efficient, scalable, and reliable code with emphasis on performance, structure, and long-term maintainability.",
-    icons: [
-      "/Image pack/Icon/react.svg",
-      "/Image pack/Icon/Next js.svg",
-      "/Image pack/Icon/Tailwind.svg",
-    ],
+      "Learn how alignment, layout, and spacing shape powerful visual communication.",
+    icons: ["/Image pack/Icon/Book.png"],
   },
   {
-    title: "Deploy.",
-    cta: "Know about Deployment",
+    title: "How Designers Think — Bryan Lawson",
+    cta: "View Official Source",
+    link: "https://www.routledge.com/How-Designers-Think/Lawson/p/book/9781138842077",
     description:
-      "We take products live through a secure deployment process with monitoring, optimization, and scalability in mind.",
-    icons: [
-      "/Image pack/Icon/vercel.svg",
-      "/Image pack/Icon/netlify.svg",
-      "/Image pack/Icon/docker.svg",
-    ],
+      "An in-depth look at how designers think and solve complex creative problems.",
+    icons: ["/Image pack/Icon/Book.png"],
+  },
+];
+
+const TOP_CARDS2 = [
+  {
+    title: "Getting Real — Basecamp",
+    cta: "View Official Source",
+    link: "https://basecamp.com/gettingreal",
+    description:
+      "A practical guide to building web products the simple, fast, and human way.",
+    icons: ["/Image pack/Icon/Book.png"],
+  },
+  {
+    title: "Next.js Documentation",
+    cta: "View Official Docs",
+    link: "https://nextjs.org/docs",
+    description:
+      "Official Next.js documentation to build fast, modern React applications.",
+    icons: ["/Image pack/Icon/Book.png"],
+  },
+  {
+    title: "Tailwind CSS Documentation",
+    cta: "View Official Docs",
+    link: "https://tailwindcss.com/docs",
+    description:
+      "Official Tailwind CSS docs to rapidly build modern, responsive UIs.",
+    icons: ["/Image pack/Icon/Book.png"],
   },
 ];
 
 export const Design = () => {
   return (
-    <section className=" flex flex-col  mx-auto max-w-7xl">
-      
+    <section className="flex flex-col mx-auto max-w-7xl px-4">    
       <div className="py-16 flex justify-center">
-
         <Typography
           variant="h2"
-          className=""
-          line1=""
-          line2=""
-          popUp="Design Resources"
-        />
+          popUp="Design Resources" className={""} line1={""}/>
       </div>
-
       <div className="grid grid-cols-1 md:grid-cols-3 border border-black">
         {TOP_CARDS.map((card, i) => (
           <Card
@@ -60,35 +71,30 @@ export const Design = () => {
             {...card}
             className={`
               ${i !== TOP_CARDS.length - 1 ? "md:border-r border-black" : ""}
-              border-b md:border-b-0
-            `}
-          />
+              border-b border-black`}/>
         ))}
       </div>
+
       <Phool
         Line1="Develop for Society"
-        Line2="Develop better Humanity"
-        src="Image pack/phool.svg"
-      />
+        Line2="Develop Better Humanity"
+        src="Image pack/phool.svg"/>
+
+    
       <div className="pb-32 flex flex-col justify-center items-center">
         <Typography
           variant="h2"
           className="py-16"
-          line1=""
-          line2=""
-          popUp="Design Resources"
-        />
+          popUp="Tech Resources" line1={""}/>
 
         <div className="grid grid-cols-1 md:grid-cols-3 border border-black">
-          {TOP_CARDS.map((card, i) => (
+          {TOP_CARDS2.map((card, i) => (
             <Card
               key={card.title}
               {...card}
               className={`
-              ${i !== TOP_CARDS.length - 1 ? "md:border-r border-black" : ""}
-              border-b md:border-b-0
-            `}
-            />
+                ${i !== TOP_CARDS2.length - 1 ? "md:border-r border-black" : ""}
+                border-b border-black`}/>
           ))}
         </div>
       </div>
