@@ -1,15 +1,13 @@
+import LocalTime from '@/components/LocalTime'
 import React from 'react'
 
 function page() {
   return (
-    <div className='h-screen w-full flex justify-center items-center'>
-
-    <p className='text-shadow-2xs text-2xl md:text-4xl lg:text-6xl xl:text-9xl text-orange2' >
-      Comming Soon...
-    </p>
-
-   </div>
-  )
+    <div className="h-screen w-full text-9xl flex text-shadow-sm  flex-col gap-10 justify-center items-center">
+      <p className="text-orange1 ">Comming Soon...</p>
+      <LocalTime />
+    </div>
+  );
 }
 
 export default page
