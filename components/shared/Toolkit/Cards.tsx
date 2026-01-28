@@ -22,6 +22,7 @@ const TOP_CARDS = [
     link: "https://react.dev/",
     description:
       "We convert design specifications into efficient, scalable, and reliable code. By applying contemporary frameworks and established development practices, we create websites and applications that demonstrate consistent performance, fast load times, and compatibility across devices.",
+      
     icons: [
       "/Image pack/Icon/react.svg",
       "/Image pack/Icon/Next js.svg",
@@ -35,6 +36,7 @@ const TOP_CARDS = [
     link: "https://vercel.com/docs",
     description:
       "We take products live through a secure and well-planned deployment process. This includes hosting configuration and performance optimization to ensure the product is fully production-ready and capable of scaling as requirements grow.",
+     
     icons: [
       "/Image pack/Icon/vercel.svg",
       "/Image pack/Icon/neglefer.svg",
@@ -51,6 +53,7 @@ const BOTTOM_CARDS = [
     link: "https://docs.github.com/en",
     description:
       "Effective digital products require consistency and structured oversight. We maintain websites through regular updates, performance optimization, and issue resolution to ensure continued reliability as requirements evolve.",
+      
     icons: [
       "/Image pack/Icon/Docker.svg",
       "/Image pack/Icon/github.svg",
@@ -64,6 +67,7 @@ const BOTTOM_CARDS = [
     link: "https://slack.com/help",
     description:
       "Technical issues are not limited to standard working hours, and our support services reflect that reality. Whether addressing minor fixes or urgent updates, our team remains available around the clock.",
+    
     icons: [
       "/Image pack/Icon/gmail.svg",
       "/Image pack/Icon/slake.svg",

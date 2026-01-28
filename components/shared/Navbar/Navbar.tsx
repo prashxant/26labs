@@ -39,7 +39,7 @@ export const Navbar = () => {
           flex items-center justify-between
           h-14 sm:h-16 md:h-18 lg:h-20
           w-full sm:w-11/12 md:w-5/6 lg:w-4/5 xl:max-w-[50vw]
-          rounded-lg sm:rounded-xl md:rounded-2xl
+          rounded-2xl sm:rounded-2xl md:rounded-2xl
           bg-blue1
           px-3 sm:px-4 md:px-6 lg:px-8
           shadow-lg
@@ -91,7 +91,7 @@ export const Navbar = () => {
             active:scale-95
             focus:outline-none focus:ring-2 focus:ring-orange2 focus:ring-offset-2
             whitespace-nowrap
-            flex-shrink-0
+            shrink-0
           "
         >
           <span className="hidden sm:inline">Book now</span>
