@@ -29,15 +29,18 @@ export async function POST(req: Request) {
     if (!res.ok) {
       const errorText = await res.text();
       console.error("Google Sheet API error:", res.status, errorText);
-      
+
       // If 401/404, the script URL needs to be redeployed
       if (res.status === 401 || res.status === 404) {
         return Response.json(
-          { error: "Google Sheet webhook needs to be redeployed with proper permissions" },
+          {
+            error:
+              "Google Sheet webhook needs to be redeployed with proper permissions",
+          },
           { status: 500 }
         );
       }
-      
+
       return Response.json({ error: "Failed to save email" }, { status: 500 });
     }
 
