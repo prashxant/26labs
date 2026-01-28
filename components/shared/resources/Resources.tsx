@@ -13,24 +13,12 @@ export const Resources = () => {
       <Phool
         Line1="Design for Utility"
         Line2="Design better Experience"
-        src="union.svg"
-      />
+        src="union.svg" />
       <Design />
-
 
     </main>
   );
 };
-
-
-
-
-
-
-
-
-
-
 
 const HeroSection = () => {
   return (
