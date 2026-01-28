@@ -27,7 +27,7 @@ export default function LocalTime() {
   }, []);
 
   return (
-    <div className="text-6xl flex  flex-col justify-center items-center text-orange1 gap-10">
+    <div className="text-4xl flex  flex-col justify-center items-center text-black gap-10">
       <p>
    <strong>{time}</strong>
       </p>
