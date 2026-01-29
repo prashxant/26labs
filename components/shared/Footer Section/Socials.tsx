@@ -9,15 +9,21 @@ import { Descripton } from "@/components/shared/Typography";
 import posthog from "posthog-js";
 
 const SOCIALS = [
-  { Icon: LinkedinIcon, href: "/", label: "LinkedIn" },
-  { Icon: TwitterXIcon, href: "/", label: "Twitter X" },
-  { Icon: YoutubeIcon, href: "/", label: "YouTube" },
+  { Icon: LinkedinIcon, 
+    href: "https://x.com/26labs_live", 
+    label: "LinkedIn" },
+  { Icon: TwitterXIcon, 
+    href: "https://x.com/26labs_live", 
+    label: "Twitter X" },
+  { Icon: YoutubeIcon, 
+    href: "/", 
+    label: "YouTube" },
   {
     Icon: InstagramIcon,
     href: "https://www.instagram.com/26labs.live/",
     label: "Instagram",
   },
-];
+]; 
 
 export const Socials = () => {
   const handleSocialClick = (platform: string, href: string) => {
