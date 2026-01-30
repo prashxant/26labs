@@ -6,7 +6,7 @@ const WaveBackground = forwardRef<SVGSVGElement, {}>((props, ref) => {
       ref={ref}
       aria-hidden
       xmlns="http://www.w3.org/2000/svg"
-      className="pointer-events-none absolute left-0 top-0 w-[8572px] h-full z-0"
+      className="pointer-events-none absolute left-0 top-0 w-2143 h-full z-0"
       viewBox="0 0 8572 1024"
       fill="none"
       preserveAspectRatio="xMidYMid slice"

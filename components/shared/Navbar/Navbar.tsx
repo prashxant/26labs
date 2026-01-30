@@ -91,9 +91,7 @@ export const Navbar = () => {
             active:scale-95
             focus:outline-none focus:ring-2 focus:ring-orange2 focus:ring-offset-2
             whitespace-nowrap
-            shrink-0
-          "
-        >
+            shrink-0">
           <span className="hidden sm:inline">Book now</span>
           <span className="sm:hidden">Book</span>
         </a>

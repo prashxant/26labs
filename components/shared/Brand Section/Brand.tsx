@@ -3,8 +3,8 @@ import { Descripton, Typography } from '../Typography';
 
 const Brand = () => {
   return (
-    <div className="relative flex flex-col items-center mx-auto my-30 max-w-6xl">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 w-full text-center mb-8">
+    <div className="relative flex flex-col items-center mx-auto my-25 max-w-7xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-14 w-full text-center mb-7">
         <Typography
           className=""
           variant="h3"
@@ -22,7 +22,7 @@ const Brand = () => {
         description="We build websites that truly carry your brand’s emotion, translating your vision, values, and personality into meaningful digital experiences, while leveraging AI and internet-driven targeting to reach the right audience with precision. By combining emotional design with data backed intelligence, our websites adapt to user behavior, deliver personalized interactions, and turn attention into engagement and growth."
         className="max-w-3xl text-center mt-8"/>
 
-      <div className="absolute right-0 bottom-0 translate-x-6 translate-y-6">
+      <div className="absolute transition-spin right-0 bottom-0 translate-x-6 translate-y-6">
         <Icon1 />
       </div>
     </div>
@@ -69,7 +69,7 @@ export const Icon1 = () => {
         src="/union.svg"
         alt="Decoration"
         fill
-        className="object-contain" />
+        className="animate-spin-slow" />
     </div>
   );
 };
