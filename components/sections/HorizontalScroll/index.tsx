@@ -69,10 +69,15 @@ useLayoutEffect(() => {
 
       
         <Point x={300} y={200}>
-          <div className="text-4xl font-bold w-125">
-            Take a Look at Some of {" Our "}
-            <span className="text-orange-500">featured projects</span>
-          </div>
+             <div className="flex justify-center">
+                 <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 leading-tight">
+                       Take a Look at Some of <br />
+                        Our{" "}
+                 <span className="relative inline-block text-orange-500">
+                      Featured Projects                 
+                </span>
+                </h2>
+             </div>
         </Point>
 
         <Point x={910} y={550}>

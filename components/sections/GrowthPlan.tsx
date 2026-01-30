@@ -8,13 +8,11 @@ export const GrowthPlan = () => {
           variant="h2"
           className="text-orange2 my-6 md:my-8 lg:my-10"
           line1="Get personalized"
-          popUp="growth plan"
-        />
+          popUp="growth plan"      />
 
         <Descripton
           className="max-w-lg my-6 md:my-8 lg:my-10 px-4"
-          description="We'll identify your biggest revenue bottlenecks and map out a proven outbound strategy to fix them - based on what's working for our other clients."
-        />
+          description="We'll identify your biggest revenue bottlenecks and map out a proven outbound strategy to fix them - based on what's working for our other client"     />
 
         <div className="flex flex-wrap font-bold text-base md:text-xl lg:text-[28.5px] justify-center gap-4 md:gap-16 lg:gap-32">
           <span className="text-[#27C840]">Discover</span>

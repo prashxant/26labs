@@ -2,7 +2,7 @@ import { GrowthPlan } from "@/components/sections/GrowthPlan";
 import { Sliding } from "@/components/sections/Sliding";
 import { Descripton, Typography } from "@/components/shared/Typography";
 
-//spacing is needed
+
 export const Foooter = () => {
   return (
     <div className="flex flex-col justify-center items-center">

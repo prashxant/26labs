@@ -14,8 +14,7 @@ export const Point = ({
   return (
     <div
       className="absolute transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10"
-      style={{ left: `${x}px`, top: `${y}px` }}
-    >
+      style={{ left: `${x}px`, top: `${y}px` }}   >
       {children}
     </div>
   );
@@ -28,8 +27,7 @@ export const PhotoCard = ({ src, className }: { src: string; className?: string 
       alt="Project"
       width={390}
       height={300}
-      className="object-cover w-full h-full"
-    />
+      className="object-cover w-full h-full"  />
   </div>
 );
 
