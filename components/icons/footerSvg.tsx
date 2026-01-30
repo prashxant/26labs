@@ -12,23 +12,19 @@ export const FooterSvg = ({ className }: FooterSvgProps) => {
       height="1600"
       viewBox="0 0 1800 1600"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+      xmlns="http://www.w3.org/2000/svg" >
       <g filter="url(#filter0_d_732_2)">
         <path
-          d="
-            M2058.5 52.4551
+          d="   M2058.5 52.4551
             C1458.5 52.4551 1096.04 189.968 954.142 478.365
             C832.983 724.622 736.362 823.25 187.824 528.622
             C187.824 538.622 26.7005 395.607 -24.8431 528.622
             C-88.0365 691.7 164.308 901.776 164.308 901.776
             C349.199 1038.1 778.897 1247.79 1018.56 1200.006
-            C1258.22 1168.222 1466.04 1178.4 1850 1390
-          "
+          C1258.22 1168.222 1466.04 1178.4 1850 1390     "
           stroke="url(#paint0_linear_732_2)"
           strokeWidth="78"
-          strokeLinecap="round"
-        />
+          strokeLinecap="round"     />
       </g>
 
       <defs>
@@ -39,8 +35,7 @@ export const FooterSvg = ({ className }: FooterSvgProps) => {
           width="1900"
           height="1600"
           filterUnits="userSpaceOnUse"
-          colorInterpolationFilters="sRGB"
-        >
+          colorInterpolationFilters="sRGB"     >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"

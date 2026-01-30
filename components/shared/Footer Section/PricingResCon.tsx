@@ -22,8 +22,7 @@ export const PricingResCon = () => {
           <div key={i}>
             <div
               className="grid grid-cols-3 gap-2 sm:gap-8 md:gap-16 lg:gap-24
-              text-center"
-            >
+              text-center">
               <p>{row[0]}</p>
               <p>{row[1]}</p>
               <p>{row[2]}</p>
@@ -35,3 +34,4 @@ export const PricingResCon = () => {
     </div>
   );
 };
+
