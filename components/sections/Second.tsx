@@ -26,7 +26,6 @@ export const Second = () => {
 export const Toolkit = () => {
   return (
     <div className="relative w-full py-32 overflow-hidden bg-[#f3f3f3]">
-      {/* Blue glow */}
       <div
         className="
       pointer-events-none
@@ -37,7 +36,6 @@ export const Toolkit = () => {
     "
       />
 
-      {/* Content */}
       <h2 className="relative z-10 text-center text-xl font-semibold text-black">
         Our Toolkit
       </h2>
