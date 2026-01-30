@@ -14,11 +14,10 @@ export const Hero = () => {
           className=""
           line1="One Problem One Service"
           line2="One"
-          popUp="Audience"
-        />
+          popUp="Audience"   />
 
         <Descripton
-          className="font-family-roboto max-w-2xl text-shadow-lg"
+          className="font-family-roboto max-w-2xl"
           description="Delivering warm opportunities and optimizing your visibility process to ensure
           nothing stands between you and your revenue goals."
         />

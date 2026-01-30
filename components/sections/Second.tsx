@@ -26,21 +26,18 @@ export const Second = () => {
 export const Toolkit = () => {
   return (
     <div className="relative w-full py-32 overflow-hidden bg-[#f3f3f3]">
-      {/* Blue glow */}
+      
       <div
-        className="
-      pointer-events-none
-      absolute inset-x-0 top-1/2 -translate-y-1/2
-      h-45
-      bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.35),transparent_70%)]
-      blur-2xl
-    "
-      />
+        className=" pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2[radial-gradient(ellipse_at_center,rgba(59,130,246,0.35),transparent_70%)]
+      blur-2xl"/>
 
-      {/* Content */}
+      
       <h2 className="relative z-10 text-center text-xl font-semibold text-black">
         Our Toolkit
       </h2>
     </div>
   );
 }
+
+
+
