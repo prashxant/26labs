@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Need = () => {
   return (
-    <section className="relative mx-auto mt-20 mb-24 max-w-6xl px-4 overflow-hidden">
+    <section className="relative mx-auto mt-20 mb-24 max-w-4xl px-4 overflow-hidden">
       <div
         className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 
         bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.35),transparent_70%)]

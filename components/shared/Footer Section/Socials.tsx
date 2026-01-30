@@ -39,8 +39,7 @@ export const Socials = () => {
       <Descripton
         className="max-w-2xl mt-4 md:mt-6 text-sm sm:text-base text-black font-medium lg:mt-8 mb-3 md:mb-4 text-center"
         description="Say goodbye to outdated enterprise software and welcome the smoother one.
-We lead you from design to product innovation to shape your path from idea to success"
-      />
+We lead you from design to product innovation to shape your path from idea to success"/>
 
       <div className="flex justify-center items-center gap-x-2 md:gap-x-3">
         {SOCIALS.map(({ Icon, href, label }) => (
@@ -49,8 +48,7 @@ We lead you from design to product innovation to shape your path from idea to su
             href={href}
             aria-label={label}
             className="group"
-            onClick={() => handleSocialClick(label, href)}
-          >
+            onClick={() => handleSocialClick(label, href)}      >
             <Icon className="size-6 md:size-8 text-blue2 transition-colors group-hover:text-blue-600/90" />
           </Link>
         ))}
