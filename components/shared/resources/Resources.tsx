@@ -1,21 +1,16 @@
-import { HeroSvg } from "@/components/icons/HeroSvg";
 import { Phool } from "../Phool";
-import ProcessGrid from "../Toolkit/Cards";
 import { Descripton, Typography } from "../Typography";
 import { Design } from "./Design";
 
 export const Resources = () => {
   return (
-    <main className="">
-
+    <main className="  mx-auto max-w-4xl">
       <HeroSection />
-      <ProcessGrid />
       <Phool
         Line1="Design for Utility"
         Line2="Design better Experience"
         src="union.svg" />
       <Design />
-
     </main>
   );
 };
