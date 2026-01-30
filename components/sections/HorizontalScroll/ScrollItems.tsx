@@ -1,19 +1,18 @@
 import Image from "next/image";
-import { cn } from "@/lib/utils";
 import { Flower } from "lucide-react";
 
 
-export const Point = ({ 
-  children, 
-  x, 
-  y 
-}: { 
-  children: React.ReactNode; 
-  x: number; 
-  y: number; 
+export const Point = ({
+  children,
+  x,
+  y
+}: {
+  children: React.ReactNode;
+  x: number;
+  y: number;
 }) => {
   return (
-    <div 
+    <div
       className="absolute transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center z-10"
       style={{ left: `${x}px`, top: `${y}px` }}   >
       {children}
@@ -23,11 +22,11 @@ export const Point = ({
 
 export const PhotoCard = ({ src, className }: { src: string; className?: string }) => (
   <div >
-    <Image 
-      src={src} 
-      alt="Project" 
-      width={390} 
-      height={300} 
+    <Image
+      src={src}
+      alt="Project"
+      width={390}
+      height={300}
       className="object-cover w-full h-full"  />
   </div>
 );

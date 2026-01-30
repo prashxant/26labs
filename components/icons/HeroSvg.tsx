@@ -1,10 +1,11 @@
 import React from "react";
 
-export const HeroSvg = () => {
+export const HeroSvg = (props: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
-      className="absolute
-       inset-0 lg:mt-40 h-full w-full mask-y-from-90% mask-x-from-60% -z-20"
+    {...props}
+      className=" absolute
+    lg:mt-40 h-full w-full  -z-20"
       viewBox="0 0 1426 1122"
       preserveAspectRatio="xMidYMid slice"
       xmlns="http://www.w3.org/2000/svg"
