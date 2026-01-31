@@ -18,7 +18,7 @@ export const Resources = () => {
 const HeroSection = () => {
   return (
     <section className="pt-40 pb-8 flex justify-center">
-      <div className="flex flex-col items-center text-center gap-6 max-w-3xl px-4">
+      <div className="flex flex-col items-center text-center gap-6  px-4">
         <Typography
           variant="h2"
           className="tracking-wider"
