@@ -1,9 +1,5 @@
 [build]
-  command = "npm run build"
-  publish = ".next"
+command = "npm run build"
 
 [[plugins]]
-  package = "@netlify/plugin-nextjs"
-
-[context.production.environment]
-  GOOGLE_SHEET_EMAIL = "https://script.google.com/macros/s/AKfycbyVdx4yAjBb-Apmh48vZqCbAFvO89tm1rxas1-ef6dtuVV6UHIyvDlZlzYLtB9KEsLNZQ/exec"
+package = "@netlify/plugin-nextjs"

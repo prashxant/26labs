@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import posthog from "posthog-js";
 import { useState } from "react";
 
