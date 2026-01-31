@@ -1,7 +1,8 @@
 "use client";
 
-import posthog from "posthog-js";
 import { useState } from "react";
+import posthog from "posthog-js";
+import { supabase } from "@/lib/supabaseClient";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -16,27 +17,43 @@ export const Email = () => {
   const handleClaimClick = async () => {
     setError("");
 
-    if (!email) return setError("Email is required");
-    if (!isValidEmail(email)) return setError("Please enter a valid email");
+    if (!email) {
+      setError("Email is required");
+      return;
+    }
+
+    if (!isValidEmail(email)) {
+      setError("Please enter a valid email");
+      return;
+    }
 
     setStatus("loading");
 
     try {
+      // Analytics (keep this)
       posthog.capture("hero_email_signup_clicked", {
         location: "hero_section",
       });
 
-      const res = await fetch("/api/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
+      // Supabase insert
+      const { error: supabaseError } = await supabase
+        .from("newsletter_subscribers")
+        .insert({ email });
 
-      if (!res.ok) throw new Error("Request failed");
+      if (supabaseError) {
+        if (supabaseError.code === "23505") {
+          setError("You are already subscribed 🙂");
+          setStatus("error");
+          return;
+        }
+        throw supabaseError;
+      }
 
       setStatus("success");
       setEmail("");
-    } catch {
+    } catch (err) {
+      console.error(err);
+      setError("Something went wrong. Please try again.");
       setStatus("error");
     }
   };
@@ -54,16 +71,17 @@ export const Email = () => {
         <button
           onClick={handleClaimClick}
           disabled={status === "loading"}
-          className="rounded-md bg-blue-600 px-6 py-2 text-white disabled:opacity-60"       >
+          className="rounded-md bg-blue-600 px-6 py-2 text-white disabled:opacity-60"
+        >
           {status === "loading" ? "Sending…" : "Claim It"}
         </button>
       </div>
 
       {error && <p className="text-sm text-red-600">{error}</p>}
+
       {status === "success" && (
-        <p className="text-sm text-green-600">Email saved successfully ✅</p>
+        <p className="text-sm text-green-600">You’re subscribed 🎉</p>
       )}
     </div>
   );
 };
-
