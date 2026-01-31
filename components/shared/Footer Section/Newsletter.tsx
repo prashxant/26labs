@@ -2,15 +2,8 @@
 
 import { NewSvg } from "@/components/icons/New";
 import Image from "next/image";
-import posthog from "posthog-js";
 
 export const Newsletter = () => {
-  const handleNewsletterClick = () => {
-    posthog.capture("newsletter_signup_clicked", {
-      location: "footer_section",
-    });
-  };
-
   return (
     <div className="border relative flex flex-col w-full p-5 sm:p-8 md:p-10 justify-center items-center gap-4 sm:gap-6 md:gap-8 border-black">
       <div className="absolute top-0 left-0 sm:left-2  md:left-0 -translate-y-1/4 -translate-x-1/12">
@@ -32,10 +25,7 @@ export const Newsletter = () => {
           placeholder="Email Address"
           className="ring p-1.5 sm:p-2 w-full font-bold text-2xl sm:text-base"
         />
-        <button
-          onClick={handleNewsletterClick}
-          className="bg-orange1 justify-center ring items-center flex p-1.5 sm:p-2 shrink-0 cursor-pointer hover:bg-orange-600 transition-colors"
-        >
+        <button className="bg-orange1 justify-center ring items-center flex p-1.5 sm:p-2 shrink-0 cursor-pointer hover:bg-orange-600 transition-colors">
           <Image
             alt="logo"
             width={48}

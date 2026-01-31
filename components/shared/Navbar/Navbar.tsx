@@ -4,31 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Menu } from "./navMenu";
-import posthog from "posthog-js";
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   const handleMenuToggle = () => {
-    const newState = !open;
-    setOpen(newState);
-    posthog.capture("mobile_menu_toggled", {
-      action: newState ? "opened" : "closed",
-    });
-  };
-
-  const handleBookCallClick = (location: string) => {
-    posthog.capture("book_call_clicked", {
-      location,
-    });
-  };
-
-  const handleNavLinkClick = (linkName: string) => {
-    posthog.capture("navigation_link_clicked", {
-      link_name: linkName,
-      location: "mobile_menu",
-    });
-    setOpen(false);
+    setOpen(!open);
   };
 
   return (
@@ -91,7 +72,8 @@ export const Navbar = () => {
             active:scale-95
             focus:outline-none focus:ring-2 focus:ring-orange2 focus:ring-offset-2
             whitespace-nowrap
-            shrink-0">
+            shrink-0"
+        >
           <span className="hidden sm:inline">Book now</span>
           <span className="sm:hidden">Book</span>
         </a>
@@ -104,28 +86,24 @@ export const Navbar = () => {
             <Link
               href="/resources"
               className="block text-white text-sm sm:text-base hover:text-orange2  py-2 sm:py-2.5 hover:pl-2 transition-colors duration-200"
-              onClick={() => handleNavLinkClick("Resource")}
             >
               Resource
             </Link>
             <Link
               href="/pricing"
               className="block text-white text-sm sm:text-base hover:text-orange2 transition-colors py-2 sm:py-2.5 hover:pl-2  duration-200"
-              onClick={() => handleNavLinkClick("Pricing")}
             >
               Pricing
             </Link>
             <Link
               href="/blog"
               className="block text-white text-sm sm:text-base hover:text-orange2 transition-colors py-2 sm:py-2.5 hover:pl-2  duration-200"
-              onClick={() => handleNavLinkClick("Blog")}
             >
               Blog
             </Link>
             <a
               href="https://calendly.com/26labs-live/30min"
               className="block text-white text-sm sm:text-base hover:text-orange2 transition-colors py-2 sm:py-2.5 hover:pl-2 duration-200"
-              onClick={() => handleNavLinkClick("Contact")}
             >
               Contact
             </a>
@@ -136,10 +114,7 @@ export const Navbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block rounded-md sm:rounded-lg bg-orange2 px-4 py-2.5 sm:py-3 text-center text-mainBg font-medium sm:font-semibold text-sm sm:text-base hover:bg-orange-500/90 transition-all duration-200 active:scale-[0.98]"
-                onClick={() => {
-                  handleBookCallClick("mobile_menu");
-                  setOpen(false);
-                }}
+                onClick={() => setOpen(false)}
               >
                 Book a Call
               </a>
