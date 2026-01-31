@@ -6,7 +6,7 @@ import { Sliding } from '@/components/sections/Sliding';
 
 const Fueling = () => {
   return (
-    <div className="relative flex flex-col items-center mx-auto max-w-6xl text-center">
+    <div className="relative flex flex-col items-center mx-auto mt-25 max-w-6xl text-center">
       
       <Typography
         variant="h2"
