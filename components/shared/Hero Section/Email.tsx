@@ -43,7 +43,12 @@ export const Email = () => {
 
   return (
     <div className="flex flex-col gap-6 items-center w-full">
-      <form className="flex gap-3 w-full max-w-md" netlify>
+      <form
+        className="flex gap-3 w-full max-w-md"
+        name="email-capture"
+        method="POST"
+        data-netlify="true"
+      >
         <input
           type="email"
           value={email}
