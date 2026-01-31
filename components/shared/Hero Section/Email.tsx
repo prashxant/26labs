@@ -43,12 +43,7 @@ export const Email = () => {
 
   return (
     <div className="flex flex-col gap-6 items-center w-full">
-      <form
-        className="flex gap-3 w-full max-w-md"
-        name="email-capture"
-        method="POST"
-        data-netlify="true"
-      >
+      <div className="flex gap-3 w-full max-w-md">
         <input
           type="email"
           value={email}
@@ -63,7 +58,7 @@ export const Email = () => {
         >
           {status === "loading" ? "Sending…" : "Claim It"}
         </button>
-      </form>
+      </div>
 
       {error && <p className="text-sm text-red-600">{error}</p>}
       {status === "success" && (
