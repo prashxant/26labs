@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { Open_Sans , Roboto } from "next/font/google";
+import { Open_Sans, Roboto } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/shared/Navbar/Navbar";
 import ScrollProgress from "@/components/shared/ScroolProcress";
 import { Footer } from "@/components/shared/Footer Section/Footer";
-
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -13,14 +12,12 @@ const roboto = Roboto({
   display: "swap",
 });
 
-
 export const openSans = Open_Sans({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
   variable: "--font-open-sans",
   display: "swap",
 });
-
 
 export const metadata: Metadata = {
   title: "26labs",
@@ -33,7 +30,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${openSans.variable} ${roboto.variable}`}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${openSans.variable} ${roboto.variable}`}
+    >
       <body className="bg-[#F5F5F5] font-sans antialiased ">
         <a
           href="#main"
