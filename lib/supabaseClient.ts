@@ -7,7 +7,7 @@ export const supabase = (() => {
   if (!supabaseUrl || !supabaseKey) {
     // Prevent build crash
     console.warn("Supabase env vars are missing");
-    return null as any;
+    return null as unknown;
   }
 
   return createClient(supabaseUrl, supabaseKey);

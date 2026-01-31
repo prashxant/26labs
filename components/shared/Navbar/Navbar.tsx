@@ -56,7 +56,6 @@ export const Navbar = () => {
           href="https://calendly.com/26labs-live/30min"
           target="_blank"
           rel="noopener noreferrer"
-          onClick={() => handleBookCallClick("navbar_desktop")}
           className="
             inline-flex items-center justify-center
             rounded-md sm:rounded-lg md:rounded-xl
