@@ -3,7 +3,7 @@ import React from "react";
 
 function page() {
   return (
-    <div className="">
+    <div className="p-2">
       <Resources />
     </div>
   );
