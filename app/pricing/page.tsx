@@ -3,7 +3,7 @@ import { PricingHero } from "@/components/shared/Pricing/PricingHero";
 
 export default function page() {
   return (
-    <main className="min-h-screen py-12">
+    <main className="min-h-screen md:pt-20">
       <PricingHero />
       <PriceSlider />
     </main>
