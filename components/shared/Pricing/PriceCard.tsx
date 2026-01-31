@@ -22,7 +22,7 @@ export const PriceCard = ({
         md:hover:scale-105
       "
     >
-      {/* Title */}
+
       <h3
         className="
           text-lg sm:text-xl md:text-2xl
@@ -32,7 +32,7 @@ export const PriceCard = ({
         {title}
       </h3>
 
-      {/* Card */}
+
       <div
         className="
           flex flex-col h-full
@@ -42,7 +42,7 @@ export const PriceCard = ({
           bg-[#FFF0E7]
         "
       >
-        {/* Header */}
+
         <div className="flex flex-col justify-start min-h-[110px] sm:min-h-[120px]">
           <p className="text-sm sm:text-base pl-1">for</p>
 
@@ -61,7 +61,7 @@ export const PriceCard = ({
           </p>
         </div>
 
-        {/* Features */}
+
         <ul
           className="
             flex-1 min-h-[220px]
@@ -77,7 +77,7 @@ export const PriceCard = ({
           ))}
         </ul>
 
-        {/* CTA */}
+
         <button
           className="
             mt-auto mx-auto
