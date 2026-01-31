@@ -3,8 +3,9 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import { Point, PhotoCard, IconCard } from "./ScrollItems";
+import { Point, PhotoCard, Phool2 } from "./ScrollItems";
 import WaveBackground from "./WaveBackground";
+import { Phool } from "@/components/shared/Phool";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -58,16 +59,12 @@ useLayoutEffect(() => {
   return (
     <section
       ref={componentRef}
-      className="relative h-screen w-full overflow-hidden bg-[#F5F5F5]"
-    >
+      className="relative h-screen w-full overflow-hidden bg-[#F5F5F5]"  >
       <div
         ref={scrollContentRef}
-        className="absolute top-0 left-0 h-full w-2143 will-change-transform"
-      >
+        className="absolute top-0 left-0 h-full w-2143 will-change-transform"     >
         
-        <WaveBackground ref={waveRef} />
-
-      
+        <WaveBackground ref={waveRef} />     
         <Point x={300} y={200}>
              <div className="flex justify-center">
                  <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 leading-tight">
@@ -80,37 +77,37 @@ useLayoutEffect(() => {
              </div>
         </Point>
 
-        <Point x={910} y={550}>
+        <Point x={800} y={400}>
           <PhotoCard src="/HorizontalScroll/Project 1.svg" />
         </Point>
 
-        <Point x={1250} y={750}>
+        <Point x={1000} y={550}>
           <PhotoCard src="/HorizontalScroll/Rectangle.png" />
         </Point>
 
-        <Point x={1250} y={490}>
+        <Point x={1150} y={330}>
           <div className="w-75 font-bold text-gray-600">
-            <span className="text-orange-500">Diagnose AI </span>
+            <span className="text-orange-500">Diagnose AI</span>
             is a health-tech project that runs on an in-house server hosted in our lab.
           </div>
         </Point>
 
-        <Point x={1750} y={300}>
-          <IconCard src="/union.svg" />
+        <Point x={1670} y={300}>
+          <Phool />
         </Point>
 
-        <Point x={2040} y={450}>
+        <Point x={2000} y={400}>
           <PhotoCard src="/HorizontalScroll/Project 2.svg" />
         </Point>
 
-        <Point x={2440} y={500}>
+        <Point x={2340} y={450}>
           <div className="w-76 font-bold text-gray-600">
-          1  Its a tax and financial services software platform made for Simplifying tax management and financial guidance for individuals and businesses .
+            It's a tax and financial services software platform made for Simplifying tax management and financial guidance for individuals and businesses.
           </div>
         </Point>
 
-        <Point x={2650} y={720}>
-          <IconCard src="Image pack/phool.svg" />
+        <Point x={2520} y={620}>
+         <Phool2 />
         </Point>
 
         <Point x={3090} y={670}>
@@ -121,7 +118,7 @@ useLayoutEffect(() => {
 
         <Point x={3040} y={470}>
           <div className="w-76 font-bold text-gray-600">
-            Its a tax and financial services software platform made for Simplifying tax management and financial guidance for individuals and businesse.
+            Its a tax and financial services software platform made for Simplifying tax management and financial guidance for individuals and businesses.
           </div>
         </Point>
 
@@ -132,7 +129,7 @@ useLayoutEffect(() => {
         </Point>
 
         <Point x={4350} y={220}>
-          <IconCard src="Image pack/phool.svg" />
+         <Phool />
         </Point>
 
         <Point x={4900} y={350}>
@@ -142,15 +139,15 @@ useLayoutEffect(() => {
         </Point>
 
         <Point x={5600} y={930}>
-          <IconCard src="/union.svg" />
+        <Phool />
         </Point>
 
         <Point x={6500} y={360}>
           <PhotoCard src="/HorizontalScroll/mockuuups-free-imac-mockup.png" />
         </Point>
 
-          <Point x={7990} y={370}>
-          <IconCard src="Image pack/phool.svg" />
+          <Point x={7990} y={270}>
+          <Phool2 />
         </Point>
       </div>
     </section>

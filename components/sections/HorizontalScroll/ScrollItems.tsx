@@ -1,5 +1,7 @@
 import Image from "next/image";
-import { Flower } from "lucide-react";
+import React from "react";
+
+
 
 
 export const Point = ({
@@ -31,12 +33,25 @@ export const PhotoCard = ({ src, className }: { src: string; className?: string 
   </div>
 );
 
-export const IconCard = ({ src }: { src?: string }) => (
-  <div className="relative w-24 h-24 hover:scale-110 transition-transform">
-    {src ? (
-      <Image src={src} alt="Icon" fill className="object-contain" />
-    ) : (
-      <Flower className="w-16 h-16 text-orange-400 fill-current" />
-    )}
-  </div>
-);
+export const Phool = () => {
+  return (
+    <div className="relative w-29 h-29 rotate-12">
+      <Image
+        src="/union.svg"
+        alt="Decoration"
+        fill
+        className="animate-spin-slow" />
+    </div>
+  );
+};
+export const Phool2 = () => {
+  return (
+    <div className="relative w-35 h-35 rotate-12">
+      <Image
+        src="/Image pack/phool.svg"
+        alt="Decoration"
+        fill
+        className="animate-spin-slow" />
+    </div>
+  );
+};
