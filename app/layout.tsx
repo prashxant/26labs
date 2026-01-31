@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Open_Sans, Roboto } from "next/font/google";
 import "./globals.css";
-import "../instrumentation-client";
 import { Navbar } from "@/components/shared/Navbar/Navbar";
 import ScrollProgress from "@/components/shared/ScroolProcress";
 import { Footer } from "@/components/shared/Footer Section/Footer";

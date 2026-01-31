@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import posthog from "posthog-js";
 import { supabase } from "@/lib/supabaseClient";
 
 type Status = "idle" | "loading" | "success" | "error";
@@ -26,15 +25,14 @@ export const Email = () => {
       setError("Please enter a valid email");
       return;
     }
-
+  if (!supabase) {
+    setError("Service unavailable. Please try again later.");
+    setStatus("error");
+    return;
+  }
     setStatus("loading");
 
     try {
-      // Analytics (keep this)
-      posthog.capture("hero_email_signup_clicked", {
-        location: "hero_section",
-      });
-
       // Supabase insert
       const { error: supabaseError } = await supabase
         .from("newsletter_subscribers")
