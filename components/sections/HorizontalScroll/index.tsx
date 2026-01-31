@@ -23,7 +23,6 @@ useLayoutEffect(() => {
 
     const wave = waveRef.current;
 
-   
     ScrollTrigger.create({
       trigger: componentRef.current,
       start: "top top",
@@ -62,7 +61,7 @@ useLayoutEffect(() => {
       className="relative h-screen w-full overflow-hidden bg-[#F5F5F5]"  >
       <div
         ref={scrollContentRef}
-        className="absolute top-0 left-0 h-full w-2143 will-change-transform"     >
+        className="absolute top-0 left-0 h-full w-2143 will-change-transform">
         
         <WaveBackground ref={waveRef} />     
         <Point x={300} y={200}>
@@ -82,14 +81,12 @@ useLayoutEffect(() => {
         </Point>
 
         <Point x={1000} y={550}>
-  <PhotoCard
-    src="/HorizontalScroll/Rectangle.png"
-    width={460}
-    height={300}
-  />
-</Point>
-
-
+        <PhotoCard
+          src="/HorizontalScroll/Rectangle.png"
+          width={460}
+          height={300}
+        />
+        </Point>
 
         <Point x={1150} y={330}>
           <div className="w-75 font-bold text-gray-600">
@@ -131,15 +128,12 @@ useLayoutEffect(() => {
              Communication gap between the <br />
              Consumer and Dental industry
             </p>
-            <p className="text-orange-500 text-sm font-bold mt-1">
+            <p className="text-orange-500 text-md font-bold mt-1">
             Oro a Oral product
             </p>
             </div>
-
-            <div className="absolute -right-6 top-8 w-full h-full bg-orange-300 rounded-2xl z-0" />
-
-            <div className="relative rounded-2xl shadow-lg p-4 z-10">
-            <PhotoCard src="/HorizontalScroll/Project 3.svg" />
+            <div className="relative rounded-2xl  p-4 z-10">
+            <PhotoCard className="" src="/HorizontalScroll/Project 3.svg" />
             </div>
             <div className="absolute bottom-4 right-10 bg-sky-400 text-white px-6 py-2 rounded-xl font-bold shadow-lg z-20">
              Solves
@@ -183,13 +177,9 @@ useLayoutEffect(() => {
           <PhotoCard src="/HorizontalScroll/Rectangle666.png"  width={490} height={390}/>
         </Point>
 
-
-
-
-
-
-
       </div>
     </section>
   );
 }
+
+
