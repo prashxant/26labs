@@ -22,7 +22,7 @@ export const Email = () => {
 
     setStatus("loading");
 
-    // Analytics (safe on client)
+    
     posthog.capture("hero_email_signup_clicked", {
       location: "hero_section",
       email,
@@ -58,14 +58,12 @@ export const Email = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter your email"
-          className="flex-1 rounded-md border px-4 py-2"
-        />
+          className="flex-1 rounded-md border px-4 py-2"/>
 
         <button
           onClick={handleClaimClick}
           disabled={status === "loading"}
-          className="rounded-md bg-blue-600 px-6 py-2 text-white disabled:opacity-60"
-        >
+          className="rounded-md bg-blue-600 px-6 py-2 text-white disabled:opacity-60"       >
           {status === "loading" ? "Sending…" : "Claim It"}
         </button>
       </div>
@@ -80,12 +78,14 @@ export const Email = () => {
         </p>
       )}
 
-      {/* Optional avatars */}
+      
       <div className="flex gap-2">
         <Image src="/pfp1.png" width={32} height={32} alt="User" />
         <Image src="/pfp2.png" width={32} height={32} alt="User" />
         <Image src="/pfp3.png" width={32} height={32} alt="User" />
+        
       </div>
     </div>
   );
 };
+
