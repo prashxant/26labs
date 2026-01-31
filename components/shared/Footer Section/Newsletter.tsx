@@ -22,17 +22,20 @@ export const Newsletter = () => {
       <div className="tracking-wider font-bold text-2xl sm:text-3xl md:text-4xl lg:text-[46px] text-center">
         <h1>
           We give you more . A monthly <br className="hidden sm:block" />{" "}
-          <span className="text-orange-400">Newsletter</span> to keep you updated.
+          <span className="text-orange-400">Newsletter</span> to keep you
+          updated.
         </h1>
       </div>
-      <div className="flex w-full p-2  max-w-sm sm:max-w-lg">
+      <div className="flex w-full p-2  max-w-xs sm:max-w-md">
         <input
           type="text"
           placeholder="Email Address"
-          className="ring p-2 sm:p-2 w-full font-bold text-2xl sm:text-base"      />
+          className="ring p-1.5 sm:p-2 w-full font-bold text-2xl sm:text-base"
+        />
         <button
           onClick={handleNewsletterClick}
-          className="bg-orange1 justify-center ring items-center flex p-2 sm:p-3 shrink-0 cursor-pointer hover:bg-orange-600 transition-colors"     >
+          className="bg-orange1 justify-center ring items-center flex p-1.5 sm:p-2 shrink-0 cursor-pointer hover:bg-orange-600 transition-colors"
+        >
           <Image
             alt="logo"
             width={48}
@@ -44,8 +47,7 @@ export const Newsletter = () => {
       </div>
       <p className="max-w-lg text-sm sm:text-base md:text-[18px] text-center font-semibold px-4">
         Be the first to receive ideas, trends, and strategies that help your
-       <span className=""> brand grow smarter and stand out.</span>
-        
+        <span className=""> brand grow smarter and stand out.</span>
       </p>
     </div>
   );
