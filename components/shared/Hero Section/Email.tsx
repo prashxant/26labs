@@ -54,8 +54,7 @@ export const Email = () => {
         <button
           onClick={handleClaimClick}
           disabled={status === "loading"}
-          className="rounded-md bg-blue-600 px-6 py-2 text-white disabled:opacity-60"
-        >
+          className="rounded-md bg-blue-600 px-6 py-2 text-white disabled:opacity-60"       >
           {status === "loading" ? "Sending…" : "Claim It"}
         </button>
       </div>
@@ -67,3 +66,4 @@ export const Email = () => {
     </div>
   );
 };
+

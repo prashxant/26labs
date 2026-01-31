@@ -3,8 +3,9 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import { Point, PhotoCard, IconCard } from "./ScrollItems";
+import { Point, PhotoCard, Phool2 } from "./ScrollItems";
 import WaveBackground from "./WaveBackground";
+import { Phool } from "@/components/shared/Phool";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -58,16 +59,12 @@ useLayoutEffect(() => {
   return (
     <section
       ref={componentRef}
-      className="relative h-screen w-full overflow-hidden bg-[#F5F5F5]"
-    >
+      className="relative h-screen w-full overflow-hidden bg-[#F5F5F5]"  >
       <div
         ref={scrollContentRef}
-        className="absolute top-0 left-0 h-full w-2143 will-change-transform"
-      >
+        className="absolute top-0 left-0 h-full w-2143 will-change-transform"     >
         
-        <WaveBackground ref={waveRef} />
-
-      
+        <WaveBackground ref={waveRef} />     
         <Point x={300} y={200}>
              <div className="flex justify-center">
                  <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 leading-tight">
@@ -80,78 +77,118 @@ useLayoutEffect(() => {
              </div>
         </Point>
 
-        <Point x={910} y={550}>
+        <Point x={800} y={400}>
           <PhotoCard src="/HorizontalScroll/Project 1.svg" />
         </Point>
 
-        <Point x={1250} y={750}>
-          <PhotoCard src="/HorizontalScroll/Rectangle.png" />
-        </Point>
+        <Point x={1000} y={550}>
+  <PhotoCard
+    src="/HorizontalScroll/Rectangle.png"
+    width={460}
+    height={300}
+  />
+</Point>
 
-        <Point x={1250} y={490}>
+
+
+        <Point x={1150} y={330}>
           <div className="w-75 font-bold text-gray-600">
             <span className="text-orange-500">Diagnose AI </span>
-            is a health-tech project that runs on an in-house server hosted in our lab.
+                is a health-tech project that runs on an in-house server hosted in our lab.
           </div>
         </Point>
 
-        <Point x={1750} y={300}>
-          <IconCard src="/union.svg" />
+        <Point x={1670} y={300}>
+          <Phool />
         </Point>
 
-        <Point x={2040} y={450}>
+        <Point x={1960} y={400}>
           <PhotoCard src="/HorizontalScroll/Project 2.svg" />
         </Point>
 
-        <Point x={2440} y={500}>
+        <Point x={2300} y={250}>
+         <PhotoCard
+         src="/HorizontalScroll/Rectangle 2.png"
+          width={460}
+         height={300}
+         />
+        </Point>
+
+        <Point x={2340} y={450}>
           <div className="w-76 font-bold text-gray-600">
-          1  Its a tax and financial services software platform made for Simplifying tax management and financial guidance for individuals and businesses .
+            It's a tax and financial services software platform made for Simplifying tax management and financial guidance for individuals and businesses.
           </div>
         </Point>
 
-        <Point x={2650} y={720}>
-          <IconCard src="Image pack/phool.svg" />
+        <Point x={2520} y={620}>
+         <Phool2 />
         </Point>
 
-        <Point x={3090} y={670}>
-          <div className="w-100 h-62.5">
-          <PhotoCard src="/HorizontalScroll/Project 3.svg" />
-          </div>
-        </Point>
+       <Point x={3090} y={520}>
+         <div className="relative w-140">
+             <div className="absolute -top-25 left-6 px-5 py-3 rounded-xl z-20">
+             <p className="text-md font-semibold text-gray-700 leading-snug">
+             Communication gap between the <br />
+             Consumer and Dental industry
+            </p>
+            <p className="text-orange-500 text-sm font-bold mt-1">
+            Oro a Oral product
+            </p>
+            </div>
 
-        <Point x={3040} y={470}>
-          <div className="w-76 font-bold text-gray-600">
-            Its a tax and financial services software platform made for Simplifying tax management and financial guidance for individuals and businesse.
-          </div>
-        </Point>
+            <div className="absolute -right-6 top-8 w-full h-full bg-orange-300 rounded-2xl z-0" />
 
-        <Point x={3990} y={220}>
-           <div className="w-100 h-62.5">
+            <div className="relative rounded-2xl shadow-lg p-4 z-10">
+            <PhotoCard src="/HorizontalScroll/Project 3.svg" />
+            </div>
+            <div className="absolute bottom-4 right-10 bg-sky-400 text-white px-6 py-2 rounded-xl font-bold shadow-lg z-20">
+             Solves
+            </div>
+           </div>
+           </Point>
+
+        <Point x={3990} y={230}>
+           <div className="w-100 h-63.5">
           <PhotoCard src="/HorizontalScroll/Project 4.svg" />
           </div>
         </Point>
 
         <Point x={4350} y={220}>
-          <IconCard src="Image pack/phool.svg" />
+         <Phool2 />
         </Point>
 
-        <Point x={4900} y={350}>
-           <div className="w-100 h-62.5">
-          <PhotoCard src="/HorizontalScroll/Project 5.svg" />
-          </div>
+        <Point x={5200} y={590}>        
+          <PhotoCard src="/HorizontalScroll/Mockup Scene 52.png"  width={490} height={390} />       
+        </Point>
+        <Point x={5600} y={590}>        
+          <PhotoCard src="/HorizontalScroll/Frame 18.png" width={360} height={200} />      
+        </Point>
+        <Point x={5990} y={750}>
+        <Phool />
         </Point>
 
-        <Point x={5600} y={930}>
-          <IconCard src="/union.svg" />
-        </Point>
 
         <Point x={6500} y={360}>
-          <PhotoCard src="/HorizontalScroll/mockuuups-free-imac-mockup.png" />
+          <PhotoCard src="/HorizontalScroll/Group 109.png" width={490} height={390} />
         </Point>
 
-          <Point x={7990} y={370}>
-          <IconCard src="Image pack/phool.svg" />
+          <Point x={7990} y={270}>
+          <Phool2 />
         </Point>
+        
+        <Point x={7800} y={670}>
+          <PhotoCard src="/HorizontalScroll/Frame 201.png" />
+        </Point>
+         <Point x={8150} y={550}>
+          <PhotoCard src="/HorizontalScroll/Rectangle666.png"  width={490} height={390}/>
+        </Point>
+
+
+
+
+
+
+
       </div>
     </section>
   );
