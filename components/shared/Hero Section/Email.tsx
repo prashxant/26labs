@@ -25,7 +25,11 @@ export const Email = () => {
       setError("Please enter a valid email");
       return;
     }
-
+  if (!supabase) {
+    setError("Service unavailable. Please try again later.");
+    setStatus("error");
+    return;
+  }
     setStatus("loading");
 
     try {
