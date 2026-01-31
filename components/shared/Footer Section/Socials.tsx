@@ -8,7 +8,7 @@ import YoutubeIcon from "@/components/ui/youtube-icon";
 import { Descripton } from "@/components/shared/Typography";
 
 const SOCIALS = [
-  { Icon: LinkedinIcon, href: "https://x.com/26labs_live", label: "LinkedIn" },
+  { Icon: LinkedinIcon, href: "https://www.linkedin.com/in/twenty-six-labs-0466743a6/", label: "LinkedIn" },
   { Icon: TwitterXIcon, href: "https://x.com/26labs_live", label: "Twitter X" },
   { Icon: YoutubeIcon, href: "/", label: "YouTube" },
   {
@@ -26,7 +26,6 @@ export const Socials = () => {
         description="Say goodbye to outdated enterprise software and welcome the smoother one.
 We lead you from design to product innovation to shape your path from idea to success"
       />
-
       <div className="flex justify-center items-center gap-x-2 md:gap-x-3">
         {SOCIALS.map(({ Icon, href, label }) => (
           <Link key={label} href={href} aria-label={label} className="group">
