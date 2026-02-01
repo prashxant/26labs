@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Open_Sans, Roboto } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "@/components/ui/sonner";
 import { Navbar } from "@/components/shared/Navbar/Navbar";
 import ScrollProgress from "@/components/shared/ScroolProcress";
 import { Footer } from "@/components/shared/Footer Section/Footer";
@@ -50,6 +51,7 @@ export default function RootLayout({
         <footer>
           <Footer />
         </footer>
+        <Toaster className="" />
       </body>
     </html>
   );

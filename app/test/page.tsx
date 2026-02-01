@@ -19,8 +19,8 @@ export default function Home() {
       <Brand />
       <HorizontalScrollSection />
       <Fueling />
-      <Need /> 
-       <Growth /> 
+      <Need />
+       <Growth />
     </div>
   );
 }

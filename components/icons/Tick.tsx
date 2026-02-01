@@ -9,13 +9,13 @@ export const Tick = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <circle cx="9" cy="9" r="9" fill="#62C010" fill-opacity="0.6" />
+      <circle cx="9" cy="9" r="9" fill="#62C010" fillOpacity="0.6" />
       <path
         d="M5 11L7.66667 13L13 6"
         stroke="#F5F5F5"
-        stroke-width="3"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
