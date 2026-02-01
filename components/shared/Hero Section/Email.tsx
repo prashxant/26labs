@@ -78,7 +78,7 @@ export const Email = () => {
       {error && <p className="text-sm text-red-600">{error}</p>}
 
       {status === "success" && (
-        <p className="text-sm text-green-600">You’re subscribed 🎉</p>
+        <p className="text-sm text-green-600">You’re subscribed....woohooo</p>
       )}
     </div>
   );
