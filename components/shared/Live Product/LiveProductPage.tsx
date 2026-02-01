@@ -1,25 +1,24 @@
 import Image from 'next/image';
-import { Descripton, Typography } from '../Typography';
+import { Descripton} from '../Typography';
 
 export const LiveProductPage = () => {
   return (
     <div className="flex  flex-col gap-10 justify-center mx-auto items-center my-30">
       <div className="relative">
-        <div className='absolute -inset-10 bg-[#8CA9FF] opacity-50 blur-2xl rounded-full"'></div>
-        
-          <h2 className="text-4xl text-center md:text-5xl font-bold leading-tight text-gray-900">
-       We takes you from
+        <div className="bg-blue1 blur-3xl absolute -z-10 inset-0 pointer-events-none"></div>
+        <h2 className="text-4xl text-center md:text-5xl font-bold leading-tight text-gray-900">
+          We takes you from
           <br />
-            <span className="text-black-500">Idea to</span>       
-            <span className="text-orange-500 ml-2">Live Product</span>
-            <span className="text-black-500 ml-2">.</span>
-          </h2>
-        
+          <span className="text-black-500">Idea to</span>
+          <span className="text-orange1 ml-2">Live Product</span>
+          <span className="text-black-500 ml-2">.</span>
+        </h2>
       </div>
       <ThreeCards />
       <Descripton
         description="With over 4+ years of experience, we collaborate with businesses of all sizes, from ambitious SaaS startups to established B2B leaders, to transform and improve their presence in the digital space and gain traction."
-        className="max-w-4xl"     />
+        className="max-w-4xl"
+      />
       <Descripton
         description="From strategy and positioning to a fully functional website, every step is covered with a clear, full-cycle process. With our team experts acting as an extension of your business, our research-driven approach ensures websites that reach the right audience, reflect your brand, and drive real growth."
         className="max-w-4xl "
