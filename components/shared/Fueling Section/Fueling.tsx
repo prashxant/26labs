@@ -1,12 +1,12 @@
-import Image from 'next/image';
+
 import { Descripton, Typography } from '../Typography';
-import { Fuel } from 'lucide-react';
-import { Sliding } from '@/components/sections/Sliding';
+import Image from 'next/image';
+import  Sliding  from '@/components/sections/Sliding';
 
 
 const Fueling = () => {
   return (
-    <div className="relative flex flex-col items-center mx-auto mt-25 max-w-6xl text-center">
+    <div className="relative flex flex-col items-center mx-auto mt-29 max-w-6xl text-center">
       
       <Typography
         variant="h2"
@@ -16,7 +16,7 @@ const Fueling = () => {
 
       <Descripton
         description="We partner with industry-leading platforms to help you automate, scale, and simplify your business operations - so you can focus on what matters most: growth."
-        className="max-w-xl mb-16"     />
+        className="max-w-xl mb-16"/>
 
       <Sliding />
     </div>

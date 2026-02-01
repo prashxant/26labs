@@ -185,3 +185,24 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee {
+  display: flex;
+  width: max-content;
+  gap: 4rem;
+  animation: marquee 20s linear infinite;
+}
+
+.marquee:hover {
+  animation-play-state: paused;
+}
+
