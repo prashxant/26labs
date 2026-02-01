@@ -1,28 +1,29 @@
-import React from "react";
-import { Descripton, Typography } from "../Typography";
 
+import { Descripton, Typography } from "../Typography";
 import { Email } from "./Email";
-import { HeroSvg } from "@/components/icons/HeroSvg";
 
 export const Hero = () => {
   return (
+    <div className="relative h-screen w-full ">
+      {/* <HeroSvg  /> */}
 
-      <div className="flex   h-screen pt-20 flex-col justify-center items-center">
-        <HeroSvg />
+      <div className="absolute inset-0 z-10 flex h-full pt-20 flex-col justify-center items-center text-center">
         <Typography
-          variant="h1"
           className=""
+          variant="h1"
           line1="One Problem One Service"
           line2="One"
-          popUp="Audience"   />
+          popUp="Audience"
+        />
 
         <Descripton
           className="font-family-roboto max-w-2xl"
           description="Delivering warm opportunities and optimizing your visibility process to ensure
           nothing stands between you and your revenue goals."
         />
-        <Email />
 
+        <Email />
+      </div>
     </div>
   );
 };

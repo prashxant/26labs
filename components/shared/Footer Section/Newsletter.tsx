@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { NewSvg } from "@/components/icons/New";
 import Image from "next/image";
+import { toast } from "sonner";
+
+import { NewSvg } from "@/components/icons/New";
 import { supabase } from "@/lib/supabaseClient";
 
 export const Newsletter = () => {
@@ -12,30 +14,45 @@ export const Newsletter = () => {
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 
   const handleSubscribe = async () => {
-    if (!email) return;
-    if (!isValidEmail(email)) return;
+    if (!email) {
+      toast.error("Email is required");
+      return;
+    }
 
-    if (!supabase) return;
+    if (!isValidEmail(email)) {
+      toast.error("Please enter a valid email");
+      return;
+    }
+
+    if (!supabase) {
+      toast.error("Service unavailable. Please try again later.");
+      return;
+    }
 
     try {
       const { error } = await supabase
         .from("newsletter_subscribers")
         .insert({ email });
 
-      if (error && error.code !== "23505") {
-        console.error(error);
-        return;
+      if (error) {
+        if (error.code === "23505") {
+          toast("You’re already subscribed 🙂");
+          return;
+        }
+        throw error;
       }
 
+      toast.success("Subscribed 🎉");
       setEmail("");
     } catch (err) {
       console.error(err);
+      toast.error("Something went wrong. Please try again.");
     }
   };
 
   return (
     <div className="border relative flex flex-col w-full p-5 sm:p-8 md:p-10 justify-center items-center gap-4 sm:gap-6 md:gap-8 border-black">
-      <div className="absolute top-0 left-0 sm:left-2  md:left-0 -translate-y-1/4 -translate-x-1/12">
+      <div className="absolute top-0 left-0 sm:left-2 md:left-0 -translate-y-1/4 -translate-x-1/12">
         <div className="absolute translate-x-6 sm:translate-x-6 text-sm sm:text-base md:text-[18px] font-semibold text-white">
           New
         </div>
@@ -74,7 +91,7 @@ export const Newsletter = () => {
 
       <p className="max-w-lg text-sm sm:text-base md:text-[18px] text-center font-semibold px-4">
         Be the first to receive ideas, trends, and strategies that help your
-        <span className=""> brand grow smarter and stand out.</span>
+        <span> brand grow smarter and stand out.</span>
       </p>
     </div>
   );

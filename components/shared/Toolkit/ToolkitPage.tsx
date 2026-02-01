@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography } from "../Typography";
+
 import ProcessGrid from "./Cards";
 
 function ToolkitPage() {
@@ -10,15 +10,15 @@ function ToolkitPage() {
         <p className="relative z-30 "> Our Toolkit</p>
       </div>
 
-      <div className="text-center md:text-left">
+      <div className="text-center lg:mt-16 mt-4 md:mt-8   md:text-left">
           <h2 className="text-4xl text-center md:text-5xl font-bold leading-tight text-gray-900">
          Everything You Need
           <br />
-            <span className="text-black-500">to Launch Your</span>       
+            <span className="text-black-500">to Launch Your</span>
             <span className="text-orange-500 ml-2">Own Website</span>
             <span className="text-black-500 ml-2">.</span>
           </h2>
-        </div> 
+        </div>
       <ProcessGrid />
     </div>
   );

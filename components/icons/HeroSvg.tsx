@@ -3,9 +3,12 @@ import React from "react";
 export const HeroSvg = (props: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
-    {...props}
-      className=" absolute
-    lg:mt-40 h-full w-full  -z-20"
+      {...props}
+      className=" translate-y-20 sm:translate-y-0 w-screen h-screen
+
+    scale-125
+
+    pointer-events-none"
       viewBox="0 0 1426 1122"
       preserveAspectRatio="xMidYMid slice"
       xmlns="http://www.w3.org/2000/svg"

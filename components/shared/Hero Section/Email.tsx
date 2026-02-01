@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
+import { toast } from "sonner";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -12,74 +13,101 @@ export const Email = () => {
 
   const isValidEmail = (value: string) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+const handleClaimClick = async () => {
+  setError("");
 
-  const handleClaimClick = async () => {
-    setError("");
+  if (!email) {
+    setError("Email is required");
+    toast.error("Email is required");
+    return;
+  }
 
-    if (!email) {
-      setError("Email is required");
-      return;
-    }
+  if (!isValidEmail(email)) {
+    setError("Please enter a valid email");
+    toast.error("Please enter a valid email");
+    return;
+  }
 
-    if (!isValidEmail(email)) {
-      setError("Please enter a valid email");
-      return;
-    }
   if (!supabase) {
     setError("Service unavailable. Please try again later.");
     setStatus("error");
+    toast.error("Service unavailable");
     return;
   }
-    setStatus("loading");
 
-    try {
-      // Supabase insert
-      const { error: supabaseError } = await supabase
-        .from("newsletter_subscribers")
-        .insert({ email });
+  setStatus("loading");
 
-      if (supabaseError) {
-        if (supabaseError.code === "23505") {
-          setError("You are already subscribed 🙂");
-          setStatus("error");
-          return;
-        }
-        throw supabaseError;
+  try {
+    const { error: supabaseError } = await supabase
+      .from("newsletter_subscribers")
+      .insert({ email });
+
+    if (supabaseError) {
+      if (supabaseError.code === "23505") {
+        setError("You are already subscribed 🙂");
+        setStatus("error");
+
+        toast("You’re already subscribed 🙂", {
+          description: "We already have this email",
+          action: {
+            label: "OK",
+            onClick: () => {},
+          },
+        });
+
+        return;
       }
 
-      setStatus("success");
-      setEmail("");
-    } catch (err) {
-      console.error(err);
-      setError("Something went wrong. Please try again.");
-      setStatus("error");
+      throw supabaseError;
     }
-  };
+
+    setStatus("success");
+    setEmail("");
+
+    toast.success("Subscribed 🎉", {
+      description: "You’ll hear from us soon",
+    });
+  } catch (err) {
+    console.error(err);
+    setError("Something went wrong. Please try again.");
+    setStatus("error");
+
+    toast.error("Something went wrong", {
+      description: "Please try again later",
+    });
+  }
+};
+
 
   return (
-    <div className="flex flex-col gap-6 items-center w-full">
-      <div className="flex gap-3 w-full max-w-md">
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Enter your email"
-          className="flex-1 rounded-md border px-4 py-2"
-        />
-        <button
-          onClick={handleClaimClick}
-          disabled={status === "loading"}
-          className="rounded-md bg-blue-600 px-6 py-2 text-white disabled:opacity-60"
-        >
-          {status === "loading" ? "Sending…" : "Claim It"}
-        </button>
-      </div>
+  <div className="flex w-full flex-col items-center gap-4 px-4 sm:px-0">
+    <div className="flex w-full max-w-md flex-col gap-3 sm:flex-row">
+      <input
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Enter your email"
+        className="
+          w-full flex-1
+          rounded-md border px-4 py-3
+          text-base
+        "
+      />
 
-      {error && <p className="text-sm text-red-600">{error}</p>}
-
-      {status === "success" && (
-        <p className="text-sm text-green-600">You’re subscribed 🎉</p>
-      )}
+      <button
+        onClick={handleClaimClick}
+        disabled={status === 'loading'}
+        className="
+          w-[50vw] mx-auto  sm:w-auto
+          rounded-md bg-blue-600
+          px-6 py-3
+          text-white
+          disabled:opacity-60
+        "
+      >
+        {status === 'loading' ? 'Sending…' : 'Claim It'}
+      </button>
     </div>
-  );
-};
+
+  </div>
+);}
