@@ -20,7 +20,7 @@ const Fueling = () => {
 
       <Sliding />
     </div>
-  );
+  );                   
 };
 
 export default Fueling;
