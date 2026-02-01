@@ -11,11 +11,11 @@ export const Sliding = () => {
 const Slider = () => {
   const Logo = [
     { src: "Image pack/Icon/Docker.svg", alt: "Somthing"},
-    { src: "/Icon.jpeg.png", alt: "Somthing" },
-    { src: "/mapmyindia_icon.jpeg.png", alt: "Somthing" },
+    { src: "/n8n-color.svg", alt: "Somthing" },
+    { src: "/icons8-supabase-240.png", alt: "Somthing" },
     { src: "/amazon_web_services_icon.jpeg.png", alt: "Somthing" },   
     { src: "/clickup_symbol.png.png", alt: "Somthing" },
-    { src: "/Icon.jpeg (1).png", alt: "Somthing" },  
+    { src: "/zapier-icon.png", alt: "Somthing" },  
   ];
 
   const loopLogos = [...Logo, ...Logo];
@@ -29,8 +29,7 @@ const Slider = () => {
           alt={item.alt}
           src={item.src}
           height={64}
-          width={100}
-        />
+          width={90}/>
       ))}
     </div>
   );
