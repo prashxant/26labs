@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export const Sliding = () => {
   return (
-    <div className="max-w-4xl flex flex-col items-center mb-12.5 mt-12.5 justify-center overflow-hidden  mask-x-from-70% mask-x-to-95%">
-      <SlidingLogos/>
+    <div className="w-full flex flex-col items-center my-12 justify-center overflow-hidden">
+      <SlidingLogos />
     </div>
   );
 };
@@ -16,18 +16,18 @@ function SlidingLogos() {
     { src: "/zapier-icon.png", alt: "Zapier" },
     { src: "/aistudio11.svg", alt: "AI Studio" },
     { src: "/cloudflare2.svg", alt: "Cloudflare" },
-      { src: "/lambda.svg", alt: "Lambda" },
+    { src: "/lambda.svg", alt: "Lambda" },
   ];
 
   const loopLogos = [...logos, ...logos];
 
   return (
-    <div className="max-w-5xl mx-auto overflow-hidden py-12">
-      <div className="marquee">
+    <div className="w-full overflow-hidden py-12">
+      <div className="marquee flex">
         {loopLogos.map((logo, index) => (
           <div
             key={index}
-            className="w-24 h-20 flex items-center justify-center shrink-0"
+            className="w-16 h-16 sm:w-24 sm:h-20 flex items-center justify-center shrink-0"
           >
             <Image
               src={logo.src}
