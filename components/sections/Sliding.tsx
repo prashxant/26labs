@@ -27,13 +27,12 @@ function SlidingLogos() {
         {loopLogos.map((logo, index) => (
           <div
             key={index}
-            className="w-16 h-16 sm:w-24 sm:h-20 flex items-center justify-center shrink-0"
-          >
+            className="w-16 h-16 sm:w-24 sm:h-20 flex items-center justify-center shrink-0">
             <Image
               src={logo.src}
               alt={logo.alt}
-              width={96}
-              height={80}
+              width={82}
+              height={70}
               className="object-contain"
             />
           </div>

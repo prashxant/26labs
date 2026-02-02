@@ -12,10 +12,10 @@ const Fueling = () => {
         variant="h2"
         line1="Fueling Growth With"
         popUp="Smart Technology"
-        className="mb-6"   />
+        className="mb-6"/>
 
       <Descripton
-        description="We partner with industry-leading platforms to help you automate, scale, and simplify your business operations - so you can focus on what matters most: growth."
+        description="We partner with industry leading platforms to help you automate,scale, and simplify your business operations,so you can focus on what matters most : growth."
         className="max-w-xl mb-16"/>
 
       <Sliding />
