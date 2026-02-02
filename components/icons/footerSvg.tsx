@@ -8,7 +8,7 @@ export const FooterSvg = () => {
       viewBox="0 0 1440 1477"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="w-screen bg-red-200 absolute -z-5000"
+      className="w-screen absolute -z-5000"
     >
       <g filter="url(#filter0_d_1006_40)">
         <path
