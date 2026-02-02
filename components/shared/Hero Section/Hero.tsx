@@ -4,10 +4,10 @@ import { Email } from "./Email";
 
 export const Hero = () => {
   return (
-    <div className="relative h-screen w-full ">
+    <div className="relative h-screen mt-20  w-full ">
       {/* <HeroSvg  /> */}
 
-      <div className="absolute inset-0 z-10 flex h-full pt-20 flex-col justify-center items-center text-center">
+      <div className="absolute inset-0 z-10  flex h-full pt-20 flex-col justify-center items-center text-center">
         <Typography
           className=""
           variant="h1"
@@ -17,7 +17,7 @@ export const Hero = () => {
         />
 
         <Descripton
-          className="font-family-roboto max-w-2xl"
+          className="font-family-roboto text-[20px] max-w-2xl"
           description="Delivering warm opportunities and optimizing your visibility process to ensure
           nothing stands between you and your revenue goals."
         />
