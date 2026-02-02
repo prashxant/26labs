@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import { toast } from "sonner";
+import Image from "next/image";
+import { Plus } from "./Plus";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -13,101 +15,106 @@ export const Email = () => {
 
   const isValidEmail = (value: string) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-const handleClaimClick = async () => {
-  setError("");
+  const handleClaimClick = async () => {
+    setError("");
 
-  if (!email) {
-    setError("Email is required");
-    toast.error("Email is required");
-    return;
-  }
-
-  if (!isValidEmail(email)) {
-    setError("Please enter a valid email");
-    toast.error("Please enter a valid email");
-    return;
-  }
-
-  if (!supabase) {
-    setError("Service unavailable. Please try again later.");
-    setStatus("error");
-    toast.error("Service unavailable");
-    return;
-  }
-
-  setStatus("loading");
-
-  try {
-    const { error: supabaseError } = await supabase
-      .from("newsletter_subscribers")
-      .insert({ email });
-
-    if (supabaseError) {
-      if (supabaseError.code === "23505") {
-        setError("You are already subscribed 🙂");
-        setStatus("error");
-
-        toast("You’re already subscribed 🙂", {
-          description: "We already have this email",
-          action: {
-            label: "OK",
-            onClick: () => {},
-          },
-        });
-
-        return;
-      }
-
-      throw supabaseError;
+    if (!email) {
+      setError("Email is required");
+      toast.error("Email is required");
+      return;
     }
 
-    setStatus("success");
-    setEmail("");
+    if (!isValidEmail(email)) {
+      setError("Please enter a valid email");
+      toast.error("Please enter a valid email");
+      return;
+    }
 
-    toast.success("Subscribed 🎉", {
-      description: "You’ll hear from us soon",
-    });
-  } catch (err) {
-    console.error(err);
-    setError("Something went wrong. Please try again.");
-    setStatus("error");
+    if (!supabase) {
+      setError("Service unavailable. Please try again later.");
+      setStatus("error");
+      toast.error("Service unavailable");
+      return;
+    }
 
-    toast.error("Something went wrong", {
-      description: "Please try again later",
-    });
-  }
-};
+    setStatus("loading");
 
+    try {
+      const { error: supabaseError } = await supabase
+        .from("newsletter_subscribers")
+        .insert({ email });
+
+      if (supabaseError) {
+        if (supabaseError.code === "23505") {
+          setError("You are already subscribed 🙂");
+          setStatus("error");
+
+          toast("You’re already subscribed 🙂", {
+            description: "We already have this email",
+            action: {
+              label: "OK",
+              onClick: () => {},
+            },
+          });
+
+          return;
+        }
+
+        throw supabaseError;
+      }
+
+      setStatus("success");
+      setEmail("");
+
+      toast.success("Subscribed 🎉", {
+        description: "You’ll hear from us soon",
+      });
+    } catch (err) {
+      console.error(err);
+      setError("Something went wrong. Please try again.");
+      setStatus("error");
+
+      toast.error("Something went wrong", {
+        description: "Please try again later",
+      });
+    }
+  };
 
   return (
-  <div className="flex w-full flex-col items-center gap-4 px-4 sm:px-0">
-    <div className="flex w-full max-w-md flex-col gap-3 sm:flex-row">
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Enter your email"
-        className="
+    <div className="flex w-full py-10 flex-col items-center gap-4 px-4 sm:px-0">
+      <div className="flex w-full font-family-roboto max-w-md flex-col gap-3 sm:flex-row">
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Enter your email"
+          className="
           w-full flex-1
-          rounded-md border px-4 py-3
+          rounded-md border-[#FFF0E7] px-4 py-3
           text-base
+          shadow-[inset_0px_1px_6px_rgba(255,240,231,1)]
+          placeholder:text-[13px]
+          placeholder:font-light
         "
-      />
+        />
 
-      <button
-        onClick={handleClaimClick}
-        disabled={status === 'loading'}
-        className="
+        <button
+          onClick={handleClaimClick}
+          disabled={status === "loading"}
+          className="
           w-[50vw] mx-auto  sm:w-auto
-          rounded-md bg-blue-600
-          px-6 py-3
-          text-white
+          rounded-md bg-[#8CA9FF]
+          shadow-[inset_0px_1px_6px_rgba(0,136,255,1)]
+          px-4 py-2
+          text-mainBg
+          text-[30px]
           disabled:opacity-60
         "
-      >
-        {status === 'loading' ? 'Sending…' : 'Claim It'}
-      </button>
+        >
+          {status === "loading" ? "Sending…" : "Claim It"}
+        </button>
+      </div>
+      <Plus />
     </div>
-
-  </div>
-);}
+  );
+};

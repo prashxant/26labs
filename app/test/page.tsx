@@ -12,15 +12,16 @@ import Growth from "@/components/shared/Growth Section/Growth";
 
 export default function Home() {
   return (
-    <div>
+    <div className="min-h-screen">
       <Hero />
+
       <ToolkitPage />
       <LiveProductPage />
       <Brand />
       <HorizontalScrollSection />
       <Fueling />
       <Need />
-       <Growth />
+      <Growth />
     </div>
   );
 }

@@ -22,7 +22,6 @@ export const PriceCard = ({
         md:hover:scale-105
       "
     >
-
       <h3
         className="
           text-lg sm:text-xl md:text-2xl
@@ -33,64 +32,67 @@ export const PriceCard = ({
       </h3>
 
 
-      <div
-        className="
-          flex flex-col h-full
-          p-4 sm:p-5 md:p-6
-          border-[#8CA9FF] border-4
-          shadow-xl rounded-md
-          bg-[#FFF0E7]
-        "
-      >
+      <div className="bg-linear-to-b from-[#8CA9FF] to-[#FFF0E7] p-1 rounded-md">
 
-        <div className="flex flex-col justify-start min-h-[110px] sm:min-h-[120px]">
-          <p className="text-sm sm:text-base pl-1">for</p>
+        <div
+          className="
+            flex flex-col h-full
+            p-4 sm:p-5 md:p-6
+            rounded-md
+            bg-[#FFF0E7]
+          "
+        >
+          <div className="flex flex-col justify-start min-h-[110px] sm:min-h-[120px]">
+            <p className="text-sm font-semibold sm:text-base pl-1">for</p>
 
-          <p
-            className="text-[#3766F0] font-bold leading-none
-            text-3xl sm:text-4xl md:text-[46px]"
+            <p
+              className="
+                text-[#3766F0] font-bold leading-none
+                text-3xl sm:text-4xl md:text-[46px]
+              "
+            >
+              {price}
+              <span className="ml-1 text-sm sm:text-base text-black">
+                /project
+              </span>
+            </p>
+
+            <p className="text-[11px] sm:text-xs pt-2 pl-2 max-w-[260px]">
+              {description}
+            </p>
+          </div>
+
+          <ul
+            className="
+              flex-1 min-h-[220px]
+              space-y-2 sm:space-y-2.5
+              my-8 sm:my-10 md:my-12
+            "
           >
-            {price}
-            <span className="ml-1 text-sm sm:text-base text-black">
-              /project
-            </span>
-          </p>
+            {features.map((feature) => (
+              <li key={feature} className="flex items-start gap-2">
+                <Tick />
+                <span className="text-xs sm:text-sm leading-snug">
+                  {feature}
+                </span>
+              </li>
+            ))}
+          </ul>
 
-          <p className="text-[11px] sm:text-xs pt-2 pl-2 max-w-[260px]">
-            {description}
-          </p>
+          <button
+            className="
+              mt-auto mx-auto
+              w-36 sm:w-40
+              rounded-lg
+              bg-blue1
+              p-3 sm:p-4
+              text-sm sm:text-base
+              font-bold
+            "
+          >
+            Get Started
+          </button>
         </div>
-
-
-        <ul
-          className="
-            flex-1 min-h-[220px]
-            space-y-2 sm:space-y-2.5
-            my-8 sm:my-10 md:my-12
-          "
-        >
-          {features.map((feature) => (
-            <li key={feature} className="flex items-start gap-2">
-              <Tick />
-              <span className="text-xs sm:text-sm leading-snug">{feature}</span>
-            </li>
-          ))}
-        </ul>
-
-
-        <button
-          className="
-            mt-auto mx-auto
-            w-36 sm:w-40
-            rounded-lg
-            bg-blue1
-            p-3 sm:p-4
-            text-sm sm:text-base
-            font-bold
-          "
-        >
-          Get Started
-        </button>
       </div>
     </div>
   );
