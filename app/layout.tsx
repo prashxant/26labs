@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { Navbar } from "@/components/shared/Navbar/Navbar";
 import ScrollProgress from "@/components/shared/ScroolProcress";
 import { Footer } from "@/components/shared/Footer Section/Footer";
+import { FooterSvg } from "@/components/icons/footerSvg";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -48,7 +49,8 @@ export default function RootLayout({
         </header>
         <ScrollProgress aria-hidden="true" />
         <main id="main">{children}</main>
-        <footer>
+        <footer className="relative">
+          <FooterSvg/>
           <Footer />
         </footer>
         <Toaster className="" />
