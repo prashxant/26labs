@@ -12,11 +12,13 @@ export const FooterSvg = () => {
     >
       <g filter="url(#filter0_d_1006_40)">
         <path
-          d="M1583.49  53.7803C1583.49 53.7803 914.501 224.78 867.5 458.78C820.499 692.78 1335.5 706.391 1101.5 927.28C867.5 1148.17 -286 1414.78 -286 1414.78 1500"
+          d="M1583.49 53.7803C1583.49 53.7803 914.501 224.78 867.5 458.78C820.499 692.78 1335.5 706.391 1101.5 927.28C867.5 1148.17 -286 1414.78 -286 1414.78 1500"
           stroke="url(#paint0_linear_1006_40)"
-          stroke-width="78"
+          strokeWidth={78}
+          fill="none"
         />
       </g>
+
       <defs>
         <filter
           id="filter0_d_1006_40"
@@ -25,7 +27,7 @@ export const FooterSvg = () => {
           width="1927.93"
           height="1476.77"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
           <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
@@ -53,6 +55,7 @@ export const FooterSvg = () => {
             result="shape"
           />
         </filter>
+
         <linearGradient
           id="paint0_linear_1006_40"
           x1="997"
@@ -61,8 +64,8 @@ export const FooterSvg = () => {
           y2="729.28"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#8CA9FF" />
-          <stop offset="1" stop-color="#E9EBF8" />
+          <stop stopColor="#8CA9FF" />
+          <stop offset="1" stopColor="#E9EBF8" />
         </linearGradient>
       </defs>
     </svg>

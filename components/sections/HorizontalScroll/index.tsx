@@ -18,8 +18,18 @@ useLayoutEffect(() => {
   const ctx = gsap.context(() => {
     if (!componentRef.current || !scrollContentRef.current || !waveRef.current) return;
 
-    const totalWidth = 8572;
-    const scrollLength = totalWidth - window.innerWidth;
+   const DESIGN_WIDTH = 1440; 
+const scale = Math.min(window.innerWidth / DESIGN_WIDTH, 1);
+
+const totalWidth = 8572 * scale;
+const scrollLength = totalWidth - window.innerWidth;
+
+
+gsap.set(scrollContentRef.current, {
+  scale,
+  transformOrigin: "top left",
+});
+
 
     const wave = waveRef.current;
 
