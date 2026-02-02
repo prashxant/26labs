@@ -40,7 +40,7 @@ export const Navbar = () => {
         </div>
 
         {/* Center: Logo */}
-        <Link href="/test" className="flex items-center shrink-0">
+        <Link href="/" className="flex items-center shrink-0">
           <Image
             alt="Company logo"
             width={100}
