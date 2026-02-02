@@ -181,5 +181,3 @@ useLayoutEffect(() => {
     </section>
   );
 }
-
-
