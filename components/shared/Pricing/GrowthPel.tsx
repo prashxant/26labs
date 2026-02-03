@@ -2,8 +2,7 @@ import React from "react";
 
 export const GrowthPel = () => {
   return (
-    <section className="relative mx-auto mt-16  flex max-w-6xl flex-col items-center gap-4 px-4 text-center sm:gap-6 sm:px-6 lg:mt-24 lg:gap-8  lg:px-12">
-      {/* Background glow */}
+    <section className="relative mx-auto mb-20 flex max-w-6xl flex-col items-center gap-4 px-4 text-center sm:gap-6 sm:px-6 lg:gap-8 py-10  lg:px-12">
       <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
         <div className="bg-blue1 blur-3xl absolute -z-10 inset-0 pointer-events-none"></div>
       </div>

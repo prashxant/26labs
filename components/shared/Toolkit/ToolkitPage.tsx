@@ -15,7 +15,7 @@ function ToolkitPage() {
          Everything You Need
           <br />
             <span className="text-black-500">to Launch Your</span>
-            <span className="text-orange-500 ml-2">Own Website</span>
+            <span className="text-orange2 ml-2">Own Website</span>
             <span className="text-black-500 ml-2">.</span>
           </h2>
         </div>

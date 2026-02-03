@@ -18,12 +18,12 @@ export const Navbar = () => {
         className="
           mx-auto
           flex items-center justify-between
-          h-14 sm:h-16 md:h-18 lg:h-20
           w-full sm:w-11/12 md:w-5/6 lg:w-4/5 xl:max-w-[50vw]
-          rounded-2xl sm:rounded-2xl md:rounded-2xl
-    bg-linear-to-r from-[#cbd6f9] to-[#A0B8FF]
-          px-3 sm:px-4 md:px-6 lg:px-8
+          rounded-lg
+          bg-linear-to-r from-[#cbd6f9] to-[#A0B8FF]
           shadow-lg
+          px-2 md:px-3
+          py-0.5 md:py-1.5 lg:py-2
         "
       >
         {/* Left: Menu / Hamburger */}
@@ -58,7 +58,7 @@ export const Navbar = () => {
           rel="noopener noreferrer"
           className="
             inline-flex items-center justify-center
-            rounded-md sm:rounded-lg md:rounded-xl
+            rounded-[5px]
             bg-orange2
             px-3 sm:px-4 md:px-5 lg:px-6 xl:px-7
             py-2 sm:py-2.5 md:py-3 lg:py-3.5

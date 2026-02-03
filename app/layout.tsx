@@ -50,7 +50,7 @@ export default function RootLayout({
         <ScrollProgress aria-hidden="true" />
         <main id="main">{children}</main>
         <footer className="relative">
-          <FooterSvg/>
+          {/* <FooterSvg/> */}
           <Footer />
         </footer>
         <Toaster className="" />

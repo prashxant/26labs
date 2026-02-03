@@ -18,7 +18,7 @@ useLayoutEffect(() => {
   const ctx = gsap.context(() => {
     if (!componentRef.current || !scrollContentRef.current || !waveRef.current) return;
 
-   const DESIGN_WIDTH = 1440; 
+   const DESIGN_WIDTH = 1440;
 const scale = Math.min(window.innerWidth / DESIGN_WIDTH, 1);
 
 const totalWidth = 8572 * scale;
@@ -42,14 +42,14 @@ gsap.set(scrollContentRef.current, {
       invalidateOnRefresh: true,
 
       onUpdate: (self) => {
-       
+
         gsap.set(scrollContentRef.current!, {
           x: -scrollLength * self.progress,
         });
 
-        
-        const amplitude = 50; 
-        const frequency = Math.PI * 2; 
+
+        const amplitude = 50;
+        const frequency = Math.PI * 2;
 
         const yOffset = Math.sin(self.progress * frequency) * amplitude;
 
@@ -72,15 +72,15 @@ gsap.set(scrollContentRef.current, {
       <div
         ref={scrollContentRef}
         className="absolute top-0 left-0 h-full w-2143 will-change-transform">
-        
-        <WaveBackground ref={waveRef} />     
+
+        <WaveBackground ref={waveRef} />
         <Point x={300} y={200}>
              <div className="flex justify-center">
                  <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 leading-tight">
                        Take a Look at Some of <br />
                         Our{" "}
-                 <span className="relative inline-block text-orange-500">
-                      Featured Projects                 
+                 <span className="relative inline-block text-2">
+                      Featured Projects
                 </span>
                 </h2>
              </div>
@@ -100,7 +100,7 @@ gsap.set(scrollContentRef.current, {
 
         <Point x={1150} y={330}>
           <div className="w-75 font-bold text-gray-600">
-            <span className="text-orange-500">Diagnose AI </span>
+            <span className="text-orange2">Diagnose AI </span>
                 is a health-tech project that runs on an in-house server hosted in our lab.
           </div>
         </Point>
@@ -123,7 +123,7 @@ gsap.set(scrollContentRef.current, {
 
         <Point x={2340} y={490}>
           <div className="w-76 font-bold text-gray-600">
-            It's a tax and financial services software platform made for Simplifying tax management and financial guidance for individuals and businesses.
+            It&apos;s a tax and financial services software platform made for Simplifying tax management and financial guidance for individuals and businesses.
           </div>
         </Point>
 
@@ -138,7 +138,7 @@ gsap.set(scrollContentRef.current, {
              Communication gap between the <br />
              Consumer and Dental industry
             </p>
-            <p className="text-orange-500 text-md font-bold mt-1">
+            <p className="text-orange2 text-md font-bold mt-1">
             Oro a Oral product
             </p>
             </div>
@@ -161,11 +161,11 @@ gsap.set(scrollContentRef.current, {
          <Phool2 />
         </Point>
 
-        <Point x={5200} y={590}>        
-          <PhotoCard src="/HorizontalScroll/Mockup Scene 52.png"  width={420} height={320} />       
+        <Point x={5200} y={590}>
+          <PhotoCard src="/HorizontalScroll/Mockup Scene 52.png"  width={420} height={320} />
         </Point>
-        <Point x={5520} y={590}>        
-          <PhotoCard src="/HorizontalScroll/Frame 18.png" width={360} height={230} />      
+        <Point x={5520} y={590}>
+          <PhotoCard src="/HorizontalScroll/Frame 18.png" width={360} height={230} />
         </Point>
         <Point x={5990} y={750}>
         <Phool />
@@ -179,14 +179,13 @@ gsap.set(scrollContentRef.current, {
           <Point x={8300} y={360}>
           <Phool2 />
         </Point>
-        
+
         <Point x={7700} y={620}>
           <PhotoCard src="/HorizontalScroll/Frame 201.png" />
         </Point>
          <Point x={8000} y={550}>
           <PhotoCard src="/HorizontalScroll/Rectangle666.png"  width={490} height={390}/>
         </Point>
-
       </div>
     </section>
   );
