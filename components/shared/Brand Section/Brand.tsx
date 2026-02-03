@@ -4,7 +4,7 @@ import { Descripton, Typography } from '../Typography';
 const Brand = () => {
   return (
     <div className="relative flex flex-col items-center mx-auto my-25 max-w-7xl">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-14 w-full text-center mb-7">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full text-center mb-9">
         <Typography
           className=""
           variant="h3"
@@ -20,11 +20,7 @@ const Brand = () => {
 
       <Descripton
         description="We build websites that truly carry your brand’s emotion, translating your vision, values, and personality into meaningful digital experiences, while leveraging AI and internet-driven targeting to reach the right audience with precision. By combining emotional design with data backed intelligence, our websites adapt to user behavior, deliver personalized interactions, and turn attention into engagement and growth."
-        className="max-w-3xl text-center mt-8"/>
-
-      <div className="absolute transition-spin right-0 bottom-0 translate-x-6 translate-y-6">
-        <Icon1 />
-      </div>
+        className="max-w-3xl text-center mt-8"/> 
     </div>
   );
 };
@@ -45,33 +41,22 @@ export const TwoCards = () => {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-25 w-full justify-items-center">
-      {cards.map((card) => (
-        <div key={card.id} className="flex flex-col items-center">
-          <div
-            className="relative w-48 h-48  md:w-64 md:h-64 lg:w-72 lg:h-72  rounded-[24px] overflow-hidden">
-            <Image
-              src={card.src}
-              alt={card.alt}
-              fill
-              className="object-contain p-4"
-              priority={card.id === 1} />
-          </div>
-        </div>
-      ))}
+  {cards.map((card) => (
+    <div key={card.id} className="flex flex-col items-center w-full">
+      <div className="relative w-full max-w-108 h-75 md:h-75 lg:h-85 rounded-[24px] overflow-hidden">
+        <Image
+          src={card.src}
+          alt={card.alt}
+          fill
+          className="object-contain"
+          priority={card.id === 1}
+        />
+      </div>
     </div>
+  ))}
+</div>
   );
 };
 
-export const Icon1 = () => {
-  return (
-    <div className="relative w-29 h-29 rotate-12">
-      <Image
-        src="/union.svg"
-        alt="Decoration"
-        fill
-        className="animate-spin-slow" />
-    </div>
-  );
-};
 
 export default Brand;

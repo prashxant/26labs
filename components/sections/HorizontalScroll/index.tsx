@@ -18,8 +18,18 @@ useLayoutEffect(() => {
   const ctx = gsap.context(() => {
     if (!componentRef.current || !scrollContentRef.current || !waveRef.current) return;
 
-    const totalWidth = 8572;
-    const scrollLength = totalWidth - window.innerWidth;
+   const DESIGN_WIDTH = 1440; 
+const scale = Math.min(window.innerWidth / DESIGN_WIDTH, 1);
+
+const totalWidth = 8572 * scale;
+const scrollLength = totalWidth - window.innerWidth;
+
+
+gsap.set(scrollContentRef.current, {
+  scale,
+  transformOrigin: "top left",
+});
+
 
     const wave = waveRef.current;
 
@@ -80,7 +90,7 @@ useLayoutEffect(() => {
           <PhotoCard src="/HorizontalScroll/Project 1.svg" />
         </Point>
 
-        <Point x={1000} y={550}>
+        <Point x={1002} y={550}>
         <PhotoCard
           src="/HorizontalScroll/Rectangle.png"
           width={460}
@@ -95,7 +105,7 @@ useLayoutEffect(() => {
           </div>
         </Point>
 
-        <Point x={1670} y={300}>
+        <Point x={1670} y={290}>
           <Phool />
         </Point>
 
@@ -103,7 +113,7 @@ useLayoutEffect(() => {
           <PhotoCard src="/HorizontalScroll/Project 2.svg" />
         </Point>
 
-        <Point x={2300} y={250}>
+        <Point x={2310} y={290}>
          <PhotoCard
          src="/HorizontalScroll/Rectangle 2.png"
           width={460}
@@ -111,7 +121,7 @@ useLayoutEffect(() => {
          />
         </Point>
 
-        <Point x={2340} y={450}>
+        <Point x={2340} y={490}>
           <div className="w-76 font-bold text-gray-600">
             It's a tax and financial services software platform made for Simplifying tax management and financial guidance for individuals and businesses.
           </div>
@@ -121,9 +131,9 @@ useLayoutEffect(() => {
          <Phool2 />
         </Point>
 
-       <Point x={3090} y={520}>
+       <Point x={3090} y={630}>
          <div className="relative w-140">
-             <div className="absolute -top-25 left-6 px-5 py-3 rounded-xl z-20">
+             <div className="absolute -top-21 left-1 px-5 py-3 rounded-xl z-20">
              <p className="text-md font-semibold text-gray-700 leading-snug">
              Communication gap between the <br />
              Consumer and Dental industry
@@ -141,21 +151,21 @@ useLayoutEffect(() => {
            </div>
            </Point>
 
-        <Point x={3990} y={230}>
-           <div className="w-100 h-63.5">
+        <Point x={3990} y={240}>
+           <div className="w-120 h-69.5">
           <PhotoCard src="/HorizontalScroll/Project 4.svg" />
           </div>
         </Point>
 
-        <Point x={4350} y={220}>
+        <Point x={4350} y={230}>
          <Phool2 />
         </Point>
 
         <Point x={5200} y={590}>        
-          <PhotoCard src="/HorizontalScroll/Mockup Scene 52.png"  width={490} height={390} />       
+          <PhotoCard src="/HorizontalScroll/Mockup Scene 52.png"  width={420} height={320} />       
         </Point>
-        <Point x={5600} y={590}>        
-          <PhotoCard src="/HorizontalScroll/Frame 18.png" width={360} height={200} />      
+        <Point x={5520} y={590}>        
+          <PhotoCard src="/HorizontalScroll/Frame 18.png" width={360} height={230} />      
         </Point>
         <Point x={5990} y={750}>
         <Phool />
@@ -166,14 +176,14 @@ useLayoutEffect(() => {
           <PhotoCard src="/HorizontalScroll/Group 109.png" width={490} height={390} />
         </Point>
 
-          <Point x={7990} y={270}>
+          <Point x={8300} y={360}>
           <Phool2 />
         </Point>
         
-        <Point x={7800} y={670}>
+        <Point x={7700} y={620}>
           <PhotoCard src="/HorizontalScroll/Frame 201.png" />
         </Point>
-         <Point x={8150} y={550}>
+         <Point x={8000} y={550}>
           <PhotoCard src="/HorizontalScroll/Rectangle666.png"  width={490} height={390}/>
         </Point>
 
@@ -181,5 +191,3 @@ useLayoutEffect(() => {
     </section>
   );
 }
-
-

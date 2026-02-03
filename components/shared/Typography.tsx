@@ -37,18 +37,29 @@ export const Typography = ({
   line1,
   line2,
   popUp,
-
 }: Omit<TypographyProps, "description">) => {
   return (
-    <div className={cn(baseStyles, variants[variant], className)}>
-      <p>{line1}</p>
-      <p>
+    <div
+      className={cn(
+        "font-bold flex flex-col items-center text-center leading-tight",
+        variants[variant],
+        className   )} >
+      <p className="m-0 leading-tight">
+        {line1}
+      </p>
+
+      <p className="m-0 leading-tight mt-2">
         {line2}
-        {popUp && <span className={highlightStyles[variant]}>{popUp}</span>}
+        {popUp && (
+          <span className={highlightStyles[variant]}>
+            {popUp}
+          </span>
+        )}
       </p>
     </div>
   );
 };
+
 
 export const Descripton = ({ className, description }: DiscriptionProps) => {
   return (
@@ -56,8 +67,7 @@ export const Descripton = ({ className, description }: DiscriptionProps) => {
       className={cn(
         "mx-auto text-center font-family-roboto max-w-2xl my-4 sm:my-6 md:my-8 lg:my-8 tracking-tight font-normal text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed",
         className
-      )}
-    >
+      )}  >
       {description}
     </div>
   );
