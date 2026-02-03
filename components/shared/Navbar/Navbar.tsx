@@ -22,7 +22,7 @@ export const Navbar = () => {
           rounded-lg
           bg-linear-to-r from-[#cbd6f9] to-[#A0B8FF]
           shadow-lg
-          px-2 md:px-3 
+          px-2 md:px-3
           py-0.5 md:py-1.5 lg:py-2
         "
       >

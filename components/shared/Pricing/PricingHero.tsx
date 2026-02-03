@@ -1,10 +1,15 @@
+import { HeroSvg } from "@/components/icons/HeroSvg";
 import { Descripton, Typography } from "../Typography"
 
 
 
 export const PricingHero = () => {
   return (
-    <div className="h-screen justify-center flex flex-col items-center">
+    <div className="h-screen relative justify-center flex flex-col items-center">
+      <div className="absolute -z-100">
+        <HeroSvg/>
+      </div>
+
       <Typography
         variant="h2"
         className=""

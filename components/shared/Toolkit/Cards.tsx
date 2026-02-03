@@ -22,7 +22,7 @@ const TOP_CARDS = [
     link: "https://react.dev/",
     description:
       "We convert design specifications into efficient, scalable, and reliable code. By applying contemporary frameworks and established development practices, we create websites and applications that demonstrate consistent performance, fast load times, and compatibility across devices.",
-      
+
     icons: [
       "/Image pack/Icon/react.svg",
       "/Image pack/Icon/Next js.svg",
@@ -36,7 +36,7 @@ const TOP_CARDS = [
     link: "https://vercel.com/docs",
     description:
       "We take products live through a secure and well-planned deployment process. This includes hosting configuration and performance optimization to ensure the product is fully production-ready and capable of scaling as requirements grow.",
-     
+
     icons: [
       "/Image pack/Icon/vercel.svg",
       "/Image pack/Icon/neglefer.svg",
@@ -53,7 +53,7 @@ const BOTTOM_CARDS = [
     link: "https://docs.github.com/en",
     description:
       "Effective digital products require consistency and structured oversight. We maintain websites through regular updates, performance optimization, and issue resolution to ensure continued reliability as requirements evolve.",
-      
+
     icons: [
       "/Image pack/Icon/Docker.svg",
       "/Image pack/Icon/github.svg",
@@ -67,7 +67,7 @@ const BOTTOM_CARDS = [
     link: "https://slack.com/help",
     description:
       "Technical issues are not limited to standard working hours, and our support services reflect that reality. Whether addressing minor fixes or urgent updates, our team remains available around the clock.",
-    
+
     icons: [
       "/Image pack/Icon/gmail.svg",
       "/Image pack/Icon/slake.svg",
@@ -81,8 +81,8 @@ const BOTTOM_CARDS = [
 
 export default function ProcessGrid() {
   return (
-    <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">  
-      <div className="grid grid-cols-1 md:grid-cols-3 border-x border-b md:border-t border-black divide-y md:divide-y-0 md:divide-x divide-black">
+    <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="grid border-t grid-cols-1 md:grid-cols-3 border-x border-b md:border-t border-black divide-y md:divide-y-0 md:divide-x divide-black">
         {TOP_CARDS.map((card, i) => (
           <Card key={i} {...card} />
         ))}
@@ -118,7 +118,7 @@ export function Card({
         "p-6 sm:p-8 md:p-10 flex h-full flex-col justify-between gap-4 sm:gap-5 md:gap-6",
         className
       )} >
-     
+
       <div className="flex pt-3 sm:pt-4 md:pt-5 gap-2 sm:gap-2.5 md:gap-3">
         {icons.map((src, i) => (
           <Image
@@ -129,14 +129,14 @@ export function Card({
             height={34}
             className="rounded w-7 h-7 sm:w-8 sm:h-8 md:w-8.5 md:h-8.5"      />
         ))}
-      </div>    
+      </div>
       <div className="space-y-2 sm:space-y-2.5 md:space-y-3">
         <h3 className="text-base sm:text-lg pl-2 font-semibold">{title}</h3>
         <p className="text-xs sm:text-[13px] leading-relaxed font-light text-neutral-600">
           {description}
         </p>
       </div>
-      
+
       {link ? (
         <Link
           href={link}
