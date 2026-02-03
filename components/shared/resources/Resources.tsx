@@ -1,10 +1,11 @@
+
 import { Phool } from "../Phool";
 import { Descripton, Typography } from "../Typography";
 import { Design } from "./Design";
 
 export const Resources = () => {
   return (
-    <main className="  mx-auto max-w-4xl">
+    <main className=" mx-auto max-w-4xl">
       <HeroSection />
       <Phool
         Line1="Design for Utility"

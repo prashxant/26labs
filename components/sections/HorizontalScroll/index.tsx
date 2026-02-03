@@ -79,7 +79,7 @@ gsap.set(scrollContentRef.current, {
                  <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 leading-tight">
                        Take a Look at Some of <br />
                         Our{" "}
-                 <span className="relative inline-block text-orange1">
+                 <span className="relative inline-block text-2">
                       Featured Projects
                 </span>
                 </h2>
@@ -100,7 +100,7 @@ gsap.set(scrollContentRef.current, {
 
         <Point x={1150} y={330}>
           <div className="w-75 font-bold text-gray-600">
-            <span className="text-orange1">Diagnose AI </span>
+            <span className="text-orange2">Diagnose AI </span>
                 is a health-tech project that runs on an in-house server hosted in our lab.
           </div>
         </Point>
@@ -138,7 +138,7 @@ gsap.set(scrollContentRef.current, {
              Communication gap between the <br />
              Consumer and Dental industry
             </p>
-            <p className="text-orange1 text-md font-bold mt-1">
+            <p className="text-orange2 text-md font-bold mt-1">
             Oro a Oral product
             </p>
             </div>

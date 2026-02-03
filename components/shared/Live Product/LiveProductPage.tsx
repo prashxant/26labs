@@ -8,7 +8,8 @@ export const LiveProductPage = () => {
           We take you from
           <br />
           <span className="text-black-500">Idea to</span>
-          <span className="text-orange1 ml-2">Live Product</span>
+          <span className="text-orange2
+           ml-2">Live Product</span>
           <span className="text-black-500 ml-2">.</span>
         </h2>
       <ThreeCards />

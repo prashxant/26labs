@@ -11,7 +11,7 @@ const Need = () => {
               text-xl sm:text-2xl md:text-5xl xl:text-[75px] leading-[1.05]" >
 
         <span className="block whitespace-nowrap">
-            Your <span className="text-orange1">website</span>
+            Your <span className="text-orange2">website</span>
         </span>
 
         <span className="block text-center">

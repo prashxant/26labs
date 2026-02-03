@@ -77,7 +77,7 @@ export const Newsletter = () => {
         />
         <button
           onClick={handleSubscribe}
-          className="bg-orange1 justify-center ring items-center flex p-1.5 sm:p-2 shrink-0 cursor-pointer hover:bg-orange-600 transition-colors"
+          className="bg-orange2 justify-center ring items-center flex p-1.5 sm:p-2 shrink-0 cursor-pointer hover:bg-orange-600 transition-colors"
         >
           <Image
             alt="logo"

@@ -8,13 +8,13 @@ const Growth = () => {
         <Typography
           variant="h2"
           popUp="Get personalized"
-          className="text-orange1"
+          className="text-orange2"
           line1=""
         />
         <Typography
           variant="h2"
           popUp="growth plan"
-          className="text-orange1"
+          className="text-orange2"
           line1=""
         />
       </div>

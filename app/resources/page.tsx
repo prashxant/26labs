@@ -1,9 +1,13 @@
+import { HeroSvg } from "@/components/icons/HeroSvg";
 import { Resources } from "@/components/shared/resources/Resources";
-import React from "react";
 
 function page() {
   return (
-    <div className="p-2">
+    <div
+      className="p-2 relative">
+      <div className=" absolute -z-1000">
+        <HeroSvg />
+      </div>
       <Resources />
     </div>
   );
