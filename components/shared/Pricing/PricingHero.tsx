@@ -6,7 +6,7 @@ export const PricingHero = () => {
   return (
     <div className="h-screen justify-center flex flex-col items-center">
       <div className="">
-        {" "}
+
         <Typography
           variant="h2"
           className=""
