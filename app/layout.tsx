@@ -50,8 +50,8 @@ export default function RootLayout({
         <ScrollProgress aria-hidden="true" />
         <main id="main">{children}</main>
         <footer className="relative">
-          {/* <FooterSvg/> */}
-          <Footer />
+          <FooterSvg/>
+             <Footer />
         </footer>
         <Toaster className="" />
       </body>

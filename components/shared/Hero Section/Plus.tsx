@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export const Plus = () => {
   return (
-    <div className="rounded-full  mt-20 flex gap-1.5 sm:gap-2 md:gap-2.5 p-1.5 sm:p-2 md:p-2.5 shadow-[inset_0px_1px_6px_rgba(0,136,255,1)] bg-white/5">
+    <div className="rounded-full items-center flex gap-1  py-1.5 px-2 shadow-[inset_0px_1px_6px_rgba(0,136,255,1)] bg-white/5">
       <Image
         src="/avengers/superman.png"
         width={32}
@@ -25,8 +25,8 @@ export const Plus = () => {
         alt="Customer profile 3"
         className="w-5 shadow-[0px_1px_6px_rgba(0,136,255,1)] hover:scale-125 transition duration-200  h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 rounded-full object-cover"
       />
-      <div className="rounded-full hover:scale-125 transition duration-200  text-gray-600 font-medium p-0.5 px-2 sm:p-1 sm:px-3 md:px-4 text-xs sm:text-sm md:text-base shadow-[inset_0px_1px_6px_rgba(0,136,255,1)] bg-white/90 flex items-center">
-        +99
+      <div className="rounded-full hover:scale-125 transition duration-200  text-gray-600 font-medium p-0.5 px-2 sm:p-1 sm:px-3 md:px-4 text-xs sm:text-sm md:text-base shadow-[inset_0px_1px_6px_rgba(0,136,255,1)] flex items-center">
+        +20
       </div>
 
     </div>

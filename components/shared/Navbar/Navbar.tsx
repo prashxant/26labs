@@ -63,7 +63,7 @@ export const Navbar = () => {
             px-3 sm:px-4 md:px-5 lg:px-6 xl:px-7
             py-2 sm:py-2.5 md:py-3 lg:py-3.5
             text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl
-            text-mainBg
+            text-white
             font-medium sm:font-semibold
             shadow-md
             hover:bg-orange-500/90 hover:text-white
@@ -73,8 +73,8 @@ export const Navbar = () => {
             whitespace-nowrap
             shrink-0"
         >
-          <span className="hidden sm:inline">Book now</span>
-          <span className="sm:hidden">Book</span>
+          <span className="hidden font-extrabold sm:inline">Book now</span>
+          <span className="sm:hidden font-bold">Book</span>
         </a>
       </div>
 

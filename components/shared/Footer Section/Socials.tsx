@@ -21,11 +21,10 @@ const SOCIALS = [
 export const Socials = () => {
   return (
     <div className="flex relative flex-col text-gray-500 w-full px-4 sm:px-6">
-      <Descripton
-        className="max-w-2xl mt-4 md:mt-6 text-sm sm:text-base text-black font-medium lg:mt-8 mb-3 md:mb-4 text-center"
-        description="Say goodbye to outdated enterprise software and welcome the smoother one.
-We lead you from design to product innovation to shape your path from idea to success"
-      />
+      <div className="px-1">
+        hejnfk
+      </div>
+
       <div className="flex justify-center items-center gap-x-2 md:gap-x-3">
         {SOCIALS.map(({ Icon, href, label }) => (
           <Link key={label} href={href} aria-label={label} className="group">
