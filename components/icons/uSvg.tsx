@@ -62,7 +62,7 @@ export const USvg = () => {
           gradientUnits="userSpaceOnUse"
         >
           <stop stopColor="#8CA9FF" />
-          <stop offset="1" stop-color="#E9EBF8" />
+          <stop offset="1" stopColor="#E9EBF8" />
         </linearGradient>
       </defs>
     </svg>
