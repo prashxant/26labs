@@ -14,7 +14,7 @@ export const USvg = () => {
         <path
           d="M645.464 -474C645.464 -474 115.966 -310 68.9643 -76C21.9628 158 143.467 283.5 376.967 255.5C610.467 227.5 831.466 -90 831.466 -90"
           stroke="url(#paint0_linear_573_108)"
-          stroke-width="78"
+          strokeWidth="78"
         />
       </g>
       <defs>
@@ -25,9 +25,9 @@ export const USvg = () => {
           width="883.463"
           height="849.595"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -61,7 +61,7 @@ export const USvg = () => {
           y2="201.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#8CA9FF" />
+          <stop stopColor="#8CA9FF" />
           <stop offset="1" stop-color="#E9EBF8" />
         </linearGradient>
       </defs>

@@ -5,7 +5,7 @@ export const PriceSlider = () => {
   return (
     <div
       className="
-        mx-auto my-16 px-4
+        mx-auto lg:my-24 my-8 px-4
         flex flex-col gap-8
         sm:gap-10
         md:flex-row md:flex-wrap md:justify-center
