@@ -10,7 +10,7 @@
   --color-blue1: oklch(0.7912 0.1049 269.56);
   --color-blue2: oklch(0.7481 0.1287 268.99);
   --color-blue3: oklch(0.6321 0.2018 254.09);
-
+  --shadow-inset-soft: inset 0px 1px 6px rgba(255, 240, 231, 1);
   --font-family-roboto: var(--font-roboto);
 }
 

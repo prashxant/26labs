@@ -70,6 +70,12 @@ export const Newsletter = () => {
       <div className="flex w-full p-2 max-w-xs sm:max-w-md">
         <input
           type="text"
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              handleSubscribe();
+            }
+          }}
           placeholder="Email Address"
           className="ring p-1.5 sm:p-2 w-full font-bold text-2xl sm:text-base"
           value={email}
