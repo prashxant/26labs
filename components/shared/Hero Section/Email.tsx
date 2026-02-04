@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import { toast } from "sonner";
-import Image from "next/image";
 import { Plus } from "./Plus";
 
 type Status = "idle" | "loading" | "success" | "error";
@@ -85,20 +84,27 @@ export const Email = () => {
       <div className="flex w-full items-center font-family-roboto max-w-md flex-col gap-12 sm:flex-row">
         <input
           type="email"
-          value={email}
           onChange={(e) => setEmail(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              handleClaimClick();
+            }
+          }}
+          value={email}
           placeholder="Enter your email"
           className="
           h-10
           w-full flex-1
           rounded-md border-[#FFF0E7] bg-white px-4 py-3
           text-base
-          shadow-[inset_0px_1px_6px_rgba(255,240,231,1)]
+          shadow-inset-soft
           placeholder:font-light
         "
         />
 
         <button
+          type="button"
           onClick={handleClaimClick}
           disabled={status === "loading"}
           className="

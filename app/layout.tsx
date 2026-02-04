@@ -51,9 +51,9 @@ export default function RootLayout({
         <main id="main">{children}</main>
         <footer className="relative">
           {/* <FooterSvg/> */}
-             <Footer />
+          <Footer />
         </footer>
-        <Toaster className="" />
+        <Toaster />
       </body>
     </html>
   );
