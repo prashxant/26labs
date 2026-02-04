@@ -8,7 +8,7 @@ export const HeroSvg = () => {
       viewBox="0 0 1427 880"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="w-screen h-screen"
+      className="w-screen h-screen "
     >
       <g filter="url(#filter0_f_1006_49)">
         <rect

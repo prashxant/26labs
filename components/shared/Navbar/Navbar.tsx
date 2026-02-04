@@ -70,6 +70,7 @@ export const Navbar = () => {
 
         <Link href="/" className="flex items-center shrink-0">
           <Image
+            draggable='false'
             alt="Company logo"
             width={100}
             height={40}
