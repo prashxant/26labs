@@ -22,12 +22,13 @@ function SlidingLogos() {
   const loopLogos = [...logos, ...logos];
 
   return (
-    <div className="w-full overflow-hidden py-12">
+    <div className="w-full overflow-hidden py-12 mask-x-from-70% mask-x-to-90%">
       <div className="marquee flex">
         {loopLogos.map((logo, index) => (
           <div
             key={index}
-            className="w-16 h-16 sm:w-24 sm:h-20 flex items-center justify-center shrink-0">
+            className="w-16 h-16 sm:w-24 sm:h-20 flex items-center justify-center shrink-0"
+          >
             <Image
               src={logo.src}
               alt={logo.alt}
