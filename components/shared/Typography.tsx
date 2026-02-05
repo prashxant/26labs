@@ -43,18 +43,14 @@ export const Typography = ({
       className={cn(
         "font-bold flex flex-col items-center text-center leading-tight",
         variants[variant],
-        className   )} >
-      <p className="m-0 leading-tight">
-        {line1}
-      </p>
+        className
+      )}
+    >
+      <p className="m-0 leading-tight">{line1}</p>
 
       <p className="m-0 leading-tight mt-2">
         {line2}
-        {popUp && (
-          <span className={highlightStyles[variant]}>
-            {popUp}
-          </span>
-        )}
+        {popUp && <span className={highlightStyles[variant]}>{popUp}</span>}
       </p>
     </div>
   );
