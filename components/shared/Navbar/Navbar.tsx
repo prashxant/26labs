@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import posthog from "posthog-js";
 import { Menu } from "./navMenu";
 
 export const Navbar = () => {
@@ -85,6 +86,12 @@ export const Navbar = () => {
           href="https://calendly.com/26labs-live/30min"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => {
+            posthog.capture("booking_cta_clicked", {
+              source: "navbar",
+              destination: "calendly",
+            });
+          }}
           className="
             inline-flex items-center justify-center
             rounded-[5px]
@@ -113,24 +120,51 @@ export const Navbar = () => {
           <nav className="space-y-2 sm:space-y-3">
             <Link
               href="/resources"
+              onClick={() => {
+                posthog.capture("nav_link_clicked", {
+                  link_name: "Resource",
+                  destination: "/resources",
+                  source: "mobile_menu",
+                });
+              }}
               className="block text-white hover:text-orange2 py-2"
             >
               Resource
             </Link>
             <Link
               href="/pricing"
+              onClick={() => {
+                posthog.capture("nav_link_clicked", {
+                  link_name: "Pricing",
+                  destination: "/pricing",
+                  source: "mobile_menu",
+                });
+              }}
               className="block text-white hover:text-orange2 py-2"
             >
               Pricing
             </Link>
             <Link
               href="/blog"
+              onClick={() => {
+                posthog.capture("nav_link_clicked", {
+                  link_name: "Blog",
+                  destination: "/blog",
+                  source: "mobile_menu",
+                });
+              }}
               className="block text-white hover:text-orange2 py-2"
             >
               Blog
             </Link>
             <a
               href="https://calendly.com/26labs-live/30min"
+              onClick={() => {
+                posthog.capture("booking_cta_clicked", {
+                  source: "mobile_menu",
+                  destination: "calendly",
+                });
+              }}
               className="block text-white hover:text-orange2 py-2"
             >
               Contact

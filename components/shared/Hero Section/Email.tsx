@@ -4,6 +4,7 @@ import { useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import { toast } from "sonner";
 import { Plus } from "./Plus";
+import posthog from "posthog-js";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -65,13 +66,25 @@ export const Email = () => {
       setStatus("success");
       setEmail("");
 
+      // Track successful newsletter subscription
+      posthog.capture("newsletter_subscribed", {
+        source: "hero_section",
+      });
+
       toast.success("Subscribed 🎉", {
-        description: "You’ll hear from us soon",
+        description: "You'll hear from us soon",
       });
     } catch (err) {
       console.error(err);
       setError("Something went wrong. Please try again.");
       setStatus("error");
+
+      // Track failed newsletter subscription and capture exception
+      posthog.capture("newsletter_subscription_failed", {
+        source: "hero_section",
+        error_message: err instanceof Error ? err.message : "Unknown error",
+      });
+      posthog.captureException(err);
 
       toast.error("Something went wrong", {
         description: "Please try again later",

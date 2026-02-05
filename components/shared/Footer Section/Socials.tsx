@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import posthog from "posthog-js";
 import InstagramIcon from "@/components/ui/instagram-icon";
 import LinkedinIcon from "@/components/ui/linkedin-icon";
 import TwitterXIcon from "@/components/ui/twitter-x-icon";
@@ -27,7 +28,18 @@ export const Socials = () => {
 
       <div className="flex justify-center items-center gap-x-2 md:gap-x-6">
         {SOCIALS.map(({ Icon, href, label }) => (
-          <Link key={label} href={href} aria-label={label} className="group">
+          <Link
+            key={label}
+            href={href}
+            aria-label={label}
+            onClick={() => {
+              posthog.capture("social_link_clicked", {
+                platform: label,
+                destination: href,
+              });
+            }}
+            className="group"
+          >
             <Icon className="size-6 md:size-8 text-blue2 transition-colors group-hover:text-blue-600/90" />
           </Link>
         ))}
