@@ -1,16 +1,16 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import posthog from "posthog-js";
 
-export function PostHogProvider({ children }: { children: React.ReactNode }) {
+function PageViewTracker() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
   useEffect(() => {
     // Track pageviews
-    if (pathname) {
+    if (pathname && typeof window !== "undefined") {
       let url = window.origin + pathname;
       if (searchParams && searchParams.toString()) {
         url = url + `?${searchParams.toString()}`;
@@ -21,5 +21,16 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
     }
   }, [pathname, searchParams]);
 
-  return <>{children}</>;
+  return null;
+}
+
+export function PostHogProvider({ children }: { children: React.ReactNode }) {
+  return (
+    <>
+      <Suspense fallback={null}>
+        <PageViewTracker />
+      </Suspense>
+      {children}
+    </>
+  );
 }
