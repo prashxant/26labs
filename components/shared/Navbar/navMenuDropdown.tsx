@@ -1,6 +1,12 @@
 import Link from "next/link";
 
-export const MenuDropdown = ({ open }: { open: boolean }) => {
+export const MenuDropdown = ({
+  open,
+  onClose,
+}: {
+  open: boolean;
+  onClose: () => void;
+}) => {
   return (
     <div
       className={`
@@ -15,26 +21,37 @@ export const MenuDropdown = ({ open }: { open: boolean }) => {
             ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
             : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
         }
-      `}   >
+      `}
+    >
       <nav className="space-y-3 md:space-y-4 text-white text-base md:text-lg lg:text-xl font-semibold">
-        <Link href="/resources"
-        className="block transition-all duration-200 hover:text-black hover:translate-x-1 text-white ">
+        <Link
+          href="/resources"
+          onClick={onClose}
+          className="block transition-all duration-200 hover:text-black hover:translate-x-1 text-white "
+        >
           Resource
         </Link>
         <Link
           href="/pricing"
-          className="block transition-all duration-200 hover:text-black hover:translate-x-1 text-white ">
+          onClick={onClose}
+          className="block transition-all duration-200 hover:text-black hover:translate-x-1 text-white "
+        >
           Pricing
         </Link>
         <Link
           href="/blog"
-          className="block transition-all duration-200 hover:text-black hover:translate-x-1 text-white" >
+          onClick={onClose}
+          className="block transition-all duration-200 hover:text-black hover:translate-x-1 text-white"
+        >
           Blog
         </Link>
+
         <a
-        target="_blank"
+          target="_blank"
           href="https://calendly.com/26labs-live/30min"
-          className="block transition-all duration-200 hover:text-black hover:translate-x-1 text-white" >
+          onClick={onClose}
+          className="block transition-all duration-200 hover:text-black hover:translate-x-1 text-white"
+        >
           Contact
         </a>
       </nav>

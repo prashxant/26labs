@@ -37,7 +37,7 @@ export const Menu = () => {
         </span>
       </button>
 
-      <MenuDropdown open={open} />
+      <MenuDropdown open={open} onClose={() => setOpen(false)} />
     </div>
   );
 };
