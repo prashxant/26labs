@@ -9,7 +9,7 @@ import { Menu } from "./navMenu";
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
 
-  // ✅ NEW: scroll state
+
   const [hidden, setHidden] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -51,9 +51,7 @@ export const Navbar = () => {
           bg-linear-to-r from-[#cbd6f9] to-[#A0B8FF]
           shadow-lg
           px-2 md:px-3
-          py-0.5 md:py-1.5 lg:py-2
-        "
-      >
+          py-0.5 md:py-1.5 lg:py-2 " >
 
         <button
           onClick={handleMenuToggle}
