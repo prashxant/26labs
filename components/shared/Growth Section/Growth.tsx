@@ -1,3 +1,6 @@
+"use client";
+
+import posthog from "posthog-js";
 import { Descripton, Typography } from '../Typography';
 
 const steps = [
@@ -69,6 +72,13 @@ const Growth = () => {
           href="https://calendly.com/26labs-live/30min"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => {
+            posthog.capture("booking_cta_clicked", {
+              source: "growth_section",
+              destination: "calendly",
+              pricing: "$149",
+            });
+          }}
           className="px-9 py-2 font-bold text-gray-800 bg-white border border-gray-300 shadow-[0_2px_6px_rgba(0,0,0,0.15)] hover:shadow-[0_4px_10px_rgba(0,0,0,0.2)] transition"   >
           <span className="hidden sm:inline">Book now</span>
           <span className="sm:hidden">Book</span>
@@ -76,6 +86,13 @@ const Growth = () => {
 
         <a
           href="/pricing"
+          onClick={() => {
+            posthog.capture("nav_link_clicked", {
+              link_name: "Visit Pricing",
+              destination: "/pricing",
+              source: "growth_section",
+            });
+          }}
           className="px-9 py-2 border border-orange-500 bg-[#8ca9ff] text-white font-semibold" >
           Visit Pricing
         </a>

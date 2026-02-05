@@ -1,3 +1,6 @@
+"use client";
+
+import posthog from "posthog-js";
 import { Tick } from "@/components/icons/Tick";
 
 type PriceCardProps = {
@@ -13,6 +16,13 @@ export const PriceCard = ({
   description,
   features,
 }: PriceCardProps) => {
+  const handleGetStarted = () => {
+    posthog.capture("pricing_plan_selected", {
+      plan_name: title,
+      plan_price: price,
+      features_count: features.length,
+    });
+  };
   return (
     <div
       className="
@@ -80,6 +90,7 @@ export const PriceCard = ({
           </ul>
 
           <button
+            onClick={handleGetStarted}
             className="
               mt-auto mx-auto
               w-36 sm:w-40
