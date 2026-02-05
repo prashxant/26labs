@@ -8,7 +8,7 @@ import YoutubeIcon from "@/components/ui/youtube-icon";
 import { Descripton } from "@/components/shared/Typography";
 
 const SOCIALS = [
-  { Icon: LinkedinIcon, href: "https://www.linkedin.com/in/twenty-six-labs-0466743a6/", label: "LinkedIn" },
+  { Icon: LinkedinIcon, href: "https://www.linkedin.com/company/26labs/", label: "LinkedIn" },
   { Icon: TwitterXIcon, href: "https://x.com/26labs_live", label: "Twitter X" },
   { Icon: YoutubeIcon, href: "/", label: "YouTube" },
   {
