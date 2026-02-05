@@ -4,8 +4,8 @@ import { Resources } from "@/components/shared/resources/Resources";
 function page() {
   return (
     <div
-      className="p-5 relative">
-      <div className=" absolute -z-900">
+      className="p-2 overflow-hidden relative">
+      <div className=" absolute -z-1000">
         <HeroSvg />
       </div>
       <Resources />

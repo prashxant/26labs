@@ -49,7 +49,7 @@ export default function RootLayout({
         </header>
         <ScrollProgress aria-hidden="true" />
         <main id="main">{children}</main>
-        <footer className="relative">
+        <footer className="relative overflow-hidden">
           <FooterSvg/>
           <Footer />
         </footer>
