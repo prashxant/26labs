@@ -1,5 +1,4 @@
 import { Typography } from "../Typography";
-import { Card } from "../Toolkit/Cards";
 import { Phool } from "../Phool";
 
 const TOP_CARDS = [
@@ -64,10 +63,17 @@ const TOP_CARDS2 = [
 
 export const Design = () => {
   return (
-    <section className="flex flex-col mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      
+    <section className="flex relative flex-col mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="h-full w-[30vw] rounded-full bg-linear-to-r p-10 from-sky-200  to-indigo-200 absolute right-20 -rotate-25 -z-100  blur-3xl">
+      </div>
+
       <div className="py-16 flex justify-center">
-        <Typography variant="h3" popUp="Design Resources." line1="" className={""} />
+        <Typography
+          variant="h3"
+          popUp="Design Resources."
+          line1=""
+          className={""}
+        />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 border border-black">
@@ -77,20 +83,16 @@ export const Design = () => {
             className={`
               p-6 flex flex-col justify-between h-full
               border-b md:border-b-0 border-black
-              ${i !== TOP_CARDS.length - 1 ? "md:border-r" : ""}`} >
+              ${i !== TOP_CARDS.length - 1 ? "md:border-r" : ""}`}
+          >
             <div className="space-y-3">
-              <img
-                src={card.icons[0]}
-                alt=""
-                className="w-6 h-6 shrink-0" />
+              <img src={card.icons[0]} alt="" className="w-6 h-6 shrink-0" />
 
               <h3 className="text-sm font-medium md:line-clamp-1">
                 {card.title}
               </h3>
 
-              <p className="text-xs text-gray-500 min-h-4">
-                {card.author}
-              </p>
+              <p className="text-xs text-gray-500 min-h-4">{card.author}</p>
 
               <p className="text-xs text-gray-600 leading-relaxed">
                 {card.description}
@@ -101,26 +103,27 @@ export const Design = () => {
               href={card.link}
               target="_blank"
               rel="noreferrer"
-              className="mt-6 text-xs font-medium underline underline-offset-4 py-2"  >
+              className="mt-6 text-xs font-medium underline underline-offset-4 py-2"
+            >
               ↓ {card.cta}
             </a>
           </div>
         ))}
       </div>
 
-     
       <Phool
         Line1="Develop for Society"
         Line2="Develop Better Humanity"
-        src="Image pack/phool.svg"     />
+        src="Image pack/phool.svg"
+      />
 
-   
       <div className="pb-32 flex flex-col items-center">
         <Typography
           variant="h3"
           className="py-16"
           popUp="Tech Resources."
-          line1=""      />
+          line1=""
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-3 border border-black">
           {TOP_CARDS2.map((card, i) => (
@@ -129,20 +132,16 @@ export const Design = () => {
               className={`
                 p-6 flex flex-col justify-between h-full
                 border-b md:border-b-0 border-black
-                ${i !== TOP_CARDS2.length - 1 ? "md:border-r" : ""} `}>
+                ${i !== TOP_CARDS2.length - 1 ? "md:border-r" : ""} `}
+            >
               <div className="space-y-3">
-                <img
-                  src={card.icons[0]}
-                  alt=""
-                  className="w-6 h-6 shrink-0"/>
+                <img src={card.icons[0]} alt="" className="w-6 h-6 shrink-0" />
 
                 <h3 className="text-sm font-medium md:line-clamp-1">
                   {card.title}
                 </h3>
 
-                <p className="text-xs text-gray-500 min-h-4">
-                  {card.author}
-                </p>
+                <p className="text-xs text-gray-500 min-h-4">{card.author}</p>
 
                 <p className="text-xs text-gray-600 leading-relaxed">
                   {card.description}

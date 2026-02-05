@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 export const HeroSvg = () => {
   return (
@@ -8,7 +8,7 @@ export const HeroSvg = () => {
       viewBox="0 0 1427 880"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className='w-screen h-screen'
+      className="w-screen h-screen "
     >
       <g filter="url(#filter0_f_1006_49)">
         <rect
@@ -48,9 +48,9 @@ export const HeroSvg = () => {
           width="952"
           height="721"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -69,9 +69,9 @@ export const HeroSvg = () => {
           width="816"
           height="642"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -90,9 +90,9 @@ export const HeroSvg = () => {
           width="635.465"
           height="632.857"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -112,8 +112,8 @@ export const HeroSvg = () => {
           y2="924.07"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFAA72" />
-          <stop offset="1" stop-color="#8CA9FF" />
+          <stop stopColor="#FFAA72" />
+          <stop offset="1" stopColor="#8CA9FF" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_1006_49"
@@ -123,8 +123,8 @@ export const HeroSvg = () => {
           y2="514.651"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#BCCDFF" />
-          <stop offset="1" stop-color="#FF6C0C" />
+          <stop stopColor="#BCCDFF" />
+          <stop offset="1" stopColor="#FF6C0C" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_1006_49"
@@ -134,10 +134,10 @@ export const HeroSvg = () => {
           y2="156.534"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#A0B8FF" />
-          <stop offset="1" stop-color="#FF8535" />
+          <stop stopColor="#A0B8FF" />
+          <stop offset="1" stopColor="#FF8535" />
         </linearGradient>
       </defs>
     </svg>
   );
-}
+};

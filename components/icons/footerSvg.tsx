@@ -1,7 +1,8 @@
 import React from "react";
 
 export const FooterSvg = () => {
-  return (<svg
+  return (
+    <svg
       width="3048"
       height="2329"
       viewBox="0 0 3048 2329"
@@ -23,9 +24,9 @@ export const FooterSvg = () => {
           width="3048"
           height="2329"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -59,9 +60,10 @@ export const FooterSvg = () => {
           y2="1152.4"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#8CA9FF" />
-          <stop offset="1" stop-color="#E9EBF8" />
+          <stop stopColor="#8CA9FF" />
+          <stop offset="1" stopColor="#E9EBF8" />
         </linearGradient>
       </defs>
     </svg>
-)}
+  );
+};

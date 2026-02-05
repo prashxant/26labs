@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import { toast } from "sonner";
-import Image from "next/image";
 import { Plus } from "./Plus";
 
 type Status = "idle" | "loading" | "success" | "error";
@@ -82,30 +81,37 @@ export const Email = () => {
 
   return (
     <div className="flex w-full py-10 flex-col items-center gap-4 px-4 sm:px-0">
-      <div className="flex w-full font-family-roboto max-w-md flex-col gap-3 sm:flex-row">
+      <div className="flex w-full items-center font-family-roboto max-w-md flex-col gap-12 sm:flex-row">
         <input
           type="email"
-          value={email}
           onChange={(e) => setEmail(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              handleClaimClick();
+            }
+          }}
+          value={email}
           placeholder="Enter your email"
           className="
+          h-10
           w-full flex-1
-          rounded-md border-[#FFF0E7] px-4 py-3
+          rounded-md border-[#FFF0E7] bg-white px-4 py-3
           text-base
-          shadow-[inset_0px_1px_6px_rgba(255,240,231,1)]
-          placeholder:text-[13px]
+          shadow-inset-soft
           placeholder:font-light
         "
         />
 
         <button
+          type="button"
           onClick={handleClaimClick}
           disabled={status === "loading"}
           className="
-          w-[50vw] mx-auto  sm:w-auto
+          w-[50vw] mx-auto flex items-center  sm:w-auto
           rounded-md bg-[#8CA9FF]
           shadow-[inset_0px_1px_6px_rgba(0,136,255,1)]
-          px-4 py-2
+          px-4 py-2 h-12
           text-mainBg
           text-[30px]
           disabled:opacity-60
