@@ -8,7 +8,7 @@ export const MenuDropdown = ({ open }: { open: boolean }) => {
         rounded-xl md:rounded-1xl
         bg-linear-to-b from-[#9db2ff] to-mainBg
         p-4 md:p-6 lg:p-6
-        shadow-xl 
+        shadow-xl
         transition-all duration-300 ease-out
         ${
           open
@@ -17,8 +17,8 @@ export const MenuDropdown = ({ open }: { open: boolean }) => {
         }
       `}   >
       <nav className="space-y-3 md:space-y-4 text-white text-base md:text-lg lg:text-xl font-semibold">
-        <Link href="/resources" 
-        className="block transition-all duration-200 hover:text-black hover:translate-x-1 text-white ">    
+        <Link href="/resources"
+        className="block transition-all duration-200 hover:text-black hover:translate-x-1 text-white ">
           Resource
         </Link>
         <Link
@@ -31,11 +31,12 @@ export const MenuDropdown = ({ open }: { open: boolean }) => {
           className="block transition-all duration-200 hover:text-black hover:translate-x-1 text-white" >
           Blog
         </Link>
-        <Link
+        <a
+        target="_blank"
           href="https://calendly.com/26labs-live/30min"
           className="block transition-all duration-200 hover:text-black hover:translate-x-1 text-white" >
           Contact
-        </Link>
+        </a>
       </nav>
     </div>
   );

@@ -68,7 +68,7 @@ gsap.set(scrollContentRef.current, {
   return (
     <section
       ref={componentRef}
-      className="relative h-screen w-full overflow-hidden bg-[#F5F5F5]"  >
+      className="relative  h-screen w-full overflow-hidden bg-[#F5F5F5]"  >
       <div
         ref={scrollContentRef}
         className="absolute top-0 left-0 h-full w-2143 will-change-transform">

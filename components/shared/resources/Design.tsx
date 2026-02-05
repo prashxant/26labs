@@ -68,7 +68,7 @@ export const Design = () => {
         className="
             absolute right-0 h-full w-[30vw]
             -rotate-10 sm:-rotate-15 md:-rotate-25   lg:-rotate-30 xl:-rotate-60 rounded-full
-            bg-linear-to-r from-[#FF6C0C]/50 to-[#BCCDFF]
+            bg-linear-to-r from-[#FF6C0C]/30 to-[#BCCDFF]/80
             p-10 blur-3xl -z-300
           "
       />
