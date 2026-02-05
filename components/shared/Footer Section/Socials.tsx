@@ -20,12 +20,12 @@ const SOCIALS = [
 
 export const Socials = () => {
   return (
-    <div className="flex relative flex-col text-gray-500 w-full px-4 sm:px-6">
+    <div className="flex relative flex-col text-gray-500  px-4 sm:px-6">
       <div className="px-1">
-        hejnfk
+
       </div>
 
-      <div className="flex justify-center items-center gap-x-2 md:gap-x-3">
+      <div className="flex justify-center items-center gap-x-2 md:gap-x-6">
         {SOCIALS.map(({ Icon, href, label }) => (
           <Link key={label} href={href} aria-label={label} className="group">
             <Icon className="size-6 md:size-8 text-blue2 transition-colors group-hover:text-blue-600/90" />
