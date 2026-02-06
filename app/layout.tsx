@@ -6,6 +6,8 @@ import { Navbar } from "@/components/shared/Navbar/Navbar";
 import ScrollProgress from "@/components/shared/ScroolProcress";
 import { Footer } from "@/components/shared/Footer Section/Footer";
 import { FooterSvg } from "@/components/icons/footerSvg";
+import { PostHogProvider } from "@/components/providers/PostHogProvider";
+import "@/instrumentation-client";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -38,22 +40,24 @@ export default function RootLayout({
       className={`${openSans.variable} ${roboto.variable}`}
     >
       <body className="bg-[#F5F5F5] font-sans antialiased ">
-        <a
-          href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 z-50 rounded bg-blue1 px-10 py-2 text-sm shadow"
-        >
-          Skip to main content
-        </a>
-        <header>
-          <Navbar />
-        </header>
-        <ScrollProgress aria-hidden="true" />
-        <main id="main">{children}</main>
-        <footer className="relative overflow-hidden">
-          <FooterSvg/>
-          <Footer />
-        </footer>
-        <Toaster />
+        <PostHogProvider>
+          <a
+            href="#main"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 z-50 rounded bg-blue1 px-10 py-2 text-sm shadow"
+          >
+            Skip to main content
+          </a>
+          <header>
+            <Navbar />
+          </header>
+          <ScrollProgress aria-hidden="true" />
+          <main id="main">{children}</main>
+          <footer className="relative overflow-hidden">
+            <FooterSvg />
+            <Footer />
+          </footer>
+          <Toaster />
+        </PostHogProvider>
       </body>
     </html>
   );

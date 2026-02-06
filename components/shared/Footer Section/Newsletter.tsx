@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { toast } from "sonner";
+import posthog from "posthog-js";
 
 import { NewSvg } from "@/components/icons/New";
 import { supabase } from "@/lib/supabaseClient";
@@ -42,10 +43,23 @@ export const Newsletter = () => {
         throw error;
       }
 
+      // Track successful newsletter subscription
+      posthog.capture("newsletter_subscribed", {
+        source: "footer_section",
+      });
+
       toast.success("Subscribed 🎉");
       setEmail("");
     } catch (err) {
       console.error(err);
+
+      // Track failed newsletter subscription and capture exception
+      posthog.capture("newsletter_subscription_failed", {
+        source: "footer_section",
+        error_message: err instanceof Error ? err.message : "Unknown error",
+      });
+      posthog.captureException(err);
+
       toast.error("Something went wrong. Please try again.");
     }
   };
