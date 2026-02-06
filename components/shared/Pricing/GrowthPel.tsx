@@ -6,7 +6,7 @@ export const GrowthPel = () => {
       <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
         <div className="bg-blue1 blur-3xl absolute -z-10 inset-0 pointer-events-none"></div>
       </div>
-      {/* Heading */}
+    
       <h2
         className="
           font-extrabold text-white
