@@ -1,5 +1,8 @@
 import React from "react";
 
+/* ---------------------------------- */
+/* Icons */
+/* ---------------------------------- */
 
 const Tick = ({ size = 18 }: { size?: number }) => (
   <svg
@@ -9,17 +12,22 @@ const Tick = ({ size = 18 }: { size?: number }) => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     className="shrink-0"
-    aria-hidden="true" >
+    aria-hidden="true"
+  >
     <circle cx="10" cy="10" r="10" fill="#48BB78" />
     <path
       d="M6 10L9 13L14 7"
       stroke="white"
       strokeWidth="2"
       strokeLinecap="round"
-      strokeLinejoin="round"   />
+      strokeLinejoin="round"
+    />
   </svg>
 );
 
+/* ---------------------------------- */
+/* Types */
+/* ---------------------------------- */
 
 type PlanKey = "starter" | "standard" | "premium" | "enterprise";
 
@@ -36,6 +44,16 @@ type FeatureCategory = {
   features: Feature[];
 };
 
+/* ---------------------------------- */
+/* Data */
+/* ---------------------------------- */
+
+const plans: { key: PlanKey; name: string; price: string }[] = [
+  { key: "starter", name: "Starter", price: "$249" },
+  { key: "standard", name: "Standard", price: "$399" },
+  { key: "premium", name: "Premium", price: "$549" },
+  { key: "enterprise", name: "Enterprise", price: "Quotation" },
+];
 
 const featureCategories: FeatureCategory[] = [
   {
@@ -165,116 +183,98 @@ const featureCategories: FeatureCategory[] = [
   },
 ];
 
-const plans: { key: PlanKey; name: string; price: string }[] = [
-  { key: "starter", name: "Starter", price: "$249" },
-  { key: "standard", name: "Standard", price: "$399" },
-  { key: "premium", name: "Premium", price: "$549" },
-  { key: "enterprise", name: "Enterprise", price: "Quotation" },
-];
+/* ---------------------------------- */
+/* Helpers */
+/* ---------------------------------- */
 
+const TickCentered = () => (
+  <div className="flex justify-center">
+    <Tick />
+  </div>
+);
+
+const Dash = () => (
+  <div className="flex justify-center text-gray-300 text-xl">—</div>
+);
+
+const TextCell = ({ value }: { value: string }) => (
+  <div className="flex justify-center px-2 text-center">
+    <span className="text-sm lg:text-base text-gray-800 leading-tight">
+      {value}
+    </span>
+  </div>
+);
+
+const renderCell = (value: string | boolean) => {
+  if (value === true) return <TickCentered />;
+  if (value === false) return <Dash />;
+  return <TextCell value={value} />;
+};
+
+/* ---------------------------------- */
+/* Component */
+/* ---------------------------------- */
 
 export const ComparisonTable = () => {
-  const renderCell = (value: string | boolean) => {
-    if (value === true) {
-      return (
-        <div className="flex justify-center">
-          <Tick />
-        </div>
-      );
-    }
-
-    if (value === false) {
-      return (
-        <div className="flex justify-center text-gray-300 text-xl">—</div>
-      );
-    }
-
-    return (
-      <div className="flex justify-center text-center px-2">
-        <span className="text-sm lg:text-base text-gray-800 leading-tight">
-          {value}
-        </span>
-      </div>
-    );
-  };
-
   return (
-    <div className="relative rounded-xl p-4">
-      <div className="absolute inset-0 rounded-xl bg-linear-to-r from-orange-200/30 to-blue-200/30 blur-2xl" />
+    <div className="relative">
+      <section className="mx-auto max-w-7xl px-4 my-12">
+        {/* ================= Desktop Table (LG+) ================= */}
+        <div className="hidden lg:block relative rounded-xl overflow-hidden p-2">
 
-      <section className="relative z-10 mx-auto my-10 w-full max-w-7xl px-4">
-        <div className="text-center mb-12">
-          <h2 className="font-bold text-black text-3xl md:text-5xl mb-3">
-            Our Product <span className="text-[#FF8535]">Plans</span>
-          </h2>
-          <p className="text-black text-base max-w-2xl mx-auto">
-            Compare all features across our plans to find the perfect fit for
-            your needs...
-          </p>
-        </div>
+          <div className="absolute inset-0 scale-170 -z-10 animate-spin-slow  ">
+            <div className="h-full w-full   bg-linear-to-r from-blue-700/90  via-slate-300 to-slate-700/90 " />
+          </div>
 
-       
-        <div className="hidden lg:block p-4 rounded-xl overflow-hidden">
-          <div className="bg-linear-to-r from-[#FF6C0C]/80 to-[#BCCDFF]/90 p-1 rounded-xl">
-            <div className="bg-white rounded-xl overflow-x-auto">
-              <table className="w-full min-w-180">
-                <thead>
-                  <tr>
-                    <th className="p-4 text-left font-bold text-base">
-                      Features
+          <div className="bg-white rounded-xl overflow-x-auto">
+            <table className="w-full min-w-[1100px]">
+              <thead>
+                <tr>
+                  <th className="p-4 text-left font-bold">Features</th>
+                  {plans.map((plan) => (
+                    <th key={plan.key} className="p-4 text-center font-bold">
+                      <div className="text-xl">{plan.name}</div>
+                      <div className="text-[#3766F0] text-4xl font-bold">
+                        {plan.price}
+                      </div>
+                      {plan.key !== "enterprise" && (
+                        <div className="text-sm">/project</div>
+                      )}
                     </th>
-                    {plans.map((plan) => (
-                      <th
-                        key={plan.key}
-                        className="p-4 text-center font-bold">
-                        <div className="text-xl">{plan.name}</div>
-                        <div className="text-[#3766F0] text-4xl font-bold">
-                          {plan.price}
-                        </div>
-                        {plan.key !== "enterprise" && (
-                          <div className="text-sm text-black">/project</div>
-                        )}
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-
-                <tbody>
-                  {featureCategories.map((category) => (
-                    <React.Fragment key={category.category}>
-                      <tr className="bg-[#FFF0E7]">
-                        <td
-                          colSpan={5}
-                          className="px-4 py-2 font-semibold text-base">
-                          {category.category}
-                        </td>
-                      </tr>
-
-                      {category.features.map((feature) => (
-                        <tr
-                          key={feature.name}
-                          className="hover:bg-gray-50 transition-colors"
-                        >
-                          <th className="px-4 py-3 text-sm font-medium border-b text-left">
-                            {feature.name}
-                          </th>
-                          {plans.map((plan) => (
-                            <td key={plan.key} className="border-b">
-                              {renderCell(feature[plan.key])}
-                            </td>
-                          ))}
-                        </tr>
-                      ))}
-                    </React.Fragment>
                   ))}
-                </tbody>
-              </table>
-            </div>
+                </tr>
+              </thead>
+
+              <tbody>
+                {featureCategories.map((category) => (
+                  <React.Fragment key={category.category}>
+                    <tr className="bg-[#FFF0E7]">
+                      <td colSpan={5} className="px-4 py-2 font-semibold">
+                        {category.category}
+                      </td>
+                    </tr>
+
+                    {category.features.map((feature) => (
+                      <tr key={feature.name} className="hover:bg-gray-50">
+                        <th className="px-4 py-3 text-sm text-left border-b">
+                          {feature.name}
+                        </th>
+                        {plans.map((plan) => (
+                          <td key={plan.key} className="border-b">
+                            {renderCell(feature[plan.key])}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </React.Fragment>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
 
-        
-        <div className="lg:hidden space-y-5">
+        {/* ================= Mobile Cards (< LG) ================= */}
+        <div className="lg:hidden space-y-6">
           {plans.map((plan) => (
             <div
               key={plan.key}
@@ -295,9 +295,7 @@ export const ComparisonTable = () => {
 
                 {featureCategories.map((category) => (
                   <div key={category.category} className="mb-4">
-                    <h4 className="font-semibold text-base mb-2">
-                      {category.category}
-                    </h4>
+                    <h4 className="font-semibold mb-2">{category.category}</h4>
                     <ul className="space-y-2">
                       {category.features.map((feature) => {
                         const value = feature[plan.key];
@@ -306,7 +304,8 @@ export const ComparisonTable = () => {
                         return (
                           <li
                             key={feature.name}
-                            className="flex items-start gap-2" >
+                            className="flex items-start gap-2"
+                          >
                             <Tick size={16} />
                             <span className="text-sm font-medium">
                               {feature.name}
