@@ -18,12 +18,11 @@ type TypographyVariant = "h1" | "h2" | "h3";
 
 const variants = {
   h1: "text-2xl sm:text-3xl md:text-4xl text-shadow lg:text-6xl xl:text-[90px] ",
-  h2: "text-xl sm:text-2xl  md:text-5xl xl:text-[75px]",
+  h2: "text-lg sm:text-2xl  md:text-5xl xl:text-[75px]",
   h3: "text-lg sm:text-xl md:text-2xl lg:text-[28.13px]",
 };
 
-const baseStyles =
-  "font-bold flex flex-col gap-1 sm:gap-2 md:gap-4 lg:gap-8 items-center text-center leading-tight";
+
 
 const highlightStyles = {
   h1: "text-white mx-2 text-[px] inline-flex leading-none  px-2 bg-[#FFAA72]",

@@ -81,7 +81,7 @@ const BOTTOM_CARDS = [
 
 export default function ProcessGrid() {
   return (
-    <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="mx-auto w-[90vw] sm:max-w-7xl px-4 pt-6 sm:pt-0  sm:px-6 lg:px-8">
       <div className="grid border-t grid-cols-1 md:grid-cols-3 border-x border-b md:border-t border-black divide-y md:divide-y-0 md:divide-x divide-black">
         {TOP_CARDS.map((card, i) => (
           <Card key={i} {...card} />
