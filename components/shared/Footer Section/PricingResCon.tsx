@@ -3,8 +3,8 @@ import React from "react";
 
 export const PricingResCon = () => {
   return (
-    <div className="mx-auto max-w-7xl w-full px-4 sm:px-6">
-      <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-8 text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium">
+    <div className="mx-auto max-w-7xl w-full px-4 pb-10 sm:px-6">
+      <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-8 text-center text-[18px] sm:text-xl md:text-2xl lg:text-3xl font-medium">
         <Link href='/pricing'>Pricing</Link>
         <Link href='/resources'>Resource</Link>
         <Link href='/contact'>Contact</Link>

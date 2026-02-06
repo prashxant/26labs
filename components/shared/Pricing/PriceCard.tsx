@@ -27,7 +27,7 @@ export const PriceCard = ({
     <div
       className="
         flex flex-col h-full
-        w-full sm:max-w-[340px]
+        w-full sm:max-w-85
         transition-transform duration-300
         md:hover:scale-105
       "
@@ -74,7 +74,7 @@ export const PriceCard = ({
 
           <ul
             className="
-              flex-1 min-h-[220px]
+              flex-1 sm:min-h-55
               space-y-2 sm:space-y-2.5
               my-8 sm:my-10 md:my-12
             "

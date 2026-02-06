@@ -11,11 +11,12 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <Hero />
-
       <ToolkitPage />
       <LiveProductPage />
       <Brand />
-      <HorizontalScrollSection />
+      <div className="hidden sm:block">
+        <HorizontalScrollSection />
+      </div>
       <Fueling />
       <Need />
       <Growth />

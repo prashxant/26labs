@@ -10,7 +10,7 @@ export const LetsConnect = () => {
         <h1>Let&apos;s</h1>
         <h1 className="">Connect </h1>
       </div>
-      <p>sales@26labs.live</p>
+      {/* <p>sales@26labs.live</p> */}
 
       <div className="">
         <Socials/>

@@ -93,8 +93,8 @@ export const Email = () => {
   };
 
   return (
-    <div className="flex w-full py-10 flex-col items-center gap-4 px-4 sm:px-0">
-      <div className="flex w-full items-center font-family-roboto max-w-md flex-col gap-12 sm:flex-row">
+    <div className="flex w-full py-5 sm:py-10 flex-col items-center gap-4 px-4 sm:px-0">
+      <div className="flex sm:w-full w-[70vw] items-center font-family-roboto max-w-md flex-col sm:gap-12 gap-6 sm:flex-row">
         <input
           type="email"
           onChange={(e) => setEmail(e.target.value)}
@@ -107,9 +107,9 @@ export const Email = () => {
           value={email}
           placeholder="Enter your email"
           className="
-          h-10
+           sm:h-10
           w-full flex-1
-          rounded-md border-[#FFF0E7] bg-white px-4 py-3
+          rounded-md border-[#FFF0E7] bg-white px-4 sm:py-3 py-1
           text-base
           shadow-inset-soft
           placeholder:font-light
@@ -121,12 +121,12 @@ export const Email = () => {
           onClick={handleClaimClick}
           disabled={status === "loading"}
           className="
-          w-[50vw] mx-auto flex items-center  sm:w-auto
+          w-[30vw] mx-auto flex items-center justify-center  sm:w-auto
           rounded-md bg-[#8CA9FF]
           shadow-[inset_0px_1px_6px_rgba(0,136,255,1)]
-          px-4 py-2 h-12
+          sm:px-4 sm:py-2 sm:h-12 py-1
           text-mainBg
-          text-[30px]
+           text-[15px] sm:text-[30px]
           disabled:opacity-60
         "
         >

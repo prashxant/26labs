@@ -72,7 +72,7 @@ export const Design = () => {
             p-10 blur-3xl -z-300"/>
 
       <div className="relative max-w-4xl mx-auto flex flex-col px-4 sm:px-6 lg:px-8">
-        <div className="flex max-w-4xl justify-center py-16">
+        <div className="flex max-w-4xl justify-center py-8 sm:py-16">
           <Typography
             className=""
             variant="h3"
@@ -117,15 +117,15 @@ export const Design = () => {
           ))}
         </div>
 
-        
+
         <Phool
           Line1="Develop for Society"
           Line2="Develop Better Humanity"
           src="Image pack/phool.svg"
         />
 
-       
-        <div className="flex flex-col items-center pb-32">
+
+        <div className="flex flex-col items-center">
           <Typography
             variant="h3"
             popUp="Development Resources."

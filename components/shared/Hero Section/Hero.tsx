@@ -6,7 +6,7 @@ import { Arrow } from "@/components/icons/Arrow";
 
 export const Hero = () => {
   return (
-    <div className="relative h-screen mt-20  w-full ">
+    <div className="relative h-[60vh] sm:h-screen mt-20  w-full ">
       <HeroSvg />
       <div className="absolute inset-0 z-10 flex h-full pt-20 flex-col justify-center items-center text-center">
         <Typography
@@ -18,7 +18,7 @@ export const Hero = () => {
         />
         <div className="relative ">
           <Descripton
-            className="font-family-roboto text-[20px] max-w-2xl"
+            className="font-family-roboto px-6 sm:px-0 sm:text-[20px] max-w-2xl"
             description="Delivering warm opportunities and optimizing your visibility process to ensure
           nothing stands between you and your revenue goals."
           />
