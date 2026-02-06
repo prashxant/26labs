@@ -11,9 +11,7 @@ export const GrowthPel = () => {
         className="
           font-extrabold text-white
           text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl
-          text-shadow-[0_4px_0_rgba(255,133,53,1)]
-        "
-      >
+          text-shadow-[0_4px_0_rgba(255,133,53,1)]" >
         Get personalized growth plan
       </h2>
 
