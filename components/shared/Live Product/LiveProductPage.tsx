@@ -1,25 +1,24 @@
 import Image from 'next/image';
-import { Descripton} from '../Typography';
+import { Descripton, Typography} from '../Typography';
 
 export const LiveProductPage = () => {
   return (
-    <div className="flex  flex-col gap-10 justify-center mx-auto items-center my-30">
-        <h2 className="text-4xl text-center md:text-5xl font-bold leading-tight text-gray-900">
-          We take you from
-          <br />
-          <span className="text-black-500">Idea to</span>
-          <span className="text-orange2
-           ml-2">Live Product</span>
-          <span className="text-black-500 ml-2">.</span>
-        </h2>
+    <div className="flex  flex-col gap-4 sm:gap-10 justify-center mx-auto items-center my-16 sm:my-30">
+      <Typography
+        className=""
+        variant="h2"
+        line1="We take you form "
+        line2="idea to"
+        popUp="Live Product"
+      />
       <ThreeCards />
       <Descripton
         description="With over 4+ years of experience, we collaborate with businesses of all sizes, from ambitious SaaS startups to established B2B leaders, to transform and improve their presence in the digital space and gain traction."
-        className="max-w-4xl"
+        className="max-w-4xl px-6 sm:px-0"
       />
       <Descripton
         description="From strategy and positioning to a fully functional website, every step is covered with a clear, full-cycle process. With our team experts acting as an extension of your business, our research-driven approach ensures websites that reach the right audience, reflect your brand, and drive real growth."
-        className="max-w-4xl "
+        className="max-w-4xl px-6 sm:px-0 "
       />
     </div>
   );
@@ -68,7 +67,7 @@ export const ThreeCards = () => {
               priority={card.id === 1}
             />
           </div>
-          <p className="text-sm md:text-base font-semibold text-black text-center">
+          <p className="text-[10px] md:text-base font-semibold text-black text-center">
             {card.title}
           </p>
         </div>
