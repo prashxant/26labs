@@ -24,7 +24,7 @@ export const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "26labs",
+  title: "26labs | Creating the Future of Web Design",
   description: "Just Great Design",
 };
 

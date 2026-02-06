@@ -30,13 +30,11 @@ const HeroSection = () => {
           className="tracking-wider"
           line1="Everything You Need"
           line2="to Launch Your"
-          popUp="Own Website"
-        />
+          popUp="Own Website"       />
     
         <Descripton
           className="max-w-lg test-[26px] "
-          description="Introducing our full on tech stack which we will be using for your project. Live from discovery to delivery."
-        />
+          description="Introducing our full on tech stack which we will be using for your project. Live from discovery to delivery"/>
       </div>
     </section>
   );

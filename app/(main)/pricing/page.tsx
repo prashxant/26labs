@@ -1,3 +1,4 @@
+import { ComparisonTable } from "@/components/shared/Pricing/Comparision";
 import { GrowthPel } from "@/components/shared/Pricing/GrowthPel";
 import { PriceSlider } from "@/components/shared/Pricing/PriceSlider";
 import { PricingHero } from "@/components/shared/Pricing/PricingHero";
@@ -8,6 +9,7 @@ export default function page() {
       <PricingHero />
       <GrowthPel />
       <PriceSlider />
+      <ComparisonTable />
     </main>
   );
 }
