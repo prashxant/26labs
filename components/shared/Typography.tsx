@@ -60,7 +60,7 @@ export const Descripton = ({ className, description }: DiscriptionProps) => {
   return (
     <div
       className={cn(
-        "mx-auto text-center font-family-roboto max-w-2xl my-4 sm:my-6 md:my-8 lg:my-8 tracking-tight font-normal text-[10px] sm:text-sm md:text-base lg:text-lg leading-relaxed",
+        "mx-auto text-center font-family-roboto max-w-2xl my-4 sm:my-6 md:my-8 lg:my-8 tracking-tight font-normal text-[13px] sm:text-sm md:text-base lg:text-lg leading-relaxed",
         className
       )}  >
       {description}

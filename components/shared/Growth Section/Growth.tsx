@@ -30,7 +30,7 @@ const Growth = () => {
   return (
     <section className="relative mx-auto mt-31 md:mt-44 lg:mt-48 mb-4 max-w-6xl px-4 text-center overflow-hidden">
 
-      <div className="mb-10">
+      <div className="">
         <Typography
           variant="h2"
           popUp="Get personalized"
@@ -43,15 +43,15 @@ const Growth = () => {
           line1=""/>
       </div>
 
-      
-      <div className="relative mx-auto mb-18 flex max-w-225 items-center justify-between">
+
+      <div className="relative mx-auto py-16 flex max-w-225 items-center justify-between">
         {steps.map((step, index) => (
           <div key={index} className="relative">
             <div
               className={`absolute -inset-6 ${step.bgColor} opacity-30 blur-3xl rounded-full`}>
               </div>
             <span
-              className={`relative ${step.textColor} text-xl md:text-3xl`} >
+              className={`relative ${step.textColor} text-[14px] md:text-3xl`} >
               {step.label}
             </span>
           </div>
@@ -59,10 +59,10 @@ const Growth = () => {
       </div>
 
       <div className="mb-14 flex flex-col items-center justify-center gap-3 sm:flex-row">
-        <span className="text-xl md:text-2xl text-[#8ca9ff]">
+        <span className="text-[16px] md:text-2xl text-[#8ca9ff]">
           Consultancy Fees
         </span>
-        <span className="rounded bg-[#8ca9ff] px-6 py-1 text-xl md:text-2xl font-semibold text-white border border-blue-800">
+        <span className="rounded bg-[#8ca9ff] px-6 py-1 text-[14px] md:text-2xl font-semibold text-white border border-blue-800">
           149 $
         </span>
       </div>
@@ -98,15 +98,15 @@ const Growth = () => {
         </a>
       </div>
 
-      <p className="mb-8 text-sm md:text-base text-blue-500">
+      <p className="mb-8 px-4 sm:px-0 text-sm md:text-base text-blue-500">
         Booking are filling faster. Book now in a offer price
       </p>
 
 
-        <div className="mt-25">
+        <div className=" sm:mt-25">
       <Descripton
         description="We'll identify your biggest revenue bottlenecks and map out a proven outbound strategy to fix them - based on what's working for our other clients."
-        className="mx-auto max-w-2xl text-center"
+        className="mx-auto max-w-2xl text-center "
       />
       </div>
     </section>

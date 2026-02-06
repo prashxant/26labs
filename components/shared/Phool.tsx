@@ -9,8 +9,8 @@ type Phoolprops = {
 
 export const Phool = ({Line1 = "", Line2 = "", src = "/union.svg"}: Phoolprops) => {
   return (
-  <div className=" grid grid-cols-3 place-items-center font-semibold lg:text-[18px] text-[10px] gap-6 px-4 py-16 ">
-        <p>{Line1}</p>
+  <div className=" grid grid-cols-3 place-items-center font-semibold lg:text-[18px] text-[10px] gap-6 px-4 py-8 sm:py-16 ">
+        <p className='text-center'>{Line1}</p>
         <Image
         draggable="false"
           width={128}
@@ -19,7 +19,7 @@ export const Phool = ({Line1 = "", Line2 = "", src = "/union.svg"}: Phoolprops) 
           alt="lgog"
           className="animate-spin-slow"
         />
-        <p>{Line2}</p>
+        <p className=''>{Line2}</p>
       </div>
   );
 }
