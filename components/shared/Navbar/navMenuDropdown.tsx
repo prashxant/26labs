@@ -10,7 +10,7 @@ export const MenuDropdown = ({
   return (
     <div
       className={`
-        absolute -left-7 md:mt-4 lg:mt-10 w-56 md:w-64 lg:w-72
+        absolute -left-4 md:mt-4 lg:mt-10 w-56 md:w-64 lg:w-72
         rounded-xl md:rounded-1xl
         bg-linear-to-b from-[#9db2ff] to-mainBg
         p-4 md:p-6 lg:p-6
