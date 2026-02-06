@@ -55,7 +55,6 @@ We've left an agent skill folder in your project at `.claude/skills/posthog-next
 ## Environment Variables
 
 Make sure these environment variables are set in your deployment environment:
-```
-NEXT_PUBLIC_POSTHOG_KEY=phc_ooKir4N1d2e5rSQg4BwiYtvHi55T9CjlsEDPQ8HDmBF
+
 NEXT_PUBLIC_POSTHOG_HOST=https://us.i.posthog.com
 ```
