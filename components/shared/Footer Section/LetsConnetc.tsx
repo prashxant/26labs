@@ -1,19 +1,16 @@
+import { UFO } from "@/components/icons/UFO";
 
-import { Socials } from "./Socials";
+
 
 
 
 export const LetsConnect = () => {
   return (
-    <div className="flex flex-col items-center gap-10 sm:items-end sm:flex-row sm:justify-between  relative w-full px-4 sm:px-6">
-      <div className="relative leading-[0.9] text-4xl sm:text-5xl md:text-7xl lg:text-[95px]">
+    <div className="flex sm:items-end sm:flex-row sm:justify-between  relative w-full px-4 sm:px-6">
+      <div className="relative  leading-[0.9] text-4xl sm:text-5xl md:text-7xl lg:text-[95px]">
         <h1>Let&apos;s</h1>
         <h1 className="">Connect </h1>
-      </div>
-      {/* <p>sales@26labs.live</p> */}
-
-      <div className="">
-        <Socials/>
+        <UFO className="absolute h-full w-full right-4 md:-translate-y-8  -translate-y-5 lg:-translate-y-12 " />
       </div>
     </div>
   );

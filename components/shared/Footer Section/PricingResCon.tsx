@@ -8,8 +8,6 @@ export const PricingResCon = () => {
         <Link href='/pricing'>Pricing</Link>
         <Link href='/resources'>Resource</Link>
         <Link href='/contact'>Contact</Link>
-
-        <h3></h3>
       </div>
 
       <div className="mt-4 sm:mt-6 space-y-3 sm:space-y-4 text-sm sm:text-base md:text-lg lg:text-xl text-black/80">
