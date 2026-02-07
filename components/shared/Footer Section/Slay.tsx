@@ -1,16 +1,13 @@
-import React from 'react'
+
 import { LetsConnect } from './LetsConnetc'
 
-import { PrivacyandPolicy } from './PrivacyandPolicy';
 
 
 export const Slay = () => {
   return (
-    <div className="pb-8 relative  w-full">
-
-       <LetsConnect/>
-    <PrivacyandPolicy/>
-
+    <div className="flex gap-20  flex-col justify-between items-center">
+        <LetsConnect/>
+        <div className="">gjg</div>
     </div>
   );
 }

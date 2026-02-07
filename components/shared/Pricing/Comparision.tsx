@@ -219,15 +219,12 @@ export const ComparisonTable = () => {
   return (
     <div className="relative">
       <section className="mx-auto max-w-7xl px-4 my-12">
-        {/* ================= Desktop Table (LG+) ================= */}
         <div className="hidden lg:block relative rounded-xl overflow-hidden p-2">
-
           <div className="absolute inset-0 scale-170 -z-10 animate-spin-slow  ">
-            <div className="h-full w-full   bg-linear-to-r from-blue-700/90  via-slate-300 to-slate-700/90 " />
+            <div className="h-full w-full   bg-linear-to-r from-[#FF6C0C]/50  via-amber-100 to-[#BCCDFF] " />
           </div>
-
           <div className="bg-white rounded-xl overflow-x-auto">
-            <table className="w-full min-w-[1100px]">
+            <table className="w-full min-w-275">
               <thead>
                 <tr>
                   <th className="p-4 text-left font-bold">Features</th>
@@ -271,59 +268,6 @@ export const ComparisonTable = () => {
               </tbody>
             </table>
           </div>
-        </div>
-
-        {/* ================= Mobile Cards (< LG) ================= */}
-        <div className="lg:hidden space-y-6">
-          {plans.map((plan) => (
-            <div
-              key={plan.key}
-              className="bg-linear-to-b from-[#8CA9FF] to-[#FFF0E7] p-px rounded-lg"
-            >
-              <div className="bg-[#FFF0E7] rounded-lg p-5">
-                <div className="text-center mb-5">
-                  <h3 className="text-2xl font-bold">{plan.name}</h3>
-                  <p className="text-[#3766F0] font-bold text-5xl">
-                    {plan.price}
-                    {plan.key !== "enterprise" && (
-                      <span className="text-base text-black ml-1">
-                        /project
-                      </span>
-                    )}
-                  </p>
-                </div>
-
-                {featureCategories.map((category) => (
-                  <div key={category.category} className="mb-4">
-                    <h4 className="font-semibold mb-2">{category.category}</h4>
-                    <ul className="space-y-2">
-                      {category.features.map((feature) => {
-                        const value = feature[plan.key];
-                        if (value === false) return null;
-
-                        return (
-                          <li
-                            key={feature.name}
-                            className="flex items-start gap-2"
-                          >
-                            <Tick size={16} />
-                            <span className="text-sm font-medium">
-                              {feature.name}
-                              {typeof value === "string" && (
-                                <span className="text-gray-600 ml-1">
-                                  – {value}
-                                </span>
-                              )}
-                            </span>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
         </div>
       </section>
     </div>
