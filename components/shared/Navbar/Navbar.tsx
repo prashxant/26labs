@@ -4,8 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import posthog from "posthog-js";
 import { Menu } from "./navMenu";
+
+// Lazy load PostHog to defer third-party code after hydration
+const trackEvent = async (eventName: string, properties?: object) => {
+  const { default: posthog } = await import("posthog-js");
+  posthog.capture(eventName, properties || {});
+};
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -30,7 +35,8 @@ export const Navbar = () => {
       setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    // Use passive listener for better scroll performance
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
@@ -81,7 +87,7 @@ export const Navbar = () => {
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => {
-            posthog.capture("booking_cta_clicked", {
+            trackEvent("booking_cta_clicked", {
               source: "navbar",
               destination: "calendly",
             });
@@ -115,7 +121,7 @@ export const Navbar = () => {
               href="/resources"
               onClick={() => {
                 setOpen(false);
-                posthog.capture("nav_link_clicked", {
+                trackEvent("nav_link_clicked", {
                   link_name: "Resource",
                   destination: "/resources",
                   source: "mobile_menu",
@@ -129,7 +135,7 @@ export const Navbar = () => {
               href="/pricing"
               onClick={() => {
                 setOpen(false);
-                posthog.capture("nav_link_clicked", {
+                trackEvent("nav_link_clicked", {
                   link_name: "Pricing",
                   destination: "/pricing",
                   source: "mobile_menu",
@@ -143,7 +149,7 @@ export const Navbar = () => {
               href="/blog"
               onClick={() => {
                 setOpen(false);
-                posthog.capture("nav_link_clicked", {
+                trackEvent("nav_link_clicked", {
                   link_name: "Blog",
                   destination: "/blog",
                   source: "mobile_menu",
@@ -157,7 +163,7 @@ export const Navbar = () => {
               href="/contact"
               onClick={() => {
                 setOpen(false);
-                posthog.capture("booking_cta_clicked", {
+                trackEvent("booking_cta_clicked", {
                   source: "mobile_menu",
                   destination: "calendly",
                 });

@@ -4,34 +4,40 @@ import { useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import { toast } from "sonner";
 import { Plus } from "./Plus";
-import posthog from "posthog-js";
 
 type Status = "idle" | "loading" | "success" | "error";
+
+// Hoist regex outside component for better performance
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+// Lazy load PostHog to defer third-party code after hydration
+const trackEvent = async (eventName: string, properties?: object) => {
+  const { default: posthog } = await import("posthog-js");
+  posthog.capture(eventName, properties || {});
+};
+
+const captureException = async (error: unknown) => {
+  const { default: posthog } = await import("posthog-js");
+  posthog.captureException(error);
+};
 
 export const Email = () => {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<Status>("idle");
-  const [error, setError] = useState("");
 
-  const isValidEmail = (value: string) =>
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  const isValidEmail = (value: string) => EMAIL_REGEX.test(value);
   const handleClaimClick = async () => {
-    setError("");
-
     if (!email) {
-      setError("Email is required");
       toast.error("Email is required");
       return;
     }
 
     if (!isValidEmail(email)) {
-      setError("Please enter a valid email");
       toast.error("Please enter a valid email");
       return;
     }
 
     if (!supabase) {
-      setError("Service unavailable. Please try again later.");
       setStatus("error");
       toast.error("Service unavailable");
       return;
@@ -46,7 +52,6 @@ export const Email = () => {
 
       if (supabaseError) {
         if (supabaseError.code === "23505") {
-          setError("You are already subscribed 🙂");
           setStatus("error");
 
           toast("You’re already subscribed 🙂", {
@@ -67,7 +72,7 @@ export const Email = () => {
       setEmail("");
 
       // Track successful newsletter subscription
-      posthog.capture("newsletter_subscribed", {
+      trackEvent("newsletter_subscribed", {
         source: "hero_section",
       });
 
@@ -76,15 +81,14 @@ export const Email = () => {
       });
     } catch (err) {
       console.error(err);
-      setError("Something went wrong. Please try again.");
       setStatus("error");
 
       // Track failed newsletter subscription and capture exception
-      posthog.capture("newsletter_subscription_failed", {
+      trackEvent("newsletter_subscription_failed", {
         source: "hero_section",
         error_message: err instanceof Error ? err.message : "Unknown error",
       });
-      posthog.captureException(err);
+      captureException(err);
 
       toast.error("Something went wrong", {
         description: "Please try again later",

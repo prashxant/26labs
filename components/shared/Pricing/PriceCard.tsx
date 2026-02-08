@@ -1,7 +1,12 @@
 "use client";
 
-import posthog from "posthog-js";
 import { Tick } from "@/components/icons/Tick";
+
+// Lazy load PostHog to defer third-party code
+const trackEvent = async (eventName: string, properties?: object) => {
+  const { default: posthog } = await import("posthog-js");
+  posthog.capture(eventName, properties || {});
+};
 
 type PriceCardProps = {
   title: string;
@@ -17,7 +22,7 @@ export const PriceCard = ({
   features,
 }: PriceCardProps) => {
   const handleGetStarted = () => {
-    posthog.capture("pricing_plan_selected", {
+    trackEvent("pricing_plan_selected", {
       plan_name: title,
       plan_price: price,
       features_count: features.length,
@@ -41,9 +46,7 @@ export const PriceCard = ({
         {title}
       </h3>
 
-
       <div className="bg-linear-to-b from-[#8CA9FF] to-[#FFF0E7] p-1 rounded-md">
-
         <div
           className="
             flex flex-col h-full
