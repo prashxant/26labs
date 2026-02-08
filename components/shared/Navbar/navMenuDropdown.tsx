@@ -48,7 +48,7 @@ export const MenuDropdown = ({
 
         <a
           target="_blank"
-          href="https://calendly.com/26labs-live/30min"
+          href="/contact"
           onClick={onClose}
           className="block transition-all duration-200 hover:text-black hover:translate-x-1 text-white"
         >
