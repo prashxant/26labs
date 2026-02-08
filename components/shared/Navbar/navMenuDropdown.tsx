@@ -46,14 +46,14 @@ export const MenuDropdown = ({
           Blog
         </Link>
 
-        <a
-          target="_blank"
+        <Link
+
           href="/contact"
           onClick={onClose}
           className="block transition-all duration-200 hover:text-black hover:translate-x-1 text-white"
         >
           Contact
-        </a>
+        </Link>
       </nav>
     </div>
   );
