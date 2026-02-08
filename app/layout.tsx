@@ -52,7 +52,7 @@ export default function RootLayout({
           </header>
           <ScrollProgress aria-hidden="true" />
           <main id="main">{children}</main>
-          <footer className="relative py-20 overflow-hidden">
+          <footer className="relative sm:py-20 overflow-hidden">
             <FooterSvg />
             <Footer />
           </footer>
