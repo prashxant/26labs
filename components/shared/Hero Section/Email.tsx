@@ -134,6 +134,7 @@ export const Email = () => {
         </button>
       </div>
       <Plus />
+      <p className="font-light text-slate-700">Already claimed</p>
     </div>
   );
 };

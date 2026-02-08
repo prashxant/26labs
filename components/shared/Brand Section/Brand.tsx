@@ -7,7 +7,7 @@ const Brand = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full text-center mb-9">
         <Typography
           className=""
-          variant="h2"
+          variant="h3"
           line1="Website that carry your"
           popUp="Brand Emotion" />
         <Typography
