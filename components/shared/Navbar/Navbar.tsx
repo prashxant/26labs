@@ -153,7 +153,7 @@ export const Navbar = () => {
             >
               Blog
             </Link>
-            <a
+            <Link
               href="/contact"
               onClick={() => {
                 setOpen(false);
@@ -165,7 +165,7 @@ export const Navbar = () => {
               className="block text-white hover:text-orange2 py-2"
             >
               Contact
-            </a>
+            </Link>
           </nav>
         </div>
       )}
