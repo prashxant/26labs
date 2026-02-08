@@ -3,16 +3,28 @@
 import { useState } from "react";
 import Image from "next/image";
 import { toast } from "sonner";
-import posthog from "posthog-js";
 
 import { NewSvg } from "@/components/icons/New";
 import { supabase } from "@/lib/supabaseClient";
 
+// Lazy load PostHog to defer third-party code
+const trackEvent = async (eventName: string, properties?: object) => {
+  const { default: posthog } = await import("posthog-js");
+  posthog.capture(eventName, properties || {});
+};
+
+const captureException = async (error: unknown) => {
+  const { default: posthog } = await import("posthog-js");
+  posthog.captureException(error);
+};
+
+// Hoist regex outside component for better performance
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 export const Newsletter = () => {
   const [email, setEmail] = useState("");
 
-  const isValidEmail = (value: string) =>
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  const isValidEmail = (value: string) => EMAIL_REGEX.test(value);
 
   const handleSubscribe = async () => {
     if (!email) {
@@ -44,7 +56,7 @@ export const Newsletter = () => {
       }
 
       // Track successful newsletter subscription
-      posthog.capture("newsletter_subscribed", {
+      trackEvent("newsletter_subscribed", {
         source: "footer_section",
       });
 
@@ -54,11 +66,11 @@ export const Newsletter = () => {
       console.error(err);
 
       // Track failed newsletter subscription and capture exception
-      posthog.capture("newsletter_subscription_failed", {
+      trackEvent("newsletter_subscription_failed", {
         source: "footer_section",
         error_message: err instanceof Error ? err.message : "Unknown error",
       });
-      posthog.captureException(err);
+      captureException(err);
 
       toast.error("Something went wrong. Please try again.");
     }

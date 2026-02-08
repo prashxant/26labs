@@ -1,11 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import posthog from "posthog-js";
 import InstagramIcon from "@/components/ui/instagram-icon";
 import LinkedinIcon from "@/components/ui/linkedin-icon";
 import TwitterXIcon from "@/components/ui/twitter-x-icon";
 import YoutubeIcon from "@/components/ui/youtube-icon";
+
+// Lazy load PostHog to defer third-party code
+const trackEvent = async (eventName: string, properties?: object) => {
+  const { default: posthog } = await import("posthog-js");
+  posthog.capture(eventName, properties || {});
+};
 
 const SOCIALS = [
   {
@@ -25,7 +30,6 @@ const SOCIALS = [
 export const Socials = () => {
   return (
     <div className="flex relative flex-col text-gray-500  px-4 sm:px-6">
-
       <div className="flex justify-center items-center gap-x-2 md:gap-x-6">
         {SOCIALS.map(({ Icon, href, label }) => (
           <Link
@@ -33,7 +37,7 @@ export const Socials = () => {
             href={href}
             aria-label={label}
             onClick={() => {
-              posthog.capture("social_link_clicked", {
+              trackEvent("social_link_clicked", {
                 platform: label,
                 destination: href,
               });
