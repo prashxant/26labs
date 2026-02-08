@@ -156,7 +156,7 @@ export const Navbar = () => {
               Blog
             </Link>
             <a
-              href="https://calendly.com/26labs-live/30min"
+              href="/contact"
               onClick={() => {
                 posthog.capture("booking_cta_clicked", {
                   source: "mobile_menu",

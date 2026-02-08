@@ -7,7 +7,7 @@ import { PrivacyandPolicy } from "./PrivacyandPolicy";
 
 export const Footer = () => {
   return (
-    <footer className="flex pt-20 px-6 max-w-7xl relative mx-auto ">
+    <footer className="flex  pt-20 px-6 max-w-7xl relative mx-auto ">
       <div className="flex relative justify-center gap-8 sm:gap-12 md:gap-16 items-center flex-col mx-auto w-full">
         <Phool
           Line1="Based out of Dubai "
