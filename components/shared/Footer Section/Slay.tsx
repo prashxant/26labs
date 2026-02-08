@@ -12,18 +12,6 @@ export const Slay = () => {
     <div className="flex flex-col  sm:flex-row w-full justify-center items-center sm:items-end">
       <LetsConnect />
       <div className="flex gap-8 flex-col">
-        <div className="hidden sm:flex  justify-between items-center text-start">
-          <div className="flex gap-2 items-center">
-            <PhoneVolume className="size-6 md:size-8 text-blue2 transition-colors group-hover:text-blue-600/90" />
-            <p>+91 91018 66930</p>
-          </div>
-          <div className="flex gap-2 items-center">
-            <HomeIcon className="size-6 md:size-8 font-bold text-blue2 transition-colors group-hover:text-blue-600/90" />
-            <p>
-              CIT Kokrajhar,Balagan <br /> 783370 Kokrajhar,
-              <br /> Assam
-            </p>
-          </div>
         </div>
         <div className="flex flex-col pt-12 sm:pt-0 sm:flex-row justify-between gap-4 items-center">
           <div className="flex items-center">
@@ -32,6 +20,6 @@ export const Slay = () => {
           <Socials />
         </div>
       </div>
-    </div>
+
   );
 }

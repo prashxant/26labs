@@ -6,10 +6,12 @@ import Brand from "@/components/shared/Brand Section/Brand";
 import Fueling from "@/components/shared/Fueling Section/Fueling";
 import Need from "@/components/shared/Need Section/Need";
 import Growth from "@/components/shared/Growth Section/Growth";
+import ScrollProgress from "@/components/shared/ScroolProcress";
 
 export default function Home() {
   return (
     <div className="min-h-screen">
+       <ScrollProgress aria-hidden="true" />
       <Hero />
       <ToolkitPage />
       <LiveProductPage />
