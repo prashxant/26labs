@@ -1,7 +1,6 @@
 import { MessageIcon } from '@/components/icons/message';
 import { LetsConnect } from './LetsConnetc'
-import HomeIcon from '@/components/ui/HomeIcon';
-import PhoneVolume from '@/components/ui/PhoneIcon';
+
 
 export const Slay = () => {
   return (
@@ -10,9 +9,12 @@ export const Slay = () => {
       <LetsConnect /> 
       <div className="flex items-center gap-2 text-lg sm:text-xl">
         <MessageIcon /> 
-        <p>sales@26labs.live</p>
+        <a
+        href="mailto:sales@26labs.live"
+        className="hover:underline cursor-pointer" >
+        sales@26labs.live
+        </a>
       </div>
-
     </div>
   );
 }
