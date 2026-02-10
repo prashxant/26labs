@@ -1,9 +1,5 @@
 import { UFO } from "@/components/icons/UFO";
 
-
-
-
-
 export const LetsConnect = () => {
   return (
     <div className="flex sm:items-end sm:flex-row sm:justify-between  relative w-full px-4 sm:px-6">
