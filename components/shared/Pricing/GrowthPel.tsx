@@ -36,7 +36,7 @@ export const GrowthPel = () => {
         "
       >
         Consult and get a 3 months growth plan at
-        <span className="text-white text-shadow-[0_2px_0_rgba(255,133,53,1)]">$149</span>
+        <span className="text-white text-4xl text-shadow-[0_2px_0_rgba(255,133,53,1)]">$149</span>
       </p>
     </section>
   );

@@ -11,8 +11,7 @@ export const Footer = () => {
         <Phool
           Line1="Based out of Dubai "
           Line2="Designing Worldwide"
-          src="union.svg"
-        />
+          src="union.svg"       />
         <PricingResCon />
         <Newsletter />
         <Slay />

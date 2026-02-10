@@ -74,6 +74,9 @@ gsap.set(scrollContentRef.current, {
         className="absolute top-0 left-0 h-full w-2143 will-change-transform">
 
         <WaveBackground ref={waveRef} />
+
+
+        
         <Point x={300} y={200}>
              <div className="flex justify-center">
                  <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 leading-tight">
