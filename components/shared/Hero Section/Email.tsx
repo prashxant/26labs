@@ -4,34 +4,40 @@ import { useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import { toast } from "sonner";
 import { Plus } from "./Plus";
-import posthog from "posthog-js";
 
 type Status = "idle" | "loading" | "success" | "error";
+
+// Hoist regex outside component for better performance
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+// Lazy load PostHog to defer third-party code after hydration
+const trackEvent = async (eventName: string, properties?: object) => {
+  const { default: posthog } = await import("posthog-js");
+  posthog.capture(eventName, properties || {});
+};
+
+const captureException = async (error: unknown) => {
+  const { default: posthog } = await import("posthog-js");
+  posthog.captureException(error);
+};
 
 export const Email = () => {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<Status>("idle");
-  const [error, setError] = useState("");
 
-  const isValidEmail = (value: string) =>
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  const isValidEmail = (value: string) => EMAIL_REGEX.test(value);
   const handleClaimClick = async () => {
-    setError("");
-
     if (!email) {
-      setError("Email is required");
       toast.error("Email is required");
       return;
     }
 
     if (!isValidEmail(email)) {
-      setError("Please enter a valid email");
       toast.error("Please enter a valid email");
       return;
     }
 
     if (!supabase) {
-      setError("Service unavailable. Please try again later.");
       setStatus("error");
       toast.error("Service unavailable");
       return;
@@ -46,7 +52,6 @@ export const Email = () => {
 
       if (supabaseError) {
         if (supabaseError.code === "23505") {
-          setError("You are already subscribed 🙂");
           setStatus("error");
 
           toast("You’re already subscribed 🙂", {
@@ -67,7 +72,7 @@ export const Email = () => {
       setEmail("");
 
       // Track successful newsletter subscription
-      posthog.capture("newsletter_subscribed", {
+      trackEvent("newsletter_subscribed", {
         source: "hero_section",
       });
 
@@ -76,15 +81,14 @@ export const Email = () => {
       });
     } catch (err) {
       console.error(err);
-      setError("Something went wrong. Please try again.");
       setStatus("error");
 
       // Track failed newsletter subscription and capture exception
-      posthog.capture("newsletter_subscription_failed", {
+      trackEvent("newsletter_subscription_failed", {
         source: "hero_section",
         error_message: err instanceof Error ? err.message : "Unknown error",
       });
-      posthog.captureException(err);
+      captureException(err);
 
       toast.error("Something went wrong", {
         description: "Please try again later",
@@ -93,8 +97,8 @@ export const Email = () => {
   };
 
   return (
-    <div className="flex w-full py-10 flex-col items-center gap-4 px-4 sm:px-0">
-      <div className="flex w-full items-center font-family-roboto max-w-md flex-col gap-12 sm:flex-row">
+    <div className="flex w-full py-5 sm:py-10 flex-col items-center gap-4 px-4 sm:px-0">
+      <div className="flex sm:w-full w-[70vw] items-center font-family-roboto max-w-md flex-col sm:gap-12 gap-6 sm:flex-row">
         <input
           type="email"
           onChange={(e) => setEmail(e.target.value)}
@@ -107,9 +111,9 @@ export const Email = () => {
           value={email}
           placeholder="Enter your email"
           className="
-          h-10
+           sm:h-10
           w-full flex-1
-          rounded-md border-[#FFF0E7] bg-white px-4 py-3
+          rounded-md border-[#FFF0E7] bg-white px-4 sm:py-3 py-1
           text-base
           shadow-inset-soft
           placeholder:font-light
@@ -121,12 +125,12 @@ export const Email = () => {
           onClick={handleClaimClick}
           disabled={status === "loading"}
           className="
-          w-[50vw] mx-auto flex items-center  sm:w-auto
+          w-[30vw] mx-auto flex items-center justify-center  sm:w-auto
           rounded-md bg-[#8CA9FF]
           shadow-[inset_0px_1px_6px_rgba(0,136,255,1)]
-          px-4 py-2 h-12
+          sm:px-4 sm:py-2 sm:h-12 py-1
           text-mainBg
-          text-[30px]
+           text-[15px] sm:text-[30px]
           disabled:opacity-60
         "
         >
@@ -134,6 +138,7 @@ export const Email = () => {
         </button>
       </div>
       <Plus />
+      <p className="font-light text-slate-700">Already claimed</p>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React from "react";
+
 
 export const FooterSvg = () => {
   return (
@@ -8,7 +8,7 @@ export const FooterSvg = () => {
       viewBox="0 0 3048 2329"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="absolute w-screen h-full scale-110  -z-5000"
+      className="absolute w-screen h-full scale-110 sm:block hidden  -z-5000"
     >
       <g filter="url(#filter0_d_1047_3)">
         <path

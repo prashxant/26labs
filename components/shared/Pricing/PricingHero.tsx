@@ -5,7 +5,7 @@ import { Descripton, Typography } from "../Typography"
 
 export const PricingHero = () => {
   return (
-    <div className="h-screen relative justify-center flex flex-col items-center">
+    <div className="sm:h-screen h-[50vh] relative justify-center flex flex-col items-center">
       <div className="absolute -z-100">
         <HeroSvg/>
       </div>

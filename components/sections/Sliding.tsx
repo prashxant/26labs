@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export const Sliding = () => {
   return (
-    <div className="w-full flex flex-col items-center my-12 justify-center overflow-hidden">
+    <div className="w-full flex flex-col items-center sm:my-12 justify-center overflow-hidden">
       <SlidingLogos />
     </div>
   );
@@ -27,7 +27,7 @@ function SlidingLogos() {
         {loopLogos.map((logo, index) => (
           <div
             key={index}
-            className="w-16 h-16 sm:w-24 sm:h-20 flex items-center justify-center shrink-0"
+            className="w-8 h-8 sm:w-24 sm:h-20 flex items-center justify-center shrink-0"
           >
             <Image
               src={logo.src}

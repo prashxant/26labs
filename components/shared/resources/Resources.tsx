@@ -6,7 +6,7 @@ import { Design } from "./Design";
 export const Resources = () => {
   return (
     <main className="mx-auto ">
-      <div className="flex h-screen justify-center items-center">
+      <div className="flex h-[50vh] sm:h-screen justify-center items-center">
         <HeroSection />
       </div>
       <div className="max-w-4xl  mx-auto">
@@ -31,9 +31,9 @@ const HeroSection = () => {
           line1="Everything You Need"
           line2="to Launch Your"
           popUp="Own Website"       />
-    
+
         <Descripton
-          className="max-w-lg test-[26px] "
+          className="max-w-lg"
           description="Introducing our full on tech stack which we will be using for your project. Live from discovery to delivery"/>
       </div>
     </section>

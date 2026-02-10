@@ -4,12 +4,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import posthog from "posthog-js";
 import { Menu } from "./navMenu";
+
+// Lazy load PostHog to defer third-party code after hydration
+const trackEvent = async (eventName: string, properties?: object) => {
+  const { default: posthog } = await import("posthog-js");
+  posthog.capture(eventName, properties || {});
+};
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
-
 
   const [hidden, setHidden] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -17,7 +21,6 @@ export const Navbar = () => {
   const handleMenuToggle = () => {
     setOpen(!open);
   };
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,7 +35,8 @@ export const Navbar = () => {
       setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    // Use passive listener for better scroll performance
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
@@ -52,8 +56,8 @@ export const Navbar = () => {
           bg-linear-to-r from-[#cbd6f9] to-[#A0B8FF]
           shadow-lg
           px-2 md:px-3
-          py-0.5 md:py-1.5 lg:py-2 " >
-
+          py-0.5 md:py-1.5 lg:py-2 "
+      >
         <button
           onClick={handleMenuToggle}
           className="md:hidden text-white text-xl sm:text-2xl p-1.5 sm:p-2 hover:bg-white/10 rounded-md transition-colors active:scale-95"
@@ -66,10 +70,9 @@ export const Navbar = () => {
           <Menu />
         </div>
 
-
         <Link href="/" className="flex items-center shrink-0">
           <Image
-            draggable='false'
+            draggable="false"
             alt="Company logo"
             width={100}
             height={40}
@@ -79,13 +82,12 @@ export const Navbar = () => {
           />
         </Link>
 
-
         <a
           href="https://calendly.com/26labs-live/30min"
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => {
-            posthog.capture("booking_cta_clicked", {
+            trackEvent("booking_cta_clicked", {
               source: "navbar",
               destination: "calendly",
             });
@@ -112,14 +114,14 @@ export const Navbar = () => {
         </a>
       </div>
 
-
       {open && (
         <div className="md:hidden mt-2 mx-3 sm:mx-auto w-auto sm:w-11/12 rounded-lg sm:rounded-xl bg-blue1 p-4 sm:p-5 shadow-lg animate-in fade-in slide-in-from-top-2 duration-200">
           <nav className="space-y-2 sm:space-y-3">
             <Link
               href="/resources"
               onClick={() => {
-                posthog.capture("nav_link_clicked", {
+                setOpen(false);
+                trackEvent("nav_link_clicked", {
                   link_name: "Resource",
                   destination: "/resources",
                   source: "mobile_menu",
@@ -132,7 +134,8 @@ export const Navbar = () => {
             <Link
               href="/pricing"
               onClick={() => {
-                posthog.capture("nav_link_clicked", {
+                setOpen(false);
+                trackEvent("nav_link_clicked", {
                   link_name: "Pricing",
                   destination: "/pricing",
                   source: "mobile_menu",
@@ -145,7 +148,8 @@ export const Navbar = () => {
             <Link
               href="/blog"
               onClick={() => {
-                posthog.capture("nav_link_clicked", {
+                setOpen(false);
+                trackEvent("nav_link_clicked", {
                   link_name: "Blog",
                   destination: "/blog",
                   source: "mobile_menu",
@@ -155,10 +159,11 @@ export const Navbar = () => {
             >
               Blog
             </Link>
-            <a
-              href="https://calendly.com/26labs-live/30min"
+            <Link
+              href="/contact"
               onClick={() => {
-                posthog.capture("booking_cta_clicked", {
+                setOpen(false);
+                trackEvent("booking_cta_clicked", {
                   source: "mobile_menu",
                   destination: "calendly",
                 });
@@ -166,7 +171,7 @@ export const Navbar = () => {
               className="block text-white hover:text-orange2 py-2"
             >
               Contact
-            </a>
+            </Link>
           </nav>
         </div>
       )}
