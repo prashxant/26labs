@@ -19,7 +19,7 @@ type TypographyVariant = "h1" | "h2" | "h3";
 const variants = {
   h1: "text-[40px] sm:text-[45px] md:text-[55px] text-shadow lg:text-6xl xl:text-[90px] ",
   h2: "text-[35px] sm:text-2xl  md:text-5xl xl:text-[75px]",
-  h3: "text-[35px] sm:text-xl md:text-2xl lg:text-[28.13px]",
+  h3: "text-[20px] sm:text-xl md:text-2xl lg:text-[28.13px]",
 };
 
 

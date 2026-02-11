@@ -1,9 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import { toast } from "sonner";
 import { Plus } from "./Plus";
+
+
+
+
+
+
+
+
+
+
+
+
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -22,6 +34,7 @@ const captureException = async (error: unknown) => {
 };
 
 export const Email = () => {
+
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<Status>("idle");
 
