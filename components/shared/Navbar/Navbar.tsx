@@ -76,7 +76,7 @@ export const Navbar = () => {
             alt="Company logo"
             width={100}
             height={40}
-            src="/logo.svg"
+            src="/LogoOne.svg"
             priority
             className="w-20 sm:w-24 md:w-28 lg:w-32 xl:w-36 h-auto"
           />
