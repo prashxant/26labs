@@ -1,6 +1,6 @@
-'use client'
+"use client";
 import { cn } from "@/lib/utils";
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 
 type TypographyProps = {
   variant: TypographyVariant;
@@ -24,8 +24,6 @@ const variants = {
   h3: "text-[20px] sm:text-xl md:text-2xl lg:text-[28.13px]",
 };
 
-
-
 const highlightStyles = {
   h1: "text-white mx-2 text-[px] inline-flex leading-none  px-2 bg-[#FFAA72]",
   h2: "text-orange2 mx-1 md:mx-2 lg:mx-3 p-1 md:p-1.5 lg:p-2",
@@ -39,11 +37,14 @@ export const Typography = ({
   line2,
   popUp,
 }: Omit<TypographyProps, "description">) => {
+  const shouldReduceMotion = useReducedMotion();
+  const HeadingTag = variant as keyof JSX.IntrinsicElements;
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
+      initial={shouldReduceMotion ? undefined : { opacity: 0, y: 40 }}
+      whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
+      transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.8 }}
       viewport={{ once: true }}
       className={cn(
         "font-bold flex flex-col items-center text-center leading-tight",
@@ -51,23 +52,26 @@ export const Typography = ({
         className
       )}
     >
-      <p className="m-0 leading-tight">{line1}</p>
+      <HeadingTag className="m-0 leading-tight text-wrap balance">
+        {line1}
+      </HeadingTag>
 
-      <p className="m-0 leading-tight mt-2">
+      <HeadingTag className="m-0 leading-tight mt-2 text-wrap balance">
         {line2}
         {popUp && <span className={highlightStyles[variant]}>{popUp}</span>}
-      </p>
+      </HeadingTag>
     </motion.div>
   );
 };
 
-
 export const Descripton = ({ className, description }: DiscriptionProps) => {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
+      initial={shouldReduceMotion ? undefined : { opacity: 0, y: 40 }}
+      whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
+      transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.8 }}
       viewport={{ once: true }}
       className={cn(
         "mx-auto text-center font-family-roboto max-w-2xl my-4 sm:my-6 md:my-8 lg:my-8 tracking-tight font-normal text-[15px] md:text-base lg:text-lg leading-relaxed",
