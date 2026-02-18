@@ -1,4 +1,6 @@
+'use client'
 import { cn } from "@/lib/utils";
+import { motion } from "motion/react";
 
 type TypographyProps = {
   variant: TypographyVariant;
@@ -38,7 +40,11 @@ export const Typography = ({
   popUp,
 }: Omit<TypographyProps, "description">) => {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
       className={cn(
         "font-bold flex flex-col items-center text-center leading-tight",
         variants[variant],
@@ -51,19 +57,24 @@ export const Typography = ({
         {line2}
         {popUp && <span className={highlightStyles[variant]}>{popUp}</span>}
       </p>
-    </div>
+    </motion.div>
   );
 };
 
 
 export const Descripton = ({ className, description }: DiscriptionProps) => {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
       className={cn(
         "mx-auto text-center font-family-roboto max-w-2xl my-4 sm:my-6 md:my-8 lg:my-8 tracking-tight font-normal text-[15px] md:text-base lg:text-lg leading-relaxed",
         className
-      )}  >
+      )}
+    >
       {description}
-    </div>
+    </motion.div>
   );
 };
