@@ -19,7 +19,9 @@ export const Menu = () => {
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen((v) => !v)}
-        className="flex items-center gap-2 md:gap-2.5 lg:gap-3 hover:opacity-80 transition-all duration-200 active:scale-95"
+        aria-expanded={open}
+        aria-controls="menu-dropdown"
+        className="flex items-center gap-2 md:gap-2.5 lg:gap-3 hover:opacity-80 transition-[opacity,transform] duration-200 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange2"
       >
         <div
           className={`

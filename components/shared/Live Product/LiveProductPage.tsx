@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import { Descripton, Typography} from '../Typography';
+import Image from "next/image";
+import { Descripton, Typography } from "../Typography";
 
 export const LiveProductPage = () => {
   return (
@@ -7,7 +7,7 @@ export const LiveProductPage = () => {
       <Typography
         className=""
         variant="h2"
-        line1="We take you form "
+        line1="We Take You from "
         line2="idea to"
         popUp="Live Product"
       />
@@ -24,14 +24,12 @@ export const LiveProductPage = () => {
   );
 };
 
-
-
 export const ThreeCards = () => {
   const cards = [
     {
       id: 1,
       src: "/Image pack/gt1.svg",
-      alt: "Design tools",
+      alt: " tools",
       title: "Custom Designs",
     },
     {
@@ -52,13 +50,13 @@ export const ThreeCards = () => {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-16 lg:gap-40 pt-6 md:pt-8 lg:pt-10">
       {cards.map((card) => (
         <div key={card.id} className="flex flex-col items-center ">
-
           <div
             className="  relative
               w-32 h-32 md:w-36 md:h-36 lg:w-45 lg:h-45
               rounded-[14px]
               overflow-hidden
-              mx-auto"    >
+              mx-auto"
+          >
             <Image
               src={card.src}
               alt={card.alt}

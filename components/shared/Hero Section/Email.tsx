@@ -5,18 +5,6 @@ import { supabase } from "@/lib/supabaseClient";
 import { toast } from "sonner";
 import { Plus } from "./Plus";
 
-
-
-
-
-
-
-
-
-
-
-
-
 type Status = "idle" | "loading" | "success" | "error";
 
 // Hoist regex outside component for better performance
@@ -34,7 +22,6 @@ const captureException = async (error: unknown) => {
 };
 
 export const Email = () => {
-
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<Status>("idle");
 
@@ -68,7 +55,7 @@ export const Email = () => {
           setStatus("error");
 
           toast("You’re already subscribed 🙂", {
-            description: "We already have this email",
+            description: "We already have that email.",
             action: {
               label: "OK",
               onClick: () => {},
@@ -90,7 +77,7 @@ export const Email = () => {
       });
 
       toast.success("Subscribed 🎉", {
-        description: "You'll hear from us soon",
+        description: "You’ll hear from us soon.",
       });
     } catch (err) {
       console.error(err);
@@ -104,7 +91,7 @@ export const Email = () => {
       captureException(err);
 
       toast.error("Something went wrong", {
-        description: "Please try again later",
+        description: "Please try again later.",
       });
     }
   };
@@ -112,8 +99,16 @@ export const Email = () => {
   return (
     <div className="flex w-full py-5 sm:py-10 flex-col items-center gap-4 px-4 sm:px-0">
       <div className="flex sm:w-full w-[70vw] items-center font-family-roboto max-w-md flex-col sm:gap-12 gap-6 sm:flex-row">
+        <label htmlFor="hero-email" className="sr-only">
+          Email address
+        </label>
         <input
+          id="hero-email"
+          name="email"
           type="email"
+          autoComplete="email"
+          inputMode="email"
+          spellCheck={false}
           onChange={(e) => setEmail(e.target.value)}
           onKeyDown={(e) => {
             if (e.key === "Enter") {
@@ -122,7 +117,7 @@ export const Email = () => {
             }
           }}
           value={email}
-          placeholder="Enter your email"
+          placeholder="Email address…"
           className="
            sm:h-10
           w-full flex-1
@@ -130,6 +125,7 @@ export const Email = () => {
           text-base
           shadow-inset-soft
           placeholder:font-light
+          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8CA9FF] focus-visible:ring-offset-2
         "
         />
 
@@ -145,6 +141,7 @@ export const Email = () => {
           text-mainBg
            text-[15px] sm:text-[30px]
           disabled:opacity-60
+          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8CA9FF] focus-visible:ring-offset-2
         "
         >
           {status === "loading" ? "Sending…" : "Claim It"}

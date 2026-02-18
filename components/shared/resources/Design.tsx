@@ -69,7 +69,8 @@ export const Design = () => {
             absolute right-0 h-full w-[30vw]
             -rotate-10 sm:-rotate-15 md:-rotate-25   lg:-rotate-30 xl:-rotate-60 rounded-full
             bg-linear-to-r from-[#FF6C0C]/30 to-[#BCCDFF]/80
-            p-10 blur-3xl -z-300"/>
+            p-10 blur-3xl -z-300"
+      />
 
       <div className="relative max-w-4xl mx-auto flex flex-col px-4 sm:px-6 lg:px-8">
         <div className="flex max-w-4xl justify-center py-8 sm:py-16">
@@ -92,7 +93,14 @@ export const Design = () => {
             `}
             >
               <div className="space-y-3">
-                <img src={card.icons[0]} alt="" className="h-6 w-6 shrink-0" />
+                <img
+                  src={card.icons[0]}
+                  alt=""
+                  width={24}
+                  height={24}
+                  loading="lazy"
+                  className="h-6 w-6 shrink-0"
+                />
 
                 <h3 className="text-sm font-medium md:line-clamp-1">
                   {card.title}
@@ -117,13 +125,11 @@ export const Design = () => {
           ))}
         </div>
 
-
         <Phool
           Line1="Develop for Society"
           Line2="Develop Better Humanity"
           src="Image pack/phool.svg"
         />
-
 
         <div className="flex flex-col items-center">
           <Typography
@@ -147,6 +153,9 @@ export const Design = () => {
                   <img
                     src={card.icons[0]}
                     alt=""
+                    width={24}
+                    height={24}
+                    loading="lazy"
                     className="h-6 w-6 shrink-0"
                   />
 
