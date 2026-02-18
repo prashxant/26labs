@@ -4,7 +4,7 @@ import { ContactDetails } from './ContactDetails';
 
 export const Contact = () => {
   return <div className="h-screen max-w-4xl mx-auto flex flex-col justify-center
-  items-start  ">
+  items-center  ">
     <Typography
       variant='h2'
       className=''

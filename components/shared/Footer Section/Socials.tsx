@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -19,7 +20,7 @@ const SOCIALS = [
     label: "LinkedIn",
   },
   { Icon: TwitterXIcon, href: "https://x.com/26labs_live", label: "Twitter X" },
-  { Icon: YoutubeIcon, href: "/", label: "YouTube" },
+  //{ Icon: YoutubeIcon, href: "/", label: "YouTube" },
   {
     Icon: InstagramIcon,
     href: "https://www.instagram.com/26labs.live/",
@@ -42,8 +43,7 @@ export const Socials = () => {
                 destination: href,
               });
             }}
-            className="group"
-          >
+            className="group"         >
             <Icon className="size-6 md:size-8 text-blue2 transition-colors group-hover:text-blue-600/90" />
           </Link>
         ))}

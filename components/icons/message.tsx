@@ -7,8 +7,7 @@ export const MessageIcon = () => {
       fill="currentColor"
       viewBox="0 0 24 24"
       strokeWidth={1.5}
-      className="size-12 text-blue2 hover:text-blue-600  stroke-white/90 "
-    >
+      className="size-9.5 text-blue2 hover:text-blue-600  stroke-white/90 "   >
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
