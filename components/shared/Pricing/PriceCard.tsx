@@ -93,6 +93,7 @@ export const PriceCard = ({
           </ul>
 
           <button
+            type="button"
             onClick={handleGetStarted}
             className="
               mt-auto mx-auto
@@ -102,6 +103,10 @@ export const PriceCard = ({
               p-3 sm:p-4
               text-sm sm:text-base
               font-bold
+              transition-[background-color,box-shadow,transform]
+              hover:bg-blue2
+              active:scale-95
+              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue2
             "
           >
             Get Started

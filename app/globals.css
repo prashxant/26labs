@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-
-
 @theme {
   --color-mainBg: oklch(0.9121 0.0033 17.22);
   --color-orange1: oklch(0.8097 0.1234 53.5);
@@ -109,6 +107,7 @@
 }
 
 :root {
+  --scroll-margin-top: 6rem;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -143,7 +142,15 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+html {
+  -webkit-tap-highlight-color: transparent;
+}
 
+button,
+a,
+[role="button"] {
+  touch-action: manipulation;
+}
 
 @layer base {
   * {
@@ -151,6 +158,16 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-wrap: balance;
+    scroll-margin-top: var(--scroll-margin-top);
   }
 }
 
@@ -174,6 +191,11 @@
   animation-play-state: paused;
 }
 
-
-
-
+@media (prefers-reduced-motion: reduce) {
+  .marquee,
+  .animate-spin-slow,
+  .animate-blob {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

@@ -35,7 +35,7 @@ export function ContactDetails() {
 
     // Basic validation
     if (!form.name || !form.email || !form.project) {
-      toast.error("Please fill all required fields");
+      toast.error("Please fill all required fields.");
       return;
     }
 
@@ -58,7 +58,7 @@ export function ContactDetails() {
         throw error;
       }
 
-      toast.success("We will get back to you soon..");
+      toast.success("We’ll get back to you soon…");
 
       setForm({
         name: "",
@@ -69,7 +69,7 @@ export function ContactDetails() {
       });
     } catch (err) {
       console.error(err);
-      toast.error("Please try again");
+      toast.error("Please try again.");
     } finally {
       setLoading(false);
     }
@@ -79,24 +79,30 @@ export function ContactDetails() {
     <form onSubmit={handleSubmit} className="w-full pt-10 pl-4 max-w-sm">
       <FieldGroup>
         <Field>
-          <FieldLabel>Name *</FieldLabel>
+          <FieldLabel htmlFor="contact-name">Name *</FieldLabel>
           <Input
+            id="contact-name"
             name="name"
             value={form.name}
             onChange={handleChange}
-            placeholder="Prashant Sharma"
+            autoComplete="name"
+            placeholder="Jane Doe…"
             required
           />
         </Field>
 
         <Field>
-          <FieldLabel>Email *</FieldLabel>
+          <FieldLabel htmlFor="contact-email">Email *</FieldLabel>
           <Input
+            id="contact-email"
             name="email"
             type="email"
             value={form.email}
             onChange={handleChange}
-            placeholder="your@email.com"
+            autoComplete="email"
+            inputMode="email"
+            spellCheck={false}
+            placeholder="you@example.com…"
             required
           />
           <FieldDescription>
@@ -106,35 +112,45 @@ export function ContactDetails() {
 
         <div className="grid grid-cols-2 gap-4">
           <Field>
-            <FieldLabel>Phone</FieldLabel>
+            <FieldLabel htmlFor="contact-phone">Phone</FieldLabel>
             <Input
+              id="contact-phone"
               name="phone"
+              type="tel"
               value={form.phone}
               onChange={handleChange}
-              placeholder="+91 99999 99999"
+              autoComplete="tel"
+              inputMode="tel"
+              placeholder="+1 555 000 0000…"
             />
           </Field>
 
           <Field>
-            <FieldLabel>Instagram</FieldLabel>
+            <FieldLabel htmlFor="contact-instagram">Instagram</FieldLabel>
             <Input
+              id="contact-instagram"
               name="instagram"
               value={form.instagram}
               onChange={handleChange}
-              placeholder="@instagram"
+              autoComplete="off"
+              spellCheck={false}
+              placeholder="@yourhandle…"
             />
           </Field>
         </div>
 
         <Field>
-          <FieldLabel>Tell me about your project *</FieldLabel>
+          <FieldLabel htmlFor="contact-project">
+            Tell me about your project *
+          </FieldLabel>
           <textarea
+            id="contact-project"
             name="project"
             value={form.project}
             onChange={handleChange}
             rows={6}
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary resize-y min-h-[120px]"
-            placeholder="Describe your project, goals, and requirements..."
+            className="w-full px-3 py-2 border rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 resize-y min-h-[120px]"
+            placeholder="Describe your project, goals, and requirements…"
             required
           />
         </Field>
@@ -157,7 +173,7 @@ export function ContactDetails() {
           </Button>
 
           <Button type="submit" disabled={loading}>
-            {loading ? "Submitting..." : "Submit"}
+            {loading ? "Submitting…" : "Submit"}
           </Button>
         </Field>
       </FieldGroup>

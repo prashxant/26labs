@@ -69,7 +69,7 @@ const Growth = () => {
           Consultancy Fees
         </span>
         <span className="rounded bg-[#8ca9ff] px-6 py-1 text-[14px] md:text-2xl font-semibold text-white border border-blue-800">
-          149 $
+          $149
         </span>
       </div>
 
@@ -85,9 +85,9 @@ const Growth = () => {
               pricing: "$149",
             });
           }}
-          className="px-9 py-2 font-bold text-gray-800 bg-white border border-gray-300 shadow-[0_2px_6px_rgba(0,0,0,0.15)] hover:shadow-[0_4px_10px_rgba(0,0,0,0.2)] transition"
+          className="px-9 py-2 font-bold text-gray-800 bg-white border border-gray-300 shadow-[0_2px_6px_rgba(0,0,0,0.15)] hover:shadow-[0_4px_10px_rgba(0,0,0,0.2)] transition-[box-shadow,transform,background-color,color] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#8ca9ff]"
         >
-          <span className="hidden sm:inline">Book now</span>
+          <span className="hidden sm:inline">Book Now</span>
           <span className="sm:hidden">Book</span>
         </a>
 
@@ -100,14 +100,14 @@ const Growth = () => {
               source: "growth_section",
             });
           }}
-          className="px-9 py-2 border border-orange-500 bg-[#8ca9ff] text-white font-semibold"
+          className="px-9 py-2 border border-orange-500 bg-[#8ca9ff] text-white font-semibold transition-[background-color,transform,color] hover:bg-[#7c98ff] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#8ca9ff]"
         >
           Visit Pricing
         </a>
       </div>
 
       <p className="mb-8 px-4 sm:px-0 text-sm md:text-base text-blue-500">
-        Booking are filling faster. Book now in a offer price
+        Bookings are filling fast. Book now at an offer price.
       </p>
 
       <div className=" sm:mt-25">
