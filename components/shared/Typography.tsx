@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import { cn } from "@/lib/utils";
 import { motion, useReducedMotion } from "motion/react";
 
@@ -38,7 +39,7 @@ export const Typography = ({
   popUp,
 }: Omit<TypographyProps, "description">) => {
   const shouldReduceMotion = useReducedMotion();
-  const HeadingTag = variant as keyof JSX.IntrinsicElements;
+  const HeadingTag = variant as React.ElementType;
 
   return (
     <motion.div
