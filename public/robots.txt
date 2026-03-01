@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://26labs.live
+
+# Sitemaps
+Sitemap: https://26labs.live/sitemap.xml
