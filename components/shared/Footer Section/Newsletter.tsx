@@ -87,35 +87,45 @@ export const Newsletter = () => {
 
       <div className="tracking-wider font-bold text-xl sm:text-3xl md:text-4xl lg:text-[46px] text-center">
         <h1>
-          We give you more . A monthly <br className="hidden sm:block" />
-          <span className="text-orange-400">Newsletter</span> to keep you
-          updated.
+          We Give You More. A Monthly <br className="hidden sm:block" />
+          <span className="text-orange-400">Newsletter</span> to Keep You
+          Updated.
         </h1>
       </div>
 
       <div className="flex w-full p-2 max-w-xs sm:max-w-md">
+        <label htmlFor="footer-newsletter-email" className="sr-only">
+          Email address
+        </label>
         <input
-          type="text"
+          id="footer-newsletter-email"
+          name="email"
+          type="email"
+          autoComplete="email"
+          inputMode="email"
+          spellCheck={false}
           onKeyDown={(e) => {
             if (e.key === "Enter") {
               e.preventDefault();
               handleSubscribe();
             }
           }}
-          placeholder="Email Address"
-          className="ring p-1.5 sm:p-2 w-full font-bold sm:text-2xl"
+          placeholder="Email address…"
+          className="ring p-1.5 sm:p-2 w-full font-bold sm:text-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange2"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <button
+          type="button"
           onClick={handleSubscribe}
-          className="bg-orange2 justify-center ring items-center flex p-1.5 sm:p-2 shrink-0 cursor-pointer hover:bg-orange-600 transition-colors"
+          aria-label="Subscribe"
+          className="bg-orange2 justify-center ring items-center flex p-1.5 sm:p-2 shrink-0 cursor-pointer hover:bg-orange-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange2"
         >
           <Image
             alt="logo"
             width={48}
             height={48}
-            src="/logo.svg"
+            src="/LogoOne.svg"
             className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
           />
         </button>

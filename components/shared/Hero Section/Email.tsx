@@ -1,5 +1,5 @@
 "use client";
-
+import { motion, useReducedMotion } from "motion/react";
 import { useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import { toast } from "sonner";
@@ -22,6 +22,7 @@ const captureException = async (error: unknown) => {
 };
 
 export const Email = () => {
+  const shouldReduceMotion = useReducedMotion();
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<Status>("idle");
 
@@ -99,7 +100,11 @@ export const Email = () => {
   return (
     <div className="flex w-full py-5 sm:py-10 flex-col items-center gap-4 px-4 sm:px-0">
       <div className="flex sm:w-full w-[70vw] items-center font-family-roboto max-w-md flex-col sm:gap-12 gap-6 sm:flex-row">
-        <input
+        <motion.input
+          initial={shouldReduceMotion ? undefined : { opacity: 0, x: -40 }}
+          whileInView={shouldReduceMotion ? undefined : { opacity: 1, x: 0 }}
+          transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.6 }}
+          viewport={{ once: true }}
           type="email"
           onChange={(e) => setEmail(e.target.value)}
           onKeyDown={(e) => {
@@ -109,7 +114,10 @@ export const Email = () => {
             }
           }}
           value={email}
-          placeholder="Enter your email"
+          placeholder="Enter your email…"
+          aria-label="Email address"
+          autoComplete="email"
+          spellCheck={false}
           className="
            sm:h-10
           w-full flex-1
@@ -117,13 +125,19 @@ export const Email = () => {
           text-base
           shadow-inset-soft
           placeholder:font-light
+          focus-visible:outline-blue-500 focus-visible:outline-2
         "
         />
 
-        <button
+        <motion.button
+          initial={shouldReduceMotion ? undefined : { opacity: 0, x: 40 }}
+          whileInView={shouldReduceMotion ? undefined : { opacity: 1, x: 0 }}
+          transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.6 }}
+          viewport={{ once: true }}
           type="button"
           onClick={handleClaimClick}
           disabled={status === "loading"}
+          aria-busy={status === "loading"}
           className="
           w-[30vw] mx-auto flex items-center justify-center  sm:w-auto
           rounded-md bg-[#8CA9FF]
@@ -132,10 +146,11 @@ export const Email = () => {
           text-mainBg
            text-[15px] sm:text-[30px]
           disabled:opacity-60
+          focus-visible:outline-blue-600 focus-visible:outline-2
         "
         >
           {status === "loading" ? "Sending…" : "Claim It"}
-        </button>
+        </motion.button>
       </div>
       <Plus />
       <p className="font-light text-slate-700">Already claimed</p>

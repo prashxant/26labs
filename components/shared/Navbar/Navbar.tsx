@@ -60,7 +60,7 @@ export const Navbar = () => {
       >
         <button
           onClick={handleMenuToggle}
-          className="md:hidden text-white text-xl sm:text-2xl p-1.5 sm:p-2 hover:bg-white/10 rounded-md transition-colors active:scale-95"
+          className="md:hidden text-white text-xl sm:text-2xl p-1.5 sm:p-2 hover:bg-white/10 rounded-md transition-colors active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-[#A0B8FF]"
           aria-label="Toggle menu"
         >
           {open ? "✕" : "☰"}
@@ -70,13 +70,16 @@ export const Navbar = () => {
           <Menu />
         </div>
 
-        <Link href="/" className="flex items-center shrink-0">
+        <Link
+          href="/"
+          className="flex items-center shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-[#A0B8FF]"
+        >
           <Image
             draggable="false"
             alt="Company logo"
             width={100}
             height={40}
-            src="/logo.svg"
+            src="/LogoOne.svg"
             priority
             className="w-20 sm:w-24 md:w-28 lg:w-32 xl:w-36 h-auto"
           />
@@ -103,13 +106,13 @@ export const Navbar = () => {
             font-medium sm:font-semibold
             shadow-md
             hover:bg-orange-500/90 hover:text-white
-            transition-all duration-200
+            transition-[background-color,color,transform,box-shadow] duration-200
             active:scale-95
-            focus:outline-none focus:ring-2 focus:ring-orange2 focus:ring-offset-2
+            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange2 focus-visible:ring-offset-2
             whitespace-nowrap
             shrink-0"
         >
-          <span className="hidden font-extrabold sm:inline">Book now</span>
+          <span className="hidden font-extrabold sm:inline">Book Now</span>
           <span className="sm:hidden font-bold">Book</span>
         </a>
       </div>
@@ -127,7 +130,7 @@ export const Navbar = () => {
                   source: "mobile_menu",
                 });
               }}
-              className="block text-white hover:text-orange2 py-2"
+              className="block text-white hover:text-orange2 py-2 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange2 focus-visible:ring-offset-2 focus-visible:ring-offset-blue1"
             >
               Resource
             </Link>
@@ -141,7 +144,7 @@ export const Navbar = () => {
                   source: "mobile_menu",
                 });
               }}
-              className="block text-white hover:text-orange2 py-2"
+              className="block text-white hover:text-orange2 py-2 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange2 focus-visible:ring-offset-2 focus-visible:ring-offset-blue1"
             >
               Pricing
             </Link>
@@ -155,7 +158,7 @@ export const Navbar = () => {
                   source: "mobile_menu",
                 });
               }}
-              className="block text-white hover:text-orange2 py-2"
+              className="block text-white hover:text-orange2 py-2 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange2 focus-visible:ring-offset-2 focus-visible:ring-offset-blue1"
             >
               Blog
             </Link>
@@ -168,7 +171,7 @@ export const Navbar = () => {
                   destination: "calendly",
                 });
               }}
-              className="block text-white hover:text-orange2 py-2"
+              className="block text-white hover:text-orange2 py-2 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange2 focus-visible:ring-offset-2 focus-visible:ring-offset-blue1"
             >
               Contact
             </Link>

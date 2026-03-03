@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -43,7 +42,8 @@ export const Socials = () => {
                 destination: href,
               });
             }}
-            className="group"         >
+            className="group rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue2"
+          >
             <Icon className="size-6 md:size-8 text-blue2 transition-colors group-hover:text-blue-600/90" />
           </Link>
         ))}

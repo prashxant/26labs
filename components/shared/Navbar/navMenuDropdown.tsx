@@ -9,13 +9,14 @@ export const MenuDropdown = ({
 }) => {
   return (
     <div
+      id="menu-dropdown"
       className={`
         absolute -left-4 md:mt-4 lg:mt-10 w-56 md:w-64 lg:w-72
         rounded-xl md:rounded-1xl
         bg-linear-to-b from-[#9db2ff] to-mainBg
         p-4 md:p-6 lg:p-6
         shadow-xl
-        transition-all duration-300 ease-out
+        transition-[opacity,transform] duration-300 ease-out
         ${
           open
             ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
@@ -27,30 +28,29 @@ export const MenuDropdown = ({
         <Link
           href="/resources"
           onClick={onClose}
-          className="block transition-all duration-200 hover:text-black hover:translate-x-1 text-white "
+          className="block transition-[color,transform] duration-200 hover:text-black hover:translate-x-1 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange2 rounded"
         >
           Resource
         </Link>
         <Link
           href="/pricing"
           onClick={onClose}
-          className="block transition-all duration-200 hover:text-black hover:translate-x-1 text-white "
+          className="block transition-[color,transform] duration-200 hover:text-black hover:translate-x-1 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange2 rounded"
         >
           Pricing
         </Link>
         <Link
           href="/blog"
           onClick={onClose}
-          className="block transition-all duration-200 hover:text-black hover:translate-x-1 text-white"
+          className="block transition-[color,transform] duration-200 hover:text-black hover:translate-x-1 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange2 rounded"
         >
           Blog
         </Link>
 
         <Link
-
           href="/contact"
           onClick={onClose}
-          className="block transition-all duration-200 hover:text-black hover:translate-x-1 text-white"
+          className="block transition-[color,transform] duration-200 hover:text-black hover:translate-x-1 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange2 rounded"
         >
           Contact
         </Link>
