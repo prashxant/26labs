@@ -94,13 +94,13 @@ export const Design = () => {
               <div className="space-y-3">
                 <img src={card.icons[0]} alt="" className="h-6 w-6 shrink-0" />
 
-                <h3 className="text-sm font-medium md:line-clamp-1">
+                <h3 className="text-sm md:text-base font-medium md:line-clamp-1">
                   {card.title}
                 </h3>
 
-                <p className="min-h-4 text-xs text-gray-500">{card.author}</p>
+                <p className="min-h-4 text-xs md:text-sm text-gray-500">{card.author}</p>
 
-                <p className="text-xs leading-relaxed text-gray-600">
+                <p className="text-xs md:text-sm leading-relaxed text-gray-600">
                   {card.description}
                 </p>
               </div>
@@ -109,7 +109,7 @@ export const Design = () => {
                 href={card.link}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-6 py-2 text-xs font-medium underline underline-offset-4"
+                className="mt-6 py-2 text-xs md:text-sm font-medium underline underline-offset-4"
               >
                 ↓ {card.cta}
               </a>
