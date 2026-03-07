@@ -1,0 +1,18 @@
+
+site: https://26labs.live
+name: 26labs
+description: Web design and growth optimization agency specializing in high-converting websites and SEO-friendly architecture.
+
+key_topics:
+- web design
+- conversion optimization
+- SEO friendly websites
+- landing page design
+- startup website design
+
+important_pages:
+https://26labs.live/
+https://26labs.live/pricing
+https://26labs.live/resources
+https://26labs.live/blog
+https://26labs.live/contact

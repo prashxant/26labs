@@ -9,6 +9,22 @@ import { FooterSvg } from "@/components/icons/footerSvg";
 import { PostHogProvider } from "@/components/providers/PostHogProvider";
 import "@/instrumentation-client";
 
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "26labs",
+  url: "https://26labs.live",
+  logo: "https://26labs.live/LogoOne.svg",
+  description:
+    "26labs builds high-performance websites and growth systems for businesses.",
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "customer support",
+    url: "https://26labs.live/contact",
+  },
+};
+
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["300", "400", "500", "700"],
@@ -25,8 +41,11 @@ export const openSans = Open_Sans({
 
 export const metadata: Metadata = {
   title: "26labs | Creating the Future of Web Design",
-  description: "Just Great Design",
-};
+  description: "Web design and visibility optimization that turns visitors into revenue.",
+  alternates: {
+    canonical: "https://26labs.live/"
+  }
+}
 
 export default function RootLayout({
   children,
@@ -39,6 +58,14 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${openSans.variable} ${roboto.variable}`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd),
+          }}
+        />
+      </head>
       <body className="bg-[#F5F5F5] font-sans antialiased ">
         <PostHogProvider>
           <a
