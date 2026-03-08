@@ -1,5 +1,5 @@
 import { HeroSvg } from "@/components/icons/HeroSvg";
-import { Resources } from "@/components/shared/resources/Resources";
+import { Resources } from "@/components/resources/resources/Resources";
 
 function page() {
   return (

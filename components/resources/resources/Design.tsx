@@ -1,5 +1,5 @@
-import { Typography } from "../Typography";
-import { Phool } from "../Phool";
+import { Typography } from "@/components/ui/Typography";
+import { Phool } from "@/components/ui/Phool";
 
 const TOP_CARDS = [
   {

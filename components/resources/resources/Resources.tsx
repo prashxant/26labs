@@ -1,6 +1,6 @@
 
-import { Phool } from "../Phool";
-import { Descripton, Typography } from "../Typography";
+import { Phool } from "@/components/ui/Phool";
+import { Descripton, Typography } from "@/components/ui/Typography";
 import { Design } from "./Design";
 
 export const Resources = () => {

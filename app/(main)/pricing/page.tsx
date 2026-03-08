@@ -1,8 +1,8 @@
-import { ComparisonTable } from "@/components/shared/Pricing/Comparision";
-import { GrowthPel } from "@/components/shared/Pricing/GrowthPel";
-import { PriceSlider } from "@/components/shared/Pricing/PriceSlider";
-import { PricingHero } from "@/components/shared/Pricing/PricingHero";
-import ScrollProgress from "@/components/shared/ScroolProcress";
+import { ComparisonTable } from "@/components/pricing/pricing/Comparision";
+import { GrowthPel } from "@/components/pricing/pricing/GrowthPel";
+import { PriceSlider } from "@/components/pricing/pricing/PriceSlider";
+import { PricingHero } from "@/components/pricing/pricing/PricingHero";
+import ScrollProgress from "@/components/layout/scrollProgress";
 
 export default function page() {
   return (

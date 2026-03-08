@@ -3,9 +3,9 @@
 
 
 import { USvg } from '@/components/icons/uSvg';
-import { Descripton, Typography } from '../Typography';
+import { Descripton, Typography } from "@/components/ui/Typography";
 
-import  Sliding  from '@/components/sections/Sliding';
+import  Sliding  from '@/components/home/Sliding';
 
 
 
