@@ -9,7 +9,6 @@ import { FooterSvg } from "@/components/icons/footerSvg";
 import { PostHogProvider } from "@/components/providers/PostHogProvider";
 import "@/instrumentation-client";
 
-
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -41,11 +40,33 @@ export const openSans = Open_Sans({
 
 export const metadata: Metadata = {
   title: "26labs | Creating the Future of Web Design",
-  description: "Web design and visibility optimization that turns visitors into revenue.",
+  description:
+    "Web design and visibility optimization that turns visitors into revenue.",
   alternates: {
-    canonical: "https://26labs.live/"
-  }
-}
+    canonical: "https://26labs.live/",
+  },
+  openGraph: {
+    title: "26labs | Web Design & Growth Optimization",
+    description:
+      "We create high-converting websites with AI-driven targeting and SEO optimization.",
+    url: "https://26labs.live/",
+    type: "website",
+    images: [
+      {
+        url: "https://26labs.live/LogoOne.svg",
+        width: 400,
+        height: 400,
+        alt: "26labs - Web Design & Development Agency",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "26labs | Web Design & Growth Optimization",
+    description: "High-converting websites with AI-driven targeting.",
+    images: ["https://26labs.live/LogoOne.svg"],
+  },
+};
 
 export default function RootLayout({
   children,

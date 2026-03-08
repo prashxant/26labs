@@ -1,6 +1,16 @@
 import { HeroSvg } from "@/components/icons/HeroSvg";
 import { UFO } from "@/components/icons/UFO";
 import React from "react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog | 26labs",
+  description: "Web design and development insights coming soon.",
+  robots: "noindex, nofollow",
+  alternates: {
+    canonical: "https://26labs.live/blog",
+  },
+};
 
 function page() {
   return (
