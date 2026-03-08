@@ -1,4 +1,4 @@
-import { Phool } from "../Phool";
+import { Phool } from "@/components/ui/Phool";
 import { PricingResCon } from "./PricingResCon";
 import { Newsletter } from "./Newsletter";
 import { Slay } from "./Slay";

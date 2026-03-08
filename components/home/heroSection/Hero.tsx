@@ -1,6 +1,6 @@
 "use client";
 import { HeroSvg } from "@/components/icons/HeroSvg";
-import { Descripton, Typography } from "../Typography";
+import { Descripton, Typography } from "@/components/ui/Typography";
 import { Email } from "./Email";
 import { Arrow } from "@/components/icons/Arrow";
 import { motion, useReducedMotion } from "motion/react";

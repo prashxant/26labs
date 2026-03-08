@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Descripton, Typography } from '../Typography';
+import { Descripton, Typography } from "@/components/ui/Typography";
 
 export const Brand = () => {
   return (

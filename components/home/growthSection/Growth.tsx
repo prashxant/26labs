@@ -1,6 +1,6 @@
 "use client";
 
-import { Descripton, Typography } from "../Typography";
+import { Descripton, Typography } from "@/components/ui/Typography";
 
 // Lazy load PostHog to defer third-party code
 const trackEvent = async (eventName: string, properties?: object) => {

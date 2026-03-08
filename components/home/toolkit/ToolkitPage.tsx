@@ -1,7 +1,7 @@
 import React from "react";
 
 import ProcessGrid from "./Cards";
-import { Typography } from "../Typography";
+import { Typography } from "@/components/ui/Typography";
 
 function ToolkitPage() {
   return (

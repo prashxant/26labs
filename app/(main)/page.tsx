@@ -1,13 +1,13 @@
 
 
-import { Hero } from "@/components/shared/Hero Section/Hero";
-import { LiveProductPage } from "@/components/shared/Live Product/LiveProductPage";
-import ToolkitPage from "@/components/shared/Toolkit/ToolkitPage";
-import Fueling from "@/components/shared/Fueling Section/Fueling";
-import Need from "@/components/shared/Need Section/Need";
-import Growth from "@/components/shared/Growth Section/Growth";
-import ScrollProgress from "@/components/shared/ScroolProcress";
-import { Brand } from "@/components/shared/Brand Section/Brand";
+import { Hero } from "@/components/home/heroSection/Hero";
+import { LiveProductPage } from "@/components/home/liveProduct/LiveProductPage";
+import ToolkitPage from "@/components/home/toolkit/ToolkitPage";
+import Fueling from "@/components/home/fuelingSection/Fueling";
+import Need from "@/components/home/needSection/Need";
+import Growth from "@/components/home/growthSection/Growth";
+import ScrollProgress from "@/components/layout/scrollProgress";
+import { Brand } from "@/components/home/brandSection/Brand";
 
 
 export default function Home() {

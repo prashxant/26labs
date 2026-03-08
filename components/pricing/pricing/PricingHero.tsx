@@ -1,5 +1,5 @@
 import { HeroSvg } from "@/components/icons/HeroSvg";
-import { Descripton, Typography } from "../Typography"
+import { Descripton, Typography } from "@/components/ui/Typography"
 
 
 

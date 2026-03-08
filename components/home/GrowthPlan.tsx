@@ -1,4 +1,4 @@
-import { Descripton, Typography } from "../shared/Typography";
+import { Descripton, Typography } from "@/components/ui/Typography";
 
 export const GrowthPlan = () => {
   return (

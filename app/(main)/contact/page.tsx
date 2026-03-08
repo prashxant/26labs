@@ -1,7 +1,7 @@
 
 
 import { HeroSvg } from '@/components/icons/HeroSvg';
-import { Contact } from '@/components/shared/Contact Page/Contact'
+import { Contact } from '@/components/contact/contactPage/Contact'
 import React from 'react'
 function page() {
   return (

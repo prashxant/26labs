@@ -1,4 +1,4 @@
-import { Typography } from "../shared/Typography";
+import { Typography } from "@/components/ui/Typography";
 
 
 
