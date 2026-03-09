@@ -2,10 +2,6 @@ import type { Metadata } from "next";
 import { Open_Sans, Roboto } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
-import { Navbar } from "@/components/layout/navbar/Navbar";
-import ScrollProgress from "@/components/layout/scrollProgress";
-import { Footer } from "@/components/layout/footerSection/Footer";
-import { FooterSvg } from "@/components/icons/footerSvg";
 import { PostHogProvider } from "@/components/providers/PostHogProvider";
 import "@/instrumentation-client";
 
@@ -95,15 +91,7 @@ export default function RootLayout({
           >
             Skip to main content
           </a>
-          <header>
-            <Navbar />
-          </header>
-          <ScrollProgress aria-hidden="true" />
-          <main id="main">{children}</main>
-          <footer className="relative sm:py-20 overflow-hidden">
-            <FooterSvg />
-            <Footer />
-          </footer>
+          {children}
           <Toaster />
         </PostHogProvider>
       </body>

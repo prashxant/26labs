@@ -18,7 +18,7 @@ export default function Error({
     return (
         <div className="flex h-[80vh] flex-col items-center justify-center gap-6 px-4 text-center">
             <h2 className="text-3xl font-bold tracking-tight">Something went wrong!</h2>
-            <p className="max-w-[500px] text-muted-foreground">
+            <p className="max-w-125 text-muted-foreground">
                 We apologize for the inconvenience. An unexpected error occurred on our end.
             </p>
             <div className="flex gap-4">
