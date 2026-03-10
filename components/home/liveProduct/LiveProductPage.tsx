@@ -65,7 +65,7 @@ export const ThreeCards = () => {
               priority={card.id === 1}
             />
           </div>
-          <p className="text-[10px] md:text-base font-semibold text-black text-center">
+          <p className="text-[13px] md:text-[18px] font-semibold text-black text-center">
             {card.title}
           </p>
         </div>

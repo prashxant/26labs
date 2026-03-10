@@ -2,7 +2,7 @@
 
 import { Descripton, Typography } from "@/components/ui/Typography";
 
-// Lazy load PostHog to defer third-party code
+
 const trackEvent = async (eventName: string, properties?: object) => {
   const { default: posthog } = await import("posthog-js");
   posthog.capture(eventName, properties || {});
@@ -11,23 +11,27 @@ const trackEvent = async (eventName: string, properties?: object) => {
 const steps = [
   {
     label: "Discover",
-    textColor: "text-green-500",
+    textColor: "text-[#27C840]",
     bgColor: "bg-green-300",
+    shadow: "0px 0px 50px #27C840",
   },
   {
     label: "Define",
-    textColor: "text-yellow-400",
+    textColor: "text-[#FEBC2F]",
     bgColor: "bg-yellow-400",
+    shadow: "0px 0px 50px #FEBC2F",
   },
   {
     label: "Derive",
-    textColor: "text-red-400",
+    textColor: "text-[#FF5F57]",
     bgColor: "bg-red-300",
+    shadow: "0px 0px 50px #FF5F57",
   },
   {
     label: "Deliver",
-    textColor: "text-blue-500",
+    textColor: "text-[#0088FF]",
     bgColor: "bg-blue-300",
+    shadow: "0px 0px 50px #0088FF",
   },
 ];
 
@@ -56,7 +60,8 @@ const Growth = () => {
               className={`absolute -inset-6 ${step.bgColor} opacity-30 blur-3xl rounded-full`}
             ></div>
             <span
-              className={`relative ${step.textColor} text-[14px] md:text-3xl`}
+              className={`relative ${step.textColor} font-family-roboto font-normal text-base md:text-xl lg:text-[31px]`}
+              style={{ textShadow: step.shadow }}
             >
               {step.label}
             </span>
@@ -65,15 +70,15 @@ const Growth = () => {
       </div>
 
       <div className="mb-14 flex flex-col items-center justify-center gap-3 sm:flex-row">
-        <span className="text-[16px] md:text-2xl text-[#8ca9ff]">
+        <span className="text-base md:text-xl lg:text-[29px] font-semibold text-[#8CA9FF]">
           Consultancy Fees
         </span>
-        <span className="rounded bg-[#8ca9ff] px-6 py-1 text-[14px] md:text-2xl font-semibold text-white border border-blue-800">
-          $149
+        <span className="rounded-[5px] bg-[#8CA9FF] px-6 py-1 font-family-roboto font-normal text-base md:text-xl lg:text-[31px] text-[#F5F5F5] border border-blue-800">
+          149$
         </span>
       </div>
 
-      <div className="mb-3 flex flex-col justify-center gap-4 sm:flex-row">
+      <div className="mb-16 flex flex-col justify-center items-center gap-6 sm:gap-10 sm:flex-row">
         <a
           href="https://calendly.com/26labs-live/30min"
           target="_blank"
@@ -85,10 +90,11 @@ const Growth = () => {
               pricing: "$149",
             });
           }}
-          className="px-9 py-2 font-bold text-gray-800 bg-white border border-gray-300 shadow-[0_2px_6px_rgba(0,0,0,0.15)] hover:shadow-[0_4px_10px_rgba(0,0,0,0.2)] transition-[box-shadow,transform,background-color,color] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#8ca9ff]"
+          className="relative w-[211px] h-[44px] flex items-center justify-center rounded-[5px] bg-[#F4F6FF] shadow-[0px_2px_9.7px_0px_rgba(0,0,0,0.25)] text-[#161616] font-semibold text-sm md:text-lg lg:text-[29px] hover:shadow-[0px_4px_12px_0px_rgba(0,0,0,0.3)] transition-[box-shadow,transform] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#8ca9ff]"
         >
-          <span className="hidden sm:inline">Book Now</span>
-          <span className="sm:hidden">Book</span>
+          <div className="absolute inset-0 pointer-events-none rounded-[inherit] shadow-[inset_0px_-1px_3px_1px_#a4a4a4]" />
+          <span className="relative hidden sm:inline">Book Now</span>
+          <span className="relative sm:hidden">Book</span>
         </a>
 
         <a
@@ -100,13 +106,14 @@ const Growth = () => {
               source: "growth_section",
             });
           }}
-          className="px-9 py-2 border border-orange-500 bg-[#8ca9ff] text-white font-semibold transition-[background-color,transform,color] hover:bg-[#7c98ff] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#8ca9ff]"
+          className="relative w-[211px] h-[44px] flex items-center justify-center rounded-[5px] bg-[#8CA9FF] shadow-[0px_2px_9.7px_0px_rgba(0,0,0,0.25)] text-[#F5F5F5] font-semibold text-sm md:text-lg lg:text-[29px] hover:bg-[#7c98ff] transition-[background-color,transform,box-shadow] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#8ca9ff]"
         >
-          Visit Pricing
+          <div className="absolute inset-0 pointer-events-none rounded-[inherit] shadow-[inset_0px_-1px_3px_1px_#ffaa72]" />
+          <span className="relative">Visit Pricing</span>
         </a>
       </div>
 
-      <p className="mb-8 px-4 sm:px-0 text-sm md:text-base text-blue-500">
+      <p className="mb-8 px-4 sm:px-0 text-sm md:text-base lg:text-[20px] font-family-roboto text-[#8CA9FF]">
         Bookings are filling fast. Book now at an offer price.
       </p>
 

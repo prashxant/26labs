@@ -13,7 +13,7 @@ import { Brand } from "@/components/home/brandSection/Brand";
 export default function Home() {
   return (
     <div className="min-h-screen">
-      <ScrollProgress aria-hidden="true" />
+      <ScrollProgress aria-hidden="true"/>
       <Hero />
       <ToolkitPage />
       <LiveProductPage />

@@ -20,9 +20,9 @@ type DiscriptionProps = {
 type TypographyVariant = "h1" | "h2" | "h3";
 
 const variants = {
-  h1: "text-[40px] sm:text-[45px] md:text-[55px] text-shadow lg:text-6xl xl:text-[90px] ",
-  h2: "text-[35px] sm:text-[40px] md:text-5xl xl:text-[75px]",
-  h3: "text-[20px] sm:text-xl md:text-2xl lg:text-[28.13px]",
+  h1: "text-[40px] sm:text-[45px] md:text-[55px] text-shadow lg:text-6xl xl:text-[75px] ",
+  h2: "text-[35px] sm:text-[40px] md:text-[46px]",
+  h3: "text-[20px] sm:text-xl md:text-2xl lg:text-[29px]",
 };
 
 const highlightStyles = {
@@ -75,7 +75,7 @@ export const Descripton = ({ className, description }: DiscriptionProps) => {
       transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.8 }}
       viewport={{ once: true }}
       className={cn(
-        "mx-auto text-center font-family-roboto max-w-2xl my-4 sm:my-6 md:my-8 lg:my-8 tracking-tight font-normal text-[15px] md:text-base lg:text-lg leading-relaxed",
+        "mx-auto text-center font-family-roboto max-w-2xl my-4 sm:my-6 md:my-8 lg:my-8 tracking-tight font-normal text-[15px] md:text-base lg:text-[20px] leading-normal",
         className
       )}
     >

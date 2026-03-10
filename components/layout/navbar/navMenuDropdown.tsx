@@ -28,21 +28,21 @@ export const MenuDropdown = ({
         <Link
           href="/resources"
           onClick={onClose}
-          className="block transition-[color,transform] duration-200 hover:text-black hover:translate-x-1 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange2 rounded"
+          className="block transition-[color,transform] duration-200 hover:text-black  text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange2 rounded"
         >
           Resource
         </Link>
         <Link
           href="/pricing"
           onClick={onClose}
-          className="block transition-[color,transform] duration-200 hover:text-black hover:translate-x-1 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange2 rounded"
+          className="block transition-[color,transform] duration-200 hover:text-black  text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange2 rounded"
         >
           Pricing
         </Link>
         <Link
           href="/blog"
           onClick={onClose}
-          className="block transition-[color,transform] duration-200 hover:text-black hover:translate-x-1 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange2 rounded"
+          className="block transition-[color,transform] duration-200  hover:text-black  text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange2 rounded"
         >
           Blog
         </Link>
@@ -50,7 +50,7 @@ export const MenuDropdown = ({
         <Link
           href="/contact"
           onClick={onClose}
-          className="block transition-[color,transform] duration-200 hover:text-black hover:translate-x-1 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange2 rounded"
+          className="block  transition-[color,transform] duration-200 hover:text-black  text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange2 rounded"
         >
           Contact
         </Link>
