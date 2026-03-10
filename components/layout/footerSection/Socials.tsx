@@ -5,6 +5,7 @@ import InstagramIcon from "@/components/ui/instagram-icon";
 import LinkedinIcon from "@/components/ui/linkedin-icon";
 import TwitterXIcon from "@/components/ui/twitter-x-icon";
 import YoutubeIcon from "@/components/ui/youtube-icon";
+import clsx from "clsx";
 
 // Lazy load PostHog to defer third-party code
 const trackEvent = async (eventName: string, properties?: object) => {
@@ -27,9 +28,9 @@ const SOCIALS = [
   },
 ];
 
-export const Socials = () => {
+export const Socials = ({className , Parent}:{className?:string ,Parent:string}) => {
   return (
-    <div className="flex relative flex-col text-gray-500  px-4 sm:px-6">
+    <div className={clsx("flex relative flex-col text-gray-500 ",Parent)}>
       <div className="flex justify-center items-center gap-x-2 md:gap-x-6">
         {SOCIALS.map(({ Icon, href, label }) => (
           <Link
@@ -44,7 +45,10 @@ export const Socials = () => {
             }}
             className="group rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue2"
           >
-            <Icon className="size-6 md:size-8 text-blue2 transition-colors group-hover:text-blue-600/90" />
+            <Icon className={clsx(
+                "size-6 md:size-8 transition-colors group-hover:text-blue-600/90",
+                className
+              )}/>
           </Link>
         ))}
       </div>
