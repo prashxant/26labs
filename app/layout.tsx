@@ -2,13 +2,8 @@ import type { Metadata } from "next";
 import { Open_Sans, Roboto } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
-import { Navbar } from "@/components/shared/Navbar/Navbar";
-import ScrollProgress from "@/components/shared/ScroolProcress";
-import { Footer } from "@/components/shared/Footer Section/Footer";
-import { FooterSvg } from "@/components/icons/footerSvg";
 import { PostHogProvider } from "@/components/providers/PostHogProvider";
 import "@/instrumentation-client";
-
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -41,11 +36,33 @@ export const openSans = Open_Sans({
 
 export const metadata: Metadata = {
   title: "26labs | Creating the Future of Web Design",
-  description: "Web design and visibility optimization that turns visitors into revenue.",
+  description:
+    "Web design and visibility optimization that turns visitors into revenue.",
   alternates: {
-    canonical: "https://26labs.live/"
-  }
-}
+    canonical: "https://26labs.live/",
+  },
+  openGraph: {
+    title: "26labs | Web Design & Growth Optimization",
+    description:
+      "We create high-converting websites with AI-driven targeting and SEO optimization.",
+    url: "https://26labs.live/",
+    type: "website",
+    images: [
+      {
+        url: "https://26labs.live/LogoOne.svg",
+        width: 400,
+        height: 400,
+        alt: "26labs - Web Design & Development Agency",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "26labs | Web Design & Growth Optimization",
+    description: "High-converting websites with AI-driven targeting.",
+    images: ["https://26labs.live/LogoOne.svg"],
+  },
+};
 
 export default function RootLayout({
   children,
@@ -74,15 +91,7 @@ export default function RootLayout({
           >
             Skip to main content
           </a>
-          <header>
-            <Navbar />
-          </header>
-          <ScrollProgress aria-hidden="true" />
-          <main id="main">{children}</main>
-          <footer className="relative sm:py-20 overflow-hidden">
-            <FooterSvg />
-            <Footer />
-          </footer>
+          {children}
           <Toaster />
         </PostHogProvider>
       </body>

@@ -1,7 +1,5 @@
 import type { NextConfig } from "next";
 
-
-
 const securityHeaders = [
   {
     key: "X-Frame-Options",
@@ -17,7 +15,7 @@ const securityHeaders = [
   },
 ];
 
-module.exports = {
+const nextConfig: NextConfig = {
   async headers() {
     return [
       {
@@ -26,10 +24,6 @@ module.exports = {
       },
     ];
   },
-};
-
-const nextConfig: NextConfig = {
-  /* config options here */
   async rewrites() {
     return [
       {
