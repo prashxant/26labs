@@ -1,5 +1,5 @@
 import { HeroSvg } from "@/components/icons/HeroSvg";
-import { UFO } from "@/components/icons/UFO";
+import { Typography } from "@/components/ui/Typography";
 import React from "react";
 import type { Metadata } from "next";
 
@@ -14,13 +14,19 @@ export const metadata: Metadata = {
 
 function page() {
   return (
-    <div className="h-screen relative w-full text-7xl flex text-shadow-sm  flex-col gap-10 justify-center items-center">
+    <div className="h-screen relative w-full flex flex-col gap-10 justify-center items-center">
       <div className=" absolute -z-1000">
         <HeroSvg />
       </div>
-      <p className="text-orange2 ">Coming Soon…</p>
+      <Typography
+        variant="h2"
+        className="text-orange2"
+        line1=""
+        popUp="Coming Soon…"
+      />
     </div>
   );
 }
 
 export default page;
+

@@ -34,7 +34,7 @@ export const Menu = () => {
           <span className="bg-black h-5 md:h-6 lg:h-7 w-1 md:w-1.5 rounded-lg mx-0.5" />
         </div>
 
-        <span className="text-base md:text-lg lg:text-xl text-black font-bold">
+        <span className="text-base md:text-lg lg:text-xl text-black font-semibold">
           Menu
         </span>
       </button>

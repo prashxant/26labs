@@ -22,7 +22,7 @@ const Need = () => {
         <FloatingDashboard />
       </div>
 
-      <p className="relative mt-11 max-w-3xl mx-auto text-center text-[12px] md:text-base font-bold text-gray-600">
+      <p className="relative mt-11 max-w-3xl mx-auto text-center text-[13px] md:text-[20px] font-normal font-family-roboto text-gray-600">
         <span className="block mb-1">
           By combining thoughtful design, smart AI-driven targeting, and modern
           technology, we ensure

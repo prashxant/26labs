@@ -36,10 +36,8 @@ const HeroSection = () => {
         />
 
         <Descripton
-          className="max-w-lg"
-          description="Introducing our full on tech stack which we will be using for your project. Live from discovery to delivery"
-        />
-
+          className="max-w-lg sm:text-[20px]"
+          description="Introducing our full on tech stack which we will be using for your project. Live from discovery to delivery" />
       </div>
     </section>
   );
