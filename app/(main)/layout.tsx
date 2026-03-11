@@ -2,6 +2,7 @@ import { Navbar } from "@/components/layout/navbar/Navbar";
 import ScrollProgress from "@/components/layout/scrollProgress";
 import { Footer } from "@/components/layout/footerSection/Footer";
 import { FooterSvg } from "@/components/icons/footerSvg";
+import CursorTrail from "@/components/layout/CursorTrail";
 
 export default function MainLayout({
   children,
@@ -10,6 +11,7 @@ export default function MainLayout({
 }) {
   return (
     <>
+      <CursorTrail />
       <header>
         <Navbar />
       </header>
