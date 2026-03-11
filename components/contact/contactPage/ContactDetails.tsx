@@ -33,7 +33,7 @@ export function ContactDetails() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Basic validation
+    
     if (!form.name || !form.email || !form.project) {
       toast.error("Please fill all required fields.");
       return;
@@ -86,7 +86,7 @@ export function ContactDetails() {
             value={form.name}
             onChange={handleChange}
             autoComplete="name"
-            placeholder="Jane Doe…"
+            placeholder="Alex Hormozi…"
             required
           />
         </Field>
@@ -102,7 +102,7 @@ export function ContactDetails() {
             autoComplete="email"
             inputMode="email"
             spellCheck={false}
-            placeholder="you@example.com…"
+            placeholder="you@26labs.com…"
             required
           />
           <FieldDescription>
@@ -121,7 +121,7 @@ export function ContactDetails() {
               onChange={handleChange}
               autoComplete="tel"
               inputMode="tel"
-              placeholder="+1 555 000 0000…"
+              placeholder="+1 555 000 000"
             />
           </Field>
 
@@ -150,7 +150,7 @@ export function ContactDetails() {
             onChange={handleChange}
             rows={6}
             className="w-full px-3 py-2 border rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 resize-y min-h-[120px]"
-            placeholder="Describe your project, goals, and requirements…"
+            placeholder="Describe your project, goals and requirements…"
             required
           />
         </Field>

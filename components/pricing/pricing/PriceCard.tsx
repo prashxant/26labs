@@ -2,7 +2,7 @@
 
 import { Tick } from "@/components/icons/Tick";
 
-// Lazy load PostHog to defer third-party code
+
 const trackEvent = async (eventName: string, properties?: object) => {
   const { default: posthog } = await import("posthog-js");
   posthog.capture(eventName, properties || {});
@@ -40,7 +40,7 @@ export const PriceCard = ({
       <h3
         className="
           text-lg sm:text-xl md:text-2xl
-          font-bold mb-4 text-center
+          font-semibold mb-4 text-center
         "
       >
         {title}

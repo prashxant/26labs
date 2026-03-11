@@ -7,7 +7,7 @@ import { toast } from "sonner";
 import { NewSvg } from "@/components/icons/New";
 import { supabase } from "@/lib/supabaseClient";
 
-// Lazy load PostHog to defer third-party code
+
 const trackEvent = async (eventName: string, properties?: object) => {
   const { default: posthog } = await import("posthog-js");
   posthog.capture(eventName, properties || {});
@@ -18,7 +18,7 @@ const captureException = async (error: unknown) => {
   posthog.captureException(error);
 };
 
-// Hoist regex outside component for better performance
+
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export const Newsletter = () => {
@@ -55,7 +55,7 @@ export const Newsletter = () => {
         throw error;
       }
 
-      // Track successful newsletter subscription
+    
       trackEvent("newsletter_subscribed", {
         source: "footer_section",
       });
@@ -65,7 +65,7 @@ export const Newsletter = () => {
     } catch (err) {
       console.error(err);
 
-      // Track failed newsletter subscription and capture exception
+     
       trackEvent("newsletter_subscription_failed", {
         source: "footer_section",
         error_message: err instanceof Error ? err.message : "Unknown error",
@@ -131,7 +131,7 @@ export const Newsletter = () => {
         </button>
       </div>
 
-      <p className="max-w-lg text-[14px] sm:text-base md:text-[18px] text-center font-semibold px-4">
+      <p className="max-w-lg text-[14px] sm:text-base md:text-[20px] text-center font-normal font-family-roboto px-4">
         Be the first to receive ideas, trends, and strategies that help your
         <span> brand grow smarter and stand out.</span>
       </p>

@@ -7,19 +7,19 @@ type Phoolprops = {
   src?: string;
 };
 
-export const Phool = ({Line1 = "", Line2 = "", src = "/union.svg"}: Phoolprops) => {
+export const Phool = ({ Line1 = "", Line2 = "", src = "/union.svg" }: Phoolprops) => {
   return (
-  <div className=" grid grid-cols-3 place-items-center font-semibold lg:text-[18px] text-[10px] gap-6 px-4 py-8 sm:py-16 ">
-        <p className='text-center'>{Line1}</p>
-        <Image
+    <div className=" grid grid-cols-3 place-items-center font-semibold text-[10px] sm:text-[13px] md:text-[16px] lg:text-[18px] gap-6 px-4 py-8 sm:py-16 ">
+      <p className='text-center'>{Line1}</p>
+      <Image
         draggable="false"
-          width={128}
-          height={128}
-          src={src}
-          alt="lgog"
-          className="animate-spin-slow"
-        />
-        <p className=''>{Line2}</p>
-      </div>
+        width={128}
+        height={128}
+        src={src}
+        alt="lgog"
+        className="animate-spin-slow"
+      />
+      <p className=''>{Line2}</p>
+    </div>
   );
 }

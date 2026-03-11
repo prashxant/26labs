@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Menu } from "./navMenu";
 
-// Lazy load PostHog to defer third-party code after hydration
+
 const trackEvent = async (eventName: string, properties?: object) => {
   const { default: posthog } = await import("posthog-js");
   posthog.capture(eventName, properties || {});
@@ -27,15 +27,15 @@ export const Navbar = () => {
       const currentScrollY = window.scrollY;
 
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setHidden(true); // scrolling DOWN → hide
+        setHidden(true); 
       } else {
-        setHidden(false); // scrolling UP → show
+        setHidden(false);
       }
 
       setLastScrollY(currentScrollY);
     };
 
-    // Use passive listener for better scroll performance
+   
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
@@ -103,7 +103,7 @@ export const Navbar = () => {
             py-2 sm:py-2.5 md:py-3 lg:py-3.5
             text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl
             text-white
-            font-medium sm:font-semibold
+            font-semibold sm:font-bold
             shadow-md
             hover:bg-orange-500/90 hover:text-white
             transition-[background-color,color,transform,box-shadow] duration-200
@@ -112,7 +112,7 @@ export const Navbar = () => {
             whitespace-nowrap
             shrink-0"
         >
-          <span className="hidden font-extrabold sm:inline">Book Now</span>
+          <span className="hidden font-bold sm:inline">Book Now</span>
           <span className="sm:hidden font-bold">Book</span>
         </a>
       </div>

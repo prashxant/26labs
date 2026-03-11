@@ -6,20 +6,20 @@ export const GrowthPel = () => {
       <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
         <div className="bg-blue1 blur-3xl absolute -z-10 inset-0 pointer-events-none"></div>
       </div>
-    
+
       <h2
         className="
-          font-extrabold text-white
-          text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl
-          text-shadow-[0_4px_0_rgba(255,133,53,1)]" >
+           font-bold text-white
+           text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl
+           text-shadow-[0_4px_0_rgba(255,133,53,1)]" >
         Get personalized growth plan
       </h2>
 
       <p
         className="
-          max-w-3xl text-black
-          text-xs sm:text-sm md:text-base lg:text-lg
-          font-medium
+           max-w-3xl text-black
+           text-xs sm:text-sm md:text-base lg:text-lg
+           font-normal font-family-roboto
         "
       >
         We&apos;ll identify your biggest revenue bottlenecks and map out a
