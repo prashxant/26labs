@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
     return (
-        <div className="min-h-screen pt-32 pb-20 px-4 sm:px-6">
-            <article className="max-w-3xl mx-auto prose prose-gray">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-10">
+        <div className="min-h-screen pt-40 pb-20 px-4 sm:px-6">
+            <article className="max-w-3xl mx-auto">
+                <h1 className="text-[40px] sm:text-[45px] md:text-[55px] font-bold leading-tight mb-12">
                     Terms &amp; Conditions
                 </h1>
 
@@ -203,15 +203,15 @@ export default function TermsPage() {
                         If you have any questions about these Terms of Service, please
                         contact us at:
                     </p>
-                    <address className="not-italic leading-relaxed">
-                        <strong>26 Labs</strong>
+                    <address className="not-italic leading-relaxed text-gray-600">
+                        <strong className="text-foreground">26 Labs</strong>
                         <br />
                         Dubai, UAE
                         <br />
                         Email:{" "}
                         <a
                             href="mailto:sales@26labs.live"
-                            className="text-[#8CA9FF] hover:underline"
+                            className="text-blue2 hover:underline font-medium"
                         >
                             sales@26labs.live
                         </a>
@@ -230,9 +230,11 @@ function Section({
     children: React.ReactNode;
 }) {
     return (
-        <section className="mb-10">
-            <h2 className="text-xl sm:text-2xl font-bold mb-4">{title}</h2>
-            <div className="text-sm sm:text-base text-gray-600 leading-relaxed space-y-3 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2 [&_li]:text-gray-600">
+        <section className="mb-12">
+            <h2 className="text-[20px] sm:text-xl md:text-2xl font-bold mb-6 text-foreground">
+                {title}
+            </h2>
+            <div className="text-sm sm:text-base text-gray-600 leading-relaxed space-y-4 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2 [&_li]:text-gray-600">
                 {children}
             </div>
         </section>
