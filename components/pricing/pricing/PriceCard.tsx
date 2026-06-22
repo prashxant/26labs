@@ -1,7 +1,8 @@
 "use client";
 
-import { Tick } from "@/components/icons/Tick";
+import { useRouter } from "next/navigation";
 
+import { Tick } from "@/components/icons/Tick";
 
 const trackEvent = async (eventName: string, properties?: object) => {
   const { default: posthog } = await import("posthog-js");
@@ -25,6 +26,8 @@ export const PriceCard = ({
   description,
   features,
 }: PriceCardProps) => {
+  const router = useRouter();
+
   const handleGetStarted = () => {
     trackEvent("pricing_plan_selected", {
       plan_name: title,
@@ -33,6 +36,8 @@ export const PriceCard = ({
       display_currency: currency,
       features_count: features.length,
     });
+
+    router.push("/contact");
   };
   return (
     <div
@@ -61,14 +66,14 @@ export const PriceCard = ({
             bg-[#FFF0E7]
           "
         >
-          <div className="flex flex-col justify-start min-h-[110px] sm:min-h-[120px]">
+          <div className="flex flex-col justify-start min-h-27.5 sm:min-h-30">
             <p className="text-sm font-semibold sm:text-base pl-1">for</p>
 
             <p
               className="
                 text-[#3766F0] font-bold leading-none
                 text-3xl sm:text-4xl md:text-[42px]
-                break-words
+                wrap-break-word
               "
             >
               {displayPrice}
@@ -77,7 +82,7 @@ export const PriceCard = ({
               </span>
             </p>
 
-            <p className="text-[11px] sm:text-xs pt-2 pl-2 max-w-[260px]">
+            <p className="text-[11px] sm:text-xs pt-2 pl-2 max-w-65">
               {description}
             </p>
           </div>

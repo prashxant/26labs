@@ -33,7 +33,6 @@ export function ContactDetails() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    
     if (!form.name || !form.email || !form.project) {
       toast.error("Please fill all required fields.");
       return;
@@ -43,7 +42,8 @@ export function ContactDetails() {
 
     try {
       if (!supabase) {
-        throw new Error("Supabase client is not initialized");
+        toast.error("Service unavailable. Please try again later.");
+        return;
       }
 
       const { error } = await supabase.from("contact_requests").insert({
@@ -149,7 +149,7 @@ export function ContactDetails() {
             value={form.project}
             onChange={handleChange}
             rows={6}
-            className="w-full px-3 py-2 border rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 resize-y min-h-[120px]"
+            className="w-full px-3 py-2 border rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 resize-y min-h-30"
             placeholder="Describe your project, goals and requirements…"
             required
           />
