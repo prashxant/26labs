@@ -1,6 +1,11 @@
+"use client";
+
 import React from "react";
+import { useLocalizedPricing } from "./useLocalizedPricing";
 
 export const GrowthPel = () => {
+  const { formatPrice } = useLocalizedPricing();
+
   return (
     <section className="relative mx-auto mb-20 flex max-w-6xl flex-col items-center gap-4 px-4 text-center sm:gap-6 sm:px-6 lg:gap-8 py-10  lg:px-12">
       <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
@@ -36,7 +41,9 @@ export const GrowthPel = () => {
         "
       >
         Consult and get a 3 months growth plan at
-        <span className="text-white text-4xl text-shadow-[0_2px_0_rgba(255,133,53,1)]">$149</span>
+        <span className="text-white text-4xl text-shadow-[0_2px_0_rgba(255,133,53,1)]">
+          {formatPrice(149)}
+        </span>
       </p>
     </section>
   );

@@ -1,7 +1,23 @@
+export type PricingPlanKey =
+  | "starter"
+  | "standard"
+  | "premium"
+  | "enterprise";
+
+export type PricingCard = {
+  key: PricingPlanKey;
+  title: string;
+  priceUsd: number | null;
+  priceLabel?: string;
+  description: string;
+  features: string[];
+};
+
 export const PRICING_CARDS = [
   {
+    key: "starter",
     title: "Starter",
-    price: "$249",
+    priceUsd: 249,
     description:
       "For small teams seeking digital presence and ready to deploy.",
     features: [
@@ -13,8 +29,9 @@ export const PRICING_CARDS = [
     ],
   },
   {
+    key: "standard",
     title: "Standard",
-    price: "$399",
+    priceUsd: 399,
     description:
       "For growing teams seeking advance resource level digital website for their clients.",
     features: [
@@ -26,8 +43,9 @@ export const PRICING_CARDS = [
     ],
   },
   {
+    key: "premium",
     title: "Premium",
-    price: "$549",
+    priceUsd: 549,
     description:
       "For organizations with advance  user for high growth teams and more.",
     features: [
@@ -40,8 +58,10 @@ export const PRICING_CARDS = [
     ],
   },
   {
+    key: "enterprise",
     title: "Enterprise",
-    price: "Quatotion",
+    priceUsd: null,
+    priceLabel: "Quotation",
     description:
       "Multiple admin lavers full system build for a organization with support staff. ",
     features: [
@@ -54,4 +74,4 @@ export const PRICING_CARDS = [
       "Dedicated maintenance team",
     ],
   },
-];
+] satisfies PricingCard[];

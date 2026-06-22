@@ -1,7 +1,12 @@
+"use client";
+
 import { PriceCard } from "./PriceCard";
 import { PRICING_CARDS } from "./pricingData";
+import { useLocalizedPricing } from "./useLocalizedPricing";
 
 export const PriceSlider = () => {
+  const { currency, formatPrice } = useLocalizedPricing();
+
   return (
     <div
       className="
@@ -15,9 +20,11 @@ export const PriceSlider = () => {
     >
       {PRICING_CARDS.map((card) => (
         <PriceCard
-          key={card.price}
+          key={card.key}
           title={card.title}
-          price={card.price}
+          displayPrice={formatPrice(card.priceUsd, card.priceLabel)}
+          priceUsd={card.priceUsd}
+          currency={currency}
           description={card.description}
           features={card.features}
         />

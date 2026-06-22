@@ -1,34 +1,51 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function ScrollProgress() {
   const barRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const trigger = ScrollTrigger.create({
-      start: 0,
-      end: "max",
-      onUpdate: (self) => {
-        gsap.to(barRef.current, {
-          scaleX: self.progress,
-          transformOrigin: "left center",
-          ease: "none",
-          overwrite: true,
-        });
-      },
-    });
+    let frameId = 0;
 
-    return () => trigger.kill();
+    const updateProgress = () => {
+      frameId = 0;
+
+      const scrollableHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const progress =
+        scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0;
+
+      if (barRef.current) {
+        barRef.current.style.transform = `scaleX(${Math.min(
+          Math.max(progress, 0),
+          1
+        )})`;
+      }
+    };
+
+    const scheduleUpdate = () => {
+      if (frameId) return;
+      frameId = window.requestAnimationFrame(updateProgress);
+    };
+
+    updateProgress();
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
+
+    return () => {
+      if (frameId) window.cancelAnimationFrame(frameId);
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+    };
   }, []);
 
   return (
     <div className="fixed top-0 left-0 z-9999 h-0.75 w-full bg-transparent">
-      <div ref={barRef} className="h-full w-full bg-orange2 scale-x-0" />
+      <div
+        ref={barRef}
+        className="h-full w-full origin-left scale-x-0 bg-orange2"
+      />
     </div>
   );
 }

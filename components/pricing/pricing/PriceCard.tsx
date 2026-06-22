@@ -10,21 +10,27 @@ const trackEvent = async (eventName: string, properties?: object) => {
 
 type PriceCardProps = {
   title: string;
-  price: string;
+  displayPrice: string;
+  priceUsd: number | null;
+  currency: string;
   description: string;
   features: string[];
 };
 
 export const PriceCard = ({
   title,
-  price,
+  displayPrice,
+  priceUsd,
+  currency,
   description,
   features,
 }: PriceCardProps) => {
   const handleGetStarted = () => {
     trackEvent("pricing_plan_selected", {
       plan_name: title,
-      plan_price: price,
+      plan_price: displayPrice,
+      plan_price_usd: priceUsd,
+      display_currency: currency,
       features_count: features.length,
     });
   };
@@ -61,10 +67,11 @@ export const PriceCard = ({
             <p
               className="
                 text-[#3766F0] font-bold leading-none
-                text-3xl sm:text-4xl md:text-[46px]
+                text-3xl sm:text-4xl md:text-[42px]
+                break-words
               "
             >
-              {price}
+              {displayPrice}
               <span className="ml-1 text-sm sm:text-base text-black">
                 /project
               </span>

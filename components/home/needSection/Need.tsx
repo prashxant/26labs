@@ -49,7 +49,7 @@ const FloatingDashboard = () => {
     <div className="relative flex justify-center md:justify-end">
       <div className="relative w-193 h-86 rounded-2xl p-4 transition-[transform,box-shadow] duration-300">
         <Image
-          src="/Group 97.png"
+          src="/images/group-97.png"
           alt="Dashboard UI"
           fill
           className="object-contain"

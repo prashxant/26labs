@@ -1,5 +1,9 @@
 
+"use client";
+
 import React from "react";
+import { PRICING_CARDS, type PricingPlanKey } from "./pricingData";
+import { useLocalizedPricing } from "./useLocalizedPricing";
 
 /* ---------------------------------- */
 /* Icons */
@@ -30,15 +34,9 @@ const Tick = ({ size = 18 }: { size?: number }) => (
 /* Types */
 /* ---------------------------------- */
 
-type PlanKey = "starter" | "standard" | "premium" | "enterprise";
-
 type Feature = {
   name: string;
-  starter: string | boolean;
-  standard: string | boolean;
-  premium: string | boolean;
-  enterprise: string | boolean;
-};
+} & Record<PricingPlanKey, string | boolean>;
 
 type FeatureCategory = {
   category: string;
@@ -49,12 +47,12 @@ type FeatureCategory = {
 /* Data */
 /* ---------------------------------- */
 
-const plans: { key: PlanKey; name: string; price: string }[] = [
-  { key: "starter", name: "Starter", price: "$249" },
-  { key: "standard", name: "Standard", price: "$399" },
-  { key: "premium", name: "Premium", price: "$549" },
-  { key: "enterprise", name: "Enterprise", price: "Quotation" },
-];
+const plans = PRICING_CARDS.map((plan) => ({
+  key: plan.key,
+  name: plan.title,
+  priceUsd: plan.priceUsd,
+  priceLabel: plan.priceLabel,
+}));
 
 const featureCategories: FeatureCategory[] = [
   {
@@ -217,6 +215,8 @@ const renderCell = (value: string | boolean) => {
 /* ---------------------------------- */
 
 export const ComparisonTable = () => {
+  const { formatPrice } = useLocalizedPricing();
+
   return (
     <div className="relative">
       <section className="mx-auto max-w-7xl px-4 my-12">
@@ -233,7 +233,7 @@ export const ComparisonTable = () => {
                     <th key={plan.key} className="p-4 text-center font-bold">
                       <div className="text-xl">{plan.name}</div>
                       <div className="text-[#3766F0] text-4xl font-bold">
-                        {plan.price}
+                        {formatPrice(plan.priceUsd, plan.priceLabel)}
                       </div>
                       {plan.key !== "enterprise" && (
                         <div className="text-sm">/project</div>
