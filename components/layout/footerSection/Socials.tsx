@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import InstagramIcon from "@/components/ui/instagram-icon";
-import LinkedinIcon from "@/components/ui/linkedin-icon";
-import TwitterXIcon from "@/components/ui/twitter-x-icon";
-import YoutubeIcon from "@/components/ui/youtube-icon";
+
 import clsx from "clsx";
+import LinkedinIcon from "@/components/icons/linkedin-icon";
+import TwitterXIcon from "@/components/icons/twitter-x-icon";
+import InstagramIcon from "@/components/icons/instagram-icon";
 
 // Lazy load PostHog to defer third-party code
 const trackEvent = async (eventName: string, properties?: object) => {

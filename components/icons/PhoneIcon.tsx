@@ -1,6 +1,6 @@
 'use client'
 import { forwardRef, useImperativeHandle, useCallback } from "react";
-import type { AnimatedIconHandle, AnimatedIconProps } from "./types";
+import type { AnimatedIconHandle, AnimatedIconProps } from "../ui/types";
 import { motion, useAnimate } from "motion/react";
 
 const PhoneVolume = forwardRef<AnimatedIconHandle, AnimatedIconProps>(

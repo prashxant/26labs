@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Open_Sans, Roboto } from "next/font/google";
+import { Open_Sans, Roboto, Press_Start_2P } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import { PostHogProvider } from "@/components/providers/PostHogProvider";
@@ -24,6 +24,13 @@ const roboto = Roboto({
   subsets: ["latin"],
   weight: ["300", "400", "500", "700"],
   variable: "--font-roboto",
+  display: "swap",
+});
+
+const pressStart2P = Press_Start_2P({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-pixel",
   display: "swap",
 });
 
@@ -73,7 +80,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${openSans.variable} ${roboto.variable}`}
+      className={`${openSans.variable} ${roboto.variable} ${pressStart2P.variable}`}
     >
       <head>
         <script

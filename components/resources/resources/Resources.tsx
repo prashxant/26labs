@@ -2,14 +2,16 @@
 import { Phool } from "@/components/ui/Phool";
 import { Descripton, Typography } from "@/components/ui/Typography";
 import { Design } from "./Design";
+import ProcessGrid from "@/components/home/toolkit/Cards";
 
 export const Resources = () => {
   return (
     <main className="mx-auto ">
-      <div className="flex h-[50vh] sm:h-screen justify-center items-center">
+      <div className="flex  flex-col h-[50vh] sm:h-screen justify-center items-center">
         <HeroSection />
       </div>
-      <div className="max-w-4xl  mx-auto">
+      <ProcessGrid />
+      <div className="max-w-4xl mt-10   mx-auto">
         <Phool
           Line1="Design for Utility"
           Line2="Design better Experience"
@@ -30,7 +32,8 @@ const HeroSection = () => {
           className="tracking-wider"
           line1="Everything You Need"
           line2="to Launch Your"
-          popUp="Own Website" />
+          popUp="Own Website"
+        />
 
         <Descripton
           className="max-w-lg sm:text-[20px]"
